@@ -1,0 +1,37 @@
+<name>rutile</name>
+<description>Rutile is a mineral composed primarily of titanium dioxide, TiO2.</description>
+
+<display>
+	<color>8C0028DC</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>4250</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</largedeposit>
+	<smalldeposit>
+		<granite />
+	</smalldeposit>
+</terrain>

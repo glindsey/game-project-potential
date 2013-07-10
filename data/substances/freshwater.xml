@@ -1,0 +1,42 @@
+<name>Fresh water</name>
+<description>Fresh water is naturally occurring water on the Earth's surface in ice sheets, ice caps, glaciers, bogs, ponds, lakes, rivers and streams, and underground as groundwater in aquifers and underground streams. Fresh water is generally characterized by having low concentrations of dissolved salts and other total dissolved solids.</description>
+
+<display>
+	<color>
+		<main>00D0FF30</main>
+		<specular>FFFFFFFF</specular>
+	</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+	<lightsource>false</lightsource>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<freezetemp>0</freezetemp>
+	<boiltemp>100</boiltemp>
+	<specificgravity>1000</specificgravity>	
+</physical>
+
+<attributes>
+	<water>true</water>
+	<potable>true</potable>
+</attributes>
+
+<actions>
+	<boil>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>steam</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</boil>
+	<freeze><becomes>ice</becomes></freeze>
+</actions>
+
+<terrain>
+	<smallpool>500</smallpool>
+	<largepool>750</largepool>
+</terrain>

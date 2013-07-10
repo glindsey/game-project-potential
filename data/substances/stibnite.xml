@@ -1,0 +1,34 @@
+<name>Stibnite</name>
+<description>Stibnite, sometimes called antimonite, is a sulfide mineral with the formula Sb2S3. This soft grey material crystallizes in an orthorhombic space group. It is the most important source for the metalloid antimony.</description>
+
+<display>
+	<color>50505AFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>20</hardness>
+	<specificgravity>4630</specificgravity>
+	<melttemp>550</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>antimony</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<dolomite />
+		<limestone />
+		<shale />
+		<kaolinite />
+		<marble />
+	</vein>
+</terrain>

@@ -1,0 +1,47 @@
+<name>smoky quartz</name>
+<description>Smoky quartz is a gray, translucent version of quartz. It ranges in clarity from almost complete transparency to a brownish-gray crystal that is almost opaque.
+</description>
+
+<display>
+	<color>80808060</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<claystone />
+		<conglomerate />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+	<rarity>5</rarity>
+</terrain>

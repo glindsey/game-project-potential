@@ -1,0 +1,39 @@
+<name>uvarovite</name>
+<description>Uvarovite is one of the rarest of the garnet group minerals, and is the only consistently green garnet species, with a beautiful emerald-green color. It occurs as well-formed fine-sized crystals. Specimens of uvarovite are much sought after by collectors for outstanding brilliance and color.</description>
+
+<display>
+	<color>00DC0080</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>3660</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+	<rarity>4</rarity>
+</terrain>

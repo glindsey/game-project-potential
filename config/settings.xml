@@ -1,0 +1,63 @@
+<!-- Game settings for Embark -->
+<debug>
+	<code>
+		<!-- Die on minor errors, instead of trying to continue. -->
+		<dieonminorerror>false</dieonminorerror>
+		<!-- Die on major errors, instead of trying to continue. -->
+		<dieonmajorerror>true</dieonmajorerror>
+		<!-- Show verbose messages at startup. -->
+		<verbose>false</verbose>
+	</code>
+	<map>
+		<!-- Show all map chunks, regardless of whether they have been discovered in-game. -->
+		<revealall>true</revealall>		
+	</map>
+</debug>
+
+<terrain>
+	<!-- The overall size of the map.  The sizes will be rounded to the nearest chunk size, which by default is 16x16. -->
+	<size>
+		<x>128</x>
+		<y>128</y>
+		<z>96</z>
+	</size>
+
+	<!-- "depth" is the amount, in percent, guaranteed to be rock layers. 
+	"featureheight" is the maximum height of the terrain (currently unitless from 0 to 16384). 
+	"sealevel" is the number of layers above the minimum terrain height should be covered with water; in other words, it specifies how deep the deepest pool on the surface should be. 
+	"plainsthreshold" and "forestthreshold" set the amount of open plains and dense forest in the world.  A noise field ranging from 0 to 100 is used to figure out where plains and forest will go on the map.  Any values less than "plainsthreshold" will be devoid of trees; any values more than "forestthreshold" will be nothing but trees.  In between, the probability of a space having a tree increases linearly, to fuzz out the boundary a bit.
+		 
+	These values CAN range outside the 0 to 100 threshold; you will end up with no completely open plains and/or no completely packed forests.  Or you can set them to be very close to one another, even equal to each other, and end up with a very sharp transition between plains and forests. -->
+	
+	<stageheight>64</stageheight>
+	<featureheight>16</featureheight>
+	<frequency>1.0</frequency>
+	<octavecount>4</octavecount>
+	<persistence>0.333</persistence>
+	<lacunarity>2.0</lacunarity>
+	
+	<sealevel>3</sealevel>
+	<plainsthreshold>60</plainsthreshold>
+	<forestthreshold>90</forestthreshold>
+	
+	<!-- The density of large deposits.  This number is multiplied by the number of squares in the map, and then divided by 65536, to get the number of large deposits the game will try to place on the map.  (Note that due to randomness, and the fact that many map squares will be the air above the terrain, this number doesn't represent any sort of "true" density measurement. -->
+	<largedepositdensity>90</largedepositdensity>
+	
+	<!-- The density of small deposits.  -->
+	<smalldepositdensity>70</smalldepositdensity>
+	
+	<!-- The density of veins. -->
+	<veindensity>70</veindensity>
+	
+	<!-- The density of single-chunk deposits. -->
+	<singledensity>3</singledensity>
+	
+	<!-- If true, veins may have gangue material near them. -->
+	<ganguepresent>true</ganguepresent>
+</terrain>
+	
+<render>
+	<!-- Load graphical textures.  If false, all materials are rendered as solid colors, whether or not associated graphics are present. Turn off graphical textures if you find yourself running out of video memory, or if you just prefer a less cluttered appearance.
+	-->
+	<loadtextures>false</loadtextures>
+</render>

@@ -1,0 +1,35 @@
+<name>Nephrite</name>
+<description>Nephrite is a variety of the calcium and magnesium-rich amphibole mineral actinolite (aggregates of which also make up one form of asbestos). The chemical formula for nephrite is Ca2(Mg, Fe)5Si8O22(OH)2. It is one of two different mineral species called jade.</description>
+
+<display>
+	<color>B4FFC8FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>62</hardness>
+	<specificgravity>2950</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />		
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</smalldeposit>
+</terrain>

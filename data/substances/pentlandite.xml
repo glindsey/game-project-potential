@@ -1,0 +1,32 @@
+<name>Pentlandite</name>
+<description>Pentlandite is an iron-nickel sulfide, (Fe,Ni)9S8. Pentlandite usually has a Ni:Fe ratio of close to 1:1. It also contains minor cobalt.</description>
+
+<display>
+	<color>CFBB5DFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>37</hardness>
+	<specificgravity>4800</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>iron</ore>
+	<secondaryore>nickel</secondaryore>
+	<secondaryorechance>100</secondaryorechance>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<gabbro />
+	</largedeposit>
+</terrain>

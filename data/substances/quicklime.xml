@@ -1,0 +1,25 @@
+<name>Quicklime</name>
+<description>Calcium oxide (CaO), commonly known as quicklime or burnt lime, is a widely used chemical compound. It is a white, caustic, alkaline crystalline solid at room temperature.</description>
+
+<display>
+	<color>FFFFFFFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>0</hardness>
+	<specificgravity>850</specificgravity>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+	<waterthermal>150</waterthermal>
+</attributes>
+
+<actions>
+	<dissolve><becomes>calcite</becomes></dissolve>
+	<weather><becomes>calcite</becomes></weather>
+</actions>

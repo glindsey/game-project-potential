@@ -1,0 +1,18 @@
+EMBARK IS NOT DWARF FORTRESS
+============================
+Embark is not supposed to be a clone or ripoff of Dwarf Fortress.  I greatly admire and respect Tarn Adams' work, and I ADORE playing Dwarf Fortress.  I wouldn't dream of replicating it, nor could I, as unlike him I'm doing this in my spare time and have a separate full-time job!
+
+Indeed, it is DF that inspired me to try doing something of my own, but I want Embark to stand on its own merits.  There will no doubt be similarities -- in particular, many details of geology will be similar since it is partially based on the real thing -- but there will also be differences.  Some of the bigger ones are:
+	- More graphical focus: I'm no artist, but I also want to start off with the idea that the game can be played successfully in both top-down and oblique graphical views.
+	- Far less world-building: I do not have the skill nor the time to implement the vast and amazing world creation that DF has in place.  Focus will be placed on the embark site.
+	- No adventure mode: This goes without saying.  You really need the vast world DF has in order to have a decent adventure mode.
+	- Diversified colonies: Mining will remain important, but I want to focus more on other aspects of colony building.  These are humans, after all, not dwarves.  Not all of them like living underground!
+	- Focus on building, not combat: While there will definitely be enemies to fight, I want to emphasize the community-building angle.  The military will be greatly simplified, and I highly doubt I will get into the details of combat that DF does.  In fact, I may very well go the opposite direction and purposely develop an HP/MP JRPG-style system of health and combat.
+	
+EMBARK IS NOT GEOLOGICALLY ACCURATE
+===================================	
+Embark, like Dwarf Fortress, attempts to follow some basic geological rules.  But I'm a software engineer, not a geologist, so I'm sure plenty of geologists will scoff at certain rocks and gems ending up next to each other.
+	
+EMBARK IS MODDABLE
+==================	
+One of my favorite aspects of DF is how easy it is to edit the raws; but really, I've loved this going all the way back to Doom, Civilization, and ZZT.  I'll be storing data in XML descriptor files rather than DF's proprietary raw format, but other than that I plan to take a very similar tack.

@@ -1,0 +1,35 @@
+<name>anthracite coal</name>
+<description>Anthracite is a hard, compact variety of mineral coal that has a high luster. It has the highest carbon count, the fewest impurities, and the highest calorific content of all types of coals, which also include bituminous coal and lignite.</description>
+
+<display>
+	<color>202020FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>35</hardness>
+	<specificgravity>1500</specificgravity>
+	<burntemp>400</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<fuel>true</fuel>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+</actions>
+
+<terrain>
+	<vein>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</vein>
+</terrain>

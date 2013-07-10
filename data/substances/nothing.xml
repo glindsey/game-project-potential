@@ -1,0 +1,12 @@
+<name>nothing</name>
+<description>Nothing is no thing, denoting the absence of something. Nothing is a pronoun associated with nothingness, and an object as a concept in the Frege-Church ontology.  In nontechnical uses, nothing denotes things lacking importance, interest, value, relevance, or significance. Nothingness is the state of being nothing, the state of nonexistence of anything, or the property of having nothing.</description>
+
+<display>
+	<color>00000000</color>
+	<opaque>false</opaque>
+	<visible>false</visible>
+</display>
+
+<physical>
+	<phase>none</phase>
+</physical>

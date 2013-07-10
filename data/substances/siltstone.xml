@@ -1,0 +1,27 @@
+<name>siltstone</name>
+<description>Siltstone is a sedimentary rock which has a grain size in the silt range, finer than sandstone and coarser than claystones.</description>
+
+<display>
+	<color>969696FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>40</hardness>
+	<specificgravity>2500</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>sedimentary</layer>
+</terrain>

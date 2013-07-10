@@ -1,0 +1,26 @@
+<name>lye</name>
+<description>Sodium hydroxide, also known as lye or caustic soda, has the molecular formula NaOH and is a highly caustic metallic base. It is a white solid available in pellets, flakes, granules, and as a 50% saturated solution.</description>
+
+<display>
+	<color>FFFFFFE0</color>
+	<opaque>false</opaque>
+	<visible>true</visible>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>0</hardness>
+	<specificgravity>2130</specificgravity>
+	<melttemp>318</melttemp>
+</physical>
+
+<attributes>
+	<caustic>true</caustic>
+	<granular>true</granular>
+	<waterthermal>50</waterthermal>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-lye</becomes></melt>
+	<dissolve><becomes>lye-solution</becomes></dissolve>
+</actions>

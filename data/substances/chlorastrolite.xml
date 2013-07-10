@@ -1,0 +1,31 @@
+<name>Chlorastrolite</name>
+<description>Chlorastrolite also known as Michigan Greenstone, is a green or bluish green stone. Chlorastrolite has finely radiated or stellate masses that have a "turtleback" pattern. The stellate masses tend to be chatoyant, meaning they have a changeable luster. </description>
+
+<display>
+	<color>3C5F3CFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>55</hardness>
+	<specificgravity>3200</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<basalt />
+	</smalldeposit>
+	<rarity>10</rarity>
+</terrain>

@@ -1,0 +1,27 @@
+<name>Sanidine</name>
+<description>Sanidine is the high temperature form of potassium feldspar (K,Na)(Si,Al)4O8. Sanidine most typically occurs in felsic volcanic rocks such as obsidian, rhyolite and trachyte.</description>
+
+<display>
+	<color>F0F0F0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2520</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<smalldeposit>
+	<obsidian />
+</smalldeposit>

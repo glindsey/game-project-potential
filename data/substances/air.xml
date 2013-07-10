@@ -1,0 +1,15 @@
+<name>nothing</name>
+<description>Air is the name given to atmosphere used in breathing and photosynthesis. Dry air contains roughly (by volume) 78.09% nitrogen, 20.95% oxygen, 0.93% argon, 0.039% carbon dioxide, and small amounts of other gases. Air also contains a variable amount of water vapor, on average around 1%.</description>
+
+<display>
+	<color>00000000</color>
+	<opaque>false</opaque>
+	<visible>false</visible>
+</display>
+
+<attributes>
+</attributes>
+
+<physical>
+	<phase>none</phase>
+</physical>

@@ -1,0 +1,30 @@
+<name>Epidote</name>
+<description>Epidote is a calcium aluminium iron sorosilicate mineral, Ca2Al2(Fe3+;Al)(SiO4)(Si2O7)O(OH), crystallizing in the monoclinic system.  Epidote is an abundant rock-forming mineral, but one of secondary origin. It occurs in marble and schistose rocks of metamorphic origin. It is also a product of hydrothermal alteration of various minerals (feldspars, micas, pyroxenes, amphiboles, garnets, and others) composing igneous rocks.</description>
+
+<display>
+	<color>808000FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>65</hardness>
+	<specificgravity>3450</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

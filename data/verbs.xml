@@ -1,0 +1,186 @@
+<!-- Verb description file -->
+	
+<burn>
+	<name>burn</name>
+	<object>
+		<character>true</character>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>command</type>
+	<default>true</default>
+</burn>
+
+<chop-down>
+	<name>chop down</name>
+	<object>
+		<stageprop>true</stageprop>
+	</object>
+	<type>command</type>
+</chop-down>
+
+<build>
+	<name>build</name>
+	<object>
+		<proptype>true</proptype>
+	</object>
+	<type>command</type>
+</build>
+
+<collect>
+	<name>collect</name>
+	<object>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>command</type>
+</collect>
+
+<dig>
+	<name>dig/mine</name>
+	<object>
+		<stagechunk>true</stagechunk>
+	</object>
+</dig>
+
+<drink>
+	<name>drink</name>
+	<object>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>command</type>
+</drink>
+
+<eat>
+	<name>eat</name>
+	<object>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+	</object>
+	<type>command</type>
+</eat>
+
+<engrave>
+	<name>engrave</name>
+	<object>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>command</type>
+</engrave>
+
+<grow>
+	<name>grow</name>
+	<object>
+		<character>true</character>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>auto</type>
+</grow>
+
+<harvest>
+	<name>harvest</name>
+	<object>
+		<stageprop>true</stageprop>
+	</object>
+	<type>command</type>
+</harvest>
+
+<melt>
+	<name>melt</name>
+	<object>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>command</type>
+	<default>true</default>
+</melt>
+
+<pick-up>
+	<name>pick up</name>
+	<object>
+		<stageprop>true</stageprop>
+	</object>
+	<type>pick up</type>
+	<default>true</default>
+</pick-up>
+
+<polish>
+	<name>polish</name>
+	<object>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>command</type>
+</polish>
+
+<read>
+	<name>read</name>
+	<object>
+		<heldprop>true</heldprop>
+		<stageprop>true</heldprop>
+	</object>
+</read>
+
+<rot>
+	<name>rot</name>
+	<object>
+		<character>true</character>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>auto</type>
+</rot>
+
+<weather>
+	<name>weather</name>
+	<object>
+		<character>true</character>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>auto</type>
+</weather>
+
+<s-burn>
+	<name>burn</name>
+	<object>
+		<character>true</character>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>special</type>
+	<default>true</default>
+</s-burn>
+
+<s-freeze>
+	<name>freeze</name>
+	<object>
+		<character>true</character>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>special</type>
+	<default>true</default>
+</s-freeze>
+
+<s-melt>
+	<name>melt</name>
+	<object>
+		<character>true</character>
+		<heldprop>true</heldprop>
+		<stageprop>true</stageprop>
+		<stagechunk>true</stagechunk>
+	</object>
+	<type>special</type>
+	<default>true</default>
+</s-melt>

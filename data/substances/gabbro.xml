@@ -1,0 +1,27 @@
+<name>gabbro</name>
+<description>Gabbro refers to a large group of dark, coarse-grained, intrusive mafic igneous rocks chemically equivalent to basalt.</description>
+
+<display>
+	<color>5A5A5AFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2900</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>igneous-intrusive</layer>
+</terrain>

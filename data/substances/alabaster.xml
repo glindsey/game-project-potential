@@ -1,0 +1,29 @@
+<name>alabaster</name>
+<description>Alabaster is exceptionally fine, milky-white gypsum.  It is easy to work, with an attractive appearance, and has been used for making a variety of artworks and objects, especially small carvings.</description>
+
+<display>
+	<color>FFFFFFC0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>17</hardness>
+	<specificgravity>2320</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gypsum />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,38 @@
+<name>Brown jasper</name>
+<description>Jasper, a form of chalcedony, is an opaque, impure variety of silica, usually red, yellow, brown or green in color; and rarely blue. This mineral breaks with a smooth surface, and is used for ornamentation or as a gemstone.</description>
+
+<display>
+	<color>AA5500FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>67</hardness>
+	<specificgravity>2600</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

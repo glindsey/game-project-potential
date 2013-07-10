@@ -1,0 +1,30 @@
+<name>tree</name>
+<description />
+<namestyle>$AN$ $NAME$</namestyle>
+
+<display>
+	<color>085008ff</color>	
+</display>
+
+<physical>
+	<diameter>
+		55 <variance>15</variance>
+	</diameter>
+	<height>
+		80 <variance>10</variance>
+	</height>
+</physical>
+
+<substance>
+	<default>wood</default>
+	<locked>true</locked>
+</substance>
+
+<actions>
+	<pick-up>false</pick-up>
+	<chop-down>true</chop-down>
+</actions>
+
+<terrain>
+	<layer>soil</layer>
+</terrain>

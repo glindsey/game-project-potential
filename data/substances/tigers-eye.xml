@@ -1,0 +1,47 @@
+<name>tiger's eye</name>
+<description>Tiger's eye (also called Tigers eye or Tiger eye) is a chatoyant gemstone that is usually a metamorphic rock that is a golden to red-brown color, with a silky luster.
+</description>
+
+<display>
+	<color>CD5900FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<claystone />
+		<conglomerate />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+	<rarity>5</rarity>
+</terrain>

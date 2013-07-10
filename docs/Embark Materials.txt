@@ -1,0 +1,117 @@
+Schema for XML Material Descriptor Files
+=========================================
+
+Overall rules:
+	- Except for the keys in "terrain" indicating where materials are to be found, key values SHOULD NOT BE BLANK.  The mere presence of a key is not enough to set the corresponding boolean; it must also contain the value "true".  (Exception: a blank "attribute" key will be automatically interpreted as "true" as shorthand.)
+	- Unknown keys are ignored by Embark, which means you'd better double-check your spelling!  (In the future, key names may be compared against a "vocabulary" list as a check, but I don't plan to do this for a while as doing a recursive traversal of a boost::property_tree is not trivial.)
+
+
+name (FILENAME)
+	Friendly name of the material
+description (blank)
+	Short description of the material
+
+display
+	Category relating to graphic representation of the material.
+display.graphic (material-FILENAME)
+	If present, the name of the TGA file that should be used as a graphical texture representing the material.
+display.color or display.color.main (opaque white)
+	The color of the material, in RRGGBBAA format.
+display.color.variance (02020200)
+	The amount of random variance in color the Material can exhibit, in RRGGBBAA format (where each value is the amount that can be added/subtracted from that portion of the color).
+display.color.secondary (n/a)
+	If present, a second material color; the material will be shown as a continuous blend from the first color to the second.  (Not yet implemented.)
+display.opaque (false)
+	Indicates whether a material is completely opaque.  This is separate from the alpha color component because the TGA file can also have an alpha channel -- thus you could have a material that is semi- or completely transparent in some places, but not others.
+display.visible (true)
+	Indicates whether a material is visible at all on the map.
+display.lightsource (false)
+	Indicates whether a material emits light.  (Currently not used.)
+
+=== attributes: Well... attributes. ===
+attributes.*
+	Attributes of this Material.  Attribute keys set to anything other than "false" convey that attribute on the Material, while keys set to "false" override the attribute if set by a Prop made out of the Material.  A breakdown of the results is below:
+	
+	Material	Prop		Result
+	===========	===========	=========================
+	(missing)	(missing)	false
+	(missing)	false		false
+	(missing)	PVALUE		PVALUE
+	false		(missing)	false
+	false		false		false
+	false		PVALUE		false
+	MVALUE		(missing)	MVALUE
+	MVALUE		false		false
+	MVALUE		PVALUE		PVALUE
+
+	where MVALUE, PVALUE are any strings other than "false".	
+	
+	As shorthand, an empty (but existing) key implies "true".  This allows one to write "<gem />", for example, instead of "<gem>true</gem>".
+	
+=== physical: Category relating to physical properties of the material. ===
+physical.phase (unknown)
+	Indicates whether this material is considered a solid, viscous, liquid, gas, plasma, ethereal, or unknown.
+physical.hardness
+	For solids, approximate hardness of the material on the Mohs scale, multiplied by 10.  If not present, not applicable.  (The Mohs scale is not always appropriate -- for example, with sandstone -- but is used as a general "best-guess" number indicating durability in some cases.  This is why sandstone's level is around 35 despite most of its individual minerals having Mohs hardnesses of 6 or 7.)
+physical.specificgravity (0)
+	Specific gravity of the material, multiplied by 1000.  Must be present for solids and liquids.  Should be present for gasses, although if zero or not present, assumes the gas is lighter than air.
+physical.freezetemp (empty)
+	Freezing point, in degrees Celsius.  If not present, the material does not freeze.  (Assume standard pressure.)
+physical.melttemp (empty)
+	Melting point, in degrees Celsius.  If not present, the material does not melt.  	
+physical.burntemp (empty)
+	Ignition point, in degrees Celsius.  If not present, the material does not burn.	
+physical.boiltemp (empty)
+	Boiling point, in degrees Celsius.  If not present, the material does not boil.
+physical.flashtemp (empty)
+	Flash point, in degrees Celsius.  (The temperature at which an explosion can occur if an ignition source is present.)  If not present, the material does not have a flash point.
+physical.fixedtemp (empty)
+	Fixed material temperature.  If existing, the material is always at this temperature.
+
+actions
+	Category relating to actions that can be performed ON the Material.  
+	TODO: This is a work in progress.
+actions.VERB
+	Actions that can be performed on a material are specified by a VERB, such as "harvest", "chop", et cetera.  Whether the action can actually be performed is determined by the attributes of the Material and Prop.
+actions.VERB.becomes
+	If this key exists, the material turns into the corresponding material when the action is performed.  Overrides the "materialbecomes" key of the verb, if one exists.
+actions.VERB.time (0)
+	Amount of time, in game minutes, that the verb takes to perform.  If 0, verb occurs immediately.
+actions.VERB.surface
+	If this key exists, a solid material gains the corresponding surface covering when the action is performed.
+actions.VERB.result (empty)
+	Value is any additional Prop(s) resulting from the verb being performed, with Material defaulting to the same Material as this one (if possible).
+actions.VERB.result.material
+	If existing, additional Prop(s) are instead made of this Material.
+actions.VERB.result.number
+	If existing, this number of additional Props are produced.  Defaults to 1.
+actions.VERB.result.error
+	If existing, the number of additional Props produced is actually plus or minus this number.  (However, the resulting number will never be less than one.) Defaults to 0.
+	
+terrain
+	Category relating to how the material relates to terrain generation.  If this category is absent, the material will not be auto-generated as part of the terrain.
+terrain.layer (empty)
+	Indicates that this material can compose an entire layer.  The value is "igneous-extrusive", "igneous-intrusive", "sedimentary", "metamorphic", "soil", or "all" depending on what sort of layer it is.
+terrain.largedeposit (empty)
+	If true, this material is found as a large deposit (or, for the case of a liquid or gas, reservoir or pocket).  Empty keys (NOT VALUES) underneath this one specify what materials this one can be found in.
+	Example:
+	<terrain>
+	  <largedeposit>
+	    <granite />
+	  </largedeposit>
+	</terrain>
+	This means this material can be found as a large deposit within a granite layer).
+	This rule applies to all keys below dealing with how materials are found.
+terrain.smalldeposit (empty)
+	If true, this material is found as a small deposit/reservoir/pocket.
+terrain.vein (empty)
+	If true, this material is found as a vein.
+terrain.gangue (empty)
+	If true, this material is found as gangue (around the materials specified within this key).  (TODO: Not yet implemented.)
+terrain.single (empty)
+	If true, this material is found as single chunks.
+terrain.rarity (0)
+	If existing, a number from 0 to 10 indicating how rare the material is: 0 = common, to 10 = extremely rare.  The scale is logarithm-base-2, meaning each number on the scale indicates a doubling in rarity.  (Thus, a 10 is 2^10 times, or 1024 times, as rare as a 0.)  If not existing, 0 is assumed.  (TODO: Not yet implemented.)
+terrain.alluvial (false)
+	If true, this material can also be found as veins in alluvial layers.  (TODO: Not yet implemented.)
+	

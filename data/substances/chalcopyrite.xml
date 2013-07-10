@@ -1,0 +1,44 @@
+<name>Chalcopyrite</name>
+<description>Chalcopyrite is a copper iron sulfide mineral that crystallizes in the tetragonal system. It has the chemical composition CuFeS2.</description>
+
+<display>
+	<color>D7FF00FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>20</hardness>
+	<specificgravity>2320</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>copper</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</smalldeposit>
+	<vein>
+		<diorite />
+		<granite />
+	</vein>
+</terrain>

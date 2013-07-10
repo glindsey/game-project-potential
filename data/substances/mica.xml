@@ -1,0 +1,35 @@
+<name>mica</name>
+<description>The mica group of sheet silicate (phyllosilicate) minerals includes several closely related materials having close to perfect basal cleavage.</description>
+
+<display>
+	<color>808080FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>27</hardness>
+	<specificgravity>2883</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<granite />
+	</largedeposit>
+</terrain>

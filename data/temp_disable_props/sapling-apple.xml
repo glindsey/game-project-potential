@@ -1,0 +1,50 @@
+<name>apple sapling</name>
+<description />
+<namestyle>$AN$ $NAME$</namestyle>
+
+<display>
+	<oblique>
+		<!-- <xoffset>10</xoffset>
+		<yoffset>-28</yoffset> -->
+	</oblique>
+	<color>085008ff</color>	
+	
+	<text>
+		<unicode>9827</unicode> <!-- 0x2663, black club -->
+	</text>
+</display>
+
+<physical>
+	<diameter>
+		20 <variance>5</variance>
+	</diameter>
+	<height>
+		20 <variance>5</variance>
+	</height>
+</physical>
+
+<material>
+	<default>wood-apple</default>
+	<locked>true</locked>
+</material>
+
+<actions>
+	<pick-up>false</pick-up>
+	<chop-down>
+		true
+		<becomes>stump</becomes>
+		<result>
+			log
+			<number>2</number>
+			<error>1</error>
+		</result>
+	</chop-down>
+	<grow>
+		true
+		<becomes>tree-apple</becomes>
+	</grow>
+</actions>
+
+<terrain>
+	<layer>soil</layer>
+</terrain>

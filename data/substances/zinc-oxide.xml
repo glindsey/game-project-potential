@@ -1,0 +1,23 @@
+<name>Zinc oxide</name>
+<description>Zinc oxide is an inorganic compound with the formula ZnO. ZnO is a white powder that is insoluble in water, which is widely used as an additive in numerous materials and products including plastics, ceramics, glass, cement, lubricants, paints, ointments, adhesives, sealants, pigments, foods (source of Zn nutrient), batteries, ferrites, fire retardants, and first aid tapes.</description>
+
+<display>
+	<color>FAFAFAFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>45</hardness>
+	<specificgravity>5606</specificgravity>
+	<burntemp>1975</burntemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+</attributes>
+
+<actions>
+	<burn><becomes>air</becomes></burn>
+</actions>

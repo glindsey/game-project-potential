@@ -1,0 +1,30 @@
+<name>butter</name>
+<description>Butter is a dairy product made by churning fresh or fermented cream or milk. It is generally used as a spread and a condiment, as well as in cooking, such as baking, sauce making, and pan frying. Butter consists of butterfat, milk proteins and water.</description>
+
+<display>
+	<color>FFFFE6FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>0</hardness>
+	<specificgravity>865</specificgravity>
+	<melttemp>33</melttemp>
+</physical>
+
+<attributes>
+	<edible>true</edible>
+</attributes>
+
+<actions>
+	<melt>
+		<becomes>butter-melted</becomes>
+		<result>
+			puddle
+			<material>whey</material>
+		</result>
+	</melt>
+	<rot><adjective>rancid</adjective></rot>
+</actions>

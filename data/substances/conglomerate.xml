@@ -1,0 +1,29 @@
+<name>Puddingstone</name>
+<description>Puddingstone, also known as either Pudding stone or Plum-pudding stone, is a popular name applied to a conglomerate that consists of distinctly rounded pebbles whose colors contrast sharply with the color of the finer-grained, often sandy, matrix or cement surrounding them. The rounded pebbles and the sharp contrast in color gives this type of conglomerate the appearance of a raisin or Christmas pudding.</description>
+
+<display>
+	<color>AA9187FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>30</hardness>
+	<specificgravity>2500</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<conglomerate />
+	</largedeposit>
+</terrain>

@@ -1,0 +1,31 @@
+<name>sunstone</name>
+<description>Sunstone is a plagioclase feldspar, which when viewed from certain directions exhibits a brilliant spangled appearance; this has led to its use as a gemstone.</description>
+
+<display>
+	<color>FFC38040</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>2740</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<gangue>
+		<quartz />
+	</gangue>
+	<rarity>4</rarity>
+</terrain>

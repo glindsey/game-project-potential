@@ -1,0 +1,38 @@
+<name>almandine</name>
+<description>Almandine, also known incorrectly as almandite, is a species of mineral belonging to the garnet group. The name is a corruption of alabandicus, which is the name applied by Pliny the Elder to a stone found or worked at Alabanda, a town in Caria in Asia Minor. Almandine is an iron alumina garnet, of deep red color, inclining to purple.</description>
+
+<display>
+	<color>80002DA0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>72</hardness>
+	<specificgravity>4050</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,24 @@
+<name>aluminium</name>
+<description>Aluminium is a silvery white member of the boron group of chemical elements. It has the symbol Al, and its atomic number is 13. It is not soluble in water under normal circumstances.</description>
+
+<display>
+	<color>D7D7D7FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>28</hardness>
+	<specificgravity>2725</specificgravity>
+	<melttemp>660</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-aluminum</becomes></melt>
+</actions>

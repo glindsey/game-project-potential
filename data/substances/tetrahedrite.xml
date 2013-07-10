@@ -1,0 +1,51 @@
+<name>tetrahedrite</name>
+<description>Tetrahedrite is a copper antimony sulfosalt mineral with formula: (Cu,Fe)12Sb4S13. It gets its name from the distinctive tetrahedron shaped cubic crystals it forms.</description>
+
+<display>
+	<color>787882FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>37</hardness>
+	<specificgravity>4970</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>copper</ore>
+	<secondaryore>silver</secondaryore>
+	<secondaryorechance>50</secondaryorechance>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />
+	</vein>
+</terrain>

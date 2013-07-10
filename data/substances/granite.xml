@@ -1,0 +1,27 @@
+<name>granite</name>
+<description>Granite is a common widely occurring type of intrusive igneous rock. Granite usually has a medium- to coarse-grained texture.</description>
+
+<display>
+	<color>C89178FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>50</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>igneous-intrusive</layer>
+</terrain>

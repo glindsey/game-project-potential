@@ -1,0 +1,34 @@
+<name>Graphite</name>
+<description>The mineral graphite is an allotrope of carbon. It was named by Abraham Gottlob Werner in 1789 from the Ancient Greek grapho, "to draw/write", for its use in pencils, where it is commonly called lead (not to be confused with the metallic element lead).</description>
+
+<display>
+	<color>646464FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>15</hardness>
+	<specificgravity>2700</specificgravity>
+	<burntemp>1346</burntemp>
+</physical>
+
+<attributes>
+	<!-- Technically can be a fuel, but burns at too high a temp to be very useful. -->
+	<rock>true</rock>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<burn><becomes>air</becomes></burn>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<quartzite />
+		<schist />		
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,119 @@
+Schema for XML Prop Descriptor Files
+====================================
+Props in Embark are solid objects that can be manipulated by Actors, stored in other Props (sometimes), or sitting somewhere amidst the Scenery.
+
+name
+	Friendly name of the prop
+adjective
+	An adjective describing the prop (used in "namestyle")
+description
+	Short description of the prop
+namestyle ($AN$ $substance$ $PROP$)
+	A prop's name is normally stylized as "a/an substance PROP," such as "a granite cup".  However, this doesn't work for some things -- you don't want to see "an apple cored fruit" or "a grass sparse grass".  This parameter is a pattern used to create the displayed name.
+	
+	Symbols that can be used are:
+	
+		$SUBSTANCE$	-- The name of the substance
+		$PROP$		-- The name of the prop
+		$ADJECTIVE$ -- The value of the "adjective" key, if it exists.
+		$OWNER$		-- The owner of the prop, if any, or "everyone" if unowned.		
+		$AN$		-- "a" or "an" indefinite pronoun depending on following word*
+		$THE$		-- "the" definite pronoun*
+		
+		* For owned props, $AN$ or $THE$ are removed from the name, and $OWNER$'s is used instead.
+		
+	Other symbols may be added in the future if needed.
+	
+display
+	Category relating to graphic representation of the prop.
+display.color (uses substance color)
+	The color of the Prop, in RRGGBBAA hexadecimal format.
+display.graphicmultiply (false)
+	When this value is true, the prop's graphic is multiplied by the substance's color or texture to get the resulting image.  This essentially allows one to draw the prop as a grayscale mask for the substance's texture.  (Not yet implemented.)
+display.opaque (true)
+	Indicates whether a prop is completely opaque.  This is separate from the alpha color component because the TGA file can also have an alpha channel -- thus you could have a prop that is semi- or completely transparent in some places, but not others.
+display.visible (true)
+	Indicates whether a prop is visible at all on the map.
+display.lightsource (false)
+	Indicates whether a prop emits light.  (Currently not used.)
+
+physical
+	Physical variables related to the prop.
+physical.width (1)
+	Width (size along the X dimension) of the prop, specified in decimeters.
+physical.width.variance (0)
+	If present, number of decimeters the width can vary.
+physical.depth (1)
+	Depth (size along the Y dimension) of the prop, specified in decimeters.
+physical.depth.variance (0)
+	If present, number of decimeters the depth can vary.
+physical.height (1)
+	Height (size along the Z dimension) of the prop, specified in decimeters.
+physical.height.variance (0)
+	If present, number of decimeters the height can vary.
+physical.diameter (n/a)
+	If present, diameter of the prop, specified in decimeters.  This acts as a shortcut for specifying identical width/depth values.
+physical.diameter.variance (n/a)
+	If present, number of decimeters the diameter can vary.
+physical.volumeratio (100)
+	The percentage of the Prop's bounding-box that the Prop actually takes up; this is used for some calculations such as mass.  A few useful calculations:
+		- A solid sphere takes up about 52% of a box.
+		- A solid cone takes up about 13% of a box.
+		- A tree (whether conical or spherical) would take up far less space, since the majority of the space between branches/leaves/etc. is air.
+physical.weight.variance (0)
+    If present, number of grams the height can vary.
+	
+substance
+	Category relating to the substance the prop is made out of.  (The substance must be of "solid" phase.)
+substance.default
+	The "default" substance for this prop.
+substance.locked
+	If true, the prop is ALWAYS the default substance specified. (Obviously, if set to true, mustbe.* and shouldbe.* described below are ignored.)
+substance.mustbe.*
+	If existing, the prop can only be made out of substances with the corresponding attribute set to the corresponding value.  For example, "substance.mustbe.plant = true" means the substance must have the "plant" attribute set to true.  This also works the other way: "substance.mustbe.toxic = false" means the substance must have the "toxic" key set to false, e.g. it must NOT be toxic.  This allows one to make sure you can't, for example, make a sword out of sand.
+substance.shouldbe.*
+	Similar to "mustbe", this indicates what attributes the prop substance SHOULD have (practically).  A cheese sword or limestone muffin might not be practical, but we don't want to say a player *can't* make one, so this key allows the game to make certain assumptions without imposing restrictions.  You can also set "shouldbe.* = false" to say that something should NOT have a particular attribute; this is useful if you want metal swords, but not radioactive ones!
+	
+attributes.*
+	Attributes of this Prop.  Attribute keys set to anything other than "false" convey that attribute on the Prop, while keys set to "false" remove the attribute if already set by the substance the Prop is made out of.  A breakdown of the results is below:
+	
+	substance	Prop		Result		Explanation
+	===========	===========	=========== =====================================
+	(missing)	(missing)	false		Prop does not have that attribute.
+	(missing)	false		false		Prop does not have that attribute.
+	(missing)	PVALUE		PVALUE		Prop's attribute overrides Substance.
+	false		(missing)	false		Prop does not have that attribute.
+	false		false		false		Prop does not have that attribute.
+	false		PVALUE		false		Prop does not have that attribute.
+	SVALUE		(missing)	SVALUE		Prop inherits attribute from Substance.
+	SVALUE		false		false		Prop does not have that attribute.
+	SVALUE		PVALUE		PVALUE		Prop's attribute overrides Substance.
+
+	where SVALUE, PVALUE are any strings other than "false".
+	
+actions
+	Category relating to actions that can be performed ON the Prop.  
+	TODO: This is a work in progress.
+actions.VERB
+	Actions that can be performed on a Prop are specified by a VERB, such as "harvest", "chop", et cetera.  Whether the action can actually be performed is determined by the attributes of the substance and Prop.
+actions.VERB.becomes (empty)
+	If this key exists, the prop turns into the corresponding Prop when the action is performed.  Overrides the "propbecomes" key of the verb, if one exists.
+actions.VERB.time (0)
+	Amount of time, in game minutes, that the verb takes to perform.  If 0, verb occurs immediately.
+actions.VERB.result (empty)
+	Value is any additional Prop(s) resulting from the verb being performed, with substance defaulting to the same substance as this one (if possible).
+actions.VERB.result.substance
+	If existing, additional Props are instead made of this substance.
+actions.VERB.result.number (1)
+	If existing, this number of additional Props are produced.  Defaults to 1.
+actions.VERB.result.heightratio (0)
+	If non-zero, number produced is based on the Prop's bounding-box height divided by the number given, instead of the straight number above.
+actions.VERB.result.volumeratio (0)
+	If non-zero, number produced is based on the Prop's bounding-box volume (width * depth * height) divided by the number given, instead of the straight number above.
+actions.VERB.result.error (0)
+	If existing, the number of additional Props produced is actually plus or minus this number.  Defaults to 0.  
+
+terrain
+	Category relating to auto-generation of terrain.  
+	TODO: This is a work in progress.
+

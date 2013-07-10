@@ -1,0 +1,19 @@
+<name>ash</name>
+<description>The solid remains of a fire.</description>
+
+<display>
+	<color>808080FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>0</hardness>
+	<specificgravity>600</specificgravity>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+</attributes>
+	

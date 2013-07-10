@@ -1,0 +1,31 @@
+<name>Charoite</name>
+<description>Charoite is a rare mineral first described in 1978 and named for the Chara River. Charoite is translucent lavender to purple in color with a pearly lustre. However, it is a discrete mineral rather than a rock. Charoite is strictly massive in nature, and fractures are conchoidal. It has an unusual swirling, fibrous appearance, sometimes chatoyant, and that, along with its intense color, can lead many to believe at first that it is synthetic or enhanced artificially.</description>
+
+<display>
+	<color>C332D2E0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>55</hardness>
+	<specificgravity>2560</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<limestone />
+	</smalldeposit>
+	<rarity>10</rarity>
+</terrain>

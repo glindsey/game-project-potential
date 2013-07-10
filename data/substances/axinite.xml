@@ -1,0 +1,31 @@
+<name>axinite</name>
+<description>Axinite is a brown to violet-brown, or reddish-brown bladed group of minerals composed of calcium aluminium boro-silicate, (Ca,Fe,Mn)3Al2BO3Si4O12OH. Axinite is pyroelectric and piezoelectric.</description>
+
+<display>
+	<color>826E4B80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>67</hardness>
+	<specificgravity>3250</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<granite />
+	</smalldeposit>
+</terrain>

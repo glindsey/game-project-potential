@@ -1,0 +1,23 @@
+<name>Charcoal</name>
+<description>Charcoal is the dark grey residue consisting of carbon, and any remaining ash, obtained by removing water and other volatile constituents from animal and vegetation substances.</description>
+
+<display>
+	<color>5A5A5AFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>5</hardness>
+	<specificgravity>208</specificgravity>
+	<burntemp>400</burntemp>
+</physical>
+
+<attributes>
+	<fuel>true</fuel>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+</actions>

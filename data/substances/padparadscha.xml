@@ -1,0 +1,34 @@
+ <name>padparadscha</name>
+<description>Padparadscha is a pink-orange corundum, with a low to medium saturation and light tone, originally being mined in Sri Lanka, but also found in deposits in Vietnam and parts of Africa. Padparadscha sapphires are rare; the rarest of all is the totally natural variety, with no sign of treatment.</description>
+
+<display>
+	<color>FF400080</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>90</hardness>
+	<specificgravity>4000</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<schist />
+		<gneiss />
+		<marble />
+		<syenite />
+	</smalldeposit>
+	<rarity>8</rarity>
+</terrain>

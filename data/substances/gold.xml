@@ -1,0 +1,35 @@
+<name>gold</name>
+<description>Gold is a chemical element with the symbol Au (from Latin: aurum "gold") and an atomic number of 79. Gold is a dense, soft, shiny, malleable and ductile metal. Pure gold has a bright yellow color and luster traditionally considered attractive, which it maintains without oxidizing in air or water.</description>
+
+<display>
+	<color>FFD700FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<metal>true</metal>
+	<hardness>25</hardness>
+	<specificgravity>19320</specificgravity>
+	<melttemp>1064</melttemp>
+	<conductor>true</conductor>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-gold</becomes></melt>
+</actions>
+
+<terrain>
+	<alluvial>true</alluvial>
+	<vein>
+		<diorite />
+		<gabbro />
+		<granite />
+	</vein>
+</terrain>

@@ -1,0 +1,26 @@
+<name>grass</name>
+<description>Grasses, or more technically graminoids, are monocotyledonous, usually herbaceous plants with narrow leaves growing from the base.</description>
+
+<display>
+	<color>008000FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>	
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<burntemp>250</burntemp>
+	<specificgravity>950</specificgravity> <!-- more or less fudged this -->
+	<!-- TODO: might be worth using freezetemp to create "frosted grass", for aesthetic reasons? -->
+</physical>
+
+<attributes>
+	<plant>true</plant>
+	<grass>true</grass>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+	<wet><becomes>grass-wet</becomes></wet>
+	<dry><becomes>grass-dry</becomes></dry>
+</actions>

@@ -1,0 +1,26 @@
+<name>Weathered Copper (Verdigris)</name>
+<description>Verdigris is the common name for the natural patina formed when copper, brass or bronze is weathered and exposed to air or seawater over a period of time. It is usually a basic copper carbonate, but near the sea will be a basic copper chloride.</description>
+
+<display>
+	<color>00A693FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>30</hardness>
+	<specificgravity>8930</specificgravity>
+	<melttemp>1085</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+	<surface>true</surface>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-copper</becomes></melt>
+	<polish><becomes>nothing</becomes></polish>
+</actions>

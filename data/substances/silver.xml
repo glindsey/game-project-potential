@@ -1,0 +1,33 @@
+<name>silver</name>
+<description>Silver is a metallic chemical element with the chemical symbol Ag (Latin: argentum, from the Indo-European root *arg- for "grey" or "shining") and atomic number 47. A soft, white, lustrous transition metal, it has the highest electrical conductivity of any element and the highest thermal conductivity of any metal.</description>
+
+<display>
+	<color>D2D2D2FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>25</hardness>
+	<specificgravity>10490</specificgravity>
+	<melttemp>962</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-silver</becomes></melt>
+	<weather><surface>silver-sulfide</surface></weather>
+</actions>
+
+<terrain>
+	<alluvial>true</alluvial>
+	<vein>
+		<gneiss />
+		<granite />		
+	</vein>
+</terrain>

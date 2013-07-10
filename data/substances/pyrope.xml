@@ -1,0 +1,38 @@
+<name>Pyrope</name>
+<description>The mineral pyrope is a member of the garnet group. Pyrope is the only member of the garnet family to always display red colouration in natural samples, and it is from this characteristic that it gets its name: from the Greek for fire and eye.</description>
+
+<display>
+	<color>80000080</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>72</hardness>
+	<specificgravity>4050</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

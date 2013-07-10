@@ -1,0 +1,38 @@
+<name>Bloodstone</name>
+<description>The mineral heliotrope, also known as bloodstone, is a form of chalcedony (which is a cryptocrystalline mixture of quartz and its monoclinic polymorph moganite). The "classic" bloodstone is green chalcedony with red inclusions of iron oxide or red jasper.</description>
+
+<display>
+	<color>3C1E14FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>65</hardness>
+	<specificgravity>2600</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,42 @@
+<name>Limonite</name>
+<description>Limonite is an iron ore consisting of a mixture of hydrated iron(III) oxide-hydroxides in varying composition.</description>
+
+<display>
+	<color>E3AA30FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>5</hardness>
+	<specificgravity>2611</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>iron</ore>
+	<secondaryore>nickel</secondaryore>
+	<secondaryorechance>25</secondaryorechance>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</vein>
+</terrain>

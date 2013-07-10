@@ -1,0 +1,47 @@
+<name>milky quartz</name>
+<description>Milky quartz may be the most common variety of crystalline quartz and can be found almost anywhere. The white color may be caused by minute fluid inclusions of gas, liquid, or both, trapped during the crystal formation.
+</description>
+
+<display>
+	<color>FFFFFFF4</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<claystone />
+		<conglomerate />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+	<rarity>0</rarity>
+</terrain>

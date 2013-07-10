@@ -1,0 +1,30 @@
+<name>Lapis lazuli</name>
+<description>Lapis lazuli (sometimes abbreviated to lapis) is a relatively rare semi-precious stone that has been prized since antiquity for its intense blue color.</description>
+
+<display>
+	<color>0000FFFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>57</hardness>
+	<specificgravity>2800</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<limestone />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,28 @@
+<name>chert</name>
+<description>Chert is a fine-grained silica-rich microcrystalline, cryptocrystalline or microfibrous sedimentary rock that may contain small fossils. It varies greatly in color (from white to black), but most often manifests as gray, brown, grayish brown and light green to rusty red; its color is an expression of trace elements present in the rock, and both red and green are most often related to traces of iron (in its oxidized and reduced forms respectively).</description>
+
+<display>
+	<color>C0C0C0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1700</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>sedimentary</layer>
+</terrain>

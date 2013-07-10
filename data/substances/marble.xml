@@ -1,0 +1,28 @@
+<name>Marble</name>
+<description>Marble is a non-foliated metamorphic rock composed of recrystallized carbonate minerals, most commonly calcite or dolomite.</description>
+
+<display>
+	<color>E6E6E6FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2550</specificgravity>
+	<burntemp>825</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<burn><becomes>quicklime</becomes></burn>
+</actions>
+
+<terrain>
+	<layer>metamorphic</layer>
+</terrain>

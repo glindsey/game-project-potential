@@ -1,0 +1,24 @@
+<name>Saltwater ice</name>
+<description>Saline water, or saltwater, is a general term for water that contains a significant concentration of dissolved salts (NaCl). The concentration is usually expressed in parts per million (ppm) of salt.</description>
+
+<display>
+	<color>00FFAA80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>15</hardness>
+	<melttemp>-10</melttemp>
+	<specificgravity>1000</specificgravity>	
+</physical>
+
+<attributes>
+	<water>true</water>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>saltwater</becomes></melt>
+</actions>

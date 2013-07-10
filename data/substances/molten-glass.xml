@@ -1,0 +1,22 @@
+<name>molten glass</name>
+<description>Soda-lime glass, also called soda-lime-silica glass, is the most prevalent type of glass, used for windowpanes, and glass containers (bottles and jars) for beverages, food, and some commodity items. Glass bakeware is often made of tempered soda-lime glass.</description>
+
+<display>
+	<color>F0F8F008</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>2530</specificgravity>
+	<freezetemp>1000</freezetemp>
+</physical>
+
+<attributes>
+	<glass>true</glass>
+</attributes>
+
+<actions>
+	<freeze><becomes>glass-gray</becomes></freeze>
+</actions>

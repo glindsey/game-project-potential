@@ -1,0 +1,32 @@
+<name>Pyrolusite</name>
+<description>Pyrolusite is a mineral consisting essentially of manganese dioxide (MnO2) and is important as an ore of manganese. It is a black, amorphous appearing mineral, often with a granular, fibrous or columnar structure, sometimes forming reniform crusts. It has a metallic luster, a black or bluish-black streak, and readily soils the fingers.</description>
+
+<display>
+	<color>32323CFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>63</hardness>
+	<specificgravity>4800</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>manganese</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<diorite />
+		<gabbro />
+		<granite />
+	</smalldeposit>
+</terrain>

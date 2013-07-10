@@ -1,0 +1,26 @@
+<name>potato</name>
+<description>The potato is a starchy, tuberous crop from the perennial Solanum tuberosum of the Solanaceae family (also known as the nightshades). The word may refer to the plant itself as well as the edible tuber. In the region of the Andes, there are some other closely related cultivated potato species. Potatoes were introduced outside the Andes region four centuries ago, and have become an integral part of much of the world's cuisine. It is the world's fourth-largest food crop, following rice, wheat and maize. Long-term storage of potatoes requires specialised care in cold warehouses.</description>
+
+<display>
+	<color>F9FF80FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>0</hardness>
+	<specificgravity>1070</specificgravity>
+	<burntemp>1000</burntemp>
+</physical>
+
+<attributes>
+	<edible>true</edible>
+</attributes>
+
+<actions>
+	<burn>
+		<becomes>ash</becomes>
+	</burn>
+	<rot><adjective>rancid</adjective></rot>
+</actions>

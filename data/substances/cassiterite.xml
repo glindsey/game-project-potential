@@ -1,0 +1,32 @@
+<name>Cassiterite</name>
+<description>Cassiterite is a tin oxide mineral, SnO2. It is generally opaque, but it is translucent in thin crystals. Its luster and multiple crystal faces produce a desirable gem. Cassiterite has been the chief tin ore throughout ancient history and remains the most important source of tin today.</description>
+
+<display>
+	<color>827878FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>65</hardness>
+	<specificgravity>7000</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>tin</ore>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<alluvial>true</alluvial>
+	<vein>
+		<granite />
+	</vein>
+</terrain>

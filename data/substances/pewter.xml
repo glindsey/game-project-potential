@@ -1,0 +1,24 @@
+<name>pewter</name>
+<description>Pewter is a malleable metal alloy, traditionally 85–99% tin, with the remainder consisting of copper, antimony, bismuth and (sometimes, and less commonly today) lead. Silver is also sometimes used. Copper and antimony act as hardeners while lead is common in the lower grades of pewter, which have a bluish tint.</description>
+
+<display>
+	<color>D0D0D0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>15</hardness>
+	<specificgravity>9500</specificgravity>
+	<melttemp>200</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-pewter</becomes></melt>
+</actions>

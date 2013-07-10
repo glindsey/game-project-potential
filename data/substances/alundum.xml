@@ -1,0 +1,23 @@
+<name>alundum</name>
+<description>Alundum is the fused form of aluminum oxide, or alumina.</description>
+
+<display>
+	<color>CDCDCDFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>34</hardness>
+	<specificgravity>961</specificgravity>
+	<melttemp>2072</melttemp>
+</physical>
+
+<attributes>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+	<grind><becomes>alumina</becomes></grind>
+</actions>

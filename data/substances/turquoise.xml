@@ -1,0 +1,38 @@
+<name>Turquoise</name>
+<description>Turquoise is an opaque, blue-to-green mineral that is a hydrous phosphate of copper and aluminium, with the chemical formula CuAl6(PO4)4(OH)8·4H2O. It is rare and valuable in finer grades and has been prized as a gem and ornamental stone for thousands of years owing to its unique hue.</description>
+
+<display>
+	<color>A0FFC8FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2750</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<gangue>
+		<tetrahedrite />
+		<azurite />
+		<malachite />
+		<copper />
+		<chalcopyrite />
+		<chalcocite />
+		<hematite />
+		<limonite />
+		<magnetite />
+	</gangue>
+</terrain>

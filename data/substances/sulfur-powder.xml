@@ -1,0 +1,34 @@
+<name>Powdered sulfur</name>
+<description>Brimstone, or sulfur, is the chemical element with atomic number 16. In the periodic table it is represented by the symbol S. It is an abundant, multivalent non-metal.</description>
+
+<display>
+	<color>FFFF20FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>20</hardness>
+	<specificgravity>961</specificgravity>
+	<melttemp>115</melttemp>
+	<burntemp>500</burntemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+	<foul>true</foul>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-sulfur</becomes></melt>
+	<burn>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>foul-air</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</burn>
+</actions>

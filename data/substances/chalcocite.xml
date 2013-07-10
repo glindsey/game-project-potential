@@ -1,0 +1,40 @@
+<name>Chalcocite</name>
+<description>Chalcocite, copper(I) sulfide (Cu2S), is an important copper ore mineral. It is opaque, being colored dark-gray to black with a metallic luster.</description>
+
+<display>
+	<color>323232FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>27</hardness>
+	<specificgravity>5650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>copper</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</vein>
+</terrain>

@@ -1,0 +1,35 @@
+<name>Iolite</name>
+<description>Iolite is a magnesium iron aluminium cyclosilicate.</description>
+
+<display>
+	<color>A000FF80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>75</hardness>
+	<specificgravity>2360</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />		
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</smalldeposit>
+</terrain>

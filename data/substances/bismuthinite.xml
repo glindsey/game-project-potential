@@ -1,0 +1,30 @@
+<name>Bismuthinite</name>
+<description>Bismuthinite is a mineral consisting of bismuth sulfide (Bi2S3). It is an important ore for bismuth. The crystals are steel-grey to off-white with a metallic luster. It is soft enough to be scratched with a fingernail and rather dense.</description>
+
+<display>
+	<color>AAAA96FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>20</hardness>
+	<specificgravity>7000</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>bismuth</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+	</smalldeposit>	
+</terrain>

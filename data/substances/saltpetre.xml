@@ -1,0 +1,39 @@
+<name>saltpetre</name>
+<description>Saltpetre, also known as nitre, is the mineral form of potassium nitrate, KNO3.</description>
+
+<display>
+	<color>F0F0F060</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>20</hardness>
+	<specificgravity>2100</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,35 @@
+<name>Wolframite</name>
+<description>Wolframite, (Fe,Mn)WO4, is an iron manganese tungstate mineral that is the intermediate between ferberite (Fe2+ rich) and huebernite (Mn2+ rich). Along with scheelite, the wolframite series are the most important tungsten ore minerals.</description>
+
+<display>
+	<color>73822DFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>43</hardness>
+	<specificgravity>7250</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>tungsten</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<diorite />
+		<gabbro />		
+		<granite />
+	</smalldeposit>
+	<gangue>
+		<quartz />
+	</gangue>
+</terrain>

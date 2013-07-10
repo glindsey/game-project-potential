@@ -1,0 +1,63 @@
+Embark Attributes
+=================
+
+The following attributes are defined by the game; further attributes can be added as required.  Values in parentheses are those allowed for the attribute.
+
+There is no "attributes.xml" file; instead attributes are collected while reading the descriptor files for Materials, Props and Actors.  (TODO: There later might be a use for an XML file that allows for attribute implications -- for example "metal" implies "conductor".  Right now some of these implications are hard-coded.)
+
+caustic (false|true)
+	Causes chemical burns on contact with live tissue.
+conductor (false|true)
+	Indicates that the material is a conductor of electricity.
+explosive (false|true)
+	Indicates that an explosion occurs if the material is heated to temperatures at or exceeding its burn point, or if it is exposed to an ignition source when its temperature is above its flash point.
+fish (false|true)
+	Indicates that the material is made of fish (as in fish flesh).
+flat (false|true)
+	Indicates that the material exists as flat sheets or leaves and cannot form "blocks" or "lumps"; for example, you can have a sheet of leather, but not a lump of leather.  Incompatible with "granular" for obvious reasons.
+flux (false|true)
+	Indicates that the material is a smelting flux.
+foul (false|true)
+    Indicates that the material is smelly and unpleasant (but not necessarily toxic or inedible).  Foul materials will periodically emit clouds of foul air.
+fuel (false|true)
+	Indicates that the material can be burned as fuel.
+gem (false|true)
+	Indicates that the material is a gem.  (TODO: classify it as common, semi-precious, or precious.)
+granular (false|true)
+	Indicates that the material only exists in granular (powdered) form.  Granular materials can only exist in piles instead of discrete objects.  Incompatible with "flat" for obvious reasons.
+grass (false|true)
+	Indicates that the material is a grass.  Implies "plant".
+insect (false|true)
+	Indicates that the material is made of insect (as in insect flesh).
+intoxicating (false|true)
+	Indicates that the material causes intoxication (in those prone to it).
+magnetic (false|true)
+	Indicates that the material is naturally magnetic.  The default is false.
+meat (false|true)
+	Indicates that the material is made of meat.
+metal (false|true)
+	Indicates that the material is a metal (either elemental or an alloy).
+ore (ore type)
+	If present, indicates the material is an ore of the metal specified by the value.
+secondaryore (ore type)
+	If present, indicates a secondary material produced by the ore.
+secondaryorechance (0 to 100)
+	If present, marks the chance that the ore will produce a secondary material (in percent).
+plant (false|true)
+	Indicates that the material is plant matter.
+radioactive (false|true)
+	Indicates that the material is radioactive!
+rock (false|true)
+	Indicates that the material is rock.
+sand (false|true)
+	Indicates that the material is a sand type.  Implies "granular".
+soil (false|true)
+	Indicates that the material is a soil type.
+surface (false|true)
+	Indicates that the material can exist as a surface covering.  Rust, verdigris, and grass are all examples of surface coverings.
+wood (false|true)
+	Indicates that the material is a wood type.  Implies "plant", "fuel".
+toxic (false|true)
+	Indicates the material is toxic.  TODO: There may be keys underneath "toxic" indicating whether a material is toxic for different species of characters.  If a key does not exist the assumption is "true" (meaning the material IS toxic for a species).
+waterthermal (number)
+	If present, causes an endothermic or exothermic when it contacts water.  Value is the amount the temperature changes (positive = increases, exothermic reaction; negative = decreases, endothermic reaction).

@@ -1,0 +1,29 @@
+<name>anhydrite</name>
+<description>Anhydrite is a mineral – anhydrous calcium sulfate, CaSO4. It is in the orthorhombic crystal system, with three directions of perfect cleavage parallel to the three planes of symmetry.</description>
+
+<display>
+	<color>FAFAFAFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>35</hardness>
+	<specificgravity>2900</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gypsum />
+	</smalldeposit>
+</terrain>

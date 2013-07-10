@@ -1,0 +1,31 @@
+<name>Raspberyl</name>
+<description>Pezzottaite, marketed under the name raspberyl or raspberry beryl, is a newly identified mineral species, first recognized by the International Mineralogical Association in September 2003. Pezzottaite is a caesium analogue of beryl, a silicate of caesium, beryllium, lithium and aluminium, with the chemical formula Cs(Be2Li)Al2Si6O18.</description>
+
+<display>
+	<color>D2325580</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>77</hardness>
+	<specificgravity>2760</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<schist />
+	</smalldeposit>
+</terrain>

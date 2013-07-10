@@ -1,0 +1,25 @@
+<name>bismuth oxide</name>
+<description>Bismuth(III) oxide is perhaps the most industrially important compound of bismuth. It is also a common starting point for bismuth chemistry. It is found naturally as the mineral bismite (monoclinic) and sphaerobismoite (tetragonal, much more rare), but it is usually obtained as a by-product of the smelting of copper and lead ores.</description>
+
+<display>
+	<color>F0F0F0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>23</hardness>
+	<specificgravity>8900</specificgravity>
+	<melttemp>817</melttemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+	<surface>true</surface>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-bismuth</becomes></melt>
+	<polish><becomes>nothing</becomes></polish>
+</actions>

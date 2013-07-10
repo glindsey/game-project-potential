@@ -1,0 +1,23 @@
+<name>Molten silver</name>
+<description>Silver is a metallic chemical element with the chemical symbol Ag (Latin: argentum, from the Indo-European root *arg- for "grey" or "shining") and atomic number 47. A soft, white, lustrous transition metal, it has the highest electrical conductivity of any element and the highest thermal conductivity of any metal.</description>
+
+<display>
+	<color>D2D2D2FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>10490</specificgravity>
+	<freezetemp>962</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>silver</becomes></freeze>
+</actions>

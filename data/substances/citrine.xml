@@ -1,0 +1,47 @@
+<name>Citrine</name>
+<description>Citrine is a variety of quartz whose color ranges from a pale yellow to brown. Natural citrines are rare; most commercial citrines are heat-treated amethyst. Citrine contains traces of Fe3+ and is rarely found naturally.
+</description>
+
+<display>
+	<color>FFFFA060</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<claystone />
+		<conglomerate />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+	<rarity>5</rarity>
+</terrain>

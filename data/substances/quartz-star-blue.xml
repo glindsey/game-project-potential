@@ -1,0 +1,32 @@
+<name>Star blue quartz</name>
+<description>Asteria, or star stone (from Gr. star) is a name applied to ornamental stones that exhibit a luminous star when cut en cabochon. The typical asteria is the star-sapphire, generally a bluish-grey corundum, milky or opalescent, with a star of six rays.
+</description>
+
+<display>
+	<color>5050FF60</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<single>
+		<blue-quartz />
+	</single>
+	<rarity>5</rarity>
+</terrain>

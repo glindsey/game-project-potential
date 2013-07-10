@@ -1,0 +1,32 @@
+<name>Cymophane</name>
+<description>Translucent yellowish chatoyant chrysoberyl is called cymophane or cat's eye. Cymophane has its derivation also from the Greek words meaning 'wave' and 'appearance', in reference to the chatoyancy sometimes exhibited.</description>
+
+<display>
+	<color>E6FF50E0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>85</hardness>
+	<specificgravity>3700</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,31 @@
+<name>Chrome chalcedony</name>
+<description>Chrome chalcedony is an green variety of the mineral chalcedony, colored by small quantities of chromium.</description>
+
+<display>
+	<color>3CAA64FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>65</hardness>
+	<specificgravity>2660</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<dolomite />
+		<gabbro />
+	</smalldeposit>
+</terrain>

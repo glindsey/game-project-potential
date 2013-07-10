@@ -1,0 +1,23 @@
+<name>Molten pig iron</name>
+<description>Pig iron is the intermediate product of smelting iron ore with a high-carbon fuel such as coke, usually with limestone as a flux. Charcoal and anthracite have also been used as fuel. Pig iron has a very high carbon content, typically 3.5–4.5%, which makes it very brittle and not useful directly as a material except for limited applications.</description>
+
+<display>
+	<color>FFE0E0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>7850</specificgravity>
+	<freezetemp>1538</freezeresult>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>pig-iron</becomes></freeze>
+</actions>

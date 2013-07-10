@@ -1,0 +1,24 @@
+<name>Cobalt</name>
+<description>Cobalt is a chemical element with symbol Co and atomic number 27. It is found naturally only in chemically combined form. The free element, produced by reductive smelting, is a hard, lustrous, silver-gray metal.</description>
+
+<display>
+	<color>CDCDCDFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>50</hardness>
+	<specificgravity>8746</specificgravity>
+	<melttemp>1495</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-cobalt</becomes></melt>
+</actions>

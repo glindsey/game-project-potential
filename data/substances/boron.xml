@@ -1,0 +1,21 @@
+<name>Boron</name>
+<description>Boron is the chemical element with atomic number 5 and the chemical symbol B. Because boron is produced entirely by cosmic ray spallation and not by stellar nucleosynthesis, it is a low-abundance element in both the solar system and the Earth's crust.</description>
+
+<display>
+	<color>322828FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>95</hardness>
+	<specificgravity>2340</specificgravity>
+	<!-- Melts above 2000C, so no melt point. 
+		A shame, since I really wanted to do a Futurama reference here!
+	-->
+</physical>
+
+<attributes>
+	<metal>true</metal>
+</attributes>

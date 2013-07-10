@@ -1,0 +1,27 @@
+<name>gneiss</name>
+<description>Gneiss is a common and widely distributed type of rock formed by high-grade regional metamorphic processes from pre-existing formations that were originally either igneous or sedimentary rocks.</description>
+
+<display>
+	<color>AAAAB4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2750</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>metamorphic</layer>
+</terrain>

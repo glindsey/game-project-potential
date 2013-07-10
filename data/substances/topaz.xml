@@ -1,0 +1,32 @@
+<name>topaz</name>
+<description>Topaz is a silicate mineral of aluminium and fluorine with the chemical formula Al2SiO4(F,OH)2. </description>
+
+<display>
+	<color>FFD78040</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>2740</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<diorite />
+		<gabbro />
+		<granite />
+	</smalldeposit>
+</terrain>

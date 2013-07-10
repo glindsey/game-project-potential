@@ -1,0 +1,48 @@
+Materials to Add
+================
+
+Minerals
+==================================
+afghanite
+lazurite
+lazulite
+scorzalite
+lepidolite
+sperrylite
+vanadinite
+ulexite
+patronite
+vanadinite
+carnotite
+chrysotile (mmm, carcinogenic!)
+pharmacosiderite
+tennantite
+arsenopyrite
+cerussite
+fluorite (split into colorless/white/purple/blue/green/yellow/orange/red/pink/brown/bluish-black)
+psilomelane
+romanechite
+rhodonite (if not already in there)
+
+Metals
+==================================
+white gold (gold-white)
+rose gold (gold-rose)
+red gold (gold-red)
+green gold (gold-green)
+electrum
+sterling silver (silver-sterling)
+
+Food solids
+==================================
+caramel
+
+
+Other solids
+==================================
+asbestos (processed chrysotile -- carcinogenic!)
+
+Liquids
+==================================
+vinegar
+bleach

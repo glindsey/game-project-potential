@@ -1,0 +1,24 @@
+<name>potash</name>
+<description>The chemical compound potassium chloride (KCl) is a metal halide salt composed of potassium and chlorine. In its pure state, it is odorless and has a white or colorless vitreous crystal appearance, with a crystal structure that cleaves easily in three directions. Potassium chloride crystals are face-centered cubic. Potassium chloride was historically known as "muriate of potash," this name is occasionally still encountered in association with its use as a fertilizer.</description>
+
+<display>
+	<color>C85F19FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>0</hardness>
+	<specificgravity>1281</specificgravity>
+	<melttemp>770</melttemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-potash</becomes></melt>
+	<dissolve><becomes>freshwater</becomes></dissolve>
+</actions>

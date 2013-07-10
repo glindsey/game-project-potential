@@ -1,0 +1,30 @@
+<name>Benitoite</name>
+<description>Benitoite is a rare blue barium titanium silicate mineral, found in hydrothermally altered serpentinite. Benitoite fluoresces under short wave ultraviolet light, appearing bright blue to bluish white in color. </description>
+
+<display>
+	<color>826E4BA0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>3600</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<gangue>
+		<natrolite />
+	</gangue>
+</terrain>

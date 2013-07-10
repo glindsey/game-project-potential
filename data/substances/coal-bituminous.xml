@@ -1,0 +1,40 @@
+<name>Bituminous Coal</name>
+<description>Bituminous coal or black coal is a relatively soft coal containing a tarlike substance called bitumen. It is of higher quality than lignite coal but of poorer quality than anthracite. It was usually formed as a result of high pressure on lignite.</description>
+
+<display>
+	<color>1E1E1EFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>30</hardness>
+	<specificgravity>1250</specificgravity>
+	<burntemp>400</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<fuel>true</fuel>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+</actions>
+
+<terrain>
+	<vein>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</vein>
+</terrain>

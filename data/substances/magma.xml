@@ -1,0 +1,28 @@
+<name>Magma</name>
+<description>Magma is a mixture of molten or semi molten rock, volatiles and solids that is found beneath the surface of the Earth, and is expected to exist on other terrestrial planets.</description>
+
+<display>
+	<color>FFE640FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+	<lightsource>true</lightsource>
+</display>
+
+<physical>
+	<phase>viscous</phase>
+	<fixedtemp>1300</fixedtemp>
+	<specificgravity>2400</specificgravity>	
+</physical>
+
+<attributes>
+</attributes>
+
+<actions>
+	<!-- This seems a little odd, but exploits the way the engine works. -->
+	<dissolve><becomes>obsidian</becomes></dissolve>
+</actions>
+
+<terrain>
+	<smallpool>500</smallpool>
+	<largepool>750</largepool>
+</terrain>

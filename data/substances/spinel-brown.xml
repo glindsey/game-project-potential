@@ -1,0 +1,41 @@
+<name>brown spinel</name>
+<description>Spinel is the magnesium aluminium member of the larger spinel group of minerals. It has the formula MgAl2O4.
+</description>
+
+<display>
+	<color>825000C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>77</hardness>
+	<specificgravity>3800</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<limestone />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+	<rarity>4</rarity>
+</terrain>

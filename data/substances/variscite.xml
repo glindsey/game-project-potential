@@ -1,0 +1,38 @@
+<name>Variscite</name>
+<description>Variscite is a hydrated aluminium phosphate mineral (AlPO4·2H2O). It is a relatively rare phosphate mineral. It is sometimes confused with turquoise; however, variscite is usually greener in color.</description>
+
+<display>
+	<color>A0FFA0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>45</hardness>
+	<specificgravity>2590</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<gangue>
+		<tetrahedrite />
+		<azurite />
+		<malachite />
+		<copper />
+		<chalcopyrite />
+		<chalcocite />
+		<hematite />
+		<limonite />
+		<magnetite />
+	</gangue>
+</terrain>

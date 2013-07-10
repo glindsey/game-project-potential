@@ -1,0 +1,25 @@
+<name>uranium</name>
+<description>Uranium is a silvery-white metallic chemical element in the actinide series of the periodic table, with atomic number 92. It is assigned the chemical symbol U. All isotopes are unstable and uranium is weakly radioactive.</description>
+
+<display>
+	<color>C3C3C3FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>60</hardness>
+	<specificgravity>18900</specificgravity>
+	<melttemp>1132</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+	<radioactive>true</radioactive>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-uranium</becomes></melt>
+</actions>

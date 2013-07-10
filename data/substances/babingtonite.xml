@@ -1,0 +1,31 @@
+<name>babingtonite</name>
+<description>Babingtonite is a calcium iron manganese inosilicate mineral with the formula Ca2(Fe,Mn)FeSi5O14(OH). It is unusual in that iron(III) completely replaces the aluminium so typical of silicate minerals.</description>
+
+<display>
+	<color>144614FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>57</hardness>
+	<specificgravity>3300</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<diorite />
+		<gabbro />
+		<granite />
+	</smalldeposit>
+</terrain>

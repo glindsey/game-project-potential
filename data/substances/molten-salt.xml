@@ -1,0 +1,25 @@
+<name>Molten salt</name>
+<description>Molten salt refers to a salt that is in the liquid phase that is normally a solid at standard temperature and pressure (STP). A salt which is normally liquid at STP is usually called a room temperature ionic liquid, although technically molten salts are a class of ionic liquids.</description>
+
+<display>
+	<color>FFFFFF40</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>2170</specificgravity>
+	<freezetemp>801</freezetemp>
+</physical>
+
+<attributes>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>halite</becomes></freeze>
+	<!-- Dissolve will create saltwater, but then the high temperature will
+	     immediately turn it into salt + steam. -->
+	<dissolve><becomes>saltwater</becomes></dissolve>
+</actions>

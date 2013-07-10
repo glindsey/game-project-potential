@@ -1,0 +1,30 @@
+<name>Clinohumite</name>
+<description>Clinohumite is an uncommon member of the humite group, a magnesium silicate according to the chemical formula (Mg,Fe)9(SiO4)4(F,OH)2. Most commonly found as tiny indistinct grains, large euhedral clinohumite crystals are sought by collectors and occasionally fashioned into bright, yellow-orange gemstones.</description>
+
+<display>
+	<color>D7640080</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>3300</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<limestone />
+	</smalldeposit>
+</terrain>

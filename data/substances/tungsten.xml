@@ -1,0 +1,24 @@
+<name>Powdered tungsten</name>
+<description>Tungsten, also known as wolfram, is a chemical element with the chemical symbol W and atomic number 74. The word tungsten comes from the Swedish language "tung sten" directly translatable to heavy stone.</description>
+
+<display>
+	<color>D2D2D2FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>75</hardness>
+	<specificgravity>19600</specificgravity>
+	<!-- Melting point exceeds 2000C, so we ignore it.
+	<melttemp>3422</melttemp>
+	<meltresult>molten-tungsten</meltresult> -->
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<granular>true</granular>
+	<conductor>true</conductor>
+	<toxic>true</toxic>
+</attributes>

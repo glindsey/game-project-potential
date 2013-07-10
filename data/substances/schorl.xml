@@ -1,0 +1,32 @@
+<name>schorl</name>
+<description>Tourmaline is a crystal boron silicate mineral compounded with elements such as aluminium, iron, magnesium, sodium, lithium, or potassium. Schorl is the most common species of tourmaline, accounting for 95% or more of all tourmaline in nature.</description>
+
+<display>
+	<color>282828C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>72</hardness>
+	<specificgravity>3060</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

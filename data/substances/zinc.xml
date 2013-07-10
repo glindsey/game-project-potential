@@ -1,0 +1,26 @@
+<name>Zinc</name>
+<description>Zinc is a metallic chemical element; it has the symbol Zn and atomic number 30. It is the first element in group 12 of the periodic table.</description>
+
+<display>
+	<color>D2D2D2FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>25</hardness>
+	<specificgravity>7135</specificgravity>
+	<melttemp>420</melttemp>
+	<burntemp>550</burntemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-zinc</becomes></melt>
+	<burn><becomes>zinc-oxide</becomes></burn>
+</actions>

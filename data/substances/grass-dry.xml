@@ -1,0 +1,22 @@
+<name>dry grass</name>
+<description>Grasses, or more technically graminoids, are monocotyledonous, usually herbaceous plants with narrow leaves growing from the base.  This grass is dried out and nearly dead.</description>
+
+<display>
+	<color>808000FF</color>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<burntemp>230</burntemp>
+	<specificgravity>850</specificgravity> <!-- more or less fudged this -->	
+</physical>
+
+<attributes>
+	<plant>true</plant>
+	<grass>true</grass>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+	<wet><becomes>grass</becomes></wet>
+</actions>

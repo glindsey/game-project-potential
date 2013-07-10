@@ -1,0 +1,27 @@
+<name>diorite</name>
+<description>Diorite is a grey to dark grey intermediate intrusive igneous rock composed principally of plagioclase feldspar (typically andesine), biotite, hornblende, and/or pyroxene.</description>
+
+<display>
+	<color>787878FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2900</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>igneous-intrusive</layer>
+</terrain>

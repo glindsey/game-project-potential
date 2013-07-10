@@ -1,0 +1,30 @@
+<name>Talc</name>
+<description>Talc is a mineral composed of hydrated magnesium silicate with the chemical formula H2Mg3(SiO3)4 or Mg3Si4O10(OH)2. In loose form, it is the widely used substance known as talcum powder.</description>
+
+<display>
+	<color>FAFAFA80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>10</hardness>
+	<specificgravity>2700</specificgravity>
+	<burntemp>1050</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<burn><becomes>enstatite</becomes></burn>
+	<grind><becomes>talcum-powder</becomes></grind>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<dolomite />		
+	</largedeposit>
+</terrain>

@@ -1,0 +1,25 @@
+<name>powdered calcium carbonate</name>
+<description>Calcium carbonate is a chemical compound with the formula CaCO3. It is a common substance found in rocks in all parts of the world, and is the main component of shells of marine organisms, snails, coal balls, pearls, and eggshells. Calcium carbonate is the active ingredient in agricultural lime, and is usually the principal cause of hard water. It is commonly used medicinally as a calcium supplement or as an antacid, but excessive consumption can be hazardous.</description>
+
+<display>
+	<color>FFFFFFFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>30</hardness>
+	<specificgravity>2710</specificgravity>
+	<burntemp>840</burntemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<burn><becomes>quicklime</becomes></burn>
+	<dissolve><becomes>hardwater</becomes></dissolve>
+</actions>

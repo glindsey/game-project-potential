@@ -1,0 +1,34 @@
+<name>Psilomelane</name>
+<description>Psilomelane, also known as black hematite, is a group name for hard black manganese oxides such as hollandite and romanechite.</description>
+
+<display>
+	<color>646464FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<rock>true</rock>
+	<ore>manganese</ore>
+	<hardness>55</hardness>
+	<specificgravity>4200</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>manganese</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<diorite />
+		<gabbro />
+		<granite />
+	</smalldeposit>
+</terrain>

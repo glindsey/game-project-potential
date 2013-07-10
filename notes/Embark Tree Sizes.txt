@@ -1,0 +1,40 @@
+Some tree sizes
+===============
+
+Sizes are for mature trees.
+
+Type				Diameter (ft)	Height (ft)
+===================	=============	================
+Apple				10 to 14'		10 to 14'
+Ash, Green			Up to 60+'		Up to 60'
+Ash, European		Up to 75+'		Up to 75'
+Ash, White			Up to 70'		Up to 100+'
+Beech				50 to 70'		90 to 100'
+Birch				avg 10'/max 35'	avg 20'/max 70'
+Cedar				avg 25'/max 50'	avg 50'/max 100'
+Cherry				avg 30'/max 60' avg 30'/max 60'
+Dogwood				20 to 30'		20 to 30'
+Elm					40 to 70'		70 to 90'
+Fir, Douglas		20 to 40'		40 to 80'
+Fir, White			18 to 20'		35 to 40'
+Fir, Balsam			20 to 35'		40 to 70'
+Fir, Grand			75 to 100'		150 to 200'
+Fir, Fraser			30 to 40'		60 to 80'
+Fir, Red			30 to 65'		60 to 130'
+Hazel				10'				12'
+Hickory (Shagbark)	avg 30'/max 65'	avg 75'/max 130'
+Linden				40' to 60'		50' to 60'
+Maple, Sugar		70' to 80'		75' to 100'
+Maple, Black		60' to 80'		60' to 80'
+Maple, Red			25' to 35'		40' to 50'
+Maple, Silver		40' to 60'		50' to 80'
+Oak (Live)			60' to 120'		60' to 80'
+Olive				avg 10'/max 30'	avg 20'/max 50'
+Pear				12' to 20'		12' to 20'
+Pine				20' to 40'		50' to 100'
+Poplar				30'				40' to 50'
+Spruce				15' to 25'		30' to 60'
+Sumac				12' to 15'		12' to 15'
+Sycamore			70' to 100'		70' to 100'
+Walnut				50' to 75'		50' to 75'
+Willow (Weeping)	35'				30' to 40'

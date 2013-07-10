@@ -1,0 +1,35 @@
+<name>oil of vitriol</name>
+<description>Sulfuric acid is a highly corrosive strong mineral acid with the molecular formula H2SO4. It is a colorless to slightly yellow viscous liquid which is soluble in water at all concentrations. The historical name of this acid is oil of vitriol.
+
+For the purposes of this game we assume the acid is at about 30% dilution (battery acid), which will not freeze at game temperatures.</description>
+
+<display>
+	<color>FFFFFF10</color>
+	<opaque>false</opaque>
+	<visible>true</visible>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>1260</specificgravity>
+	<boiltemp>337</boiltemp>
+</physical>
+
+<attributes>
+	<acidic>true</acidic>
+	<caustic>true</caustic>
+	<waterthermal>100</waterthermal>
+</attributes>
+
+<actions>
+	<boil>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>foul-air</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</boil>
+	<dissolve><becomes>freshwater</becomes></dissolve>
+</actions>

@@ -1,0 +1,24 @@
+<name>Manganese</name>
+<description>Manganese is a chemical element, designated by the symbol Mn. It has the atomic number 25. It is found as a free element in nature (often in combination with iron), and in many minerals. Manganese is a metal with important industrial metal alloy uses, particularly in stainless steels.</description>
+
+<display>
+	<color>B4B4B4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>60</hardness>
+	<specificgravity>7300</specificgravity>
+	<melttemp>1246</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-manganese</becomes></melt>
+</actions>

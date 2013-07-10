@@ -1,0 +1,38 @@
+<name>Melanite</name>
+<description>Melanite, or "titanian andradite," is black in color and is a species of the garnet group. It is a nesosilicate, with formula Ca3Fe2Si3O12.</description>
+
+<display>
+	<color>141414FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>67</hardness>
+	<specificgravity>3850</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,35 @@
+<name>liquid menthol</name>
+<description>Menthol is an organic compound made synthetically or obtained from cornmint, peppermint or other mint oils. It is a waxy, crystalline substance, clear or white in color, which is solid at room temperature and melts slightly above. The main form of menthol occurring in nature is (-)-menthol, which is assigned the (1R,2S,5R) configuration. Menthol has local anesthetic and counterirritant qualities, and it is widely used to relieve minor throat irritation.</description>
+
+<display>
+	<color>FFFFFF10</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>890</specificgravity>
+	<freezetemp>40</freezetemp>
+	<flashtemp>93</flashtemp>
+	<boiltemp>212</boiltemp>
+</physical>
+
+<attributes>
+	<analgesic>true</analgesic>
+	<explosive>true</explosive>
+</attributes>
+
+<actions>
+	<dissolve><becomes>freshwater</becomes></freeze>
+	<freeze><becomes>menthol</becomes></freeze>
+	<boil>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>explosive-gas</material>
+			<number>3</number>
+			<error>1</error>
+		</result>		
+	</boil>	
+</actions>

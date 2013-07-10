@@ -1,0 +1,29 @@
+<name>alunite</name>
+<description>Alunite is a sulfate mineral that was first observed in the 15th century in Monti della Tolfa, north of Rome, where it was mined for the manufacture of alum. First called aluminilite by J.C. Delamétherie in 1797, this name was contracted by François Beudant in 1824 to alunite.</description>
+
+<display>
+	<color>D9603BFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>37</hardness>
+	<specificgravity>2750</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<kaolinite />
+	</largedeposit>
+</terrain>

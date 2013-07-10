@@ -1,0 +1,30 @@
+<name>copper</name>
+<description>Copper is a chemical element with the symbol Cu (from Latin: cuprum) and atomic number 29. It is a ductile metal with very high thermal and electrical conductivity. Pure copper is soft and malleable; a freshly exposed surface has a reddish-orange color. It is used as a conductor of heat and electricity, a building material, and a constituent of various metal alloys.</description>
+
+<display>
+	<color>B87333FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>30</hardness>
+	<specificgravity>8930</specificgravity>
+	<melttemp>1085</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-copper</becomes></melt>
+	<weather><surface>verdigris</surface></weather>
+</actions>
+
+<terrain>
+	<vein>
+		<sandstone />
+	</vein>
+</terrain>

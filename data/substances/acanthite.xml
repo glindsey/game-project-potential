@@ -1,0 +1,30 @@
+<name>acanthite</name>
+<description>Acanthite, Ag2S, crystallizes in the monoclinic system and is the stable form of silver sulfide below 173 °C.</description>
+
+<display>
+	<color>555555FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>23</hardness>
+	<specificgravity>7210</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>silver</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<granite />
+	</vein>
+</terrain>

@@ -1,0 +1,23 @@
+<name>cranberry glass</name>
+<description>Cranberry glass (or 'Gold Ruby' glass as it is known in Europe, or 'Rubino Oro' as it is known by glass workers) is a red glass made by adding gold(III) oxide to molten glass. Tin, in the form of stannous chloride, is sometimes added in tiny amounts as a reducing agent. The glass is used primarily in expensive decorations.</description>
+
+<display>
+	<color>40001020</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>6</hardness>
+	<specificgravity>2530</specificgravity>
+	<melttemp>1000</melttemp>
+</physical>
+
+<attributes>
+	<glass>true</glass>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-glass</becomes></melt>
+</actions>

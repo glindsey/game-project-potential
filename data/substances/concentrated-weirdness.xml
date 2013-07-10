@@ -1,0 +1,17 @@
+<name>concentrated weirdness</name>
+<description>Congratulations, you've found a secret!  ...Not really.  What has happened is something in Embark asked for a material that doesn't exist.  Embark panicked and returned this to appease the gods of computing.  Why is it magenta, you might ask?  Simple.  Magenta is weird.</description>
+
+<display>
+	<color>FF00FFA0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+	<lightsource>false</lightsource>
+</display>
+
+<attributes>
+	<mystical>true</mystical>
+</attributes>
+
+<physical>
+	<phase>ethereal</phase>
+</physical>

@@ -1,0 +1,23 @@
+<name>Molten iron</name>
+<description>Iron is a chemical element with the symbol Fe (from Latin: ferrum) and atomic number 26. It is a metal in the first transition series. It is the most common element (by mass) forming the planet Earth as a whole, forming much of Earth's outer and inner core. It is the fourth most common element in the Earth's crust.</description>
+
+<display>
+	<color>F0B4B4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>7850</specificgravity>
+	<freezetemp>1538</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>rusted-iron</becomes></freeze>
+</actions>

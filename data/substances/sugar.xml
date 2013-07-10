@@ -1,0 +1,27 @@
+<name>sugar</name>
+<description>Sugar is the generalised name for a class of sweet-flavored substances used as food. They are carbohydrates and as this name implies, are composed of carbon, hydrogen and oxygen.</description>
+
+<display>
+	<color>FFFFFF40</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>0</hardness>
+	<specificgravity>880</specificgravity>
+	<melttemp>170</melttemp>
+</physical>
+
+<attributes>
+	<edible>true</edible>
+	<granular>true</granular>
+</attributes>
+
+<actions>
+	<!-- Sugar is a tough one.  It is typically granular, but can also be compressed into lumps, cubes, et cetera.  For simplicity's sake I'm going to say that the "solid" form of sugar is simply "rock sugar", even though in reality there's a difference between compressed granules of sugar and whole sugar crystals. -->
+	<compress><becomes>sugar-rock</becomes></compress>
+	<melt><becomes>caramel</becomes></melt>
+	<dissolve><becomes>sugarwater</becomes></dissolve>
+</actions>

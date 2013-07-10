@@ -1,0 +1,30 @@
+<name>Moonstone</name>
+<description>Moonstone is a sodium potassium aluminium silicate, with the chemical formula (Na,K)AlSi3O8. Its name is derived from a visual effect, or sheen, caused by light reflecting internally in the moonstone from layer inclusion of different feldspars.</description>
+
+<display>
+	<color>F0F0F0E0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2610</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<orthoclase />
+	</smalldeposit>
+</terrain>

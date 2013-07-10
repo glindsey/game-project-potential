@@ -1,0 +1,34 @@
+<name>Molten sulfur</name>
+<description>Brimstone, or sulfur, is the chemical element with atomic number 16. In the periodic table it is represented by the symbol S. It is an abundant, multivalent non-metal.</description>
+
+<display>
+	<color>800000FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>961</specificgravity>
+	<freezetemp>115</freezetemp>
+	<burntemp>500</burntemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+	<foul>true</foul>
+</attributes>
+
+<actions>
+	<freeze><becomes>brimstone</becomes></freeze>
+	<burn>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>foul-air</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</burn>
+</actions>

@@ -1,0 +1,31 @@
+<name>Sylvite</name>
+<description>Sylvite is potassium chloride (KCl) in natural mineral form. It forms crystals in the isometric system very similar to normal rock salt, halite (NaCl).</description>
+
+<display>
+	<color>FAC8C8FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>20</hardness>
+	<specificgravity>1700</specificgravity>
+	<melttemp>770</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-potash</becomes></melt>
+	<grind><becomes>potash</becomes></grind>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<halite />
+	</largedeposit>
+</terrain>

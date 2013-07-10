@@ -1,0 +1,31 @@
+<name>Golden beryl</name>
+<description>Golden beryl can range in colors from pale yellow to a brilliant gold. Unlike emerald, golden beryl has very few flaws.</description>
+
+<display>
+	<color>FFF02880</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>77</hardness>
+	<specificgravity>2760</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<schist />
+	</smalldeposit>
+</terrain>

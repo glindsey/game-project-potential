@@ -1,0 +1,30 @@
+<name>Wollastonite</name>
+<description>Wollastonite is a calcium inosilicate mineral (CaSiO3) that may contain small amounts of iron, magnesium, and manganese substituting for calcium. It is usually white.</description>
+
+<display>
+	<color>F0F0F0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>50</hardness>
+	<specificgravity>2900</specificgravity>
+	<melttemp>1540</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<dolomite />
+		<limestone />
+	</smalldeposit>
+</terrain>

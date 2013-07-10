@@ -1,0 +1,30 @@
+<name>Garnierite</name>
+<description>Garnierite is a general name for a green nickel ore which is found in pockets and veins within weathered and serpentinized ultramafic rocks.</description>
+
+<display>
+	<color>69AF64FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>20</hardness>
+	<specificgravity>2320</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>nickel</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<gabbro />
+	</vein>
+</terrain>

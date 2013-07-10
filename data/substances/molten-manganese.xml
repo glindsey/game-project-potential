@@ -1,0 +1,23 @@
+<name>Molten manganese</name>
+<description>Manganese is a chemical element, designated by the symbol Mn. It has the atomic number 25. It is found as a free element in nature (often in combination with iron), and in many minerals. Manganese is a metal with important industrial metal alloy uses, particularly in stainless steels.</description>
+
+<display>
+	<color>B4B4B4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>7300</specificgravity>
+	<freezetemp>1246</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>manganese</becomes></freeze>
+</actions>

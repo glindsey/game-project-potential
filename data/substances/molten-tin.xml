@@ -1,0 +1,23 @@
+<name>Molten tin</name>
+<description>Tin is a chemical element with the symbol Sn (for Latin: stannum) and atomic number 50. It is a main group metal in group 14 of the periodic table.  This silvery, malleable post-transition metal is not easily oxidized in air and is used to coat other metals to prevent corrosion.</description>
+
+<display>
+	<color>D2D2D2FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>7280</specificgravity>
+	<freezetemp>232</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>tin</becomes></freeze>
+</actions>

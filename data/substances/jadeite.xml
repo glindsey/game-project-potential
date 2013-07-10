@@ -1,0 +1,35 @@
+<name>Jadeite</name>
+<description>Jadeite is a pyroxene mineral with composition NaAlSi2O6. It is monoclinic. It has a Mohs hardness of about 6.5 to 7.0 depending on the composition. The mineral is dense, with a specific gravity of about 3.4.</description>
+
+<display>
+	<color>64CD7DFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>65</hardness>
+	<specificgravity>3330</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />		
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</smalldeposit>
+</terrain>

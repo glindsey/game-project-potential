@@ -1,0 +1,35 @@
+<name>Chrysocolla</name>
+<description>Chrysocolla has a blue-green color and is a minor ore of copper. The name comes from the Greek chrysos, "gold", and kolla, "glue", in allusion to the name of the material used to solder gold, and was first used by Theophrastus in 315 BCE.</description>
+
+<display>
+	<color>46CDA0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>30</hardness>
+	<specificgravity>2150</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>copper</ore>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<gangue>
+		<tetrahedrite />
+		<azurite />
+		<malachite />
+		<chalcopyrite />
+		<chalcocite />
+	</gangue>
+</terrain>

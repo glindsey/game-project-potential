@@ -1,0 +1,39 @@
+<name>gypsum</name>
+<description>Gypsum is a very soft sulfate mineral composed of calcium sulfate dihydrate, with the chemical formula CaSO4·2H2O. It is found in alabaster, a decorative stone used in Ancient Egypt. It is the second softest mineral on the Mohs scale of mineral hardness.</description>
+
+<display>
+	<color>FFFFFF60</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>20</hardness>
+	<specificgravity>2320</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</largedeposit>
+</terrain>

@@ -1,0 +1,52 @@
+<name>Yellow zircon</name>
+<description>Zircon is a mineral belonging to the group of nesosilicates. Its chemical name is zirconium silicate and its corresponding chemical formula is ZrSiO4.</description>
+
+<display>
+	<color>FFFF4020</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>75</hardness>
+	<specificgravity>4650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<andesite />
+		<basalt />
+		<dacite />
+		<diorite />
+		<gabbro />
+		<granite />
+	</smalldeposit>
+</terrain>

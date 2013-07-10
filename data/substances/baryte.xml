@@ -1,0 +1,42 @@
+<name>baryte</name>
+<description>Baryte, or barite, (BaSO4) is a mineral consisting of barium sulfate.</description>
+
+<display>
+	<color>E6E6F0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>20</hardness>
+	<specificgravity>2320</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<!-- Although an ore of barium, I REALLY don't want to deal with the resulting mess of chemicals.
+	<ore>barium</ore>
+	-->
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</smalldeposit>
+</terrain>

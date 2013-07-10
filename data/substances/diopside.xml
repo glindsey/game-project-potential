@@ -1,0 +1,38 @@
+<name>Diopside</name>
+<description>Diopside is a monoclinic pyroxene mineral with composition MgCaSi2O6. It is found in ultramafic (kimberlite and peridotite) igneous rocks, and diopside-rich augite is common in mafic rocks, such as olivine basalt and andesite. </description>
+
+<display>
+	<color>148714FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>50</hardness>
+	<specificgravity>3320</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<kimberlite />
+		<basalt />
+		<andesite />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,30 @@
+<name>Piemontite</name>
+<description>Piemontite is a sorosilicate mineral in the monoclinic crystal system with the chemical formula Ca2(Al,Mn3+,Fe3+)3(SiO4)(Si2O7)O(OH). It is a member of the epidote group.</description>
+
+<display>
+	<color>5A1E0FFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>3500</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

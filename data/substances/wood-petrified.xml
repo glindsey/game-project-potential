@@ -1,0 +1,39 @@
+<name>Petrified Wood</name>
+<description>Petrified wood (from the Greek root petro meaning "rock" or "stone"; literally "wood turned into stone") is the name given to a special type of fossilized remains of terrestrial vegetation. It is the result of a tree or tree-like plants having completely transitioned to stone by the process of permineralization.</description>
+
+<display>
+	<color>80461BFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2610</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</smalldeposit>
+</terrain>

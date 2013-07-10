@@ -1,0 +1,35 @@
+<name>kunzite</name>
+<description>Spodumene (of which kunzite is a variety) is a pyroxene mineral consisting of lithium aluminium inosilicate, LiAl(SiO3)2, and is a source of lithium.
+</description>
+
+<display>
+	<color>FFD2FF80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>67</hardness>
+	<specificgravity>3130</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>		
+		<granite />	
+		<syenite />
+		<quartzite />
+		<gabbro />
+	</smalldeposit>
+	<rarity>4</rarity>
+</terrain>

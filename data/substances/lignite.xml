@@ -1,0 +1,40 @@
+<name>Lignite</name>
+<description>Lignite, often referred to as brown coal, is a soft brown fuel with characteristics that put it somewhere between coal and peat.</description>
+
+<display>
+	<color>3D2B1FFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>5</hardness>
+	<specificgravity>801</specificgravity>
+	<burntemp>400</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<fuel>true</fuel>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+</actions>
+
+<terrain>
+	<vein>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</vein>
+</terrain>

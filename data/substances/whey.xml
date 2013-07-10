@@ -1,0 +1,23 @@
+<name>whey</name>
+<description>Whey is the liquid remaining after milk has been curdled and strained. It is a by-product of the manufacture of cheese or casein and has several commercial uses.</description>
+
+<display>
+	<color>DCDCB4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>259</specificgravity>
+	<freezetemp>0</freezetemp>
+</physical>
+
+<attributes>
+	<edible>true</edible>
+</attributes>
+
+<actions>
+	<freeze><becomes>ice</becomes></freeze>
+	<rot><adjective>rancid</adjective></rot>
+</actions>

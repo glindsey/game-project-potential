@@ -1,0 +1,38 @@
+<name>Moss agate</name>
+<description>Moss agate is a semi-precious gemstone formed from silicon dioxide. It is a form of agate which includes minerals of a green colour embedded in the chalcedony, forming filaments and other patterns suggestive of moss. It also sometimes resembles blue-cheese.</description>
+
+<display>
+	<color>4B824BC0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>65</hardness>
+	<specificgravity>2600</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

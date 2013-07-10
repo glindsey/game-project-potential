@@ -1,0 +1,31 @@
+<name>Rhodonite</name>
+<description>Rhodonite is a manganese inosilicate, (Mn, Fe, Mg, Ca)SiO3 and member of the pyroxenoid group of minerals, crystallizing in the triclinic system. It commonly occurs as cleavable to compact masses with a rose-red color, often tending to brown because of surface oxidation.</description>
+
+<display>
+	<color>FF87A5FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>3660</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<limestone />
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

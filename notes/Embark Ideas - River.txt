@@ -1,0 +1,24 @@
+Ideas
+=====
+
+- River:
+	- Start by choosing a random point on the edge of the map.  Set the initial direction of the river to be such that a straight line would pass directly through the center of the map.  The river's initial height will be that of the surrounding terrain, sloping down towards the middle.
+	- Choose a random initial size of the river, specifying the width across it.
+	- Generate two strings of 1-D Perlin noise, the "heading" string and the "size" string.
+	- Start traversing a path.  At predetermined points along the river (figure out how often later, or maybe make it a "river wiggliness" setting), take a value from the Perlin noise, and do the following:
+		- river_heading = initial_river_heading + heading_noise(t)
+		- river_size = initial_river_size + size_noise(t)
+		
+	- If the terrain height increases as we traverse the path, the river bores through it.  River depth remains constant.
+	- If the terrain height DECREASES as we traverse the path, the river follows it.  This may be a bit tough to emulate, but we basically want to read the height of the path further out a bit, figure out the local minimum, then back up to where we first saw the decrease and create a waterfall and pool.  e.g.:
+	
+	                                                         
+	 ..                     .                                  . = terrain height    
+	=--====#              .. .....                             - = river height          
+	       #..  .....  ...        ...            ...........   = = river+terrain height
+	       #============================# .......              # = waterfall
+	                                    #===================   
+	                                                         
+	We can even have an option where we skip X number of minima before backtracking to make a waterfall, if we want to make a REALLY big one.
+	
+	- If we want a fork, that too is easy: take some spot along the river, save the heading/size at that point, and then go back and originate another river from there.  Merging rivers are a bit more difficult, but we could always backtrack to an edge, and then run the height algorithm afterward.

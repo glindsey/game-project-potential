@@ -1,0 +1,31 @@
+<name>Chrysoprase</name>
+<description>Chrysoprase, chrysophrase or chrysoprasus is a gemstone variety of chalcedony (a cryptocrystalline form of silica) that contains small quantities of nickel. Its color is normally apple-green, but varies to deep green.</description>
+
+<display>
+	<color>5AA05AFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>65</hardness>
+	<specificgravity>2600</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<dolomite />
+		<gabbro />
+	</smalldeposit>
+</terrain>

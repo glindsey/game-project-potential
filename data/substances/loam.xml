@@ -1,0 +1,33 @@
+<name>loam</name>
+<description>Loam is soil composed of sand, silt, and clay in relatively even concentration. Loam soils generally contain more nutrients and humus than sandy soils, have better drainage and infiltration of water and air than silty soils, and are easier to till than clay soils.</description>
+
+<display>
+	<color>
+		<main>181008FF</main>
+		<specular>282018FF</specular>
+	</color>
+	<texture>
+		<type>perlin</type>
+		<octaves>6</octaves>
+		<frequency>1.0</frequency>
+		<lacunarity>2.0</lacunarity>
+		<persistence>0.5</persistence>
+	</texture>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<granular>true</granular>
+	<hardness>0</hardness>
+	<specificgravity>1440</specificgravity>
+</physical>
+
+<attributes>
+	<soil>true</soil>
+</attributes>
+
+<terrain>
+	<layer>soil</layer>
+</terrain>

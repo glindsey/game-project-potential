@@ -1,0 +1,36 @@
+<name>methanol</name>
+<description>Methanol, also known as methyl alcohol, wood alcohol, wood naphtha or wood spirits, is a chemical with the formula CH3OH (often abbreviated MeOH). Methanol acquired the name "wood alcohol" because it was once produced chiefly as a byproduct of the destructive distillation of wood. Modern methanol is produced in a catalytic industrial process directly from carbon monoxide, carbon dioxide, and hydrogen.</description>
+
+<display>
+	<color>FFFFFF10</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>792</specificgravity>
+	<!-- Freezes well below game temperatures -->
+	<boiltemp>65</boiltemp>
+	<burntemp>385</burntemp>
+	<flashtemp>11</flashtemp>
+</physical>
+
+<attributes>
+	<explosive>true</explosive>
+	<toxic>true</toxic>
+</attributes>
+
+<actions>
+	<dissolve><becomes>freshwater</becomes></dissolve>
+	<boil>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>explosive-gas</material>
+			<number>3</number>
+			<error>1</error>
+		</result>		
+	</boil>
+	<burn><becomes>air</becomes></burn>
+</actions>

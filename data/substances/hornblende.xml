@@ -1,0 +1,39 @@
+<name>Hornblende</name>
+<description>Hornblende is a complex inosilicate series of minerals (ferrohornblende – magnesiohornblende). It is not a recognized mineral in its own right, but the name is used as a general or field term, to refer to a dark amphibole.</description>
+
+<display>
+	<color>323232FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>55</hardness>
+	<specificgravity>2900</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</largedeposit>
+	<smalldeposit>
+		<diorite />
+		<gabbro />
+		<granite />
+	</smalldeposit>
+</terrain>

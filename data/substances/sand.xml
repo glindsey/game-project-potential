@@ -1,0 +1,28 @@
+<name>sand</name>
+<description>Sand is a naturally occurring granular material composed of finely divided rock and mineral particles. The composition of sand is highly variable, depending on the local rock sources and conditions, but the most common constituent of sand in inland continental settings and non-tropical coastal settings is silica (silicon dioxide, or SiO2), usually in the form of quartz.</description>
+
+<display>
+	<color>EBE164FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>0</hardness>
+	<specificgravity>1602</specificgravity>
+	<melttemp>1700</melttemp>
+</physical>
+
+<attributes>
+	<sand>true</sand>
+	<granular>true</granular>
+</attributes>
+
+<actions>
+	<melt><becomes>green-glass</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>soil</layer>
+</terrain>

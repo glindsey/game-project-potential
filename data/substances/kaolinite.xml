@@ -1,0 +1,39 @@
+<name>Kaolinite</name>
+<description>Kaolinite is a clay mineral, part of the group of industrial minerals, with the chemical composition Al2Si2O5(OH)4. </description>
+
+<display>
+	<color>FAE6E6FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>22</hardness>
+	<specificgravity>2400</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</largedeposit>
+</terrain>

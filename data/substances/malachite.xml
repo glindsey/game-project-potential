@@ -1,0 +1,32 @@
+<name>Malachite</name>
+<description>Malachite is a copper carbonate hydroxide mineral, with the formula Cu2CO3(OH)2.
+</description>
+
+<display>
+	<color>1EC83CFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>35</hardness>
+	<specificgravity>3800</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>copper</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<limestone />
+		<marble />
+	</vein>
+</terrain>

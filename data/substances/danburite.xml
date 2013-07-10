@@ -1,0 +1,35 @@
+<name>Danburite</name>
+<description>Its chemical formula is CaB2(SiO4)2. It has a Mohs hardness of 7 to 7.5 and a specific gravity of 3.0. The mineral has an orthorhombic crystal form. It is usually colourless, like quartz, but can be also either pale yellow, yellowish-brown, or pink.</description>
+
+<display>
+	<color>DEDEDEDE</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>72</hardness>
+	<specificgravity>3000</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,24 @@
+<name>Peat</name>
+<description>Peat (turf) is an accumulation of partially decayed vegetation. One of the most common components is Sphagnum moss, although many other plants can contribute.</description>
+
+<display>
+	<color>8C783CFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>0</hardness>
+	<specificgravity>801</specificgravity>
+	<burntemp>400</burntemp>
+</physical>
+
+<attributes>
+	<plant>true</plant>
+	<fuel>true</fuel>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+</actions>

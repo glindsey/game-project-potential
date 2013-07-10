@@ -1,0 +1,37 @@
+<name>frozen mercury</name>
+<description>Mercury is a chemical element with the symbol Hg and atomic number 80. It is also known as quicksilver or hydrargyrum (from "hydr-" water and "argyros" silver). A heavy, silvery element, mercury is the only metal that is liquid at standard conditions for temperature and pressure.
+
+If you are seeing frozen mercury, it is quite cold indeed!</description>
+
+<display>
+	<color>808080FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>25</hardness>
+	<specificgravity>13600</specificgravity>
+	<melttemp>-39</melttemp>
+	<burntemp>850</burntemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+	<toxic>true</toxic>
+</attributes>
+
+<actions>
+	<melt><becomes>mercury</becomes></melt>
+	<burn>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>foul-air</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</burn>
+</actions>

@@ -1,0 +1,25 @@
+<name>Salt</name>
+<description>Salt, also known as table salt, or rock salt, is a crystalline mineral that is composed primarily of sodium chloride (NaCl), a chemical compound belonging to the larger class of ionic salts. It is essential for animal life in small quantities, but is harmful to animals and plants in excess. Salt is one of the oldest, most ubiquitous food seasonings and salting is an important method of food preservation. The taste of salt (saltiness) is one of the basic human tastes.</description>
+
+<display>
+	<color>FFFFFF40</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>25</hardness>
+	<specificgravity>2170</specificgravity>
+	<melttemp>801</melttemp>
+</physical>
+
+<attributes>
+	<edible>true</edible>
+	<granular>true</granular>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-salt</becomes></melt>
+	<dissolve><becomes>saltwater</becomes></dissolve>
+</actions>

@@ -1,0 +1,30 @@
+<name>Pink diamond</name>
+<description>In mineralogy, diamond is an allotrope of carbon, where the carbon atoms are arranged in a variation of the face-centered cubic crystal structure called a diamond lattice.</description>
+
+<display>
+	<color>F0FFFF20</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>100</hardness>
+	<specificgravity>3520</specificgravity>
+	<burntemp>700</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<burn><becomes>graphite</becomes></burn>
+</actions>
+
+<terrain>
+	<single>
+		<yellow-diamond />
+	</single>
+</terrain>

@@ -1,0 +1,22 @@
+<name>Molten borax</name>
+<description>Borax, also known as sodium borate, sodium tetraborate, or disodium tetraborate, is an important boron compound, a mineral, and a salt of boric acid. It is usually a white powder consisting of soft colorless crystals that dissolve easily in water.</description>
+
+<display>
+	<color>FAFAFAFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>1700</specificgravity>
+	<freezetemp>743</freezetemp>
+</physical>
+
+<attributes>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>borax</becomes></freeze>
+</actions>

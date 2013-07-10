@@ -1,0 +1,38 @@
+<name>Sphalerite</name>
+<description>Sphalerite ((Zn,Fe)S) is a mineral that is the chief ore of zinc. It consists largely of zinc sulfide in crystalline form but almost always contains variable iron.</description>
+
+<display>
+	<color>5A1E1EFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>37</hardness>
+	<specificgravity>4050</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+	<ore>zinc</ore>
+	<secondaryore>iron</secondaryore>
+	<secondaryorechance>50</secondaryorechance>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</vein>
+</terrain>

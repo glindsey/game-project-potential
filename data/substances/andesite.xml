@@ -1,0 +1,27 @@
+<name>andesite</name>
+<description>Andesite is an extrusive igneous, volcanic rock, of intermediate composition, with aphanitic to porphyritic texture. In a general sense, it is the intermediate type between basalt and dacite, and ranges from 57 to 63% SiO2 as illustrated in TAS diagrams.</description>
+
+<display>
+	<color>303030FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>igneous-extrusive</layer>
+</terrain>

@@ -1,0 +1,23 @@
+<name>Molten nickel</name>
+<description>Nickel is a chemical element with the chemical symbol Ni and atomic number 28. It is a silvery-white lustrous metal with a slight golden tinge. Nickel belongs to the transition metals and is hard and ductile.</description>
+
+<display>
+	<color>DCDCB4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>8800</specificgravity>
+	<freezetemp>1455</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>nickel</becomes></freeze>
+</actions>

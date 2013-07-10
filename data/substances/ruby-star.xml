@@ -1,0 +1,31 @@
+<name>star ruby</name>
+<description>Asteria, or star stone (from Gr. star) is a name applied to ornamental stones that exhibit a luminous star when cut en cabochon. The typical asteria is the star-sapphire, generally a bluish-grey corundum, milky or opalescent, with a star of six rays.</description>
+
+<display>
+	<color>800018C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>90</hardness>
+	<specificgravity>4000</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<single>
+		<ruby />
+	</single>
+	<rarity>5</rarity>
+</terrain>

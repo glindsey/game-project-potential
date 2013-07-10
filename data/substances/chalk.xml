@@ -1,0 +1,28 @@
+<name>chalk</name>
+<description>Chalk is a soft, white, porous sedimentary rock, a form of limestone composed of the mineral calcite.</description>
+
+<display>
+	<color>F4F4F4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>30</hardness>
+	<specificgravity>2710</specificgravity>
+	<burntemp>825</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<burn><becomes>quicklime</becomes></burn>
+</actions>
+
+<terrain>
+	<layer>sedimentary</layer>
+</terrain>

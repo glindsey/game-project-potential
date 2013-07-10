@@ -1,0 +1,32 @@
+<name>alexandrite</name>
+<description>Alexandrite displays a color change dependent upon the nature of ambient lighting. This color shift is independent of any change of hue with viewing direction through the crystal that would arise from pleochroism. Both these different properties are frequently referred to as "color change", however. Alexandrite results from small scale replacement of aluminium by chromium ions in the crystal structure, which causes intense absorption of light over a narrow range of wavelengths in the yellow region of the spectrum.  Alexandrite from the Ural Mountains in Russia is green by daylight and red by incandescent light. Other varieties of alexandrite may be yellowish or pink in daylight and a columbine or raspberry red by incandescent light.</description>
+
+<display>
+	<color>E6FF50C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>85</hardness>
+	<specificgravity>3700</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

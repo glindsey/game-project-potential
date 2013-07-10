@@ -1,0 +1,25 @@
+<name>Rust</name>
+<description>Rust is a general term for describing iron oxides. In colloquial usage, the term is applied to red oxides, formed by the reaction of iron and oxygen in the presence of water or air moisture.</description>
+
+<display>
+	<color>B7410EFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>55</hardness>
+	<specificgravity>5260</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+	<surface>true</surface>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+	<polish><becomes>nothing</becomes></polish>
+</actions>

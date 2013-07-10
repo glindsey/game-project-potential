@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Potential" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Potential" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="boost_system-mgw47-mt-d-1_52" />
+					<Add library="boost_filesystem-mgw47-mt-d-1_52" />
+					<Add library="boost_chrono-mgw47-mt-d-1_52" />
+					<Add library="boost_thread-mgw47-mt-d-1_52" />
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-system-d" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Potential" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="boost_system-mgw47-mt-1_52" />
+					<Add library="boost_filesystem-mgw47-mt-1_52" />
+					<Add library="boost_chrono-mgw47-mt-1_52" />
+					<Add library="boost_thread-mgw47-mt-1_52" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-march=core2" />
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+			<Add directory="include" />
+			<Add directory="C:/dropbox/Projects/libraries" />
+			<Add directory="C:/dropbox/Projects/libraries/SFML/include" />
+			<Add directory="C:/Dropbox/Projects/libraries/glfw-2.7.7/include/GL" />
+			<Add directory="C:/dropbox/Projects/libraries/glew-1.9.0/include" />
+			<Add directory="C:/dropbox/Projects/libraries/noise/include" />
+			<Add directory="C:/Dropbox/Projects/libraries/glm" />
+		</Compiler>
+		<Linker>
+			<Add library="opengl32" />
+			<Add library="glew32" />
+			<Add library="glu32" />
+			<Add library="mingw32" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add library="noise" />
+			<Add directory="C:/dropbox/Projects/libraries/SFML/lib" />
+			<Add directory="C:/dropbox/Projects/libraries/boost/stage/lib" />
+			<Add directory="C:/dropbox/Projects/libraries/glfw-2.7.7/lib/win32" />
+			<Add directory="C:/dropbox/Projects/libraries/glew-1.9.0/lib" />
+			<Add directory="C:/dropbox/Projects/libraries/noise/lib" />
+		</Linker>
+		<Unit filename="cb.bmp" />
+		<Unit filename="include/AppState.h" />
+		<Unit filename="include/AppStateGame.h" />
+		<Unit filename="include/AppStateManager.h" />
+		<Unit filename="include/AppStateSplash.h" />
+		<Unit filename="include/Application.h" />
+		<Unit filename="include/BlockTopCorners.h" />
+		<Unit filename="include/ChunkRenderData.h" />
+		<Unit filename="include/ChunkVertexRenderData.h" />
+		<Unit filename="include/ColumnData.h" />
+		<Unit filename="include/CubicBezier.h" />
+		<Unit filename="include/CursorRenderData.h" />
+		<Unit filename="include/CursorVertexRenderData.h" />
+		<Unit filename="include/ErrorMacros.h" />
+		<Unit filename="include/EventListener.h" />
+		<Unit filename="include/FPSControl.h" />
+		<Unit filename="include/FaceBools.h" />
+		<Unit filename="include/FontCollection.h" />
+		<Unit filename="include/GLShaderProgram.h" />
+		<Unit filename="include/GUI.h" />
+		<Unit filename="include/GUIElement.h" />
+		<Unit filename="include/GUIElementVisitor.h" />
+		<Unit filename="include/GUIFrame.h" />
+		<Unit filename="include/GUILabel.h" />
+		<Unit filename="include/GUIParentElement.h" />
+		<Unit filename="include/GUIRenderData.h" />
+		<Unit filename="include/GUIRenderer.h" />
+		<Unit filename="include/GUIRenderer3D.h" />
+		<Unit filename="include/GUIVertexRenderData.h" />
+		<Unit filename="include/HasInventory.h" />
+		<Unit filename="include/HasLocation.h" />
+		<Unit filename="include/Inventory.h" />
+		<Unit filename="include/MathUtils.h" />
+		<Unit filename="include/MenuArea.h" />
+		<Unit filename="include/NoiseField.h" />
+		<Unit filename="include/Prop.h" />
+		<Unit filename="include/PropPrototype.h" />
+		<Unit filename="include/Settings.h" />
+		<Unit filename="include/SimpleMatrixFont.h" />
+		<Unit filename="include/Stage.h" />
+		<Unit filename="include/StageBlock.h" />
+		<Unit filename="include/StageBuilder.h" />
+		<Unit filename="include/StageBuilderBeaches.h" />
+		<Unit filename="include/StageBuilderDeposits.h" />
+		<Unit filename="include/StageBuilderFlora.h" />
+		<Unit filename="include/StageBuilderKnownStatus.h" />
+		<Unit filename="include/StageBuilderLakes.h" />
+		<Unit filename="include/StageBuilderRivers.h" />
+		<Unit filename="include/StageBuilderSmoother.h" />
+		<Unit filename="include/StageBuilderTerrain.h" />
+		<Unit filename="include/StageChunk.h" />
+		<Unit filename="include/StageChunkCollection.h" />
+		<Unit filename="include/StageComponent.h" />
+		<Unit filename="include/StageComponentVisitor.h" />
+		<Unit filename="include/StageRenderer.h" />
+		<Unit filename="include/StageRenderer3D.h" />
+		<Unit filename="include/StatusArea.h" />
+		<Unit filename="include/Substance.h" />
+		<Unit filename="include/SubstanceData.h" />
+		<Unit filename="include/TextureAtlas.h" />
+		<Unit filename="include/TextureFont.h" />
+		<Unit filename="include/Verb.h" />
+		<Unit filename="include/common.h" />
+		<Unit filename="include/common_defines.h" />
+		<Unit filename="include/common_enums.h" />
+		<Unit filename="include/common_includes.h" />
+		<Unit filename="include/common_typedefs.h" />
+		<Unit filename="shaders/ChunkFragmentShader.glsl" />
+		<Unit filename="shaders/ChunkVertexShader.glsl" />
+		<Unit filename="shaders/GUIFragmentShader.glsl" />
+		<Unit filename="shaders/GUIVertexShader.glsl" />
+		<Unit filename="src/AppState.cpp" />
+		<Unit filename="src/AppStateGame.cpp" />
+		<Unit filename="src/AppStateManager.cpp" />
+		<Unit filename="src/AppStateSplash.cpp" />
+		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/BlockTopCorners.cpp" />
+		<Unit filename="src/ChunkRenderData.cpp" />
+		<Unit filename="src/CubicBezier.cpp" />
+		<Unit filename="src/CursorRenderData.cpp" />
+		<Unit filename="src/EventListener.cpp" />
+		<Unit filename="src/FPSControl.cpp" />
+		<Unit filename="src/FaceBools.cpp" />
+		<Unit filename="src/FontCollection.cpp" />
+		<Unit filename="src/GLShaderProgram.cpp" />
+		<Unit filename="src/GUI.cpp" />
+		<Unit filename="src/GUIElement.cpp" />
+		<Unit filename="src/GUIFrame.cpp" />
+		<Unit filename="src/GUILabel.cpp" />
+		<Unit filename="src/GUIParentElement.cpp" />
+		<Unit filename="src/GUIRenderData.cpp" />
+		<Unit filename="src/GUIRenderer.cpp" />
+		<Unit filename="src/GUIRenderer3D.cpp" />
+		<Unit filename="src/Inventory.cpp" />
+		<Unit filename="src/MenuArea.cpp" />
+		<Unit filename="src/NoiseField.cpp" />
+		<Unit filename="src/Prop.cpp" />
+		<Unit filename="src/PropPrototype.cpp" />
+		<Unit filename="src/Settings.cpp" />
+		<Unit filename="src/SimpleMatrixFont.cpp" />
+		<Unit filename="src/Stage.cpp" />
+		<Unit filename="src/StageBlock.cpp" />
+		<Unit filename="src/StageBuilderBeaches.cpp" />
+		<Unit filename="src/StageBuilderDeposits.cpp" />
+		<Unit filename="src/StageBuilderFlora.cpp" />
+		<Unit filename="src/StageBuilderKnownStatus.cpp" />
+		<Unit filename="src/StageBuilderLakes.cpp" />
+		<Unit filename="src/StageBuilderRivers.cpp" />
+		<Unit filename="src/StageBuilderSmoother.cpp" />
+		<Unit filename="src/StageBuilderTerrain.cpp" />
+		<Unit filename="src/StageChunk.cpp" />
+		<Unit filename="src/StageChunkCollection.cpp" />
+		<Unit filename="src/StageRenderer.cpp" />
+		<Unit filename="src/StageRenderer3D.cpp" />
+		<Unit filename="src/StatusArea.cpp" />
+		<Unit filename="src/Substance.cpp" />
+		<Unit filename="src/TextureAtlas.cpp" />
+		<Unit filename="src/TextureFont.cpp" />
+		<Unit filename="src/Verb.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="version.h" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="2" line="2" />
+				<doxyfile_project />
+				<doxyfile_build extract_all="1" />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot class_diagrams="1" have_dot="1" />
+				<general />
+			</DoxyBlocks>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" update_manifest="0" do_auto_increment="1" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

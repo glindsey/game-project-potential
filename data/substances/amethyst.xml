@@ -1,0 +1,49 @@
+<name>amethyst</name>
+<description>Amethyst is a violet variety of quartz often used in jewelry. The name comes from the Ancient Greek ? a- ("not") and methustos ("intoxicated"), a reference to the belief that the stone protected its owner from drunkenness.
+</description>
+
+<display>
+	<color>F080FF60</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>70</hardness>
+	<specificgravity>2650</specificgravity>
+	<burntemp>400</burntemp>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+	<burn><becomes>citrine</becomes></burn>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<claystone />
+		<conglomerate />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+	<rarity>4</rarity>
+</terrain>

@@ -1,0 +1,31 @@
+<name>andalusite</name>
+<description>Andalusite is an aluminium nesosilicate mineral with the chemical formula Al2SiO5. A clear variety first found in Andalusia, Spain can be cut into an interesting gemstone. Faceted andalusite stones give a play of red, green, and yellow colors that resembles a muted form of iridescence, although the colors are actually the result of unusually strong pleochroism.</description>
+
+<display>
+	<color>C8FFBEC0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>65</hardness>
+	<specificgravity>3450</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,25 @@
+<name>green glass</name>
+<description>Soda-lime glass, also called soda-lime-silica glass, is the most prevalent type of glass, used for windowpanes, and glass containers (bottles and jars) for beverages, food, and some commodity items. Glass bakeware is often made of tempered soda-lime glass.
+
+This particular glass is green due to iron-bearing minerals included in its production.</description>
+
+<display>
+	<color>60E06008</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>6</hardness>
+	<specificgravity>2530</specificgravity>
+	<melttemp>1000</melttemp>
+</physical>
+
+<attributes>
+	<glass>true</glass>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-glass</becomes></melt>
+</actions>

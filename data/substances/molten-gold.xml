@@ -1,0 +1,24 @@
+<name>Molten gold</name>
+<description>Gold is a chemical element with the symbol Au (from Latin: aurum "gold") and an atomic number of 79. Gold is a dense, soft, shiny, malleable and ductile metal. Pure gold has a bright yellow color and luster traditionally considered attractive, which it maintains without oxidizing in air or water.</description>
+
+<display>
+	<color>FFD700FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>19320</specificgravity>
+	<freezetemp>1064</freezetemp>
+	<freezeresult>gold</freezeresult>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>gold</becomes></freeze>
+</actions>

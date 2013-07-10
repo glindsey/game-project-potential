@@ -1,0 +1,48 @@
+<name>microcline</name>
+<description>Microcline (KAlSi3O8) is an important igneous rock-forming tectosilicate mineral. It is a potassium-rich alkali feldspar. </description>
+
+<display>
+	<color>D2E6E6FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2560</specificgravity>
+	<burntemp>900</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<burn><becomes>sanidine</becomes></burn>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />
+	</largedeposit>
+</terrain>

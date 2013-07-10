@@ -1,0 +1,28 @@
+<name>Trona</name>
+<description>Trona (trisodium hydrogendicarbonate dihydrate) is an evaporite mineral. It is mined as the primary source of sodium carbonate in the United States, where it has replaced the Solvay process used in most of the rest of the world for sodium carbonate production.</description>
+
+<display>
+	<color>D4BA68FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>25</hardness>
+	<specificgravity>2150</specificgravity>
+	<melttemp>851</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-washing-soda</becomes></melt>
+	<grind><becomes>washing-soda</becomes></grind>
+</actions>
+
+<terrain>
+	<layer>sedimentary</layer>
+</terrain>

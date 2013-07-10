@@ -1,0 +1,33 @@
+<name>platinum</name>
+<description>Platinum is a chemical element with the chemical symbol Pt and an atomic number of 78. Its name is derived from the Spanish term platina, which is literally translated into "little silver". It is a dense, malleable, ductile, precious, gray-white transition metal.</description>
+
+<display>
+	<color>C0C0C0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>42</hardness>
+	<specificgravity>21400</specificgravity>
+	<melttemp>1768</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-platinum</becomes></melt>
+</actions>
+
+<terrain>
+	<alluvial>true</alluvial>
+	<vein>
+		<diorite />
+		<gabbro />
+		<granite />
+	</vein>
+</terrain>

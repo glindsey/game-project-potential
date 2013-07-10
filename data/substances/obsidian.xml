@@ -1,0 +1,29 @@
+<name>obsidian</name>
+<description>Obsidian is a naturally occurring volcanic glass formed as an extrusive igneous rock. It is produced when felsic lava extruded from a volcano cools rapidly with minimum crystal growth.</description>
+
+<display>
+	<color>101010FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>55</hardness>
+	<specificgravity>2400</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<glass>true</glass>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>igneous-extrusive</layer>
+</terrain>

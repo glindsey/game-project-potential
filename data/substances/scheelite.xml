@@ -1,0 +1,39 @@
+<name>Scheelite</name>
+<description>Scheelite is a calcium tungstate mineral with the chemical formula CaWO4. It is an important ore of tungsten. Well-formed crystals are sought by collectors and are occasionally fashioned into gemstones when suitably free of flaws.</description>
+
+<display>
+	<color>D2B40A80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>47</hardness>
+	<specificgravity>6050</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>tungsten</ore>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</smalldeposit>
+	<gangue>
+		<cassiterite />
+	</gangue>
+</terrain>

@@ -1,0 +1,33 @@
+<name>opal</name>
+<description>Opal is an amorphous form of silica related to quartz, a mineraloid form, not a mineral. 3% to 21% of the total weight is water, but the content is usually between 6% to 10%.</description>
+
+<display>
+	<color>F0F0F0F0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>57</hardness>
+	<specificgravity>2150</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<limonite />
+		<sandstone />
+		<mudstone />
+		<basalt />
+	</smalldeposit>
+</terrain>

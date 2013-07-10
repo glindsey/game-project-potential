@@ -1,0 +1,30 @@
+<name>limestone</name>
+<description>Limestone is a sedimentary rock composed largely of the minerals calcite and aragonite, which are different crystal forms of calcium carbonate (CaCO3).</description>
+
+<display>
+	<color>C0C0C0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>35</hardness>
+	<specificgravity>2500</specificgravity>
+	<rock>true</rock>
+	<flux>true</flux>
+	<burntemp>825</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<burn><becomes>quicklime</becomes></burn>
+</actions>
+
+<terrain>
+	<layer>sedimentary</layer>
+</terrain>

@@ -1,0 +1,26 @@
+<name>Cast iron</name>
+<description>Cast iron is iron or a ferrous alloy which has been heated until it liquifies, and is then poured into a mould to solidify. It is usually made from pig iron. </description>
+
+<display>
+	<color>505050FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>70</hardness>
+	<specificgravity>7200</specificgravity>
+	<melttemp>1175</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-iron</becomes></melt>
+	<weather><surface>rust</surface></weather>
+</actions>
+

@@ -1,0 +1,44 @@
+<name>Bornite</name>
+<description>Bornite is a sulfide mineral with chemical composition Cu5FeS4 that crystallizes in the orthorhombic system (pseudo-cubic).</description>
+
+<display>
+	<color>D24600FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>31</hardness>
+	<specificgravity>5100</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>copper</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</smalldeposit>
+	<vein>
+		<diorite />
+		<granite />
+	</vein>
+</terrain>

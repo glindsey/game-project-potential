@@ -1,0 +1,28 @@
+<name>dolomite</name>
+<description>Dolomite is a carbonate mineral composed of calcium magnesium carbonate CaMg(CO3)2. The term is also used to describe the sedimentary carbonate rock dolostone.</description>
+
+<display>
+	<color>F4F4F4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>35</hardness>
+	<specificgravity>2850</specificgravity>
+	<burntemp>825</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<burn><becomes>quicklime</becomes></burn>
+</actions>
+
+<terrain>
+	<layer>sedimentary</layer>
+</terrain>

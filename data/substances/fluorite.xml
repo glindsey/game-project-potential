@@ -1,0 +1,37 @@
+<name>Fluorite</name>
+<description>Fluorite (also called fluorspar) is a halide mineral composed of calcium fluoride, CaF2.</description>
+
+<display>
+	<color>FADCC8C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>40</hardness>
+	<specificgravity>3180</specificgravity>
+	<melttemp>1400</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<dolomite />
+		<limestone />
+		<marble />
+	</largedeposit>
+	<gangue>
+		<baryte />
+		<galena />
+		<sphalerite />
+	</gangue>
+</terrain>

@@ -1,0 +1,26 @@
+<name>Borax solution</name>
+<description>Borax is used in various household laundry and cleaning products, including the "20 Mule Team Borax" laundry booster and "Boraxo" powdered hand soap.</description>
+
+<display>
+	<color>FAFAFA10</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>1000</specificgravity>
+	<boiltemp>120</boiltemp>
+</physical>
+
+<actions>
+	<boil>
+		<becomes>borax-powder</becomes>
+		<result>
+			cloud
+			<material>steam</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</boil>
+</actions>

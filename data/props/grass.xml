@@ -1,0 +1,27 @@
+<!-- TODO: This whole thing is going to be scrapped and turned into another StageBlock layer. -->
+<name>short grass</name>
+<description />
+<namestyle>$NAME$</namestyle>
+
+<display>
+	<oblique>
+		<mapping>all</mapping>
+	</oblique>
+	
+	<color>106010ff</color>	
+	
+</display>
+
+<substance>
+	<default>grass</default>
+	<locked>true</locked>
+</substance>
+
+<actions>
+	<pick-up>false</pick-up>
+	<gather>true</gather>
+</actions>
+
+<terrain>
+	<layer>soil</layer>
+</terrain>

@@ -1,0 +1,27 @@
+<name>Dacite</name>
+<description>Dacite is an igneous, volcanic rock. It has an aphanitic to porphyritic texture and is intermediate in composition between andesite and rhyolite.</description>
+
+<display>
+	<color>484848FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>55</hardness>
+	<specificgravity>2300</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>igneous-extrusive</layer>
+</terrain>

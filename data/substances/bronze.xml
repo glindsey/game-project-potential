@@ -1,0 +1,25 @@
+<name>bronze</name>
+<description>Bronze is an alloy consisting primarily of copper, usually with tin as the main additive. It is hard and tough, and it was so significant in antiquity that the Bronze Age was named after the metal.</description>
+
+<display>
+	<color>805023FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>30</hardness>
+	<specificgravity>8000</specificgravity>
+	<melttemp>950</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-bronze</becomes></melt>
+	<weather><surface>verdigris</surface></weather>
+</actions>

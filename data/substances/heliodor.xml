@@ -1,0 +1,31 @@
+<name>Heliodor</name>
+<description>Heliodor refers to greenish-yelow beryl, colored by trace amounts of Fe3+ ions.</description>
+
+<display>
+	<color>C8FF2380</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>77</hardness>
+	<specificgravity>2760</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<schist />
+	</smalldeposit>
+</terrain>

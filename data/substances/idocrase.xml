@@ -1,0 +1,29 @@
+<name>Idocrase</name>
+<description>Vesuvianite, also known as idocrase, is a green, brown, yellow, or blue silicate mineral. Vesuvianite occurs as tetragonal crystals in skarn deposits and limestones that have been subjected to contact metamorphism.</description>
+
+<display>
+	<color>A0BEA0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>65</hardness>
+	<specificgravity>3400</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<limestone />
+	</smalldeposit>
+</terrain>

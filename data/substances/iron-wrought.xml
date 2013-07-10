@@ -1,0 +1,25 @@
+<name>Wrought iron</name>
+<description>Wrought iron is an iron alloy with a very low carbon content, in comparison to steel, and has fibrous inclusions, known as slag. This is what gives it a "grain" resembling wood, which is visible when it is etched or bent to the point of failure.</description>
+
+<display>
+	<color>505050FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>70</hardness>
+	<specificgravity>7200</specificgravity>
+	<melttemp>1175</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-iron</becomes></melt>
+	<weather><becomes>rusted-iron</becomes></weather>
+</actions>

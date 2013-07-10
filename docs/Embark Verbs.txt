@@ -1,0 +1,67 @@
+Schema for XML Verb Descriptor File
+===================================
+Verbs in Embark are actions that can be performed, either automatically (such as "grow" or "decay") or by an Actor (such as "eat", "drink", "harvest").
+
+VERB
+	Top-level keys are the verbs that are supported.
+VERB.name
+	Friendly name of the verb.
+VERB.description (empty)
+	Short description of the verb.  Description can use $OBJECT$ as a token for the verb's object, or $OBJECTS$ for the plural of the object.  $OBJECT2$ / $OBJECTS2$ work similarly for the second object, if one exists.
+
+VERB.object
+	Contains information regarding the verb's object.
+VERB.object.character (false)
+	The object of the verb can be an Actor.
+VERB.object.heldprop (false)
+	The object of the verb can be an existing Prop in the Actor's inventory.
+VERB.object.proptype (false)
+	The object of the verb can be a PropType -- used to make something that does not yet exist, such as "build", "cook", et cetera.
+VERB.object.stageprop (false)
+	The object of the verb can be an existing Prop on the game stage.
+VERB.object.stagechunk (false)
+	The object of the verb can be a StageChunk.
+VERB.object.attributes.* (empty)
+	The object of this verb must have the specified attributes set to the specified values.  For example, the verb "eat" requires the verb's object have the "edible" attribute set to "true".
+
+VERB.secondobject
+	If the verb type is "command2", contains information regarding the verb's second object.  See subkeys under "VERB.object" for descriptions.
+	
+VERB.requires.* (empty)
+	For commands only: this key specifies required Props to perform this verb, by attribute.  For example, the verb "chop-down" requires a prop with the attribute "tool-bladed".
+	
+VERB.type (command)
+	This key indicates the type of the verb.  Allowed types are:
+	
+	auto
+		This value indicates whether the verb is reflexive and automatic, e.g. it runs as soon as the object is first created.  "grow" would be an automatic verb.
+	command
+		This key indicates whether the verb is a command that can be performed on the object by an Actor.  For example, "eat" would be a command, whereas "decay" would not.
+	command2
+		This key indicates a two-object command performed on two objects by an Actor; "mix-with" and "put-into" are two examples.
+	reflexive
+		This key indicates whether the verb is reflexive -- it is performed manually by the object on itself.  For example, "groom" would be a reflexive verb.
+	special
+		This key indicates the verb is reflexive and has a special trigger that is handled by the game logic; examples of this are temperature-related commands like "burn" or "freeze".
+
+VERB.default (false)
+	Whether this verb can be performed on anything by default; e.g. if a verb's default is "true", the specific object must have the verb set to "false" to forbid it.
+	
+*** Supplement: Built-in verbs ***
+There are several verbs that are built into the game engine.  The following is a list of built-in verbs.  In parentheses is the default conditions for which the verb is available.  Special commands are prefixed by "s-" as a naming convention.
+	
+	burn (true if material.burnpoint is set)
+	chop-down (false)
+	collect (false)
+	eat (true if material.edible is true)
+	grow (false)
+	harvest (false)
+	melt (true if material.meltpoint is set)
+	mix-with
+	pick-up (true)
+	put-into
+	rot (true if material.rots is set)
+	s-burn (true if material.burnpoint is set)
+	s-freeze (true if material.freezepoint is set)
+	s-melt (true if material.meltpoint is set)
+	weather (true if material.weathers is set)

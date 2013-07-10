@@ -1,0 +1,37 @@
+<name>orthoclase</name>
+<description>Orthoclase is an important tectosilicate mineral which forms igneous rock. The name is from the Greek for "straight fracture," because its two cleavage planes are at right angles to each other.</description>
+
+<display>
+	<color>D2B48CFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2600</specificgravity>
+	<melttemp>1200</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />
+	</largedeposit>
+</terrain>

@@ -1,0 +1,29 @@
+<name>Selenite</name>
+<description>Selenite is a variety of the mineral gypsum.  It is most often transparent and colorless, named after the Greek term for the moon. </description>
+
+<display>
+	<color>FFFFFF10</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>20</hardness>
+	<specificgravity>2300</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gypsum />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,24 @@
+<name>uranium glass</name>
+<description>Uranium glass is glass which has had uranium, usually in oxide diuranate form, added to a glass mix before melting. The proportion usually varies from trace levels to about 2% by weight uranium, although some 19th-century pieces were made with up to 25% uranium.</description>
+
+<display>
+	<color>78FF2020</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>6</hardness>
+	<specificgravity>2530</specificgravity>
+	<melttemp>1000</melttemp>
+</physical>
+
+<attributes>
+	<glass>true</glass>
+	<radioactive>true</radioactive>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-glass</becomes></melt>
+</actions>

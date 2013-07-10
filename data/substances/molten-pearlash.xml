@@ -1,0 +1,22 @@
+<name>molten pearlash</name>
+<description>Potassium carbonate (K2CO3) or pearlash is a white salt, soluble in water (insoluble in alcohol), which forms a strongly alkaline solution. It can be made as the product of potassium hydroxide's absorbent reaction with carbon dioxide. It is deliquescent, often appearing a damp or wet solid. Potassium carbonate is used in the production of soap and glass.</description>
+
+<display>
+	<color>E0E0E0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>2290</specificgravity>
+	<freezetemp>891</freezetemp>
+</physical>
+
+<attributes>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>pearlash</becomes></freeze>
+</actions>

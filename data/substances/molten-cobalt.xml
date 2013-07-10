@@ -1,0 +1,23 @@
+<name>Molten cobalt</name>
+<description>Cobalt is a chemical element with symbol Co and atomic number 27. It is found naturally only in chemically combined form. The free element, produced by reductive smelting, is a hard, lustrous, silver-gray metal.</description>
+
+<display>
+	<color>CDCDCDFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>8746</specificgravity>
+	<freezetemp>1495</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>cobalt</becomes></freeze>
+</actions>

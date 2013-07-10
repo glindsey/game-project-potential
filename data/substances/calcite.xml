@@ -1,0 +1,32 @@
+<name>Calcite</name>
+<description>Calcite is a carbonate mineral and the most stable polymorph of calcium carbonate (CaCO3). </description>
+
+<display>
+	<color>FFFFFF40</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>30</hardness>
+	<specificgravity>2710</specificgravity>
+	<burntemp>840</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<flux>true</flux>
+</attributes>
+
+<actions>
+	<burn><becomes>quicklime</becomes></burn>
+	<grind><becomes>calcium-carbonate-powder</becomes></grind>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<limestone />
+		<marble />
+	</largedeposit>
+</terrain>

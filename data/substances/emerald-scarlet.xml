@@ -1,0 +1,31 @@
+<name>Scarlet emerald</name>
+<description>Scarlet emerald (commonly known as red beryl) is a red variety of beryl. It was first described in 1904 for an occurrence, its type locality, at Maynard's Claim (Pismire Knolls), Thomas Range, Juab County, Utah.</description>
+
+<display>
+	<color>E1001E80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>77</hardness>
+	<specificgravity>2760</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<schist />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,24 @@
+<name>Chromium</name>
+<description>Chromium is a chemical element which has the symbol Cr and atomic number 24. It is the first element in Group 6. It is a steely-gray, lustrous, hard metal that takes a high polish and has a high melting point. It is also odorless, tasteless, and malleable.</description>
+
+<display>
+	<color>D2D2D2FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>85</hardness>
+	<specificgravity>7190</specificgravity>
+	<melttemp>1907</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-chromium</becomes></melt>
+</actions>

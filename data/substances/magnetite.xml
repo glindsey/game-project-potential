@@ -1,0 +1,41 @@
+<name>Magnetite</name>
+<description>Magnetite is a ferrimagnetic mineral with chemical formula Fe3O4, one of several iron oxides and a member of the spinel group.</description>
+
+<display>
+	<color>372814FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>5170</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>iron</ore>
+	<magnetic>true</magnetic>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</vein>
+</terrain>

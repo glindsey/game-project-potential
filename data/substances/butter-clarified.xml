@@ -1,0 +1,26 @@
+<name>clarified butter</name>
+<description>Clarified butter is milk fat rendered from butter to separate the milk solids and water from the butterfat. Typically, it is produced by melting butter and allowing the different components to separate by density.
+</description>
+
+<display>
+	<color>E6E6C8FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<edible>true</edible>
+	<hardness>0</hardness>
+	<specificgravity>865</specificgravity>
+	<melttemp>33</melttemp>
+</physical>
+
+<attributes>
+	<edible>true</edible>
+</attributes>
+
+<actions>
+	<melt><becomes>butter-melted</becomes></melt>
+	<rot><adjective>rancid</adjective></rot>
+</actions>

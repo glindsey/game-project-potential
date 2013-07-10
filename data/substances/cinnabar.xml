@@ -1,0 +1,33 @@
+<name>Cinnabar</name>
+<description>Cinnabar is the common ore of mercury. It is generally found in a massive, granular or earthy form and is bright scarlet to brick-red in color.</description>
+
+<display>
+	<color>E34234FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>22</hardness>
+	<specificgravity>8100</specificgravity>
+	<burntemp>850</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>mercury</ore>
+	<toxic>true</toxic>
+</attributes>
+
+<actions>
+	<burn><becomes>brimstone</becomes></burn>
+</actions>
+
+<terrain>
+	<vein>
+		<dolomite />
+		<shale />
+		<quartzite />
+	</vein>
+</terrain>

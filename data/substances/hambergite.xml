@@ -1,0 +1,30 @@
+<name>Hambergite</name>
+<description>Hambergite (Be2BO3OH) is a beryllium borate mineral named after Swedish explorer and mineralogist Axel Hamberg. The mineral occurs as white or colorless orthorhombic crystals.</description>
+
+<display>
+	<color>FFE1D2C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>75</hardness>
+	<specificgravity>2360</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />		
+	</smalldeposit>
+</terrain>

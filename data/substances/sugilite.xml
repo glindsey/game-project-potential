@@ -1,0 +1,29 @@
+<name>Sugilite</name>
+<description>Sugilite (also known as luvulite) is a relatively rare pink to purple cyclosilicate mineral. Sugilite crystallizes in the hexagonal system with prismatic crystals.</description>
+
+<display>
+	<color>E68CF0C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>2740</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<syenite />
+	</smalldeposit>
+</terrain>

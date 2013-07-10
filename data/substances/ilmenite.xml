@@ -1,0 +1,30 @@
+<name>Ilmenite</name>
+<description>Ilmenite is a weakly magnetic titanium-iron oxide mineral which is iron-black or steel-gray.</description>
+
+<display>
+	<color>523725FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>55</hardness>
+	<specificgravity>4750</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gabbro />
+		<granite />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,23 @@
+<name>Hard water ice</name>
+<description>Hard water is water that has high mineral content (in contrast with “soft water”). Hard water is generally not harmful to one's health, but can pose serious problems in industrial settings, where water hardness is monitored to avoid costly breakdowns in boilers, cooling towers, and other equipment that handles water.</description>
+
+<display>
+	<color>006EFF10</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>15</hardness>
+	<melttemp>-2</melttemp>
+	<specificgravity>1000</specificgravity>	
+</physical>
+
+<attributes>
+	<water>true</water>
+</attributes>
+
+<actions>
+	<melt><becomes>hardwater</becomes></melt>
+</actions>

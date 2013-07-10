@@ -1,0 +1,31 @@
+<name>Manganite</name>
+<description>Manganite is a mineral. Its composition is manganese oxide-hydroxide, MnO(OH), crystallizing in the monoclinic system (pseudo-orthorhombic).</description>
+
+<display>
+	<color>5A5A64FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>40</hardness>
+	<specificgravity>4310</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>manganese</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<gneiss />
+		<granite />
+	</vein>
+</terrain>

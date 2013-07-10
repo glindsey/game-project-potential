@@ -1,0 +1,30 @@
+<name>Cryolite</name>
+<description>Cryolite (Na3AlF6, sodium hexafluoroaluminate) is an uncommon mineral identified with the once large deposit at Ivigtût on the west coast of Greenland, depleted by 1987.</description>
+
+<display>
+	<color>DCDCDCFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>27</hardness>
+	<specificgravity>2970</specificgravity>
+	<melttemp>1012</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>aluminium</ore>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,33 @@
+<name>Blue sapphire</name>
+<description>Sapphire is a gemstone variety of the mineral corundum, an aluminium oxide (a-Al2O3). Trace amounts of other elements such as iron, titanium, chromium, copper or magnesium can give corundum blue, yellow, pink, purple, orange or greenish color.</description>
+
+<display>
+	<color>00008080</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>90</hardness>
+	<specificgravity>4000</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<schist />
+		<gneiss />
+		<marble />
+		<syenite />
+	</smalldeposit>
+</terrain>

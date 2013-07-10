@@ -1,0 +1,26 @@
+<name>silver sulfide</name>
+<description>Silver sulfide (Ag2S) is the sulfide of silver. This dense black solid constitutes the tarnish that forms over time on silverware and other silver objects.</description>
+
+<display>
+	<color>808080FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>25</hardness>
+	<specificgravity>7230</specificgravity>
+	<melttemp>825</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+	<surface>true</surface>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-silver</becomes></melt>
+	<polish><becomes>nothing</becomes></polish>
+</actions>

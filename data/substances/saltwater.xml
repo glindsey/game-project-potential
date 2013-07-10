@@ -1,0 +1,33 @@
+<name>Saltwater</name>
+<description>Saline water, or saltwater, is a general term for water that contains a significant concentration of dissolved salts (NaCl). The concentration is usually expressed in parts per million (ppm) of salt.</description>
+
+<display>
+	<color>00FFAA20</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<freezetemp>-10</freezetemp>
+	<boiltemp>110</boiltemp>
+	<specificgravity>1000</specificgravity>	
+</physical>
+
+<attributes>
+	<water>true</water>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>saltwater-ice</becomes></freeze>
+	<boil>
+		<becomes>salt</becomes>
+		<result>
+			cloud
+			<material>steam</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</boil>
+</actions>

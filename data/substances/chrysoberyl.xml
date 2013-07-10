@@ -1,0 +1,32 @@
+<name>Chrysoberyl</name>
+<description>Chrysoberyl was discovered in 1789 and described and named by Abraham Gottlob Werner, in 1790. It is normally yellow, yellow-green, or brownish, with its color being caused by the presence of iron. </description>
+
+<display>
+	<color>C8FF50C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>85</hardness>
+	<specificgravity>3700</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<marble />
+		<schist />
+	</smalldeposit>
+</terrain>

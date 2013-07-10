@@ -1,0 +1,38 @@
+<name>Tsavorite</name>
+<description>Tsavorite or tsavolite is a variety of the garnet group species grossular, a calcium-aluminium garnet with the formula Ca3Al2Si3O12. Trace amounts of vanadium or chromium provide the green color.</description>
+
+<display>
+	<color>1EA00080</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>72</hardness>
+	<specificgravity>3660</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

@@ -1,0 +1,36 @@
+<name>enstatite</name>
+<description>Enstatite is the magnesium endmember of the pyroxene silicate mineral series enstatite (MgSiO3) - ferrosilite (FeSiO3). The magnesium rich members of the solid solution series are common rock-forming minerals found in igneous and metamorphic rocks.</description>
+
+<display>
+	<color>AFDC2D80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>55</hardness>
+	<specificgravity>3200</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<smalldeposit>
+	<gneiss />
+	<marble />
+	<phyllite />
+	<quartzite />
+	<schist />
+	<slate />
+	<diorite />
+	<gabbro />
+	<granite />
+</smalldeposit>

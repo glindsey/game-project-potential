@@ -1,0 +1,30 @@
+<name>Natrolite</name>
+<description>Natrolite is a tectosilicate mineral species belonging to the zeolite group. It is a hydrated sodium and aluminium silicate with the formula Na2Al2Si3O10 · 2H2O.</description>
+
+<display>
+	<color>F0F0F0C0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>55</hardness>
+	<specificgravity>2250</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<basalt />
+		<schist />
+	</smalldeposit>
+</terrain>

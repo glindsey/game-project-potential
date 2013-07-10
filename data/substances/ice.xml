@@ -1,0 +1,24 @@
+<name>Ice</name>
+<description>Ice is water frozen into the solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter the appearance.</description>
+
+<display>
+	<color>00D0FF80</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+	<lightsource>false</lightsource>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>15</hardness>
+	<melttemp>0</melttemp>
+	<specificgravity>1000</specificgravity>	
+</physical>
+
+<attributes>
+	<water>true</water>
+</attributes>
+
+<actions>
+	<melt><becomes>freshwater</becomes></melt>
+</actions>

@@ -1,0 +1,13 @@
+<name>anomaly</name>
+<description>An utterly indescribable object.  In the world of Embark, this means some part of the program requested a prop type that doesn't exist, and Embark flipped out and returned this default prop, because it has to return *something*.  It's the "MissingNo" of Embark!  Except useless.</description>
+<namestyle>$PROP$ ($MATERIAL$)</namestyle>
+
+<display>
+	<text>
+		<unicode>64</unicode>
+	</text>
+</display>
+
+<material>
+	<default>concentrated-weirdness</default>
+</material>

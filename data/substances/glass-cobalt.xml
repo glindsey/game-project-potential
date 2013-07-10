@@ -1,0 +1,23 @@
+<name>cobalt glass</name>
+<description>Cobalt glass is a deep blue colored glass prepared by adding cobalt salts of alumina to the molten glass. It is appreciated for its attractive color. It is also used as an optical filter in flame tests to filter out the yellow flame caused by the contamination of sodium, and expand the ability to see violet and blue hues. Under fluorescent light, cobalt glass has twice the effect.</description>
+
+<display>
+	<color>00004020</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>6</hardness>
+	<specificgravity>2530</specificgravity>
+	<melttemp>1000</melttemp>
+</physical>
+
+<attributes>
+	<glass>true</glass>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-glass</becomes></melt>
+</actions>

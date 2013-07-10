@@ -1,0 +1,24 @@
+<name>washing soda</name>
+<description>Sodium carbonate (also known as washing soda or soda ash), Na2CO3 is a sodium salt of carbonic acid. Sodium carbonate is domestically well known for its everyday use as a water softener. It can be extracted from the ashes of many plants. It is synthetically produced in large quantities from salt (sodium chloride) and limestone in a process known as the Solvay process.</description>
+
+<display>
+	<color>F4F4F4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>0</hardness>
+	<specificgravity>1510</specificgravity>
+	<melttemp>851</melttemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-washing-soda</becomes></melt>
+	<dissolve><becomes>freshwater</becomes></dissolve>
+</actions>

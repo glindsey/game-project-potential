@@ -1,0 +1,31 @@
+<name>sapphirine</name>
+<description>Sapphirine is a rare mineral, a silicate of magnesium and aluminium with the chemical formula (Mg,Al)8(Al,Si)6O20 (with iron as a major impurity). Named for its sapphire-like colour, sapphirine is primarily of interest to researchers and collectors: well-formed crystals are treasured and occasionally cut into gemstones.</description>
+
+<display>
+	<color>300080FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>75</hardness>
+	<specificgravity>3490</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<quartzite />
+	</smalldeposit>
+	<rarity>4</rarity>
+</terrain>

@@ -1,0 +1,23 @@
+<name>Cobalt monoxide</name>
+<description>Cobalt(II) oxide or cobalt monoxide is an inorganic compound that appears as olive-green to red crystals, or as a greyish or black powder. It is used extensively in the ceramics industry as an additive to create blue colored glazes and enamels as well as in the chemical industry for producing cobalt(II) salts.</description>
+
+<display>
+	<color>141414FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>35</hardness>
+	<specificgravity>644</specificgravity>
+	<melttemp>2072</melttemp>
+</physical>
+
+<attributes>
+	<granular>true</granular>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>

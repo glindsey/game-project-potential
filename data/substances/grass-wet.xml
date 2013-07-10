@@ -1,0 +1,24 @@
+<name>wet grass</name>
+<description>Grasses, or more technically graminoids, are monocotyledonous, usually herbaceous plants with narrow leaves growing from the base.</description>
+
+<display>
+	<color>00A000FF</color>
+	<opaque>true</opaque>
+	<visible>true</visible>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<burntemp>280</burntemp>
+	<specificgravity>1050</specificgravity> <!-- more or less fudged this -->	
+</physical>
+
+<attributes>
+	<plant>true</plant>
+	<grass>true</grass>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+	<dry><becomes>grass</becomes></dry>
+</actions>

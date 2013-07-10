@@ -1,0 +1,30 @@
+<name>Rhodochrosite</name>
+<description>Rhodochrosite is a manganese carbonate mineral with chemical composition MnCO3. In its (rare) pure form, it is typically a rose-red color, but impure specimens can be shades of pink to pale brown.</description>
+
+<display>
+	<color>FFB9EBFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>37</hardness>
+	<specificgravity>3700</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<vein>
+		<gneiss />
+		<granite />
+	</vein>
+</terrain>

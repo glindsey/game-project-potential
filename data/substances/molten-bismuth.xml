@@ -1,0 +1,23 @@
+<name>molten bismuth</name>
+<description>Bismuth is a chemical element with symbol Bi and atomic number 83. Bismuth, a trivalent poor metal, chemically resembles arsenic and antimony. </description>
+
+<display>
+	<color>F0DCDCFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>9787</specificgravity>
+	<freezetemp>272</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>bismuth</becomes></freeze>
+</actions>

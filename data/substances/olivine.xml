@@ -1,0 +1,30 @@
+<name>olivine</name>
+<description>The mineral olivine (when of gem-quality, it is also called peridot and chrysolite), is a magnesium iron silicate with the formula (Mg,Fe)2SiO4. It is a common mineral in the Earth's subsurface but weathers quickly on the surface.
+</description>
+
+<display>
+	<color>C8F5BEC0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>67</hardness>
+	<specificgravity>3300</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<gabbro />
+	</largedeposit>
+</terrain>

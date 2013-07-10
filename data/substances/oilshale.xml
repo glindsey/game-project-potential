@@ -1,0 +1,40 @@
+<name>oil shale</name>
+<description>Oil shale, also known as kerogen shale, is an organic-rich fine-grained sedimentary rock containing kerogen (a solid mixture of organic chemical compounds) from which liquid hydrocarbons called shale oil (not to be confused with tight oil—crude oil occurring naturally in shales) can be produced. </description>
+
+<display>
+	<color>50505AFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>30</hardness>
+	<specificgravity>2500</specificgravity>
+	<burntemp>400</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<fuel>true</fuel>
+</attributes>
+
+<actions>
+	<burn><becomes>ash</becomes></burn>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+	</largedeposit>
+</terrain>

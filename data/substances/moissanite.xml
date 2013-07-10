@@ -1,0 +1,30 @@
+<name>Moissanite</name>
+<description>Moissanite refer to a rare mineral discovered by Henri Moissan having a chemical formula SiC and various crystalline polymorphs. Earlier, this material had been synthesized in the laboratory and named silicon carbide (SiC).  Almost all moissanite is artificially produced; it is extremely rare in nature.</description>
+
+<display>
+	<color>FFFFFF20</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>95</hardness>
+	<specificgravity>3219</specificgravity>
+	<burntemp>2730</burntemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<burn><becomes>graphite</becomes></burn>
+</actions>
+
+<terrain>
+	<single>
+		<kimberlite />
+	</single>
+</terrain>

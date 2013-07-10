@@ -1,0 +1,27 @@
+<name>schist</name>
+<description>The schists constitute a group of medium-grade metamorphic rocks, chiefly notable for the preponderance of lamellar minerals such as micas, chlorite, talc, hornblende, graphite, and others.</description>
+
+<display>
+	<color>AAAAAAFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>2650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<layer>metamorphic</layer>
+</terrain>

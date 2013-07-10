@@ -1,0 +1,29 @@
+<name>Marcasite</name>
+<description>The mineral marcasite, sometimes called white iron pyrite, is iron sulfide (FeS2) with orthorhombic crystal structure. It is physically and crystallographically distinct from pyrite, which is iron sulfide with cubic crystal structure.</description>
+
+<display>
+	<color>CF513BFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>4887</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<kaolinite />
+	</smalldeposit>
+</terrain>

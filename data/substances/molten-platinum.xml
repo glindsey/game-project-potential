@@ -1,0 +1,23 @@
+<name>Molten platinum</name>
+<description>Platinum is a chemical element with the chemical symbol Pt and an atomic number of 78. Its name is derived from the Spanish term platina, which is literally translated into "little silver". It is a dense, malleable, ductile, precious, gray-white transition metal.</description>
+
+<display>
+	<color>C0C0C0FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>	
+	<specificgravity>21400</specificgravity>
+	<freezetemp>1768</freezetemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<freeze><becomes>platinum</becomes></freeze>
+</actions>

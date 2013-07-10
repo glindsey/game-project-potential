@@ -1,0 +1,24 @@
+<name>tin</name>
+<description>Tin is a chemical element with the symbol Sn (for Latin: stannum) and atomic number 50. It is a main group metal in group 14 of the periodic table.  This silvery, malleable post-transition metal is not easily oxidized in air and is used to coat other metals to prevent corrosion.</description>
+
+<display>
+	<color>D2D2D2FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>15</hardness>
+	<specificgravity>7280</specificgravity>
+	<melttemp>232</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-tin</becomes></melt>
+</actions>

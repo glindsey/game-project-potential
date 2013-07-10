@@ -1,0 +1,15 @@
+<name>unknown</name>
+<description>This is an area of the map you have yet to discover.</description>
+
+<display>
+	<color>0C0C0CFF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<!-- Unknown is only used as a placeholder material for map rendering, so
+     the "physical" keys don't actually mean anything; they are only here
+     to stop the parser from flipping out. -->
+<physical>
+	<phase>unknown</phase>
+</physical>

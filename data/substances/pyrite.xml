@@ -1,0 +1,53 @@
+<name>Pyrite</name>
+<description>The mineral pyrite, or iron pyrite, is an iron sulfide with the formula FeS2. This mineral's metallic luster and pale brass-yellow hue have earned it the nickname fool's gold because of its resemblance to gold.</description>
+
+<display>
+	<color>DCDCB4FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>	
+	<hardness>62</hardness>
+	<specificgravity>5000</specificgravity>
+	<burntemp>550</burntemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<burn><becomes>rust</becomes></burn>
+	<weather><becomes>rust</becomes></weather>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<chalk />
+		<chert />
+		<claystone />
+		<conglomerate />
+		<halite />
+		<dolomite />
+		<limestone />
+		<mudstone />
+		<sandstone />
+		<shale />
+		<siltstone />
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+	</smalldeposit>
+	<gangue>
+		<bituminous-coal />
+		<gold />
+		<quartz />
+	</gangue>
+</terrain>

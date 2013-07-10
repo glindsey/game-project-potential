@@ -1,0 +1,34 @@
+<name>moldavite</name>
+<description>Moldavite is an olive-green or dull greenish vitreous substance possibly formed by a meteorite impact. It is one kind of tektite. It is sometimes cut and polished as an ornamental stone under the name of pseudo-chrysolite.</description>
+
+<display>
+	<color>38701880</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>55</hardness>
+	<specificgravity>2400</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<glass>true</glass>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<single>
+		<claystone />
+		<sandstone />
+		<siltstone />		
+	</single>
+	<rarity>10</rarity>
+</terrain>

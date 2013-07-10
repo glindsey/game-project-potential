@@ -1,0 +1,33 @@
+<name>Chromite</name>
+<description>Chromite is an iron chromium oxide: FeCr2O4. It is an oxide mineral belonging to the spinel group.</description>
+
+<display>
+	<color>402010FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>55</hardness>
+	<specificgravity>4650</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<ore>chromium</ore>
+	<secondaryore>iron</secondaryore>
+	<secondaryorechance>100</secondaryorechance>
+	<magnetic>true</magnetic>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<largedeposit>
+		<gabbro />
+	</largedeposit>	
+</terrain>

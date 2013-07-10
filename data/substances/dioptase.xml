@@ -1,0 +1,38 @@
+<name>Dioptase</name>
+<description>Dioptase is an intense emerald-green to bluish-green copper cyclosilicate mineral. It is transparent to translucent. Its luster is vitreous to sub-adamantine. Its formula is CuSiO3·H2O. </description>
+
+<display>
+	<color>008055A0</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>60</hardness>
+	<specificgravity>3278</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<gneiss />
+		<marble />
+		<phyllite />
+		<quartzite />
+		<schist />
+		<slate />
+		<diorite />
+		<gabbro />
+		<granite />		
+	</smalldeposit>
+</terrain>

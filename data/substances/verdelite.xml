@@ -1,0 +1,33 @@
+<name>verdelite</name>
+<description>Tourmaline is a crystal boron silicate mineral compounded with elements such as aluminium, iron, magnesium, sodium, lithium, or potassium. A lithium-tourmaline (elbaite) was one of three pegmatitic minerals from Utö, Sweden, in which the new alkali element lithium (Li) was determined in 1818 by Arfwedson for the first time.</description>
+
+<display>
+	<color>00800020</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>72</hardness>
+	<specificgravity>3060</specificgravity>
+	<melttemp>1600</melttemp>
+</physical>
+
+<attributes>
+	<rock>true</rock>
+	<gem>true</gem>
+</attributes>
+
+<actions>
+	<melt><becomes>magma</becomes></melt>
+</actions>
+
+<terrain>
+	<smalldeposit>
+		<granite />
+		<marble />
+		<schist />
+	</smalldeposit>
+	<rarity>6</rarity>
+</terrain>

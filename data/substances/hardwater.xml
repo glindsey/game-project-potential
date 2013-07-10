@@ -1,0 +1,33 @@
+<name>Hard water</name>
+<description>Hard water is water that has high mineral content (in contrast with “soft water”). Hard water is generally not harmful to one's health, but can pose serious problems in industrial settings, where water hardness is monitored to avoid costly breakdowns in boilers, cooling towers, and other equipment that handles water.</description>
+
+<display>
+	<color>006EFF20</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<freezetemp>-2</freezetemp>
+	<boiltemp>102</boiltemp>
+	<specificgravity>1000</specificgravity>	
+</physical>
+
+<attributes>
+	<water>true</water>
+	<potable>true</potable>
+</attributes>
+
+<actions>
+	<freeze><becomes>hardwater-ice</becomes></freeze>
+	<boil>
+		<becomes>calcium-carbonate-powder</becomes>
+		<result>
+			cloud
+			<material>steam</material>
+			<number>4</number>
+			<error>1</error>
+		</result>
+	</boil>
+</actions>

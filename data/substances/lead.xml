@@ -1,0 +1,25 @@
+<name>Lead</name>
+<description>Lead is a main-group element in the carbon group with the symbol Pb (from Latin: plumbum) and atomic number 82. Lead is a soft, malleable poor metal. It is also counted as one of the heavy metals.</description>
+
+<display>
+	<color>505078FF</color>
+	<opaque>true</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>solid</phase>
+	<hardness>15</hardness>
+	<specificgravity>11340</specificgravity>
+	<melttemp>327</melttemp>
+</physical>
+
+<attributes>
+	<metal>true</metal>
+	<conductor>true</conductor>
+	<toxic>true</toxic>
+</attributes>
+
+<actions>
+	<melt><becomes>molten-lead</becomes></melt>
+</actions>

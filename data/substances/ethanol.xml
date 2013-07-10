@@ -1,0 +1,36 @@
+<name>ethanol</name>
+<description>Ethanol, also called ethyl alcohol, pure alcohol, grain alcohol, or drinking alcohol, is a volatile, flammable, colorless liquid. A psychoactive drug and one of the oldest recreational drugs known, ethanol produces a state known as alcohol intoxication when consumed. Best known as the type of alcohol found in alcoholic beverages, it is also used in thermometers, as a solvent, and as a fuel. In common usage, it is often referred to simply as alcohol or spirits.</description>
+
+<display>
+	<color>FFFFFF10</color>
+	<opaque>false</opaque>
+	<visible>true</opaque>
+</display>
+
+<physical>
+	<phase>liquid</phase>
+	<specificgravity>789</specificgravity>
+	<!-- Freezes well below game temperatures -->
+	<boiltemp>78</boiltemp>
+	<burntemp>362</burntemp>
+	<flashtemp>13</flashtemp>
+</physical>
+
+<attributes>
+	<explosive>true</explosive>
+	<intoxicating>true</intoxicating>
+</attributes>
+
+<actions>
+	<dissolve><becomes>freshwater</becomes></dissolve>
+	<boil>
+		<becomes>air</becomes>
+		<result>
+			cloud
+			<material>explosive-gas</material>
+			<number>3</number>
+			<error>1</error>
+		</result>		
+	</boil>
+	<burn><becomes>air</becomes></burn>
+</actions>
