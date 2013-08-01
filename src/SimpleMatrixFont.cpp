@@ -43,7 +43,7 @@ bool SimpleMatrixFont::load(std::string name)
 
 void SimpleMatrixFont::bind()
 {
-  impl->fontTexture.bind();
+  impl->fontTexture.bind(&impl->fontTexture);
 }
 
 glm::vec4 SimpleMatrixFont::getTextureCoordinates(char32_t character)
