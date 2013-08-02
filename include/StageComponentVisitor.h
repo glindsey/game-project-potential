@@ -30,7 +30,7 @@ class StageComponentVisitor
 public:
   virtual bool visit(Stage& stage) = 0;
   virtual bool visit(Prop& prop) = 0;
-  virtual bool visit(StageBlock& getBlock) = 0;
+  virtual bool visit(StageBlock& get_block) = 0;
   virtual bool visit(StageChunk& chunk) = 0;
   virtual bool visit(StageChunkCollection& collection) = 0;
 

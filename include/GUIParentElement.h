@@ -49,7 +49,7 @@ public:
   unsigned int getChildCount();
 
   /// Clear dirty flag, and dirty flag on all child elements.
-  virtual void clearDirty();
+  virtual void clear_dirty();
 
 protected:
   /// Return container of children.
@@ -58,7 +58,7 @@ protected:
 private:
   struct Impl;
   /// Private implementation pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 } // namespace rectopia

@@ -62,22 +62,22 @@ SerialNumber Prop::Impl::nextSerialNumber = 1;
 Prop::Prop()
   : StageComponent(), impl(new Impl())
 {
-  SetPrototype("anomaly");
-  MoveTo(Inventory::getLimbo());
+  set_prototype("anomaly");
+  move_to(Inventory::getLimbo());
 }
 
 Prop::Prop(std::string typeName)
   : StageComponent(), impl(new Impl())
 {
-  SetPrototype(typeName);
-  MoveTo(Inventory::getLimbo());
+  set_prototype(typeName);
+  move_to(Inventory::getLimbo());
 }
 
 Prop::Prop(Prop& _other)
   : StageComponent(), impl(new Impl())
 {
-  SetPrototype(_other.prototype());
-  MoveTo(Inventory::getLimbo());
+  set_prototype(_other.get_prototype());
+  move_to(Inventory::getLimbo());
 }
 
 Prop::~Prop()
@@ -92,58 +92,62 @@ void Prop::accept(StageComponentVisitor& visitor)
   if (visitChildren)
   {
     // Visit this block's contents.
-    for (StageComponent * object : impl->inventory_.getContents())
+    for (HasLocation* object : impl->inventory_.getContents())
     {
-      object->accept(visitor);
+      StageComponent* component = dynamic_cast<StageComponent*>(object);
+      if (component != nullptr)
+      {
+        component->accept(visitor);
+      }
     }
   }
 }
 
-Inventory& Prop::inventory()
+Inventory& Prop::get_inventory()
 {
   return impl->inventory_;
 }
 
-void Prop::SetPrototype(std::string typeName)
+void Prop::set_prototype(std::string typeName)
 {
   impl->prototype_ = &(PropPrototype::get(typeName));
   impl->cached_.solid = impl->prototype_->properties.get<bool>("physical.solid",
                         false);
 }
 
-void Prop::SetPrototype(const PropPrototype& type)
+void Prop::set_prototype(const PropPrototype& type)
 {
   impl->prototype_ = &type;
   impl->cached_.solid = impl->prototype_->properties.get<bool>("physical.solid",
                         false);
 }
 
-Visibility Prop::getVisibility(void) const
+Visibility Prop::get_visibility(void) const
 {
-  return impl->prototype_->getVisibility();
+  return impl->prototype_->get_visibility();
 }
 
-bool Prop::isSolid(void)
+bool Prop::is_solid(void)
 {
   return impl->cached_.solid;
 }
 
-const PropPrototype& Prop::prototype() const
+const PropPrototype& Prop::get_prototype() const
 {
   return *(impl->prototype_);
 }
 
-const Substance& Prop::substance() const
+const Substance& Prop::get_substance() const
 {
   return *(impl->substance_);
 }
 
-Inventory& Prop::location() const
+Inventory& Prop::get_location() const
 {
   return *(impl->location_);
 }
 
-bool Prop::MoveTo(Inventory& new_location)
+bool Prop::move_to(Inventory& new_location)
 {
   // If current location == new location, just exit!
   if (impl->location_ == &new_location)
@@ -217,7 +221,7 @@ bool Prop::destroy(SerialNumber number)
   if (exists(number))
   {
     // Try to remove the prop from whatever inventory is might be in.
-    Prop::get(number).MoveTo(Inventory::getLimbo());
+    Prop::get(number).move_to(Inventory::getLimbo());
 
     // Erase the prop from existence.
     Impl::collection.erase(number);

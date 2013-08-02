@@ -3,7 +3,7 @@
 #define GLSHADERPROGRAM_H_
 
 #include <boost/noncopyable.hpp>
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <GL/glew.h>
 #include <SFML/OpenGL.hpp>
 
@@ -30,7 +30,7 @@ namespace rectopia
     private:
       struct Impl;
       // Private implementation pointer
-      boost::scoped_ptr<Impl> impl;
+      std::unique_ptr<Impl> impl;
   };
 
 

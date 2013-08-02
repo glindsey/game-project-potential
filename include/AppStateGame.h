@@ -1,7 +1,7 @@
 #ifndef APPSTATEGAME_H
 #define APPSTATEGAME_H
 
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 
 #include "common.h"
 
@@ -43,7 +43,7 @@ private:
   struct Impl;
 
   /// Private implementation pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 } // namespace rectopia

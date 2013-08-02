@@ -11,7 +11,6 @@
 #include "StageBuilderBeaches.h"
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "ColumnData.h"
 #include "MathUtils.h"
 #include "Settings.h"
@@ -85,12 +84,12 @@ bool StageBuilderBeaches::Build()
       for (int z = min_terrain_height + impl->sea_level_;
            z >= min_terrain_height + impl->sea_level_ - 1; --z)
       {
-        StageBlock& block = impl->stage_.getBlock(impl->column_.x, impl->column_.y, z);
-        StageBlock& block_above = impl->stage_.getBlock(impl->column_.x, impl->column_.y, z + 1);
+        StageBlock& block = impl->stage_.get_block(impl->column_.x, impl->column_.y, z);
+        StageBlock& block_above = impl->stage_.get_block(impl->column_.x, impl->column_.y, z + 1);
 
-        if (block.solid() && !block_above.solid())
+        if (block.is_solid() && !block_above.is_solid())
         {
-          block.setSubstance(BlockLayer::Solid, Substance::get("sand"));
+          block.set_substance(BlockLayer::Solid, Substance::get("sand"));
         }
       }
 

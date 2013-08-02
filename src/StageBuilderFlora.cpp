@@ -11,7 +11,6 @@
 #include "../include/StageBuilderFlora.h"
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "ColumnData.h"
 #include "ErrorMacros.h"
 #include "MathUtils.h"
@@ -116,23 +115,23 @@ bool StageBuilderFlora::Build()
       }
 
       // Figure out if the chunk at this location is soil.
-      StageBlock& block = impl->stage_.getBlock(impl->column_.x,
+      StageBlock& block = impl->stage_.get_block(impl->column_.x,
                                                 impl->column_.y,
                                                 height - 1);
-      StageBlock& block_above = impl->stage_.getBlock(impl->column_.x,
+      StageBlock& block_above = impl->stage_.get_block(impl->column_.x,
                                                       impl->column_.y,
                                                       height);
 
       bool block_is_soil =
-        block.substance(BlockLayer::Solid).getProperties().get<bool>(
+        block.get_substance(BlockLayer::Solid).getProperties().get<bool>(
           "attributes.soil", false);
       /*
        bool thisChunkIsWater =
-       thisNode.getBlock()->getSubstance(BlockLayer::Fluid)->getProperties().get<bool>(
+       thisNode.get_block()->getSubstance(BlockLayer::Fluid)->getProperties().get<bool>(
        "attributes.water", false);
        */
       bool above_is_water =
-        block_above.substance(BlockLayer::Fluid).getProperties().get<bool>(
+        block_above.get_substance(BlockLayer::Fluid).getProperties().get<bool>(
           "attributes.water", false);
 
       // Make sure this chunk is soil.
@@ -144,7 +143,7 @@ bool StageBuilderFlora::Build()
           // First put down grass.
           // TODO: Smatterings of different grass types.
           prop_number = Prop::create("grass");
-          Prop::get(prop_number).MoveTo(block.inventory());
+          Prop::get(prop_number).move_to(block.get_inventory());
 
           // TODO: Bushes, weeds.
 
@@ -166,7 +165,7 @@ bool StageBuilderFlora::Build()
           if (value >= chance)
           {
             prop_number = Prop::create("tree");
-            Prop::get(prop_number).MoveTo(block.inventory());
+            Prop::get(prop_number).move_to(block.get_inventory());
           }
         }
       }

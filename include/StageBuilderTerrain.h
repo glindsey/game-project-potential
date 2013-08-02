@@ -49,7 +49,7 @@ public:
 private:
   struct Impl;
   /// Private implementation pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 } /* namespace rectopia */

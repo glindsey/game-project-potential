@@ -29,7 +29,7 @@ namespace rectopia
 typedef boost::random::uniform_int_distribution<> RandomDistribution;
 
 /// Typedef for a scoped pointer to a random distribution.
-typedef boost::scoped_ptr<RandomDistribution> RDPointer;
+typedef std::unique_ptr<RandomDistribution> RDPointer;
 
 enum class PlacerState
 {
@@ -71,7 +71,7 @@ struct StageBuilderDeposits::Impl
   {
     if (stage_.validCoordinates(x, y, z))
     {
-      stage_.getBlock(x, y, z).setSubstance(layer, substance);
+      stage_.get_block(x, y, z).set_substance(layer, substance);
     }
   }
 
@@ -289,25 +289,25 @@ struct StageBuilderDeposits::Impl
   int number_remaining_;
 
   /// Random distribution across X axis.
-  boost::scoped_ptr<RandomDistribution> x_distribution_;
+  std::unique_ptr<RandomDistribution> x_distribution_;
 
   /// Random distribution across Y axis.
-  boost::scoped_ptr<RandomDistribution> y_distribution_;
+  std::unique_ptr<RandomDistribution> y_distribution_;
 
   /// Random distribution across Z axis.
-  boost::scoped_ptr<RandomDistribution> z_distribution_;
+  std::unique_ptr<RandomDistribution> z_distribution_;
 
   /// Tiny displacement distribution.
-  boost::scoped_ptr<RandomDistribution> tiny_displacement_distribution_;
+  std::unique_ptr<RandomDistribution> tiny_displacement_distribution_;
 
   /// Medium displacement distribution.
-  boost::scoped_ptr<RandomDistribution> medium_displacement_distribution_;
+  std::unique_ptr<RandomDistribution> medium_displacement_distribution_;
 
   /// Large displacement distribution.
-  boost::scoped_ptr<RandomDistribution> large_displacement_distribution_;
+  std::unique_ptr<RandomDistribution> large_displacement_distribution_;
 
   /// Huge displacement distribution.
-  boost::scoped_ptr<RandomDistribution> huge_displacement_distribution_;
+  std::unique_ptr<RandomDistribution> huge_displacement_distribution_;
 
   bool begin_;
 };
@@ -358,10 +358,10 @@ bool StageBuilderDeposits::Build()
                              impl->GetRandom(impl->x_distribution_),
                              impl->GetRandom(impl->y_distribution_),
                              impl->GetRandom(impl->z_distribution_));
-      StageBlock& chosen_block = impl->stage_.getBlock(random.x,
+      StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);
-      const Substance& substance = chosen_block.substance(BlockLayer::Solid);
+      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
 
       // Make sure the randomly selected block's substance can contain large deposits.
       if (substance.largeDeposits.size() != 0)
@@ -391,9 +391,9 @@ bool StageBuilderDeposits::Build()
             try_coord.z = coord.z + offset.z;
             try_coord = constrainToBox(zero_vector, try_coord, max_vector);
           }
-          while (!impl->stage_.getBlock(try_coord.x,
+          while (!impl->stage_.get_block(try_coord.x,
                                         try_coord.y,
-                                        try_coord.z).solid());
+                                        try_coord.z).is_solid());
 
           impl->DrawLargeBlob(coord, BlockLayer::Solid, deposit_substance);
         }
@@ -423,8 +423,8 @@ bool StageBuilderDeposits::Build()
                              impl->GetRandom(impl->x_distribution_),
                              impl->GetRandom(impl->y_distribution_),
                              impl->GetRandom(impl->z_distribution_));
-      StageBlock& chosen_block = impl->stage_.getBlock(random.x, random.y, random.z);
-      const Substance& substance = chosen_block.substance(BlockLayer::Solid);
+      StageBlock& chosen_block = impl->stage_.get_block(random.x, random.y, random.z);
+      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
 
       // Make sure the randomly selected block's substance can contain small deposits.
       if (substance.smallDeposits.size() != 0)
@@ -455,9 +455,9 @@ bool StageBuilderDeposits::Build()
             try_coord.z = coord.z + offset.z;
             try_coord = constrainToBox(zero_vector, try_coord, max_vector);
           }
-          while (!impl->stage_.getBlock(try_coord.x,
+          while (!impl->stage_.get_block(try_coord.x,
                                         try_coord.y,
-                                        try_coord.z).solid());
+                                        try_coord.z).is_solid());
 
           impl->DrawSmallBlob(coord, BlockLayer::Solid, deposit_substance);
         }
@@ -487,10 +487,10 @@ bool StageBuilderDeposits::Build()
                              impl->GetRandom(impl->x_distribution_),
                              impl->GetRandom(impl->y_distribution_),
                              impl->GetRandom(impl->z_distribution_));
-      StageBlock& chosen_block = impl->stage_.getBlock(random.x,
+      StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);
-      const Substance& substance = chosen_block.substance(BlockLayer::Solid);
+      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
 
       // Make sure the randomly selected block's substance can contain veins.
       if (substance.veinDeposits.size() != 0)
@@ -519,7 +519,7 @@ bool StageBuilderDeposits::Build()
           try_dest.z = dest.z + offset.z;
           try_dest = constrainToBox(zero_vector, try_dest, max_vector);
         }
-        while (!impl->stage_.getBlock(try_dest.x, try_dest.y, try_dest.z).solid());
+        while (!impl->stage_.get_block(try_dest.x, try_dest.y, try_dest.z).is_solid());
 
         impl->DrawVein(random, try_dest, deposit_substance);
 
@@ -548,10 +548,10 @@ bool StageBuilderDeposits::Build()
                              impl->GetRandom(impl->x_distribution_),
                              impl->GetRandom(impl->y_distribution_),
                              impl->GetRandom(impl->z_distribution_));
-      StageBlock& chosen_block = impl->stage_.getBlock(random.x,
+      StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);
-      const Substance& substance = chosen_block.substance(BlockLayer::Solid);
+      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
 
       // Make sure the randomly selected block's substance can contain solitaires.
       if (substance.singleDeposits.size() != 0)

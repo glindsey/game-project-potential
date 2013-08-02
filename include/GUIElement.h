@@ -1,7 +1,7 @@
 #ifndef GUIELEMENT_H
 #define GUIELEMENT_H
 
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <glm/glm.hpp>
 #include <string>
 
@@ -49,7 +49,7 @@ public:
   /// Thus, the sign of the coordinate represents how the element is anchored to its parent.
   /// @todo Make zero indicate anchoring to the parent's center.
   /// @param location Location of the element.
-  void setLocation(glm::vec2 element_location);
+  void set_location(glm::vec2 element_location);
 
   glm::vec2 const& getSize();
 
@@ -58,39 +58,39 @@ public:
   /// If it is positive or zero, it is the absolute size of the element.
   /// If it is negative, it is subtracted from the size of the element's parent.
   /// @param size Size of the element.
-  void setSize(glm::vec2 element_size);
+  void set_size(glm::vec2 element_size);
 
   bool getVisible();
-  void setVisible(bool element_visible);
+  void set_visible(bool element_visible);
 
-  glm::vec4 const& getBackColor();
-  void setBackColor(glm::vec4 color);
+  glm::vec4 const& get_bg_color();
+  void set_bg_color(glm::vec4 color);
 
-  glm::vec4 const& getForeColor();
-  void setForeColor(glm::vec4 color);
+  glm::vec4 const& get_fg_color();
+  void set_fg_color(glm::vec4 color);
 
   glm::vec2 getAbsoluteLocation();
   glm::vec2 getAbsoluteSize();
-  bool getAbsoluteVisibility();
+  bool get_absolute_visibility();
 
   /// Set the dirty flag on this element and on this element's parent (if any).
-  virtual void setDirty();
+  virtual void set_dirty();
 
   /// Clear the dirty flag on this element.
-  virtual void clearDirty();
+  virtual void clear_dirty();
 
   /// Return whether this element is dirty.
-  virtual bool isDirty();
+  virtual bool is_dirty();
 
 protected:
-  void setDirtyFlag();
-  void clearDirtyFlag();
-  bool isDirtyFlagSet();
+  void set_dirty_flag();
+  void clear_dirty_flag();
+  bool is_dirty_flag_set();
 
 private:
   struct Impl;
   /// Private implementation pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 } // namespace rectopia

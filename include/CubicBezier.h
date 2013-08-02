@@ -29,7 +29,7 @@ private:
   struct Impl;
 
   /// Private Implementation Pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 #endif // CUBICBEZIER_H

@@ -1,7 +1,7 @@
 #ifndef SIMPLEMATRIXFONT_H
 #define SIMPLEMATRIXFONT_H
 
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <glm/glm.hpp>
 
 #include "TextureFont.h"
@@ -33,7 +33,7 @@ class SimpleMatrixFont : public TextureFont
   protected:
   private:
     struct Impl;
-    boost::scoped_ptr<Impl> impl;
+    std::unique_ptr<Impl> impl;
 };
 
 } // end namespace rectopia

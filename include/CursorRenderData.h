@@ -19,10 +19,10 @@ struct CursorRenderData
 {
   CursorRenderData();
   ~CursorRenderData();
-  void clearVertices();
-  void addVertex(glm::vec3 vertex,
+  void clear_vertices();
+  void add_vertex(glm::vec3 vertex,
                  glm::vec4 color);
-  void updateVAOs();
+  void update_VAOs();
 
   /// Vertex vector.
   boost::container::vector<CursorVertexRenderData> vertices;

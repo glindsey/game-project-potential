@@ -1,11 +1,12 @@
 #ifndef SUBSTANCE_H_
 #define SUBSTANCE_H_
 
+#include <memory>
 #include <string>
-#include <boost/container/vector.hpp>
+#include <vector>
 #include <boost/noncopyable.hpp>
 #include <boost/property_tree/ptree.hpp>
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <glm/glm.hpp>
 
 #include "common.h"
@@ -26,26 +27,26 @@ public:
   const boost::property_tree::ptree& getProperties(); ///< Get substance XML properties.
   const boost::property_tree::ptree& getProperties() const; ///< Get substance XML properties.
 
-  Visibility getVisibility();        ///< Get visibility.
-  Visibility getVisibility() const;  ///< Get visibility.
+  Visibility get_visibility();        ///< Get visibility.
+  Visibility get_visibility() const;  ///< Get visibility.
 
   const SubstanceData& getData();         ///< Get substance data.
   const SubstanceData& getData() const;   ///< Get substance data.
 
   /// Vector indicating all substances that can be found as large deposits within this one.
-  boost::container::vector<const Substance*> largeDeposits;
+  std::vector<const Substance*> largeDeposits;
 
   /// Vector indicating all substances that can be found as small deposits within this one.
-  boost::container::vector<const Substance*> smallDeposits;
+  std::vector<const Substance*> smallDeposits;
 
   /// Vector indicating all substances that can be found as veins within this one.
-  boost::container::vector<const Substance*> veinDeposits;
+  std::vector<const Substance*> veinDeposits;
 
   /// Vector indicating all substances that can be found as single chunk deposits within this one.
-  boost::container::vector<const Substance*> singleDeposits;
+  std::vector<const Substance*> singleDeposits;
 
   /// Vector indicating all substances that can be found as gangue next to this one.
-  boost::container::vector<const Substance*> gangueDeposits;
+  std::vector<const Substance*> gangueDeposits;
 
   /// @todo: Replace getTextureRect methods with proper OpenGL methods.
   //const sf::IntRect& getTextureRect(void); ///< Get texture rect for rendering.
@@ -57,7 +58,7 @@ protected:
 private:
   struct Impl;
   /// Private implementation
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 
 // === Static members =========================================================
 public:
@@ -70,11 +71,11 @@ public:
 
   static bool isSubstance(std::string substance, std::string classtype);
 
-  static boost::container::vector<const Substance*> layerSoil;
-  static boost::container::vector<const Substance*> layerSedimentary;
-  static boost::container::vector<const Substance*> layerMetamorphic;
-  static boost::container::vector<const Substance*> layerIgneousIntrusive;
-  static boost::container::vector<const Substance*> layerIgneousExtrusive;
+  static std::vector<const Substance*> layerSoil;
+  static std::vector<const Substance*> layerSedimentary;
+  static std::vector<const Substance*> layerMetamorphic;
+  static std::vector<const Substance*> layerIgneousIntrusive;
+  static std::vector<const Substance*> layerIgneousExtrusive;
 
 private:
 };

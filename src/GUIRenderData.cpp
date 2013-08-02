@@ -14,7 +14,7 @@ GUIRenderData::GUIRenderData()
 {
   glGenVertexArrays(1, &vao_id);
   glGenBuffers(1, &vbo_id);
-  clearVertices();
+  clear_vertices();
 }
 
 GUIRenderData::~GUIRenderData()
@@ -23,13 +23,13 @@ GUIRenderData::~GUIRenderData()
   glDeleteBuffers(1, &vbo_id);
 }
 
-void GUIRenderData::clearVertices()
+void GUIRenderData::clear_vertices()
 {
   vertices.clear();
   vertex_count = 0;
 }
 
-void GUIRenderData::addVertex(glm::vec2 vertex,
+void GUIRenderData::add_vertex(glm::vec2 vertex,
                            glm::vec4 color,
                            float tex_coord_x,
                            float tex_coord_y,
@@ -43,7 +43,7 @@ void GUIRenderData::addVertex(glm::vec2 vertex,
   ++vertex_count;
 }
 
-void GUIRenderData::updateVAO()
+void GUIRenderData::update_VAO()
 {
   // Bind the solid VAO.
   glBindVertexArray(vao_id);

@@ -26,9 +26,9 @@ GUI::GUI()
   glm::vec2 window_size = glm::vec2(app_window.getSize().x,
                                     app_window.getSize().y);
 
-  this->setLocation(glm::vec2(0.0f));
-  this->setSize(window_size);
-  this->setVisible(true);
+  this->set_location(glm::vec2(0.0f));
+  this->set_size(window_size);
+  this->set_visible(true);
 }
 
 GUI::~GUI()
@@ -56,7 +56,7 @@ void GUI::accept(GUIElementVisitor& visitor)
 EventResult GUI::handleWindowResize(int w, int h)
 {
   glm::vec2 window_size = glm::vec2(w, h);
-  this->setSize(window_size);
+  this->set_size(window_size);
   return EventResult::Acknowledged;
 }
 

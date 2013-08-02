@@ -11,7 +11,6 @@
 #include "../include/StageBuilderLakes.h"
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "ColumnData.h"
 #include "MathUtils.h"
 #include "Settings.h"
@@ -85,11 +84,11 @@ bool StageBuilderLakes::Build()
       for (StageCoord z = min_terrain_height + impl->sea_level_; z >= 0; --z)
       {
         StageCoord3 coord(impl->column_.x, impl->column_.y, z);
-        StageBlock& block = impl->stage_.getBlock(coord.x, coord.y, coord.z);
+        StageBlock& block = impl->stage_.get_block(coord.x, coord.y, coord.z);
 
-        if (block.traversable())
+        if (block.is_traversable())
         {
-          block.setSubstance(BlockLayer::Fluid, Substance::get("freshwater"));
+          block.set_substance(BlockLayer::Fluid, Substance::get("freshwater"));
         }
         else
         {

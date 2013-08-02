@@ -28,7 +28,7 @@ class PropPrototype
 {
 public:
   /// Indicates whether this prop is visible.
-  Visibility getVisibility() const;
+  Visibility get_visibility() const;
 
   /// Property tree containing all properties of this prop type.
   boost::property_tree::ptree properties;

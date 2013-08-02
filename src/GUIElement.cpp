@@ -164,11 +164,11 @@ glm::vec2 GUIElement::getAbsoluteSize()
   }
 }
 
-bool GUIElement::getAbsoluteVisibility()
+bool GUIElement::get_absolute_visibility()
 {
   if (impl->parent_ != nullptr)
   {
-    return (impl->visible_ && impl->parent_->getAbsoluteVisibility());
+    return (impl->visible_ && impl->parent_->get_absolute_visibility());
   }
   else
   {
@@ -176,23 +176,23 @@ bool GUIElement::getAbsoluteVisibility()
   }
 }
 
-void GUIElement::clearDirty()
+void GUIElement::clear_dirty()
 {
-  clearDirtyFlag();
+  clear_dirty_flag();
 }
 
-void GUIElement::setDirty()
+void GUIElement::set_dirty()
 {
-  setDirtyFlag();
-  if ((impl->parent_ != nullptr) && (impl->parent_->isDirty() != true))
+  set_dirty_flag();
+  if ((impl->parent_ != nullptr) && (impl->parent_->is_dirty() != true))
   {
-    impl->parent_->setDirty();
+    impl->parent_->set_dirty();
   }
 }
 
-bool GUIElement::isDirty()
+bool GUIElement::is_dirty()
 {
-  return isDirtyFlagSet();
+  return is_dirty_flag_set();
 }
 
 glm::vec2 const& GUIElement::getLocation()
@@ -200,10 +200,10 @@ glm::vec2 const& GUIElement::getLocation()
   return impl->location_;
 }
 
-void GUIElement::setLocation(glm::vec2 element_location)
+void GUIElement::set_location(glm::vec2 element_location)
 {
   impl->location_ = element_location;
-  setDirtyFlag();
+  set_dirty_flag();
 }
 
 glm::vec2 const& GUIElement::getSize()
@@ -211,10 +211,10 @@ glm::vec2 const& GUIElement::getSize()
   return impl->size_;
 }
 
-void GUIElement::setSize(glm::vec2 element_size)
+void GUIElement::set_size(glm::vec2 element_size)
 {
   impl->size_ = element_size;
-  setDirtyFlag();
+  set_dirty_flag();
 }
 
 bool GUIElement::getVisible()
@@ -222,50 +222,50 @@ bool GUIElement::getVisible()
   return impl->visible_;
 }
 
-void GUIElement::setVisible(bool visible)
+void GUIElement::set_visible(bool visible)
 {
   impl->visible_ = visible;
-  setDirtyFlag();
+  set_dirty_flag();
 }
 
-glm::vec4 const& GUIElement::getBackColor()
+glm::vec4 const& GUIElement::get_bg_color()
 {
   return impl->back_color_;
 }
 
-void GUIElement::setBackColor(glm::vec4 color)
+void GUIElement::set_bg_color(glm::vec4 color)
 {
   impl->back_color_ = color;
-  setDirtyFlag();
+  set_dirty_flag();
 }
 
-glm::vec4 const& GUIElement::getForeColor()
+glm::vec4 const& GUIElement::get_fg_color()
 {
   return impl->fore_color_;
 }
 
-void GUIElement::setForeColor(glm::vec4 color)
+void GUIElement::set_fg_color(glm::vec4 color)
 {
   impl->fore_color_ = color;
-  setDirtyFlag();
+  set_dirty_flag();
 }
 
-void GUIElement::clearDirtyFlag()
+void GUIElement::clear_dirty_flag()
 {
   impl->dirty_ = false;
 }
 
-void GUIElement::setDirtyFlag()
+void GUIElement::set_dirty_flag()
 {
   impl->dirty_ = true;
 
   if (impl->parent_ != nullptr)
   {
-    impl->parent_->setDirty();
+    impl->parent_->set_dirty();
   }
 }
 
-bool GUIElement::isDirtyFlagSet()
+bool GUIElement::is_dirty_flag_set()
 {
   return impl->dirty_;
 }

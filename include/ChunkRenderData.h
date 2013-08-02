@@ -19,14 +19,14 @@ struct ChunkRenderData
 {
   ChunkRenderData();
   ~ChunkRenderData();
-  void clearVertices();
-  void addVertex(glm::vec3 block_coords,
-                 glm::vec3 vertex,
-                 glm::vec3 normal,
-                 glm::vec4 color,
-                 glm::vec4 color_specular,
-                 glm::vec2 texCoord);
-  void updateVAOs();
+  void clear_vertices();
+  void add_vertex(glm::vec3 block_coords,
+                  glm::vec3 vertex,
+                  glm::vec3 normal,
+                  glm::vec4 color,
+                  glm::vec4 color_specular,
+                  glm::vec2 texCoord);
+  void update_VAOs();
 
   /// SOLID vertex vector.
   boost::container::vector<ChunkVertexRenderData> solid_vertices;

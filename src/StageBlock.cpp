@@ -1,6 +1,5 @@
 #include "StageBlock.h"
 
-#include "BlockTopCorners.h"
 #include "ColumnData.h"
 #include "MathUtils.h"
 #include "Settings.h"
@@ -12,15 +11,12 @@ namespace gsl
 {
 namespace rectopia
 {
-
 StageBlock::StageBlock(StageCoord x, StageCoord y, StageCoord z)
 {
   coord_.x = x;
   coord_.y = y;
   coord_.z = z;
-
   hidden_faces_dirty_ = false;
-  corner_low_count_ = 0;
   known_ = false;
   substance_[(unsigned int) BlockLayer::Solid] = &(Substance::getNothing());
   substance_[(unsigned int) BlockLayer::Fluid] = &(Substance::getAir());
@@ -38,24 +34,28 @@ void StageBlock::accept(StageComponentVisitor& visitor)
   if (visitChildren)
   {
     // Visit this block's contents.
-    for (StageComponent * object : inventory_.getContents())
+    for (HasLocation* object : inventory_.getContents())
     {
-      object->accept(visitor);
+      StageComponent* component = dynamic_cast<StageComponent*>(object);
+      if (component != nullptr)
+      {
+        component->accept(visitor);
+      }
     }
   }
 }
 
-Inventory& StageBlock::inventory()
+Inventory& StageBlock::get_inventory()
 {
   return inventory_;
 }
 
-const Substance& StageBlock::substance(BlockLayer _layer) const
+const Substance& StageBlock::get_substance(BlockLayer _layer) const
 {
   return *(substance_[(unsigned int) _layer]);
 }
 
-void StageBlock::setSubstance(BlockLayer layer, const Substance& substance)
+void StageBlock::set_substance(BlockLayer layer, const Substance& substance)
 {
   bool change = (substance_[(unsigned int) layer] != &substance);
   if (change)
@@ -64,13 +64,13 @@ void StageBlock::setSubstance(BlockLayer layer, const Substance& substance)
                                                                 coord_.y,
                                                                 coord_.z);
     substance_[(unsigned int) layer] = &substance;
-    invalidateNeighborFaces();
+    invalidate_neighboring_faces();
     Stage::getInstance().setColumnDirty(coord_.x, coord_.y);
-    chunk.setRenderDataDirty(true);
+    chunk.set_render_data_dirty(true);
   }
 }
 
-void StageBlock::setSubstanceQuickly(BlockLayer layer, const Substance& substance)
+void StageBlock::set_substance_quickly(BlockLayer layer, const Substance& substance)
 {
   StageChunk& chunk = Stage::getInstance().getChunkContaining(coord_.x,
                                                               coord_.y,
@@ -78,98 +78,97 @@ void StageBlock::setSubstanceQuickly(BlockLayer layer, const Substance& substanc
   substance_[(unsigned int) layer] = &substance;
   hidden_faces_dirty_ = true;
   Stage::getInstance().setColumnDirty(coord_.x, coord_.y);
-  chunk.setRenderDataDirty(true);
+  chunk.set_render_data_dirty(true);
 }
 
-bool StageBlock::isOpaque(void) const
+bool StageBlock::is_opaque(void) const
 {
   const Substance* solid_substance =
     substance_[(unsigned int) BlockLayer::Solid];
   const Substance* fluid_substance =
     substance_[(unsigned int) BlockLayer::Fluid];
 
-  Visibility solid_visibility = solid_substance->getVisibility();
-  Visibility fluid_visibility = fluid_substance->getVisibility();
+  Visibility solid_visibility = solid_substance->get_visibility();
+  Visibility fluid_visibility = fluid_substance->get_visibility();
 
   return (solid_visibility == Visibility::Opaque
           || fluid_visibility == Visibility::Opaque);
 }
 
-bool StageBlock::solid(void) const
+bool StageBlock::is_solid(void) const
 {
   return (substance_[(unsigned int) BlockLayer::Solid]->getData().phase
           == Phase::Solid);
 }
 
-bool StageBlock::traversable(void) const
+bool StageBlock::is_traversable(void) const
 {
-  return (!solid()) || (corner_low_count_ > 0);
+  return !is_solid();
 }
 
-bool StageBlock::visible(void) const
+bool StageBlock::is_visible(void) const
 {
-  return (substance_[(unsigned int) BlockLayer::Solid]->getVisibility()
+  return (substance_[(unsigned int) BlockLayer::Solid]->get_visibility()
           != Visibility::Invisible
-          || substance_[(unsigned int) BlockLayer::Fluid]->getVisibility() != Visibility::Invisible);
+          || substance_[(unsigned int) BlockLayer::Fluid]->get_visibility() != Visibility::Invisible);
 }
 
-bool StageBlock::known(void) const
+bool StageBlock::is_known(void) const
 {
   return known_;
 }
 
-void StageBlock::setKnown(bool known)
+void StageBlock::set_known(bool known)
 {
   bool change = (known_ != known);
   if (change)
   {
     StageChunk& chunk = Stage::getInstance().getChunkContaining(coord_.x, coord_.y, coord_.z);
     known_ = known;
-    invalidateNeighborFaces();
+    invalidate_neighboring_faces();
     Stage::getInstance().setColumnDirty(coord_.x, coord_.y);
-    chunk.setRenderDataDirty(true);
+    chunk.set_render_data_dirty(true);
   }
 }
 
-void StageBlock::setKnownQuickly(bool known)
+void StageBlock::set_known_quickly(bool known)
 {
   known_ = known;
   hidden_faces_dirty_ = true;
 }
 
-FaceBools StageBlock::getHiddenFaces(BlockLayer _layer)
+FaceBools StageBlock::get_hidden_faces(BlockLayer _layer)
 {
   if (hidden_faces_dirty_)
   {
-    calculateHiddenFaces();
+    calculate_hidden_faces();
   }
   return hidden_faces_[(unsigned int) _layer];
 }
 
-void StageBlock::setFaceDataDirty()
+void StageBlock::invalidate_face_data()
 {
   hidden_faces_dirty_ = true;
 }
 
-bool StageBlock::hasAnyVisibleFaces()
+bool StageBlock::has_any_visible_faces()
 {
+  if (hidden_faces_dirty_)
+  {
+    calculate_hidden_faces();
+  }
   return (!hidden_faces_[(unsigned int) BlockLayer::Solid].allTrue()
           || !hidden_faces_[(unsigned int) BlockLayer::Fluid].allTrue());
 }
 
-unsigned int StageBlock::getLowCornerCount(void) const
-{
-  return corner_low_count_;
-}
-
-bool StageBlock::isSameSubstanceAs(StageBlock& other, BlockLayer layer)
+bool StageBlock::is_same_substance_as(StageBlock& other, BlockLayer layer)
 {
   const Substance* my_substance = substance_[(unsigned int) layer];
-  const Substance* other_substance = &(other.substance(layer));
+  const Substance* other_substance = &(other.get_substance(layer));
   return (my_substance == other_substance);
 }
 
-void StageBlock::calculateHiddenFaces()
+void StageBlock::calculate_hidden_faces()
 {
   FaceBools solid_hidden(false);
   FaceBools fluid_hidden(false);
@@ -183,13 +182,12 @@ void StageBlock::calculateHiddenFaces()
   // Bottom face:
   if (!stage.atEdgeBottom(coord_))
   {
-    StageBlock& adjacent = stage.getBlock(coord_.x, coord_.y, coord_.z - 1);
-    if ((isSameSubstanceAs(adjacent, BlockLayer::Solid) || (adjacent.isOpaque())) && (adjacent.getLowCornerCount()
-        == 0))
+    StageBlock& adjacent = stage.get_block(coord_.x, coord_.y, coord_.z - 1);
+    if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
     {
       solid_hidden.set_bottom(true);
     }
-    if (isSameSubstanceAs(adjacent, BlockLayer::Fluid) || (adjacent.isOpaque()))
+    if (is_same_substance_as(adjacent, BlockLayer::Fluid) || (adjacent.is_opaque()))
     {
       fluid_hidden.set_bottom(true);
     }
@@ -198,13 +196,12 @@ void StageBlock::calculateHiddenFaces()
   // Top face...
   if (!stage.atEdgeTop(coord_))
   {
-    StageBlock& adjacent = stage.getBlock(coord_.x, coord_.y, coord_.z + 1);
-    if ((isSameSubstanceAs(adjacent, BlockLayer::Solid) || (adjacent.isOpaque())) && (adjacent.getLowCornerCount()
-        == 0))
+    StageBlock& adjacent = stage.get_block(coord_.x, coord_.y, coord_.z + 1);
+    if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
     {
       solid_hidden.set_top(true);
     }
-    if (isSameSubstanceAs(adjacent, BlockLayer::Fluid) || (adjacent.isOpaque()))
+    if (is_same_substance_as(adjacent, BlockLayer::Fluid) || (adjacent.is_opaque()))
     {
       fluid_hidden.set_top(true);
     }
@@ -213,13 +210,12 @@ void StageBlock::calculateHiddenFaces()
   // Back face...
   if (!stage.atEdgeBack(coord_))
   {
-    StageBlock& adjacent = stage.getBlock(coord_.x, coord_.y - 1, coord_.z);
-    if ((isSameSubstanceAs(adjacent, BlockLayer::Solid) || (adjacent.isOpaque())) && (adjacent.getLowCornerCount()
-        == 0))
+    StageBlock& adjacent = stage.get_block(coord_.x, coord_.y - 1, coord_.z);
+    if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
     {
       solid_hidden.set_back(true);
     }
-    if (isSameSubstanceAs(adjacent, BlockLayer::Fluid) || (adjacent.isOpaque()))
+    if (is_same_substance_as(adjacent, BlockLayer::Fluid) || (adjacent.is_opaque()))
     {
       fluid_hidden.set_back(true);
     }
@@ -228,13 +224,12 @@ void StageBlock::calculateHiddenFaces()
   // Front face...
   if (!stage.atEdgeFront(coord_))
   {
-    StageBlock& adjacent = stage.getBlock(coord_.x, coord_.y + 1, coord_.z);
-    if ((isSameSubstanceAs(adjacent, BlockLayer::Solid) || (adjacent.isOpaque())) && (adjacent.getLowCornerCount()
-        == 0))
+    StageBlock& adjacent = stage.get_block(coord_.x, coord_.y + 1, coord_.z);
+    if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
     {
       solid_hidden.set_front(true);
     }
-    if (isSameSubstanceAs(adjacent, BlockLayer::Fluid) || (adjacent.isOpaque()))
+    if (is_same_substance_as(adjacent, BlockLayer::Fluid) || (adjacent.is_opaque()))
     {
       fluid_hidden.set_front(true);
     }
@@ -243,13 +238,12 @@ void StageBlock::calculateHiddenFaces()
   // Left face...
   if (!stage.atEdgeLeft(coord_))
   {
-    StageBlock& adjacent = stage.getBlock(coord_.x - 1, coord_.y, coord_.z);
-    if ((isSameSubstanceAs(adjacent, BlockLayer::Solid) || (adjacent.isOpaque())) && (adjacent.getLowCornerCount()
-        == 0))
+    StageBlock& adjacent = stage.get_block(coord_.x - 1, coord_.y, coord_.z);
+    if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
     {
       solid_hidden.set_left(true);
     }
-    if (isSameSubstanceAs(adjacent, BlockLayer::Fluid) || (adjacent.isOpaque()))
+    if (is_same_substance_as(adjacent, BlockLayer::Fluid) || (adjacent.is_opaque()))
     {
       fluid_hidden.set_left(true);
     }
@@ -258,13 +252,12 @@ void StageBlock::calculateHiddenFaces()
   // Right face...
   if (!stage.atEdgeRight(coord_))
   {
-    StageBlock& adjacent = stage.getBlock(coord_.x + 1, coord_.y, coord_.z);
-    if ((isSameSubstanceAs(adjacent, BlockLayer::Solid) || (adjacent.isOpaque())) && (adjacent.getLowCornerCount()
-        == 0))
+    StageBlock& adjacent = stage.get_block(coord_.x + 1, coord_.y, coord_.z);
+    if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
     {
       solid_hidden.set_right(true);
     }
-    if (isSameSubstanceAs(adjacent, BlockLayer::Fluid) || (adjacent.isOpaque()))
+    if (is_same_substance_as(adjacent, BlockLayer::Fluid) || (adjacent.is_opaque()))
     {
       fluid_hidden.set_right(true);
     }
@@ -276,18 +269,13 @@ void StageBlock::calculateHiddenFaces()
   hidden_faces_dirty_ = false;
 }
 
-BlockTopCorners& StageBlock::top_corners()
-{
-  return top_corners_;
-}
-
-StageCoord3 const& StageBlock::getCoordinates() const
+StageCoord3 const& StageBlock::get_coords() const
 {
   return coord_;
 }
 
 // === PRIVATE METHODS ========================================================
-void StageBlock::invalidateNeighborFaces()
+void StageBlock::invalidate_neighboring_faces()
 {
   Stage& stage = Stage::getInstance();
 
@@ -295,27 +283,27 @@ void StageBlock::invalidateNeighborFaces()
 
   if (!stage.atEdgeLeft(coord_))
   {
-    stage.getBlock(coord_.x - 1, coord_.y, coord_.z).setFaceDataDirty();
+    stage.get_block(coord_.x - 1, coord_.y, coord_.z).invalidate_face_data();
   }
   if (!stage.atEdgeRight(coord_))
   {
-    stage.getBlock(coord_.x + 1, coord_.y, coord_.z).setFaceDataDirty();
+    stage.get_block(coord_.x + 1, coord_.y, coord_.z).invalidate_face_data();
   }
   if (!stage.atEdgeBack(coord_))
   {
-    stage.getBlock(coord_.x, coord_.y - 1, coord_.z).setFaceDataDirty();
+    stage.get_block(coord_.x, coord_.y - 1, coord_.z).invalidate_face_data();
   }
   if (!stage.atEdgeFront(coord_))
   {
-    stage.getBlock(coord_.x, coord_.y + 1, coord_.z).setFaceDataDirty();
+    stage.get_block(coord_.x, coord_.y + 1, coord_.z).invalidate_face_data();
   }
   if (!stage.atEdgeBottom(coord_))
   {
-    stage.getBlock(coord_.x, coord_.y, coord_.z - 1).setFaceDataDirty();
+    stage.get_block(coord_.x, coord_.y, coord_.z - 1).invalidate_face_data();
   }
   if (!stage.atEdgeTop(coord_))
   {
-    stage.getBlock(coord_.x, coord_.y, coord_.z + 1).setFaceDataDirty();
+    stage.get_block(coord_.x, coord_.y, coord_.z + 1).invalidate_face_data();
   }
 }
 

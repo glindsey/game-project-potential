@@ -16,7 +16,7 @@ ChunkRenderData::ChunkRenderData()
   glGenVertexArrays(1, &translucent_vao_id);
   glGenBuffers(1, &solid_vbo_id);
   glGenBuffers(1, &translucent_vbo_id);
-  clearVertices();
+  clear_vertices();
 }
 
 ChunkRenderData::~ChunkRenderData()
@@ -27,7 +27,7 @@ ChunkRenderData::~ChunkRenderData()
   glDeleteBuffers(1, &translucent_vbo_id);
 }
 
-void ChunkRenderData::clearVertices()
+void ChunkRenderData::clear_vertices()
 {
   solid_vertices.clear();
   translucent_vertices.clear();
@@ -35,7 +35,7 @@ void ChunkRenderData::clearVertices()
   translucent_vertex_count = 0;
 }
 
-void ChunkRenderData::addVertex(glm::vec3 block_coords,
+void ChunkRenderData::add_vertex(glm::vec3 block_coords,
                            glm::vec3 coord,
                            glm::vec3 normal,
                            glm::vec4 color,
@@ -57,7 +57,7 @@ void ChunkRenderData::addVertex(glm::vec3 block_coords,
   }
 }
 
-void ChunkRenderData::updateVAOs()
+void ChunkRenderData::update_VAOs()
 {
   // Bind the solid VAO.
   glBindVertexArray(solid_vao_id);

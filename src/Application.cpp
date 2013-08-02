@@ -20,13 +20,13 @@ namespace rectopia
 struct App::Impl
 {
   /// Pointer to the application instance.
-  static boost::scoped_ptr<App> instance_;
+  static std::unique_ptr<App> instance_;
 
   /// Random twister we use for generating all sorts of nifty crap.
   boost::random::mt19937 twister_;
 
   /// Pointer to the main window.
-  boost::scoped_ptr<sf::Window> window_;
+  std::unique_ptr<sf::Window> window_;
 
   // Mutex for the main window.
   boost::mutex window_mutex_;
@@ -35,10 +35,10 @@ struct App::Impl
   bool halt_program_;
 
   /// State manager
-  boost::scoped_ptr<AppStateManager> state_manager_;
+  std::unique_ptr<AppStateManager> state_manager_;
 
   /// Font collection
-  boost::scoped_ptr<FontCollection> font_collection_;
+  std::unique_ptr<FontCollection> font_collection_;
 
   /// Frame timer for rendering thread.
   FrequencyControl frame_timer_;
@@ -47,7 +47,7 @@ struct App::Impl
   FrequencyControl process_timer_;
 };
 
-boost::scoped_ptr<App> App::Impl::instance_;
+std::unique_ptr<App> App::Impl::instance_;
 
 App::App()
   : impl(new Impl())

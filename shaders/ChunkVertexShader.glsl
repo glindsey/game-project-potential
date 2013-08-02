@@ -26,7 +26,6 @@ out vec3 pass_light_direction_cameraspace;
 
 uniform mat4 projection_matrix;
 uniform mat4 view_matrix;
-uniform mat4 model_matrix;
 
 uniform vec3 light_position_worldspace;
 uniform vec3 cursor_location;
@@ -37,26 +36,28 @@ const vec3 zero_vector = vec3(0, 0, 0);
 
 void main()
 {
-    // Output position of the vertex, in clip space: MVP * position
-    gl_Position = projection_matrix * view_matrix * model_matrix * vec4(in_position_modelspace, 1.0);
+    // Output position of the vertex, in clip space
+    gl_Position = projection_matrix * view_matrix *
+                  vec4(in_position_modelspace, 1.0);
 
-    // Position of the vertex, in worldspace : M * position
-    pass_position_worldspace = (model_matrix * vec4(in_position_modelspace, 1.0)).xyz;
+    // Position of the vertex, in worldspace
+    pass_position_worldspace = vec4(in_position_modelspace, 1.0).xyz;
 
     // Vector that goes from the vertex to the camera, in camera space.
     // In camera space, the camera is at the origin (0,0,0).
-    vec3 vertex_position_cameraspace = ( view_matrix * vec4(pass_position_worldspace, 1.0)).xyz;
+    vec3 vertex_position_cameraspace = ( view_matrix *
+                                         vec4(pass_position_worldspace, 1.0)).xyz;
     pass_eye_direction_cameraspace = vec3(0, 0, 0) - vertex_position_cameraspace;
 
-    // Vector that goes from the vertex to the light, in camera space. M is omitted because it's identity.
-    vec3 light_position_cameraspace = ( view_matrix * vec4(light_position_worldspace, 1.0)).xyz;
+    // Vector that goes from the vertex to the light, in camera space.
+    vec3 light_position_cameraspace = ( view_matrix *
+                                        vec4(light_position_worldspace, 1.0)).xyz;
     pass_light_direction_cameraspace = light_position_cameraspace +
                                        pass_eye_direction_cameraspace;
 
     // Normal of the the vertex, in camera space
     pass_normal_cameraspace = ( view_matrix *
-                                model_matrix *
-                                vec4(in_normal_modelspace, 0.0)).xyz; // Only correct if ModelMatrix does not scale the model ! Use its inverse transpose if not.
+                                vec4(in_normal_modelspace, 0.0)).xyz;
 
     // Get modulo of frame counter to do pulsing features.
     // (Is modulo faster, or would a bitwise AND be better?)

@@ -4,7 +4,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-#include "BlockTopCorners.h"
 #include "FaceBools.h"
 #include "Inventory.h"
 #include "Prop.h"
@@ -22,9 +21,9 @@ class StageChunk;
 class StageNode;
 
 class StageBlock:
-  virtual public StageComponent,
-  virtual public HasInventory,
-  virtual public boost::noncopyable
+  public StageComponent,
+  public HasInventory,
+  public boost::noncopyable
 {
 public:
   StageBlock(StageCoord x, StageCoord y, StageCoord z);
@@ -33,63 +32,57 @@ public:
   void accept(StageComponentVisitor& visitor);
 
   /// Get the block's inventory.
-  Inventory& inventory();
+  Inventory& get_inventory();
 
   /// Get the block's absolute coordinates.
-  StageCoord3 const& getCoordinates() const;
+  StageCoord3 const& get_coords() const;
 
   /// Get the substance a particular block layer is composed of.
-  const Substance& substance(BlockLayer _layer) const;
+  const Substance& get_substance(BlockLayer _layer) const;
 
   /// Set the substance a particular block layer is composed of.
-  void setSubstance(BlockLayer layer, const Substance& substance);
+  void set_substance(BlockLayer layer, const Substance& substance);
 
   /// Set the substance a particular block layer is composed of, without
   /// invalidating neighboring block hidden face data.  This should speed
   /// up stage generation a LOT.
-  void setSubstanceQuickly(BlockLayer layer, const Substance& substance);
+  void set_substance_quickly(BlockLayer layer, const Substance& substance);
 
   /// Tells whether a substance is the same as another block's substance.
-  bool isSameSubstanceAs(StageBlock& other, BlockLayer layer);
+  bool is_same_substance_as(StageBlock& other, BlockLayer layer);
 
   /// Calculates hidden face info for the block.
-  void calculateHiddenFaces();
+  void calculate_hidden_faces();
 
   /// Gets hidden face info for a substance layer.
   /// If hidden face info is dirty, recalculates it before returning, but ONLY
   /// if the Stage indicates it is done building.  Otherwise, we're just spinning
   /// our wheels recalculating data that is bound to change over
   /// and over again.
-  FaceBools getHiddenFaces(BlockLayer _layer);
+  FaceBools get_hidden_faces(BlockLayer _layer);
 
   /// Sets the boolean indicating that hidden faces need recalculating.
-  void setFaceDataDirty();
+  void invalidate_face_data();
 
   /// Returns true if any faces are visible, false otherwise.
   /// Includes both solid AND fluid layers.
-  bool hasAnyVisibleFaces();
+  bool has_any_visible_faces();
 
-  bool isOpaque(void) const;
-  bool solid(void) const;
-  bool traversable(void) const;
-  bool visible(void) const;
-  bool known(void) const;
+  bool is_opaque(void) const;
+  bool is_solid(void) const;
+  bool is_traversable(void) const;
+  bool is_visible(void) const;
+  bool is_known(void) const;
 
-  void setKnown(bool _known);
-  void setKnownQuickly(bool _known);
-
-  /// Returns number of lowered corners.
-  unsigned int getLowCornerCount(void) const;
-
-  /// Get the top corners of this block.
-  BlockTopCorners& top_corners();
+  void set_known(bool _known);
+  void set_known_quickly(bool _known);
 
 private:
   /// @note Normally this class would use a PIMPL idiom like the other classes
   ///       I've implemented.  However, due to the sheer number of StageBlocks
   ///       we deal with, I'm trying to keep complexity down to a minimum.
 
-  void invalidateNeighborFaces();
+  void invalidate_neighboring_faces();
 
   /// Absolute coordinates for this block.
   StageCoord3 coord_;
@@ -119,15 +112,6 @@ private:
 
   /// Inventory of the block.
   Inventory inventory_;
-
-  /// Values indicating relative corner heights from default.
-  /// Heights can range from -1 to +1, where -1 is a half-block lower,
-  /// and +1 is a half-block higher.
-  BlockTopCorners top_corners_;
-
-  /// Number of corners lower than the default.  Automatically updated whenever
-  /// setCornerHeight is called.
-  unsigned int corner_low_count_;
 
   /// Boolean indicating whether this block is known to the player.
   bool known_;

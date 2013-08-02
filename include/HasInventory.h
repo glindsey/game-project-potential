@@ -11,12 +11,11 @@ namespace rectopia
 // Forward declarations
 class Inventory;
 
-class HasInventory: virtual public StageComponent
+class HasInventory
 {
 public:
-
   /// Return this object's inventory.
-  virtual Inventory& inventory() = 0;
+  virtual Inventory& get_inventory() = 0;
 };
 
 } // namespace rectopia

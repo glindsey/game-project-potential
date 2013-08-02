@@ -18,8 +18,8 @@ MenuArea::MenuArea(GUIElement* parent)
   : GUIParentElement(parent, "menu_area"), impl(new Impl())
 {
   GUIFrame* frame = new GUIFrame(this, "frame");
-  frame->setBackColor(glm::vec4(0.0f, 0.0f, 0.1f, 1.0f));
-  frame->setVisible(true);
+  frame->set_bg_color(glm::vec4(0.0f, 0.0f, 0.1f, 1.0f));
+  frame->set_visible(true);
   addChild(frame);
 }
 

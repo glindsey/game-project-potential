@@ -3,7 +3,7 @@
 
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <string>
 
 namespace gsl
@@ -36,7 +36,7 @@ class FontCollection : public boost::noncopyable
   protected:
   private:
     struct Impl;
-    boost::scoped_ptr<Impl> impl;
+    std::unique_ptr<Impl> impl;
 };
 
 } // namespace rectopia

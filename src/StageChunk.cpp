@@ -6,6 +6,7 @@
 #include "Settings.h"
 #include "Stage.h"
 #include "StageBlock.h"
+#include "StageChunkCollection.h"
 #include "StageComponentVisitor.h"
 
 namespace gsl
@@ -13,49 +14,27 @@ namespace gsl
 namespace rectopia
 {
 
-const StageCoord StageChunk::ChunkSideLength;
-constexpr StageCoord StageChunk::ChunkSize;
+const StageCoord StageChunk::chunk_side_length;
 
-StageChunk::StageChunk(int idx, StageCoord x, StageCoord y, StageCoord z)
+StageChunk::StageChunk(StageChunkCollection* parent,
+                       int chunk_index,
+                       StageCoord block_x,
+                       StageCoord block_y,
+                       StageCoord block_z)
 {
   boost::mutex::scoped_lock lock(blocks_mutex_);
 
-  coord_ = StageCoord3(x, y, z);
-  index_ = idx;
+  parent_ = parent;
+  index_ = chunk_index;
+  coord_ = StageCoord3(block_x, block_y, block_z);
 
   render_data_dirty_ = true;
-
-  for (StageCoord y = 0; y < ChunkSideLength; ++y)
-  {
-    for (StageCoord x = 0; x < ChunkSideLength; ++x)
-    {
-      // Figure out where in the block pool the blocks will go.
-      // (reinterpret_cast<> is normally SUPER EVIL but here it is a friend)
-      StageBlock* block_location = reinterpret_cast<StageBlock*>(&block_pool_[0])
-                                      + index(x, y);
-
-      // "Allocate" memory out of the big block pool using placement new.
-      // (Although in actuality we're not allocating anything!)
-      blocks_[index(x, y)] = new (block_location) StageBlock(coord_.x + x, coord_.y + y, coord_.z);
-    }
-  }
 }
 
 StageChunk::~StageChunk()
 {
-  boost::mutex::scoped_lock lock(blocks_mutex_);
-  std::cout << "Destroying StageChunk @ ("
-            << coord_.x << ", "
-            << coord_.y << ", "
-            << coord_.z << ")..." << std::endl;
-
-  // The destructors for the StageBlocks must be called EXPLICITLY
-  // due to the placement new.
-  for (StageCoord idx = 0; idx < ChunkSize; ++idx)
-  {
-    // Under other circumstances you'd be shot for doing this.  :)
-    blocks_[idx]->~StageBlock();
-  }
+  /* No destructor calls needed here.  If they ARE required later they will
+     go into StageChunkCollection::~StageChunkCollection(). */
 }
 
 void StageChunk::accept(StageComponentVisitor& visitor)
@@ -66,155 +45,176 @@ void StageChunk::accept(StageComponentVisitor& visitor)
   if (visitChildren)
   {
     // Visit the blocks existing underneath this chunk.
-    for (StageCoord idx = 0; idx < ChunkSize; ++idx)
+
+    for (StageCoord add_y = 0; add_y < chunk_side_length; ++add_y)
     {
-      blocks_[idx]->accept(visitor);
+      for (StageCoord add_x = 0; add_x < chunk_side_length; ++add_x)
+      {
+        // Figure out where in the block pool this block is.
+        StageBlock* block_location = parent_->getBlockPointer(coord_.x + add_x,
+                                                              coord_.y + add_y,
+                                                              coord_.z);
+
+        // Visit this block.
+        block_location->accept(visitor);
+      }
     }
   }
 }
 
-StageBlock& StageChunk::getBlock(StageCoord x, StageCoord y, StageCoord z)
+StageChunkCollection* StageChunk::get_parent() const
 {
-  #ifndef NDEBUG
-    if ((x - coord_.x < 0) || (x - coord_.x >= ChunkSideLength) ||
-        (y - coord_.y < 0) || (y - coord_.y >= ChunkSideLength) ||
-        (z != coord_.z))
-    {
-      MAJOR_ERROR("Attempt to get block (%d, %d, %d) from chunk @ (%d, %d, %d) which doesn't contain it",
-                  x, y, z, coord_.x, coord_.y, coord_.z);
-    }
-  #endif // NDEBUG
-  int idx = index(x - coord_.x, y - coord_.y);
-  return *(blocks_[idx]);
+  return parent_;
 }
 
-StageBlock& StageChunk::getBlock(int idx)
-{
-  return *(blocks_[idx]);
-}
-
-StageCoord3 const& StageChunk::getCoordinates() const
+StageCoord3 const& StageChunk::get_coords() const
 {
   return coord_;
 }
 
-bool StageChunk::isOpaque(void)
+bool StageChunk::is_opaque(void)
 {
   boost::mutex::scoped_lock lock(blocks_mutex_);
 
   // Visit the blocks existing underneath this chunk.
-  for (int idx = 0; idx < ChunkSize; ++idx)
+
+  for (StageCoord add_y = 0; add_y < chunk_side_length; ++add_y)
   {
-    StageBlock* block = blocks_[idx];
-    if (!(block->isOpaque()))
+    for (StageCoord add_x = 0; add_x < chunk_side_length; ++add_x)
     {
-      return false;
+      // Figure out where in the block pool this block is.
+      StageBlock* block_location = parent_->getBlockPointer(coord_.x + add_x,
+                                                            coord_.y + add_y,
+                                                            coord_.z);
+
+      if (!(block_location->is_opaque()))
+      {
+        return false;
+      }
     }
   }
   return true;
 }
 
-bool StageChunk::isSolid(void)
+bool StageChunk::is_solid(void)
 {
   boost::mutex::scoped_lock lock(blocks_mutex_);
 
-  // Visit the blocks existing underneath this chunk.
-  for (int idx = 0; idx < ChunkSize; ++idx)
+  for (StageCoord add_y = 0; add_y < chunk_side_length; ++add_y)
   {
-    StageBlock* block = blocks_[idx];
-    if (!(block->solid()))
+    for (StageCoord add_x = 0; add_x < chunk_side_length; ++add_x)
     {
-      return false;
+      // Figure out where in the block pool this block is.
+      StageBlock* block_location = parent_->getBlockPointer(coord_.x + add_x,
+                                                            coord_.y + add_y,
+                                                            coord_.z);
+
+      if (!(block_location->is_solid()))
+      {
+        return false;
+      }
     }
   }
   return true;
 }
 
-bool StageChunk::isTraversable(void)
+bool StageChunk::is_traversable(void)
 {
   boost::mutex::scoped_lock lock(blocks_mutex_);
 
-  // Visit the blocks existing underneath this chunk.
-  for (int idx = 0; idx < ChunkSize; ++idx)
+  for (StageCoord add_y = 0; add_y < chunk_side_length; ++add_y)
   {
-    StageBlock* block = blocks_[idx];
-    if (block->traversable())
+    for (StageCoord add_x = 0; add_x < chunk_side_length; ++add_x)
     {
-      return true;
+      // Figure out where in the block pool this block is.
+      StageBlock* block_location = parent_->getBlockPointer(coord_.x + add_x,
+                                                            coord_.y + add_y,
+                                                            coord_.z);
+
+      if (block_location->is_traversable())
+      {
+        return true;
+      }
     }
   }
   return false;
 }
 
-bool StageChunk::isVisible(void)
+bool StageChunk::is_visible(void)
 {
   boost::mutex::scoped_lock lock(blocks_mutex_);
 
-  // Visit the blocks existing underneath this chunk.
-  for (int idx = 0; idx < ChunkSize; ++idx)
+  for (StageCoord add_y = 0; add_y < chunk_side_length; ++add_y)
   {
-    StageBlock* block = blocks_[idx];
-    if (block->visible())
+    for (StageCoord add_x = 0; add_x < chunk_side_length; ++add_x)
     {
-      return true;
+      // Figure out where in the block pool this block is.
+      StageBlock* block_location = parent_->getBlockPointer(coord_.x + add_x,
+                                                            coord_.y + add_y,
+                                                            coord_.z);
+
+      if (block_location->is_visible())
+      {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+bool StageChunk::is_known(void)
+{
+  boost::mutex::scoped_lock lock(blocks_mutex_);
+
+  for (StageCoord add_y = 0; add_y < chunk_side_length; ++add_y)
+  {
+    for (StageCoord add_x = 0; add_x < chunk_side_length; ++add_x)
+    {
+      // Figure out where in the block pool this block is.
+      StageBlock* block_location = parent_->getBlockPointer(coord_.x + add_x,
+                                                            coord_.y + add_y,
+                                                            coord_.z);
+
+      if (block_location->is_known())
+      {
+        return true;
+      }
     }
   }
   return false;
 }
 
-bool StageChunk::isKnown(void)
+bool StageChunk::has_any_visible_faces()
 {
   boost::mutex::scoped_lock lock(blocks_mutex_);
 
-  // Visit the blocks existing underneath this chunk.
-  for (int idx = 0; idx < ChunkSize; ++idx)
+  for (StageCoord add_y = 0; add_y < chunk_side_length; ++add_y)
   {
-    StageBlock* block = blocks_[idx];
-    if (block->known())
+    for (StageCoord add_x = 0; add_x < chunk_side_length; ++add_x)
     {
-      return true;
+      // Figure out where in the block pool this block is.
+      StageBlock* block_location = parent_->getBlockPointer(coord_.x + add_x,
+                                                            coord_.y + add_y,
+                                                            coord_.z);
+
+      if (block_location->has_any_visible_faces())
+      {
+        return true;
+      }
     }
   }
   return false;
 }
 
-bool StageChunk::anyVisibleFaces()
-{
-  boost::mutex::scoped_lock lock(blocks_mutex_);
-
-  // Visit the blocks existing underneath this chunk.
-  for (int idx = 0; idx < ChunkSize; ++idx)
-  {
-    StageBlock* block = blocks_[idx];
-    if (block->hasAnyVisibleFaces())
-    {
-      return true;
-    }
-  }
-  return false;
-}
-
-bool StageChunk::isRenderDataDirty()
+bool StageChunk::is_render_data_dirty()
 {
   return render_data_dirty_;
 }
 
-void StageChunk::setRenderDataDirty(bool dirty)
+void StageChunk::set_render_data_dirty(bool dirty)
 {
   render_data_dirty_ = dirty;
-}
-
-// === PRIVATE METHODS ========================================================
-/** Get vector index for a block. */
-int StageChunk::index(StageCoord x, StageCoord y)
-{
-  return ((int)y * (int)ChunkSideLength) + (int)x;
-}
-
-/** Get vector index for a block. */
-int StageChunk::index(StageCoord2 coord)
-{
-  return index(coord.x, coord.y);
 }
 
 } // namespace rectopia

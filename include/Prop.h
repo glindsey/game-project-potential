@@ -24,32 +24,32 @@ class Substance;
 
 /// A movable object in the system.
 class Prop:
-  virtual public HasInventory,
-  virtual public HasLocation,
-  virtual public StageComponent
+  public StageComponent,
+  public HasInventory,
+  public HasLocation
 {
 public:
   virtual ~Prop();                    ///< Destructor
 
   void accept(StageComponentVisitor& visitor);
 
-  Inventory& inventory();
+  Inventory& get_inventory();
 
   /// Return this object's location.
-  Inventory& location() const;
+  Inventory& get_location() const;
 
   /// Try to move this object to a new location.
-  bool MoveTo(Inventory& new_location);
+  bool move_to(Inventory& new_location);
 
-  const PropPrototype& prototype() const;
+  const PropPrototype& get_prototype() const;
 
-  void SetPrototype(std::string typeName);
-  void SetPrototype(const PropPrototype& type);
+  void set_prototype(std::string typeName);
+  void set_prototype(const PropPrototype& type);
 
-  Visibility getVisibility(void) const;
-  bool isSolid(void);
+  Visibility get_visibility(void) const;
+  bool is_solid(void);
 
-  const Substance& substance() const;
+  const Substance& get_substance() const;
 
 protected:
   Prop();                             ///< Constructor
@@ -59,7 +59,7 @@ protected:
 private:
   struct Impl;
   /// Private Implementation Pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 
 // === Static Members =========================================================
 public:

@@ -4,6 +4,7 @@
 #include "AppStateGame.h"
 
 #include "AppStateManager.h"
+#include "BGRenderer3D.h"
 #include "GUI.h"
 #include "GUIRenderer3D.h"
 #include "MenuArea.h"
@@ -19,11 +20,12 @@ namespace rectopia
 
 struct AppStateGame::Impl
 {
-  boost::scoped_ptr<StageRenderer> stage_renderer_;
-  boost::scoped_ptr<GUIRenderer> gui_renderer_;
+  std::unique_ptr<BGRenderer> bg_renderer_;
+  std::unique_ptr<StageRenderer> stage_renderer_;
+  std::unique_ptr<GUIRenderer> gui_renderer_;
 
   /// Game GUI instance.
-  boost::scoped_ptr<GUI> gui_;
+  std::unique_ptr<GUI> gui_;
 
   static const unsigned int status_bar_height_;
   static const unsigned int menu_bar_width_;
@@ -41,17 +43,17 @@ AppStateGame::AppStateGame(AppStateManager* manager)
 
   // Create the status area.
   StatusArea* status_area = new StatusArea(impl->gui_.get());
-  status_area->setSize(glm::vec2(-10, impl->status_bar_height_));
-  status_area->setLocation(glm::vec2(5, -5));
-  status_area->setVisible(true);
+  status_area->set_size(glm::vec2(-10, impl->status_bar_height_));
+  status_area->set_location(glm::vec2(5, -5));
+  status_area->set_visible(true);
   impl->gui_->addChild(status_area);  //<-- Takes over ownership of status_area
 
   // Create the menu area.
   MenuArea* menu_area = new MenuArea(impl->gui_.get());
-  menu_area->setSize(glm::vec2(impl->menu_bar_width_,
+  menu_area->set_size(glm::vec2(impl->menu_bar_width_,
                                   -(10 + impl->status_bar_height_)));
-  menu_area->setLocation(glm::vec2(5, 5));
-  menu_area->setVisible(false);  // DEBUG: shut off for now
+  menu_area->set_location(glm::vec2(5, 5));
+  menu_area->set_visible(false);  // DEBUG: shut off for now
   impl->gui_->addChild(menu_area);  //<-- Takes over ownership of menu_area
 }
 
@@ -120,6 +122,10 @@ void AppStateGame::process()
 
 void AppStateGame::render()
 {
+  if (impl->bg_renderer_.get() == nullptr)
+  {
+    impl->bg_renderer_.reset(new BGRenderer3D());
+  }
   if (impl->stage_renderer_.get() == nullptr)
   {
     impl->stage_renderer_.reset(new StageRenderer3D());
@@ -127,6 +133,18 @@ void AppStateGame::render()
   if (impl->gui_renderer_.get() == nullptr)
   {
     impl->gui_renderer_.reset(new GUIRenderer3D());
+  }
+
+  if (1)
+  {
+    // Get the renderer ready.
+    impl->bg_renderer_->prepare();
+
+    // Render the vertices to the screen.
+    impl->bg_renderer_->draw();
+
+    // Finish the drawing procedure.
+    impl->bg_renderer_->finish();
   }
 
   if (Stage::getInstance().okay_to_render_map())

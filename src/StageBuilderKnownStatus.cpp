@@ -11,7 +11,6 @@
 #include "../include/StageBuilderKnownStatus.h"
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "ColumnData.h"
 #include "MathUtils.h"
 #include "NoiseField.h"
@@ -42,8 +41,8 @@ struct StageBuilderKnownStatus::Impl
 
   bool begin_;
 
-  /// Column we're currently at.
-  StageCoord2 column_;
+  /// Z-level we're currently at.
+  int z_level_;
 
   /// Reference to the stage.
   Stage& stage_;
@@ -63,40 +62,55 @@ StageBuilderKnownStatus::~StageBuilderKnownStatus()
 
 bool StageBuilderKnownStatus::Build()
 {
+  /// @todo This works for now, but what we REALLY need is basically a 3-D
+  ///       flood-fill that starts at the top center of the stage and flows
+  ///       down until it hits opaque blocks.
+
   static StageCoord3 stage_size = impl->stage_.size();
   StageCoord3 coord3d;
 
   if (impl->begin_)
   {
-    std::cout << "Setting \"known\" status of blocks..." << std::endl;
+    std::cout << "Setting initial \"known\" status of blocks...";
 
-    impl->column_ = StageCoord2(0, 0);
+    impl->z_level_ = stage_size.z;
     impl->begin_ = false;
   }
 
-  if (impl->column_.y < stage_size.y)
-  {
-    for (impl->column_.x = 0; impl->column_.x < stage_size.x;
-         ++(impl->column_.x))
-    {
-      coord3d.x = impl->column_.x;
-      coord3d.y = impl->column_.y;
+  std::cout << impl->z_level_ << "...";
 
-      for (coord3d.z = stage_size.z - 1;
-           coord3d.z >= impl->stage_.getColumnOutdoorHeight(coord3d.x,
-                                                            coord3d.y);
-           coord3d.z--)
+  if (impl->z_level_ != 0)
+  {
+    --(impl->z_level_);
+    StageCoord2 coord(0, 0);
+    for (coord.x = 0; coord.x < stage_size.x; ++coord.x)
+    {
+      for (coord.y = 0; coord.y < stage_size.y; ++coord.y)
       {
-        StageBlock& block = impl->stage_.getBlock(coord3d.x, coord3d.y, coord3d.z);
-        block.setKnown(true);
+        StageBlock& block = impl->stage_.get_block(coord.x,
+                                                   coord.y,
+                                                   impl->z_level_);
+
+        if (impl->z_level_ == stage_size.z - 1)
+        {
+          block.set_known(true);
+        }
+        else
+        {
+          StageBlock& block_above = impl->stage_.get_block(coord.x,
+                                                           coord.y,
+                                                           impl->z_level_ + 1);
+          if (block_above.is_known() && !(block_above.is_opaque()))
+          {
+            block.set_known(true);
+          }
+        }
       }
     }
-
-    ++(impl->column_.y);
-
   }
   else
   {
+    std::cout << "done." << std::endl;
     return true;
   }
 

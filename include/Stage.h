@@ -94,7 +94,7 @@ public:
   StageChunk& getChunkContaining(StageCoord x, StageCoord y, StageCoord z);
 
   /// Gets a particular StageBlock by absolute coordinates.
-  StageBlock& getBlock(StageCoord x, StageCoord y, StageCoord z);
+  StageBlock& get_block(StageCoord x, StageCoord y, StageCoord z);
 
   /// Gets the stage size.
   StageCoord3 size() const;
@@ -119,7 +119,7 @@ private:
 
   struct Impl;
   /// Private Implementation Pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 
 };
 

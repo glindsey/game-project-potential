@@ -67,18 +67,23 @@
 			<Add library="winmm" />
 			<Add library="dxguid" />
 			<Add library="noise" />
-			<Add directory="C:/dropbox/Projects/libraries/SFML/lib" />
+			<Add directory="C:/Dropbox/Projects/libraries/SFML/build/lib" />
 			<Add directory="C:/dropbox/Projects/libraries/boost/stage/lib" />
 			<Add directory="C:/dropbox/Projects/libraries/glfw-2.7.7/lib/win32" />
 			<Add directory="C:/dropbox/Projects/libraries/glew-1.9.0/lib" />
 			<Add directory="C:/dropbox/Projects/libraries/noise/lib" />
 		</Linker>
 		<Unit filename="cb.bmp" />
+		<Unit filename="config/settings.xml" />
 		<Unit filename="include/AppState.h" />
 		<Unit filename="include/AppStateGame.h" />
 		<Unit filename="include/AppStateManager.h" />
 		<Unit filename="include/AppStateSplash.h" />
 		<Unit filename="include/Application.h" />
+		<Unit filename="include/BGRenderData.h" />
+		<Unit filename="include/BGRenderer.h" />
+		<Unit filename="include/BGRenderer3D.h" />
+		<Unit filename="include/BGVertexRenderData.h" />
 		<Unit filename="include/BlockTopCorners.h" />
 		<Unit filename="include/ChunkRenderData.h" />
 		<Unit filename="include/ChunkVertexRenderData.h" />
@@ -140,8 +145,12 @@
 		<Unit filename="include/common_enums.h" />
 		<Unit filename="include/common_includes.h" />
 		<Unit filename="include/common_typedefs.h" />
+		<Unit filename="shaders/BGFragmentShader.glsl" />
+		<Unit filename="shaders/BGVertexShader.glsl" />
 		<Unit filename="shaders/ChunkFragmentShader.glsl" />
 		<Unit filename="shaders/ChunkVertexShader.glsl" />
+		<Unit filename="shaders/CursorFragmentShader.glsl" />
+		<Unit filename="shaders/CursorVertexShader.glsl" />
 		<Unit filename="shaders/GUIFragmentShader.glsl" />
 		<Unit filename="shaders/GUIVertexShader.glsl" />
 		<Unit filename="src/AppState.cpp" />
@@ -149,6 +158,9 @@
 		<Unit filename="src/AppStateManager.cpp" />
 		<Unit filename="src/AppStateSplash.cpp" />
 		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/BGRenderData.cpp" />
+		<Unit filename="src/BGRenderer.cpp" />
+		<Unit filename="src/BGRenderer3D.cpp" />
 		<Unit filename="src/BlockTopCorners.cpp" />
 		<Unit filename="src/ChunkRenderData.cpp" />
 		<Unit filename="src/CubicBezier.cpp" />

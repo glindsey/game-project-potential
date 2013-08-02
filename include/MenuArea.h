@@ -31,7 +31,7 @@ protected:
 private:
   struct Impl;
   /// Private implementation pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 
   // TODO: make these variable, via Settings() or otherwise
   static const unsigned int menuWidth = 250;

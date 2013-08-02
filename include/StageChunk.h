@@ -24,6 +24,7 @@ namespace rectopia
 // Forward declarations
 class FaceBools;
 class Stage;
+class StageChunkCollection;
 class StageComponentVisitor;
 class Substance;
 
@@ -34,64 +35,63 @@ class Substance;
  *  without having to re-render any vertex data.
  */
 class StageChunk:
-  virtual public StageComponent,
+  public StageComponent,
   public boost::noncopyable
 {
 public:
-  StageChunk(int idx, StageCoord x, StageCoord y, StageCoord z);
+  StageChunk(StageChunkCollection* parent,
+             int chunk_index,
+             StageCoord block_x,
+             StageCoord block_y,
+             StageCoord block_z);
+
   ~StageChunk();
 
   void accept(StageComponentVisitor& visitor);
 
-  /** Gets the block with the coordinates requested. */
-  StageBlock& getBlock(StageCoord x, StageCoord y, StageCoord z);
-
-  /** Gets a block using raw index. */
-  StageBlock& getBlock(int idx);
+  /** Gets this StageChunk's parent. */
+  StageChunkCollection* get_parent() const;
 
   /** Gets this StageChunk's coordinates.
    *  Coordinates correspond to the upper-back-left corner of the Chunk. */
-  StageCoord3 const& getCoordinates() const;
+  StageCoord3 const& get_coords() const;
 
   /// Returns bool indicating whether this chunk is totally opaque.
-  bool isOpaque(void);
+  bool is_opaque(void);
 
   /// Returns bool indicating whether this chunk is totally solid.
-  bool isSolid(void);
+  bool is_solid(void);
 
   /// Returns bool indicating whether this chunk is totally traversable.
-  bool isTraversable(void);
+  bool is_traversable(void);
 
   /// Returns bool indicating whether this chunk is visible in any way.
-  bool isVisible(void);
+  bool is_visible(void);
 
   /// Returns bool indicating whether this chunk has any known blocks.
-  bool isKnown(void);
+  bool is_known(void);
 
   /// Returns true if any faces are visible, false otherwise.
   /// Includes both solid AND fluid layers.
-  bool anyVisibleFaces();
+  bool has_any_visible_faces();
 
   /// Returns true if the chunk's render data needs to be recalculated AND if
   /// the stage indicates it is okay to render the map.
-  bool isRenderDataDirty();
+  bool is_render_data_dirty();
 
   /// Sets whether render data needs recalculating.
-  void setRenderDataDirty(bool dirty);
+  void set_render_data_dirty(bool dirty);
 
   /// The constant, hard-coded chunk side length.
-  static const StageCoord ChunkSideLength = 64;
-
-  /// The constant, hard-coded chunk size.
-  static constexpr StageCoord ChunkSize = ChunkSideLength * ChunkSideLength;
+  static const StageCoord chunk_side_length = 32;
 
 private:
   /// @note Normally this class would use a PIMPL idiom like the other classes
   ///       I've implemented.  However, due to the sheer number of StageChunks
   ///       we deal with, I'm trying to keep complexity down to a minimum.
 
-  int index(StageCoord x, StageCoord y);
-  int index(StageCoord2 coord);
+  /** Pointer to the StageChunkCollection that owns this chunk. */
+  StageChunkCollection* parent_;
 
   /** Absolute coordinates of this chunk.  Constant after initialization. */
   StageCoord3 coord_;
@@ -101,14 +101,6 @@ private:
 
   /** Boolean indicating whether rendering data needs to be regenerated. */
   bool render_data_dirty_;
-
-  /** Memory pool for blocks in the chunk. */
-  char block_pool_[sizeof(StageBlock) * StageChunk::ChunkSize];
-
-  /** Array of pointers to blocks in the chunk.
-   *  The blocks themselves will be stored in the block_pool_.
-   */
-  StageBlock* blocks_[StageChunk::ChunkSize];
 
   /** Mutex for accessing blocks array. */
   boost::mutex blocks_mutex_;

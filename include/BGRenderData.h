@@ -1,5 +1,5 @@
-#ifndef GUIRENDERDATA_H
-#define GUIRENDERDATA_H
+#ifndef BGRENDERDATA_H
+#define BGRENDERDATA_H
 
 #include <boost/container/vector.hpp>
 #include <glm/glm.hpp>
@@ -12,23 +12,20 @@ namespace rectopia
 {
 
 // Forward declarations
-struct GUIVertexRenderData;
+struct BGVertexRenderData;
 
-/** Struct representing all of the rendering data associated with a GUI element. */
-struct GUIRenderData
+/** Struct representing all of the rendering data associated with the background. */
+struct BGRenderData
 {
-  GUIRenderData();
-  ~GUIRenderData();
+  BGRenderData();
+  ~BGRenderData();
   void clear_vertices();
   void add_vertex(glm::vec2 vertex,
-                 glm::vec4 color,
-                 float tex_coord_x = 0.0f,
-                 float tex_coord_y = 0.0f,
-                 bool textured = false);
+                 glm::vec4 color);
   void update_VAO();
 
   /// Vertex vector.
-  boost::container::vector<GUIVertexRenderData> vertices;
+  boost::container::vector<BGVertexRenderData> vertices;
 
   /// VBO ID for the vertex array.
   unsigned int vbo_id;

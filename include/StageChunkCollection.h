@@ -26,18 +26,28 @@ public:
   void accept(StageComponentVisitor& visitor);
 
   /// Get the chunk containing the requested block.
-  StageChunk& getChunkContaining(StageCoord x, StageCoord y, StageCoord z);
+  StageChunk& getChunkContaining(StageCoord block_x,
+                                 StageCoord block_y,
+                                 StageCoord block_z);
 
   /// Get an individual chunk by index.
-  StageChunk& getChunk(int idx);
+  StageChunk& getChunk(int chunk_index);
 
   /// Get an individual block in the collection.
-  StageBlock& getBlock(StageCoord x, StageCoord y, StageCoord z);
+  StageBlock& get_block(StageCoord block_x,
+                       StageCoord block_y,
+                       StageCoord block_z);
+
+  /// Get a pointer to an individual block in the collection.
+  StageBlock* getBlockPointer(StageCoord block_x,
+                              StageCoord block_y,
+                              StageCoord block_z);
+
 
 private:
   struct Impl;
   /// Private implementation
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 } // namespace rectopia

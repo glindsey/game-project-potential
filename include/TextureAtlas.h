@@ -3,7 +3,7 @@
 
 #include <boost/container/flat_map.hpp>
 #include <boost/dynamic_bitset.hpp>
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <SFML/Graphics.hpp>
 
 #include "common.h"
@@ -32,7 +32,7 @@ protected:
 private:
   TextureAtlas();
 
-  static boost::scoped_ptr<TextureAtlas> instance_;
+  static std::unique_ptr<TextureAtlas> instance_;
 
   /// Locate a free spot in the texture to place an image.
   bool findNextSpot(sf::Vector2u& origin, sf::Vector2u const& imageBlocks);
@@ -41,7 +41,7 @@ private:
   void reserveSpot(sf::Vector2u const& origin,
                    sf::Vector2u const& imageBlocks);
 
-  inline unsigned int getBlock(unsigned int x, unsigned int y)
+  inline unsigned int get_block(unsigned int x, unsigned int y)
   {
     return (y * maxBlocks) + x;
   }

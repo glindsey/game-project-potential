@@ -2,7 +2,7 @@
 #define APPLICATION_H
 
 #include <boost/random/mersenne_twister.hpp>
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <boost/thread/mutex.hpp>
 #include <SFML/Window.hpp>
 
@@ -69,7 +69,7 @@ private:
 
   struct Impl;
   /// Private implementation pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 
   /// Processing function.
   /// The processing function is very straightforward:

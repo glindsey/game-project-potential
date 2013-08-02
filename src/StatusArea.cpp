@@ -4,7 +4,6 @@
 #include "StatusArea.h"
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "FaceBools.h"
 #include "GUIFrame.h"
 #include "GUILabel.h"
@@ -26,16 +25,16 @@ StatusArea::StatusArea(GUIElement* parent)
   : GUIParentElement(parent, "status_area"), impl(new Impl())
 {
   GUIFrame* frame = new GUIFrame(this, "frame");
-  frame->setBackColor(glm::vec4(0.0f, 0.0f, 0.1f, 0.5f));
-  frame->setVisible(true);
+  frame->set_bg_color(glm::vec4(0.0f, 0.0f, 0.1f, 0.5f));
+  frame->set_visible(true);
   addChild(frame);
 
   GUILabel* test_label = new GUILabel(frame, "test_label");
-  test_label->setBackColor(glm::vec4(1.0f, 0.0f, 0.0f, 0.5f));
-  test_label->setForeColor(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
-  test_label->setLocation(glm::vec2(-5, -5));
-  test_label->setSize(glm::vec2(300, 20));
-  test_label->setVisible(true);
+  test_label->set_bg_color(glm::vec4(1.0f, 0.0f, 0.0f, 0.5f));
+  test_label->set_fg_color(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
+  test_label->set_location(glm::vec2(-5, -5));
+  test_label->set_size(glm::vec2(300, 20));
+  test_label->set_visible(true);
   test_label->setText(U"Testing GUILabel");
   frame->addChild(test_label);
 }
@@ -55,8 +54,8 @@ void StatusArea::render()
   sf::Vector3i const& cursorLoc = impl->stage_->cursor();
 
   StageBlock& block = impl->stage_->block(cursorLoc);
-  const Substance& solid_substance = block.substance(BlockLayer::Solid);
-  const Substance& fluid_substance = block.substance(BlockLayer::Fluid);
+  const Substance& solid_substance = block.get_substance(BlockLayer::Solid);
+  const Substance& fluid_substance = block.get_substance(BlockLayer::Fluid);
 
   sf::Text text;
   std::ostringstream stream;
@@ -95,19 +94,19 @@ void StatusArea::render()
 
   stream.str("");
   stream << "Hidden: solid = ";
-  stream << ((block.getHiddenFaces(BlockLayer::Solid).bottom()) ? "Bm " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Solid).top()) ? "Tp " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Solid).left()) ? "Lt " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Solid).right()) ? "Rt " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Solid).back()) ? "Bk " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Solid).front()) ? "Ft " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Solid).bottom()) ? "Bm " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Solid).top()) ? "Tp " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Solid).left()) ? "Lt " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Solid).right()) ? "Rt " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Solid).back()) ? "Bk " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Solid).front()) ? "Ft " : "-- ");
   stream << "/ fluid = ";
-  stream << ((block.getHiddenFaces(BlockLayer::Fluid).bottom()) ? "Bm " : "--") ;
-  stream << ((block.getHiddenFaces(BlockLayer::Fluid).top()) ? "Tp " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Fluid).left()) ? "Lt " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Fluid).right()) ? "Rt " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Fluid).back()) ? "Bk " : "-- ");
-  stream << ((block.getHiddenFaces(BlockLayer::Fluid).front()) ? "Ft " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Fluid).bottom()) ? "Bm " : "--") ;
+  stream << ((block.get_hidden_faces(BlockLayer::Fluid).top()) ? "Tp " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Fluid).left()) ? "Lt " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Fluid).right()) ? "Rt " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Fluid).back()) ? "Bk " : "-- ");
+  stream << ((block.get_hidden_faces(BlockLayer::Fluid).front()) ? "Ft " : "-- ");
   text.setString(stream.str());
   text.setPosition(areaLocation.x + 2, areaLocation.y + 22);
   window->draw(text);

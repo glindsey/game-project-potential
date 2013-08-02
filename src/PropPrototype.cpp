@@ -26,7 +26,7 @@ typedef boost::filesystem::path TypePath;
 typedef boost::container::vector<std::string> NameVector;
 typedef NameVector::const_iterator NameIterator;
 
-Visibility PropPrototype::getVisibility() const
+Visibility PropPrototype::get_visibility() const
 {
   return visibility;
 }
@@ -119,7 +119,7 @@ PropPrototype& PropPrototype::get(std::string name)
 
 PropPrototype::PropPrototype(std::string _name)
 {
-  bool isOpaque, isVisible;
+  bool is_opaque, is_visible;
 
   name = _name;
 
@@ -136,14 +136,14 @@ PropPrototype::PropPrototype(std::string _name)
 
   // Determine visibility.
   // TODO: replace display.opaque, display.visible with single "display.visibility" attribute.
-  isOpaque = properties.get<bool>("display.opaque", true);
-  isVisible = properties.get<bool>("display.visible", true);
+  is_opaque = properties.get<bool>("display.opaque", true);
+  is_visible = properties.get<bool>("display.visible", true);
 
-  if (!isVisible)
+  if (!is_visible)
   {
     visibility = Visibility::Invisible;
   }
-  else if (!isOpaque)
+  else if (!is_opaque)
   {
     visibility = Visibility::Translucent;
   }

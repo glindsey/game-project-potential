@@ -6,13 +6,12 @@
 #include <iostream>
 #include <iterator>
 #include <limits>
+#include <unordered_map>
 #include <set>
 #include <string>
 
-#include <boost/container/set.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/property_tree/xml_parser.hpp>
-#include <boost/ptr_container/ptr_map.hpp>
 #include <boost/ptr_container/ptr_unordered_map.hpp>
 #include <boost/unordered_map.hpp>
 #include <glm/glm.hpp>
@@ -28,10 +27,10 @@ namespace rectopia
 {
 
 typedef boost::ptr_unordered_map<std::string, Substance> SubstanceCollection;
-typedef boost::unordered_map<std::string, boost::container::set<std::string> > Categories;
-typedef boost::unordered_map<std::string, boost::container::set<std::string> > Verbs;
+typedef std::unordered_map<std::string, std::set<std::string> > Categories;
+typedef std::unordered_map<std::string, std::set<std::string> > Verbs;
 typedef boost::filesystem::path MaterialPath;
-typedef boost::container::vector<std::string> NameVector;
+typedef std::vector<std::string> NameVector;
 typedef NameVector::const_iterator NameIterator;
 
 struct Substance::Impl
@@ -62,16 +61,16 @@ Substance* Substance::Impl::substance_nothing_;
 Substance* Substance::Impl::substance_air_;
 
 
-boost::container::vector<Substance const*> Substance::layerSoil;
-boost::container::vector<Substance const*> Substance::layerSedimentary;
-boost::container::vector<Substance const*> Substance::layerMetamorphic;
-boost::container::vector<Substance const*> Substance::layerIgneousIntrusive;
-boost::container::vector<Substance const*> Substance::layerIgneousExtrusive;
+std::vector<Substance const*> Substance::layerSoil;
+std::vector<Substance const*> Substance::layerSedimentary;
+std::vector<Substance const*> Substance::layerMetamorphic;
+std::vector<Substance const*> Substance::layerIgneousIntrusive;
+std::vector<Substance const*> Substance::layerIgneousExtrusive;
 
 Substance::Substance(std::string _name)
   : impl(new Impl())
 {
-  bool isOpaque, isVisible;
+  bool is_opaque, is_visible;
 
   impl->data.name = _name;
 
@@ -89,14 +88,14 @@ Substance::Substance(std::string _name)
 
   // Get substance visibility.
   // TODO: replace display.opaque, display.visible with single "display.visibility" attribute in XML.
-  isOpaque = impl->properties.get<bool>("display.opaque", false);
-  isVisible = impl->properties.get<bool>("display.visible", true);
+  is_opaque = impl->properties.get<bool>("display.opaque", false);
+  is_visible = impl->properties.get<bool>("display.visible", true);
 
-  if (!isVisible)
+  if (!is_visible)
   {
     impl->data.visibility = Visibility::Invisible;
   }
-  else if (!isOpaque)
+  else if (!is_opaque)
   {
     impl->data.visibility = Visibility::Translucent;
   }
@@ -241,12 +240,12 @@ SubstanceData const& Substance::getData() const
   return impl->data;
 }
 
-Visibility Substance::getVisibility()
+Visibility Substance::get_visibility()
 {
   return impl->data.visibility;
 }
 
-Visibility Substance::getVisibility() const
+Visibility Substance::get_visibility() const
 {
   return impl->data.visibility;
 }

@@ -14,7 +14,7 @@ CursorRenderData::CursorRenderData()
 {
   glGenVertexArrays(1, &vao_id);
   glGenBuffers(1, &vbo_id);
-  clearVertices();
+  clear_vertices();
 }
 
 CursorRenderData::~CursorRenderData()
@@ -23,13 +23,13 @@ CursorRenderData::~CursorRenderData()
   glDeleteBuffers(1, &vbo_id);
 }
 
-void CursorRenderData::clearVertices()
+void CursorRenderData::clear_vertices()
 {
   vertices.clear();
   vertex_count = 0;
 }
 
-void CursorRenderData::addVertex(glm::vec3 coord, glm::vec4 color)
+void CursorRenderData::add_vertex(glm::vec3 coord, glm::vec4 color)
 {
   CursorVertexRenderData vertex(coord, color);
 
@@ -37,7 +37,7 @@ void CursorRenderData::addVertex(glm::vec3 coord, glm::vec4 color)
   ++vertex_count;
 }
 
-void CursorRenderData::updateVAOs()
+void CursorRenderData::update_VAOs()
 {
   // Bind the VAO.
   glBindVertexArray(vao_id);

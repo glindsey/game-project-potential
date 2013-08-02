@@ -96,7 +96,7 @@ bool GUIParentElement::addChild(GUIElement* _child)
     printf("DEBUG: Adding child element \"%s\" to parent element \"%s\"\n",
            name.c_str(), this->getElementName().c_str());
     impl->children_.insert(name, _child);
-    setDirty();
+    set_dirty();
     return true;
   }
   else
@@ -110,7 +110,7 @@ bool GUIParentElement::delChild(std::string _name)
   if (impl->children_.count(_name) != 0)
   {
     impl->children_.erase(_name);
-    setDirty();
+    set_dirty();
     return true;
   }
   else
@@ -122,7 +122,7 @@ bool GUIParentElement::delChild(std::string _name)
 void GUIParentElement::clearChildren()
 {
   impl->children_.clear();
-  setDirty();
+  set_dirty();
 }
 
 GUIElement* GUIParentElement::getChild(std::string _name)
@@ -142,9 +142,9 @@ unsigned int GUIParentElement::getChildCount()
   return impl->children_.size();
 }
 
-void GUIParentElement::clearDirty()
+void GUIParentElement::clear_dirty()
 {
-  clearDirtyFlag();
+  clear_dirty_flag();
 
   boost::ptr_map<std::string, GUIElement>::iterator iter;
 
@@ -153,7 +153,7 @@ void GUIParentElement::clearDirty()
        iter != impl->children_.end();
        ++iter)
   {
-    iter->second->clearDirty();
+    iter->second->clear_dirty();
   }
 }
 

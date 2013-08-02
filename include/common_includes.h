@@ -32,7 +32,7 @@
 #include <boost/ptr_container/ptr_vector.hpp>
 #include <boost/random/mersenne_twister.hpp>
 #include <boost/random/uniform_int_distribution.hpp>
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 #include <boost/unordered_map.hpp>
 #include <boost/unordered_set.hpp>
 

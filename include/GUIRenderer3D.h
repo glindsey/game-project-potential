@@ -8,7 +8,7 @@
 #ifndef GUIRENDERER3D_H_
 #define GUIRENDERER3D_H_
 
-#include <boost/scoped_ptr.hpp>
+#include <memory>
 
 #include "common.h"
 
@@ -47,7 +47,7 @@ private:
   struct Impl;
 
   /// Private implementation pointer
-  boost::scoped_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 } // namespace rectopia

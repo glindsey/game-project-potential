@@ -31,7 +31,7 @@ namespace rectopia
 typedef boost::random::uniform_int_distribution<> RandomDistribution;
 
 /// Typedef for a scoped pointer to a random distribution.
-typedef boost::scoped_ptr<RandomDistribution> RDPointer;
+typedef std::unique_ptr<RandomDistribution> RDPointer;
 
 enum class BuilderState
 {
@@ -124,13 +124,13 @@ struct StageBuilderTerrain::Impl
   }
 
   /// Random distribution for choosing sedimentary types.
-  boost::scoped_ptr<RandomDistribution> sedimentary_distribution_;
+  std::unique_ptr<RandomDistribution> sedimentary_distribution_;
 
   /// Random distribution for choosing metamorphic types.
-  boost::scoped_ptr<RandomDistribution> metamorphic_distribution_;
+  std::unique_ptr<RandomDistribution> metamorphic_distribution_;
 
   /// Random distribution for choosing igneous types.
-  boost::scoped_ptr<RandomDistribution> igneous_distribution_;
+  std::unique_ptr<RandomDistribution> igneous_distribution_;
 
   /// The column we are currently "painting".
   sf::Vector2i column_;
@@ -263,7 +263,7 @@ bool StageBuilderTerrain::Build()
       FATAL_ERROR("No igneous layers were found for building terrain");
     }
 
-    for (int z = 0; z < stage_size.z; ++z)
+    for (int z = 0; z < stage_size.z; z += 2)
     {
       const Substance* substance;
 
@@ -289,10 +289,11 @@ bool StageBuilderTerrain::Build()
       }
 
       impl->strata_[z] = substance;
+      impl->strata_[z+1] = substance;
     }
 
     impl->column_ = sf::Vector2i(0, 0);
-    std::cout << "Building initial stage..." << std::endl;
+    std::cout << "Building initial stage...";
     impl->builder_state_ = BuilderState::PopulateStage;
     break;
   }
@@ -308,7 +309,7 @@ bool StageBuilderTerrain::Build()
                                                          impl->column_.y) - 1;
              z >= 0; --z)
         {
-          StageBlock& block = impl->stage_.getBlock(impl->column_.x,
+          StageBlock& block = impl->stage_.get_block(impl->column_.x,
                                                     impl->column_.y,
                                                     z);
 
@@ -316,7 +317,7 @@ bool StageBuilderTerrain::Build()
 
           // This can be done "quickly" (no adjoining face invalidation)
           // since the stage is not yet designated "ready to render".
-          block.setSubstanceQuickly(BlockLayer::Solid, *substance);
+          block.set_substance_quickly(BlockLayer::Solid, *substance);
           ++stratum;
         }
 
@@ -325,13 +326,13 @@ bool StageBuilderTerrain::Build()
       else
       {
         impl->column_.x = 0;
-        std::cout << "    ... finished row "
-                  << impl->column_.y << " ... " << std::endl;
+        std::cout << impl->column_.y << "... ";
         ++(impl->column_.y);
       }
     }
     else
     {
+      std::cout << "done." << std::endl;
       impl->builder_state_ = BuilderState::Done;
     }
 

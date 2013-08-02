@@ -10,7 +10,7 @@ namespace gsl
 namespace rectopia
 {
 
-boost::scoped_ptr<TextureAtlas> TextureAtlas::instance_;
+std::unique_ptr<TextureAtlas> TextureAtlas::instance_;
 
 TextureAtlas* TextureAtlas::instance()
 {
@@ -107,7 +107,7 @@ bool TextureAtlas::findNextSpot(sf::Vector2u& origin,
         for (unsigned xCheck = origin.x; xCheck < origin.x + imageBlocks.x;
              ++xCheck)
         {
-          if (used[getBlock(xCheck, yCheck)])
+          if (used[get_block(xCheck, yCheck)])
           {
             suitable = false;
             break;
@@ -140,7 +140,7 @@ void TextureAtlas::reserveSpot(const sf::Vector2u& origin,
     for (unsigned int xBlocks = origin.x; xBlocks < origin.x + imageBlocks.x;
          ++xBlocks)
     {
-      used[getBlock(xBlocks, yBlocks)] = true;
+      used[get_block(xBlocks, yBlocks)] = true;
     }
   }
 }

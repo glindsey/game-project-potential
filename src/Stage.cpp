@@ -38,7 +38,7 @@ namespace rectopia
 struct Stage::Impl
 {
   /// Pointer to the stage instance.
-  static boost::scoped_ptr<Stage> instance_;
+  static std::unique_ptr<Stage> instance_;
 
   ColumnData& getColumnData(StageCoord x, StageCoord y)
   {
@@ -72,25 +72,25 @@ struct Stage::Impl
 
       for (StageCoord z = size_.z - 1; z >= 0; z--)
       {
-        StageBlock& block = chunks->getBlock(x, y, z);
+        StageBlock& block = chunks->get_block(x, y, z);
 
         // Starting at the top, find the first chunk that is solid, and set height to this + 1.
-        if ((solid_height_found == false) && (block.solid()))
+        if ((solid_height_found == false) && (block.is_solid()))
         {
           cData.solid_height = z + 1;
           solid_height_found = true;
         }
 
         // Also look for the first chunk that is visible, and set render height to this.
-        if ((render_height_found == false) && (block.visible()))
+        if ((render_height_found == false) && (block.is_visible()))
         {
           cData.render_height = z;
           render_height_found = true;
         }
 
         // Outdoor height is above the first solid chunk that has all hidden solid surfaces.
-        if ((outdoor_height_found == false) && (block.solid())
-            && (block.getHiddenFaces(BlockLayer::Solid).allTrue()))
+        if ((outdoor_height_found == false) && (block.is_solid())
+            && (block.get_hidden_faces(BlockLayer::Solid).allTrue()))
         {
           cData.outdoor_height = z + 1;
           outdoor_height_found = true;
@@ -151,7 +151,7 @@ struct Stage::Impl
   int seed_;
 
   /// Collection of all chunks comprising the stage.
-  boost::scoped_ptr<StageChunkCollection> chunks;
+  std::unique_ptr<StageChunkCollection> chunks;
 
   /// A vector of column data for the stage.
   boost::container::vector<ColumnData> column_data_;
@@ -182,7 +182,7 @@ struct Stage::Impl
 }
 ;
 
-boost::scoped_ptr<Stage> Stage::Impl::instance_;
+std::unique_ptr<Stage> Stage::Impl::instance_;
 
 Stage::Stage()
   : impl(new Impl())
@@ -225,12 +225,12 @@ void Stage::build(StageCoord3 stage_size, int seed)
 {
   StageCoord3 coord;
 
-  impl->size_.x = stage_size.x + (stage_size.x % StageChunk::ChunkSideLength);
-  impl->size_.y = stage_size.y + (stage_size.y % StageChunk::ChunkSideLength);
+  impl->size_.x = stage_size.x + (stage_size.x % StageChunk::chunk_side_length);
+  impl->size_.y = stage_size.y + (stage_size.y % StageChunk::chunk_side_length);
   impl->size_.z = stage_size.z;
 
-  impl->chunk_vector_size_.x = (stage_size.x / StageChunk::ChunkSideLength);
-  impl->chunk_vector_size_.y = (stage_size.y / StageChunk::ChunkSideLength);
+  impl->chunk_vector_size_.x = (stage_size.x / StageChunk::chunk_side_length);
+  impl->chunk_vector_size_.y = (stage_size.y / StageChunk::chunk_side_length);
   impl->chunk_vector_size_.z = stage_size.z;
 
   impl->min_terrain_height_ = 0;
@@ -245,7 +245,8 @@ void Stage::build(StageCoord3 stage_size, int seed)
   impl->cursor_.z = (impl->size_.z) * 3 / 4;
 
   std::cout << "Creating stage data structures..." << std::endl;
-  impl->chunks.reset(new StageChunkCollection(impl->chunk_vector_size_));
+  impl->chunks.reset(new StageChunkCollection(impl->size_));
+
   impl->column_data_.resize(impl->size_.x * impl->size_.y);
 
   impl->ready_ = true;
@@ -403,7 +404,7 @@ StageChunk& Stage::getChunkContaining(StageCoord x, StageCoord y, StageCoord z)
     return impl->chunks->getChunkContaining(x, y, z);
 }
 
-StageBlock& Stage::getBlock(StageCoord x, StageCoord y, StageCoord z)
+StageBlock& Stage::get_block(StageCoord x, StageCoord y, StageCoord z)
 {
 #ifndef NDEBUG
   if ((x < 0) || (y < 0) || (z < 0) ||
@@ -415,13 +416,13 @@ StageBlock& Stage::getBlock(StageCoord x, StageCoord y, StageCoord z)
   }
 #endif
 
-  return impl->chunks->getBlock(x, y, z);
+  return impl->chunks->get_block(x, y, z);
 }
 
 void Stage::process(void)
 {
   static ProcessingState last_processing_state = ProcessingState::Idle;
-  static boost::scoped_ptr<StageBuilder> builder;
+  static std::unique_ptr<StageBuilder> builder;
   bool done = false;
 
   // Have we changed states?
@@ -477,10 +478,6 @@ void Stage::process(void)
                                Settings::terrainSeaLevel));
       break;
 
-    case ProcessingState::SmoothTerrain:
-      builder.reset(new StageBuilderSmoother(*this, impl->seed_));
-      break;
-
     case ProcessingState::AddFlora:
       builder.reset(
         new StageBuilderFlora(*this, impl->seed_,
@@ -522,8 +519,6 @@ void Stage::process(void)
   case ProcessingState::GenerateTerrain:
     if (done)
     {
-      // At this point it's okay to do map rendering.
-      impl->okay_to_render_map_ = true;
       impl->processing_state_ = ProcessingState::AddDeposits;
     }
     break;
@@ -554,13 +549,6 @@ void Stage::process(void)
     if (done)
     {
       impl->UpdateAllColumnData();
-      impl->processing_state_ = ProcessingState::SmoothTerrain;
-    }
-    break;
-
-  case ProcessingState::SmoothTerrain:
-    if (done)
-    {
       impl->processing_state_ = ProcessingState::AddFlora;
     }
     break;
@@ -581,6 +569,10 @@ void Stage::process(void)
     {
       std::cout << "Terrain generation complete.  Moving to PAUSED state."
                 << std::endl;
+
+      // At this point it's okay to do map rendering.
+      impl->okay_to_render_map_ = true;
+
       impl->processing_state_ = ProcessingState::Paused;
     }
     break;

@@ -13,7 +13,6 @@
 #include <glm/gtx/transform.hpp>
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "ChunkRenderData.h"
 #include "ChunkVertexRenderData.h"
 #include "CursorRenderData.h"
@@ -24,6 +23,7 @@
 #include "Stage.h"
 #include "StageBlock.h"
 #include "StageChunk.h"
+#include "StageChunkCollection.h"
 
 namespace gsl
 {
@@ -33,38 +33,36 @@ namespace rectopia
 struct StageRenderer3D::Impl
 {
   /// Draws the stage block requested.
-  void drawStageBlock(StageBlock& block, ChunkRenderData& data)
+  void draw_stage_block(StageBlock& block, ChunkRenderData& data)
   {
-    BlockTopCorners corners = block.top_corners();
-    static BlockTopCorners flatCorners;
-
     static StageCoord3 stage_size = Stage::getInstance().size();
     static glm::vec3 center_coord = glm::vec3(stage_size.x / 2,
                                     stage_size.y / 2,
                                     stage_size.z / 2);
 
-    glm::vec3 coord = glm::vec3(block.getCoordinates().x,
-                                block.getCoordinates().y,
-                                block.getCoordinates().z);
+    glm::vec3 coord = glm::vec3(block.get_coords().x,
+                                block.get_coords().y,
+                                block.get_coords().z);
 
-    FaceBools hiddenFacesSolid = block.getHiddenFaces(BlockLayer::Solid);
-    FaceBools hiddenFacesFluid = block.getHiddenFaces(BlockLayer::Fluid);
+    FaceBools hiddenFacesSolid = block.get_hidden_faces(BlockLayer::Solid);
+    FaceBools hiddenFacesFluid = block.get_hidden_faces(BlockLayer::Fluid);
 
-    glm::vec4 colorSolid = block.substance(BlockLayer::Solid).getData().color;
-    glm::vec4 colorFluid = block.substance(BlockLayer::Fluid).getData().color;
+    glm::vec4 colorSolid = block.get_substance(BlockLayer::Solid).getData().color;
+    glm::vec4 colorFluid = block.get_substance(BlockLayer::Fluid).getData().color;
 
-    glm::vec4 colorSpecularSolid = block.substance(BlockLayer::Solid).getData().color_specular;
-    glm::vec4 colorSpecularFluid = block.substance(BlockLayer::Fluid).getData().color_specular;
+    glm::vec4 colorSpecularSolid = block.get_substance(BlockLayer::Solid).getData().color_specular;
+    glm::vec4 colorSpecularFluid = block.get_substance(BlockLayer::Fluid).getData().color_specular;
 
-    if (block.visible() && block.hasAnyVisibleFaces())
+    if ((Settings::debugMapRevealAll || block.is_known()) &&
+        block.is_visible() && block.has_any_visible_faces())
     {
-      drawBlock(data, coord, center_coord, colorSolid, colorSpecularSolid, hiddenFacesSolid, corners);
-      drawBlock(data, coord, center_coord, colorFluid, colorSpecularFluid, hiddenFacesFluid, flatCorners);
+      draw_block(data, coord, center_coord, colorSolid, colorSpecularSolid, hiddenFacesSolid);
+      draw_block(data, coord, center_coord, colorFluid, colorSpecularFluid, hiddenFacesFluid);
     }
   }
 
   /// Draw the cursor.
-  void drawCursor(CursorRenderData& data,
+  void draw_cursor(CursorRenderData& data,
                   glm::vec4 color)
   {
     // Set up the vertex coordinates.  Z and Y are flipped because the game
@@ -78,41 +76,40 @@ struct StageRenderer3D::Impl
     glm::vec3 ftUpRt(1, 1, 1);
     glm::vec3 ftUpLt(0, 1, 1);
 
-    data.addVertex(bkLoLt, color);
-    data.addVertex(bkLoRt, color);
-    data.addVertex(bkLoRt, color);
-    data.addVertex(bkUpRt, color);
-    data.addVertex(bkUpRt, color);
-    data.addVertex(bkUpLt, color);
-    data.addVertex(bkUpLt, color);
-    data.addVertex(bkLoLt, color);
-    data.addVertex(bkLoLt, color);
-    data.addVertex(ftLoLt, color);
-    data.addVertex(bkLoRt, color);
-    data.addVertex(ftLoRt, color);
-    data.addVertex(bkUpRt, color);
-    data.addVertex(ftUpRt, color);
-    data.addVertex(bkUpLt, color);
-    data.addVertex(ftUpLt, color);
-    data.addVertex(ftLoLt, color);
-    data.addVertex(ftLoRt, color);
-    data.addVertex(ftLoRt, color);
-    data.addVertex(ftUpRt, color);
-    data.addVertex(ftUpRt, color);
-    data.addVertex(ftUpLt, color);
-    data.addVertex(ftUpLt, color);
-    data.addVertex(ftLoLt, color);
+    data.add_vertex(bkLoLt, color);
+    data.add_vertex(bkLoRt, color);
+    data.add_vertex(bkLoRt, color);
+    data.add_vertex(bkUpRt, color);
+    data.add_vertex(bkUpRt, color);
+    data.add_vertex(bkUpLt, color);
+    data.add_vertex(bkUpLt, color);
+    data.add_vertex(bkLoLt, color);
+    data.add_vertex(bkLoLt, color);
+    data.add_vertex(ftLoLt, color);
+    data.add_vertex(bkLoRt, color);
+    data.add_vertex(ftLoRt, color);
+    data.add_vertex(bkUpRt, color);
+    data.add_vertex(ftUpRt, color);
+    data.add_vertex(bkUpLt, color);
+    data.add_vertex(ftUpLt, color);
+    data.add_vertex(ftLoLt, color);
+    data.add_vertex(ftLoRt, color);
+    data.add_vertex(ftLoRt, color);
+    data.add_vertex(ftUpRt, color);
+    data.add_vertex(ftUpRt, color);
+    data.add_vertex(ftUpLt, color);
+    data.add_vertex(ftUpLt, color);
+    data.add_vertex(ftLoLt, color);
   }
 
   /// Draws a stage block, taking into account hidden faces and shifted top
   /// corners.
-  void drawBlock(ChunkRenderData& data,
-                 glm::vec3 coord,
-                 glm::vec3 center,
-                 glm::vec4 color,
-                 glm::vec4 color_specular,
-                 FaceBools hidden = FaceBools(),
-                 BlockTopCorners corners = BlockTopCorners())
+  void draw_block(ChunkRenderData& data,
+                  glm::vec3 coord,
+                  glm::vec3 center,
+                  glm::vec4 color,
+                  glm::vec4 color_specular,
+                  FaceBools hidden = FaceBools())
   {
     // Get the vertex coordinates; Z/Y are flipped because the game treats
     // Y as back-to-front and Z as top-to-bottom.
@@ -133,75 +130,76 @@ struct StageRenderer3D::Impl
     glm::vec3 bkLoRt(xc + 1.0f, yc, zc);
     glm::vec3 ftLoLt(xc, yc, zc + 1.0f);
     glm::vec3 ftLoRt(xc + 1.0f, yc, zc + 1.0f);
-    glm::vec3 bkUpRt(xc + 1.0f, yc + 1.0f + (0.5f * corners.back_right()), zc);
-    glm::vec3 bkUpLt(xc, yc + 1.0f + (0.5f * corners.back_left()), zc);
-    glm::vec3 ftUpRt(xc + 1.0f, yc + 1.0f + (0.5f * corners.front_right()),
-                     zc + 1.0f);
-    glm::vec3 ftUpLt(xc, yc + 1.0f + (0.5f * corners.front_left()),
-                     zc + 1.0f);
+    glm::vec3 bkUpRt(xc + 1.0f, yc + 1.0f, zc);
+    glm::vec3 bkUpLt(xc, yc + 1.0f, zc);
+    glm::vec3 ftUpRt(xc + 1.0f, yc + 1.0f, zc + 1.0f);
+    glm::vec3 ftUpLt(xc, yc + 1.0f, zc + 1.0f);
+
+    static const glm::vec3 point_bk = glm::vec3(0.0f, 0.0f, -1.0f);
+    static const glm::vec3 point_fd = glm::vec3(0.0f, 0.0f, 1.0f);
+    static const glm::vec3 point_lt = glm::vec3(-1.0f, 0.0f, 0.0f);
+    static const glm::vec3 point_rt = glm::vec3(1.0f, 0.0f, 0.0f);
+    static const glm::vec3 point_dn = glm::vec3(0.0f, -1.0f, 0.0f);
+    static const glm::vec3 point_up = glm::vec3(0.0f, 1.0f, 0.0f);
 
     if (hidden.back() != true)
     {
-      data.addVertex(coord, bkLoLt, glm::vec3(0.0f, 0.0f, -1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoRt, glm::vec3(0.0f, 0.0f, -1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkUpRt, glm::vec3(0.0f, 0.0f, -1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkUpRt, glm::vec3(0.0f, 0.0f, -1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkUpLt, glm::vec3(0.0f, 0.0f, -1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoLt, glm::vec3(0.0f, 0.0f, -1.0f), color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoLt, point_bk, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoRt, point_bk, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpRt, point_bk, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpRt, point_bk, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpLt, point_bk, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoLt, point_bk, color, color_specular, texCoord);
     }
 
     if (hidden.top() != true)
     {
-      // Corner adjustments mean the top triangles may need their normals calculated.
-      glm::vec3 topNormal1 = calculateNormal(bkUpRt, bkUpLt, ftUpLt);
-      glm::vec3 topNormal2 = calculateNormal(ftUpLt, ftUpRt, bkUpRt);
-
-      data.addVertex(coord, bkUpRt, topNormal1, color, color_specular, texCoord);
-      data.addVertex(coord, bkUpLt, topNormal1, color, color_specular, texCoord);
-      data.addVertex(coord, ftUpLt, topNormal1, color, color_specular, texCoord);
-      data.addVertex(coord, ftUpLt, topNormal2, color, color_specular, texCoord);
-      data.addVertex(coord, ftUpRt, topNormal2, color, color_specular, texCoord);
-      data.addVertex(coord, bkUpRt, topNormal2, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpRt, point_up, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpLt, point_up, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpLt, point_up, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpLt, point_up, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpRt, point_up, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpRt, point_up, color, color_specular, texCoord);
     }
 
     if (hidden.left() != true)
     {
-      data.addVertex(coord, ftUpLt, glm::vec3(-1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkUpLt, glm::vec3(-1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoLt, glm::vec3(-1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoLt, glm::vec3(-1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftLoLt, glm::vec3(-1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftUpLt, glm::vec3(-1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpLt, point_lt, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpLt, point_lt, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoLt, point_lt, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoLt, point_lt, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoLt, point_lt, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpLt, point_lt, color, color_specular, texCoord);
     }
 
     if (hidden.bottom() != true)
     {
-      data.addVertex(coord, bkLoRt, glm::vec3(0.0f, -1.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoLt, glm::vec3(0.0f, -1.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftLoLt, glm::vec3(0.0f, -1.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftLoLt, glm::vec3(0.0f, -1.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftLoRt, glm::vec3(0.0f, -1.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoRt, glm::vec3(0.0f, -1.0f, 0.0f), color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoRt, point_dn, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoLt, point_dn, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoLt, point_dn, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoLt, point_dn, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoRt, point_dn, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoRt, point_dn, color, color_specular, texCoord);
     }
 
     if (hidden.right() != true)
     {
-      data.addVertex(coord, ftUpRt, glm::vec3(1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkUpRt, glm::vec3(1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoRt, glm::vec3(1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, bkLoRt, glm::vec3(1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftLoRt, glm::vec3(1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftUpRt, glm::vec3(1.0f, 0.0f, 0.0f), color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpRt, point_rt, color, color_specular, texCoord);
+      data.add_vertex(coord, bkUpRt, point_rt, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoRt, point_rt, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoRt, point_rt, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoRt, point_rt, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpRt, point_rt, color, color_specular, texCoord);
     }
 
     if (hidden.front() != true)
     {
-      data.addVertex(coord, ftLoLt, glm::vec3(0.0f, 0.0f, 1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftLoRt, glm::vec3(0.0f, 0.0f, 1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftUpRt, glm::vec3(0.0f, 0.0f, 1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftUpRt, glm::vec3(0.0f, 0.0f, 1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftUpLt, glm::vec3(0.0f, 0.0f, 1.0f), color, color_specular, texCoord);
-      data.addVertex(coord, ftLoLt, glm::vec3(0.0f, 0.0f, 1.0f), color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoLt, point_fd, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoRt, point_fd, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpRt, point_fd, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpRt, point_fd, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpLt, point_fd, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoLt, point_fd, color, color_specular, texCoord);
     }
   }
 
@@ -213,7 +211,6 @@ struct StageRenderer3D::Impl
 
   glm::mat4 projection_matrix_;       ///< Projection matrix
   glm::mat4 view_matrix_;             ///< View matrix
-  glm::mat4 model_matrix_;            ///< Model matrix
 
   glm::vec3 light_position_;          ///< Light position in world space
   glm::vec3 light_color_;             ///< Light color
@@ -232,7 +229,7 @@ struct StageRenderer3D::Impl
   /// Mutex for stale chunks set.
   boost::mutex stale_chunks_mutex_;
 
-  boost::scoped_ptr<GLShaderProgram> chunk_program_; ///< Chunk rendering program
+  std::unique_ptr<GLShaderProgram> chunk_program_; ///< Chunk rendering program
 
   /// IDs for some uniform variables: chunk rendering program.
   struct _chunk_program_id_
@@ -249,14 +246,13 @@ struct StageRenderer3D::Impl
 
   CursorRenderData cursor_data_;  ///< Cursor rendering data
 
-  boost::scoped_ptr<GLShaderProgram> cursor_program_; ///< Cursor rendering program
+  std::unique_ptr<GLShaderProgram> cursor_program_; ///< Cursor rendering program
 
   /// IDs for some uniform variables: cursor rendering program.
   struct _cursor_program_id_
   {
     GLuint projection_matrix;
     GLuint view_matrix;
-    GLuint model_matrix;
     GLuint frame_counter;
   } cursor_program_id_;
 };
@@ -274,7 +270,6 @@ StageRenderer3D::StageRenderer3D()
   // Get the IDs for the chunk rendering program.
   impl->chunk_program_id_.projection_matrix = impl->chunk_program_->getUniformId("projection_matrix");
   impl->chunk_program_id_.view_matrix = impl->chunk_program_->getUniformId("view_matrix");
-  impl->chunk_program_id_.model_matrix = impl->chunk_program_->getUniformId("model_matrix");
   impl->chunk_program_id_.light_position = impl->chunk_program_->getUniformId("light_position_worldspace");
   impl->chunk_program_id_.light_color = impl->chunk_program_->getUniformId("light_color");
   impl->chunk_program_id_.light_power = impl->chunk_program_->getUniformId("light_power");
@@ -289,23 +284,21 @@ StageRenderer3D::StageRenderer3D()
   // Get the IDs for the cursor rendering program.
   impl->cursor_program_id_.projection_matrix = impl->cursor_program_->getUniformId("projection_matrix");
   impl->cursor_program_id_.view_matrix = impl->cursor_program_->getUniformId("view_matrix");
-  impl->cursor_program_id_.model_matrix = impl->cursor_program_->getUniformId("model_matrix");
   impl->cursor_program_id_.frame_counter = impl->cursor_program_->getUniformId("frame_counter");
 
   // Draw the cursor wireframe.
-  impl->drawCursor(impl->cursor_data_, glm::vec4(1.0));
-  impl->cursor_data_.updateVAOs();
+  impl->draw_cursor(impl->cursor_data_, glm::vec4(1.0));
+  impl->cursor_data_.update_VAOs();
 
-  // Initialize the model, view, and projection matrices.
-  impl->model_matrix_ = glm::mat4(1.0f);
+  // Initialize the view and projection matrices.
   impl->view_matrix_ = glm::mat4(1.0f);
   impl->projection_matrix_ =
-    glm::perspective(45.0f, 16.0f / 9.0f, 0.75f, 300.0f);
+    glm::perspective(45.0f, 16.0f / 9.0f, 0.75f, 500.0f);
 
   // Initialize the light position (in worldspace), color, and power.
   impl->light_position_ = glm::vec3(0.0f, 0.0f, -50.0f);
   impl->light_color_ = glm::vec3(1.0f);
-  impl->light_power_ = 10000.0f; // It IS the sun, after all!
+  impl->light_power_ = 25000.0f; // It IS the sun, after all!
 
   // Set our camera variables.
   impl->camera_zoom_ = 40.0f;
@@ -334,7 +327,7 @@ bool StageRenderer3D::visit(StageBlock& block)
 bool StageRenderer3D::visit(StageChunk& chunk)
 {
   // See if the chunk's vertex data needs to be recalculated.
-  if (chunk.isRenderDataDirty())
+  if (chunk.is_render_data_dirty())
   {
     boost::mutex::scoped_lock lock(impl->stale_chunks_mutex_);
 
@@ -346,7 +339,7 @@ bool StageRenderer3D::visit(StageChunk& chunk)
         (impl->stale_chunks_.back() != &chunk))
     {
       impl->stale_chunks_.push_back(&chunk);
-      chunk.setRenderDataDirty(false);
+      chunk.set_render_data_dirty(false);
     }
   }
 
@@ -428,29 +421,44 @@ void StageRenderer3D::prepare()
 
   // See if any chunks are stale and need re-rendering.
   {
+    unsigned int stale_chunk_count = 16; /// @todo eliminate magic number
+
     boost::mutex::scoped_lock lock(impl->stale_chunks_mutex_);
 
-    // Update the top stale chunk on the list.
-    if (impl->stale_chunks_.size() > 0)
+    // Update stale chunks on the list, up to the number defined above.
+    while ((impl->stale_chunks_.size() > 0) && (stale_chunk_count > 0))
     {
+      --stale_chunk_count;
       StageChunk* chunk = impl->stale_chunks_.front();
       impl->stale_chunks_.pop_front();
       ChunkRenderData& render_data = impl->chunk_data_[chunk];
 
-      render_data.clearVertices();
+      render_data.clear_vertices();
 
-      for (int idx = 0; idx < StageChunk::ChunkSize; ++idx)
+      StageCoord3 chunk_coords = chunk->get_coords();
+
+      for (StageCoord add_y = 0;
+                      add_y < StageChunk::chunk_side_length; ++add_y)
       {
-        StageBlock& block = chunk->getBlock(idx);
-        impl->drawStageBlock(block, render_data);
+        for (StageCoord add_x = 0;
+                        add_x < StageChunk::chunk_side_length; ++add_x)
+        {
+          int block_x = chunk_coords.x + add_x;
+          int block_y = chunk_coords.y + add_y;
+          int block_z = chunk_coords.z;
+
+          StageBlock& block = chunk->get_parent()->get_block(block_x,
+                                                            block_y,
+                                                            block_z);
+
+          impl->draw_stage_block(block, render_data);
+        }
       }
 
       // Update vertex information on the GPU.
-      render_data.updateVAOs();
+      render_data.update_VAOs();
     }
   }
-
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void StageRenderer3D::draw()
@@ -463,9 +471,6 @@ void StageRenderer3D::draw()
 
     StageCoord3 stage_size = stage.size();
     StageCoord3 cursor_location = stage.cursor();
-
-    // Model matrix: Remains identity, because the model IS the world here!
-    //impl->model_matrix_ = glm::mat4(1.0f);
 
     // Figure out the angle to tilt.
     if ((impl->last_cursor_location_ != cursor_location) ||
@@ -498,9 +503,7 @@ void StageRenderer3D::draw()
     // Reposition light if necessary.
     impl->light_position_ = glm::vec3(0.0f, (float)stage_size.z + 32.0f, 0.0f);
 
-    // Send model matrix to GLSL.
-    glUniformMatrix4fv(impl->chunk_program_id_.model_matrix, 1, GL_FALSE,
-                       &impl->model_matrix_[0][0]);
+    // Send matrices to GLSL.
     glUniformMatrix4fv(impl->chunk_program_id_.projection_matrix, 1, GL_FALSE,
                        &impl->projection_matrix_[0][0]);
     glUniformMatrix4fv(impl->chunk_program_id_.view_matrix, 1, GL_FALSE,
@@ -557,8 +560,6 @@ void StageRenderer3D::draw()
     impl->cursor_program_->Bind();
 
     // Send uniforms to the cursor program.
-    glUniformMatrix4fv(impl->cursor_program_id_.model_matrix, 1, GL_FALSE,
-                       &impl->model_matrix_[0][0]);
     glUniformMatrix4fv(impl->cursor_program_id_.projection_matrix, 1, GL_FALSE,
                        &impl->projection_matrix_[0][0]);
     glUniformMatrix4fv(impl->cursor_program_id_.view_matrix, 1, GL_FALSE,

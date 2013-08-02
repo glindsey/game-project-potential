@@ -11,7 +11,6 @@
 #include "StageBuilderRivers.h"
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "ColumnData.h"
 #include "MathUtils.h"
 #include "Settings.h"
@@ -98,11 +97,15 @@ struct StageBuilderRivers::Impl
           coord.z = (int)(center.z + offset.z);
 
           if ((coord.x >= 0) && (coord.y >= 0) && (coord.z >= 0) &&
-              (coord.x < stage_size.x) && (coord.y < stage_size.y) && (coord.z < stage_size.z))
+              (coord.x < stage_size.x) &&
+              (coord.y < stage_size.y) &&
+              (coord.z < stage_size.z))
           {
-            StageBlock& getBlock = stage_.getBlock(coord.x, coord.y, coord.z);
-            getBlock.setSubstance(BlockLayer::Fluid, substance);
-            getBlock.setSubstance(BlockLayer::Solid, Substance::get("nothing"));
+            StageBlock& get_block = stage_.get_block(coord.x, coord.y, coord.z);
+            get_block.set_substance(BlockLayer::Fluid,
+                                    substance);
+            get_block.set_substance(BlockLayer::Solid,
+                                    Substance::get("nothing"));
           }
         }
       }
@@ -119,10 +122,13 @@ struct StageBuilderRivers::Impl
           coord.z = z;
 
           if ((coord.x >= 0) && (coord.y >= 0) && (coord.z >= 0) &&
-              (coord.x < stage_size.x) && (coord.y < stage_size.y) && (coord.z < stage_size.z))
+              (coord.x < stage_size.x) &&
+              (coord.y < stage_size.y) &&
+              (coord.z < stage_size.z))
           {
-            StageBlock& getBlock = stage_.getBlock(coord.x, coord.y, coord.z);
-            getBlock.setSubstance(BlockLayer::Solid, Substance::get("nothing"));
+            StageBlock& get_block = stage_.get_block(coord.x, coord.y, coord.z);
+            get_block.set_substance(BlockLayer::Solid,
+                                    Substance::get("nothing"));
           }
 
         }
@@ -189,6 +195,11 @@ StageBuilderRivers::~StageBuilderRivers()
 bool StageBuilderRivers::Build()
 {
   static StageCoord3 stage_size = impl->stage_.size();
+
+
+  // DEBUG CODE -- temporarily disable this builder
+  return true;
+  // END DEBUG CODE
 
   if (impl->begin_)
   {

@@ -12,7 +12,6 @@
 #include "../include/StageBuilderSmoother.h"
 
 #include "Application.h"
-#include "BlockTopCorners.h"
 #include "ColumnData.h"
 #include "MathUtils.h"
 #include "Settings.h"
@@ -82,7 +81,7 @@ bool StageBuilderSmoother::Build()
       int height = impl->stage_.getColumnSolidHeight(impl->coord_.x,
                                                      impl->coord_.y);
 
-      StageBlock& block = impl->stage_.getBlock(impl->coord_.x,
+      StageBlock& block = impl->stage_.get_block(impl->coord_.x,
                                                 impl->coord_.y,
                                                 height - 1);
 
@@ -100,25 +99,7 @@ bool StageBuilderSmoother::Build()
       int heightW = impl->stage_.getColumnSolidHeight(x_left, impl->coord_.y);
       int heightNW = impl->stage_.getColumnSolidHeight(x_left, y_up);
 
-      int cornerBL = 0;
-      int cornerBR = 0;
-      int cornerFR = 0;
-      int cornerFL = 0;
-
-      cornerBL = sgn(
-                   sgn(heightW - height) + sgn(heightNW - height) + sgn(heightN - height));
-      cornerBR = sgn(
-                   sgn(heightN - height) + sgn(heightNE - height) + sgn(heightE - height));
-      cornerFR = sgn(
-                   sgn(heightE - height) + sgn(heightSE - height) + sgn(heightS - height));
-      cornerFL = sgn(
-                   sgn(heightS - height) + sgn(heightSW - height) + sgn(heightW - height));
-
-      block.top_corners().set_back_left(cornerBL);
-      block.top_corners().set_back_right(cornerBR);
-      block.top_corners().set_front_right(cornerFR);
-      block.top_corners().set_front_left(cornerFL);
-      block.setFaceDataDirty();
+      block.invalidate_face_data();
     }
 
     ++(impl->coord_.y);
