@@ -8,6 +8,20 @@
 namespace gsl
 {
 
+#define PI 3.141592653589791
+
+/// Converts degrees to radians.
+inline float deg_to_rad(float degrees)
+{
+  return (degrees * (PI/180));
+}
+
+/// Convert radians to degrees.
+inline float rad_to_deg(float radians)
+{
+  return (radians * (180/PI));
+}
+
 /// Converts polar coordinates to rectangular ones.
 /// This function translates polar coordinates, centered at (0, 0), to
 /// rectangular ones.

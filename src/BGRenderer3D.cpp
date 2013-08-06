@@ -24,38 +24,38 @@ struct BGRenderer3D::Impl
                           glm::vec4 bottom_left_color,
                           glm::vec4 bottom_right_color)
   {
-    render_data_->add_vertex(glm::vec2(left, top), top_left_color);
-    render_data_->add_vertex(glm::vec2(right, top), top_right_color);
-    render_data_->add_vertex(glm::vec2(left, bottom), bottom_left_color);
-    render_data_->add_vertex(glm::vec2(left, bottom), bottom_left_color);
-    render_data_->add_vertex(glm::vec2(right, bottom), bottom_right_color);
-    render_data_->add_vertex(glm::vec2(right, top), top_right_color);
+    render_data->add_vertex(glm::vec2(left, top), top_left_color);
+    render_data->add_vertex(glm::vec2(right, top), top_right_color);
+    render_data->add_vertex(glm::vec2(left, bottom), bottom_left_color);
+    render_data->add_vertex(glm::vec2(left, bottom), bottom_left_color);
+    render_data->add_vertex(glm::vec2(right, bottom), bottom_right_color);
+    render_data->add_vertex(glm::vec2(right, top), top_right_color);
   }
 
-  std::unique_ptr<BGRenderData> render_data_;
-  std::unique_ptr<GLShaderProgram> shader_program_; ///< Rendering program
+  std::unique_ptr<BGRenderData> render_data;
+  std::unique_ptr<GLShaderProgram> shader_program; ///< Rendering program
 
   // IDs for uniforms.
-  GLuint window_size_id_;
-  GLuint frame_counter_id_;
+  GLuint window_size_id;
+  GLuint frame_counter_id;
 
-  bool vao_dirty_;  ///< Boolean indicating whether VAO needs updating
+  bool vao_dirty;  ///< Boolean indicating whether VAO needs updating
 };
 
 BGRenderer3D::BGRenderer3D()
   : impl(new Impl())
 {
   name_ = "3D Renderer";
-  impl->render_data_.reset(new BGRenderData());
+  impl->render_data.reset(new BGRenderData());
   // Create and compile our GLSL program from the shaders
-  impl->shader_program_.reset(
+  impl->shader_program.reset(
     new GLShaderProgram("shaders/BGVertexShader.glsl",
                         "shaders/BGFragmentShader.glsl"));
 
   // Get IDs for uniforms.
-  impl->frame_counter_id_ = impl->shader_program_->getUniformId("frame_counter");
+  impl->frame_counter_id = impl->shader_program->get_uniform_id("frame_counter");
 
-  impl->render_data_->clear_vertices();
+  impl->render_data->clear_vertices();
 
   printf("Drawing skybox\n");
   impl->draw_gradient_rect(-1.0f, 1.0f,
@@ -65,7 +65,7 @@ BGRenderer3D::BGRenderer3D()
                            glm::vec4(0.00, 0.00, 0.25, 1.00),
                            glm::vec4(0.00, 0.00, 0.25, 1.00));
 
-  impl->vao_dirty_ = true;
+  impl->vao_dirty = true;
 }
 
 BGRenderer3D::~BGRenderer3D()
@@ -76,7 +76,7 @@ BGRenderer3D::~BGRenderer3D()
 void BGRenderer3D::prepare()
 {
   // Use our shader program.
-  impl->shader_program_->Bind();
+  impl->shader_program->bind();
 
   // Clear everything in preparation for a new frame.
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
@@ -86,17 +86,17 @@ void BGRenderer3D::draw()
 {
   static unsigned int frame_counter;
 
-  if (impl->vao_dirty_)
+  if (impl->vao_dirty)
   {
-    impl->render_data_->update_VAO();
-    impl->vao_dirty_ = false;
+    impl->render_data->update_VAO();
+    impl->vao_dirty = false;
   }
 
   // Send frame counter to renderer.
-  glUniform1f(impl->frame_counter_id_, frame_counter);
+  glUniform1f(impl->frame_counter_id, frame_counter);
 
-  glBindVertexArray(impl->render_data_->vao_id);
-  glDrawArrays(GL_TRIANGLES, 0, impl->render_data_->vertex_count);
+  glBindVertexArray(impl->render_data->vao_id);
+  glDrawArrays(GL_TRIANGLES, 0, impl->render_data->vertex_count);
 
   ++frame_counter;
 }
@@ -106,7 +106,7 @@ void BGRenderer3D::finish()
   glBindVertexArray(0);
 
   // Use our shader program.
-  impl->shader_program_->Unbind();
+  impl->shader_program->unbind();
 }
 
 

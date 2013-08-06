@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iterator>
+#include <list>
 #include <vector>
 #include <boost/container/list.hpp>
 #include <boost/thread/condition_variable.hpp>
@@ -36,9 +37,6 @@ struct StageRenderer3D::Impl
   void draw_stage_block(StageBlock& block, ChunkRenderData& data)
   {
     static StageCoord3 stage_size = Stage::getInstance().size();
-    static glm::vec3 center_coord = glm::vec3(stage_size.x / 2,
-                                    stage_size.y / 2,
-                                    stage_size.z / 2);
 
     glm::vec3 coord = glm::vec3(block.get_coords().x,
                                 block.get_coords().y,
@@ -56,8 +54,8 @@ struct StageRenderer3D::Impl
     if ((Settings::debugMapRevealAll || block.is_known()) &&
         block.is_visible() && block.has_any_visible_faces())
     {
-      draw_block(data, coord, center_coord, colorSolid, colorSpecularSolid, hiddenFacesSolid);
-      draw_block(data, coord, center_coord, colorFluid, colorSpecularFluid, hiddenFacesFluid);
+      draw_block(data, coord, colorSolid, colorSpecularSolid, hiddenFacesSolid);
+      draw_block(data, coord, colorFluid, colorSpecularFluid, hiddenFacesFluid);
     }
   }
 
@@ -102,20 +100,18 @@ struct StageRenderer3D::Impl
     data.add_vertex(ftLoLt, color);
   }
 
-  /// Draws a stage block, taking into account hidden faces and shifted top
-  /// corners.
+  /// Draws a stage block, taking into account hidden faces.
   void draw_block(ChunkRenderData& data,
                   glm::vec3 coord,
-                  glm::vec3 center,
                   glm::vec4 color,
-                  glm::vec4 color_specular,
+                  glm::vec4 color_spec,
                   FaceBools hidden = FaceBools())
   {
     // Get the vertex coordinates; Z/Y are flipped because the game treats
     // Y as back-to-front and Z as top-to-bottom.
-    float xc = (float)coord.x - (float)center.x;
-    float yc = (float)coord.z - (float)center.z;
-    float zc = (float)coord.y - (float)center.y;
+    float xc = (float)coord.x;
+    float yc = (float)coord.z;
+    float zc = (float)coord.y;
 
     if (color.a == 0)
     {
@@ -135,6 +131,26 @@ struct StageRenderer3D::Impl
     glm::vec3 ftUpRt(xc + 1.0f, yc + 1.0f, zc + 1.0f);
     glm::vec3 ftUpLt(xc, yc + 1.0f, zc + 1.0f);
 
+    // Coordinates to make a little cap on top of the block.
+    glm::vec3 CapBkLoRt(xc + 0.8f, yc + 1.0f, zc + 0.2f);
+    glm::vec3 CapBkLoLt(xc + 0.2f, yc + 1.0f, zc + 0.2f);
+    glm::vec3 CapFtLoRt(xc + 0.8f, yc + 1.0f, zc + 0.8f);
+    glm::vec3 CapFtLoLt(xc + 0.2f, yc + 1.0f, zc + 0.8f);
+    glm::vec3 CapBkUpRt(xc + 0.8f, yc + 1.2f, zc + 0.2f);
+    glm::vec3 CapBkUpLt(xc + 0.2f, yc + 1.2f, zc + 0.2f);
+    glm::vec3 CapFtUpRt(xc + 0.8f, yc + 1.2f, zc + 0.8f);
+    glm::vec3 CapFtUpLt(xc + 0.2f, yc + 1.2f, zc + 0.8f);
+
+    // Coordinates to make a little dimple on bottom of the block.
+    glm::vec3 DplBkLoRt(xc + 0.8f, yc + 0.0f, zc + 0.2f);
+    glm::vec3 DplBkLoLt(xc + 0.2f, yc + 0.0f, zc + 0.2f);
+    glm::vec3 DplFtLoRt(xc + 0.8f, yc + 0.0f, zc + 0.8f);
+    glm::vec3 DplFtLoLt(xc + 0.2f, yc + 0.0f, zc + 0.8f);
+    glm::vec3 DplBkUpRt(xc + 0.8f, yc + 0.2f, zc + 0.2f);
+    glm::vec3 DplBkUpLt(xc + 0.2f, yc + 0.2f, zc + 0.2f);
+    glm::vec3 DplFtUpRt(xc + 0.8f, yc + 0.2f, zc + 0.8f);
+    glm::vec3 DplFtUpLt(xc + 0.2f, yc + 0.2f, zc + 0.8f);
+
     static const glm::vec3 point_bk = glm::vec3(0.0f, 0.0f, -1.0f);
     static const glm::vec3 point_fd = glm::vec3(0.0f, 0.0f, 1.0f);
     static const glm::vec3 point_lt = glm::vec3(-1.0f, 0.0f, 0.0f);
@@ -144,117 +160,250 @@ struct StageRenderer3D::Impl
 
     if (hidden.back() != true)
     {
-      data.add_vertex(coord, bkLoLt, point_bk, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoRt, point_bk, color, color_specular, texCoord);
-      data.add_vertex(coord, bkUpRt, point_bk, color, color_specular, texCoord);
-      data.add_vertex(coord, bkUpRt, point_bk, color, color_specular, texCoord);
-      data.add_vertex(coord, bkUpLt, point_bk, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoLt, point_bk, color, color_specular, texCoord);
+      data.add_vertex(coord, bkLoLt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpLt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoLt, point_bk, color, color_spec, texCoord);
     }
 
     if (hidden.top() != true)
     {
-      data.add_vertex(coord, bkUpRt, point_up, color, color_specular, texCoord);
-      data.add_vertex(coord, bkUpLt, point_up, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpLt, point_up, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpLt, point_up, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpRt, point_up, color, color_specular, texCoord);
-      data.add_vertex(coord, bkUpRt, point_up, color, color_specular, texCoord);
+      // Top back
+      data.add_vertex(coord, bkUpRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpRt, point_up, color, color_spec, texCoord);
+
+      // Top left
+      data.add_vertex(coord, bkUpLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpLt, point_up, color, color_spec, texCoord);
+
+      // Top right
+      data.add_vertex(coord, bkUpRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpRt, point_up, color, color_spec, texCoord);
+
+      // Top front
+      data.add_vertex(coord, ftUpRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpRt, point_up, color, color_spec, texCoord);
+
+      // Cap back
+      data.add_vertex(coord, CapBkLoLt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkUpRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkUpRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkUpLt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoLt, point_bk, color, color_spec, texCoord);
+
+      // Cap left
+      data.add_vertex(coord, CapFtUpLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkUpLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpLt, point_lt, color, color_spec, texCoord);
+
+      // Cap right
+      data.add_vertex(coord, CapFtUpRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkUpRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkLoRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpRt, point_rt, color, color_spec, texCoord);
+
+      // Cap front
+      data.add_vertex(coord, CapFtLoLt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpLt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtLoLt, point_fd, color, color_spec, texCoord);
+
+      // Cap top
+      data.add_vertex(coord, CapBkUpRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkUpLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpLt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapFtUpRt, point_up, color, color_spec, texCoord);
+      data.add_vertex(coord, CapBkUpRt, point_up, color, color_spec, texCoord);
     }
 
     if (hidden.left() != true)
     {
-      data.add_vertex(coord, ftUpLt, point_lt, color, color_specular, texCoord);
-      data.add_vertex(coord, bkUpLt, point_lt, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoLt, point_lt, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoLt, point_lt, color, color_specular, texCoord);
-      data.add_vertex(coord, ftLoLt, point_lt, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpLt, point_lt, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoLt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpLt, point_lt, color, color_spec, texCoord);
     }
 
     if (hidden.bottom() != true)
     {
-      data.add_vertex(coord, bkLoRt, point_dn, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoLt, point_dn, color, color_specular, texCoord);
-      data.add_vertex(coord, ftLoLt, point_dn, color, color_specular, texCoord);
-      data.add_vertex(coord, ftLoLt, point_dn, color, color_specular, texCoord);
-      data.add_vertex(coord, ftLoRt, point_dn, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoRt, point_dn, color, color_specular, texCoord);
+      // Bottom back
+      data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
+
+      // Bottom left
+      data.add_vertex(coord, bkLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoLt, point_dn, color, color_spec, texCoord);
+
+      // Bottom right
+      data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
+
+      // Bottom front
+      data.add_vertex(coord, ftLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoRt, point_dn, color, color_spec, texCoord);
+
+      // Dimple back
+      data.add_vertex(coord, DplBkLoLt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkUpRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkUpRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkUpLt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoLt, point_fd, color, color_spec, texCoord);
+
+      // Dimple left
+      data.add_vertex(coord, DplFtUpLt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkUpLt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoLt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoLt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoLt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpLt, point_rt, color, color_spec, texCoord);
+
+      // Dimple right
+      data.add_vertex(coord, DplFtUpRt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkUpRt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoRt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkLoRt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoRt, point_lt, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpRt, point_lt, color, color_spec, texCoord);
+
+      // Dimple front
+      data.add_vertex(coord, DplFtLoLt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpRt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpLt, point_bk, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtLoLt, point_bk, color, color_spec, texCoord);
+
+      // Dimple top
+      data.add_vertex(coord, DplBkUpRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkUpLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpLt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplFtUpRt, point_dn, color, color_spec, texCoord);
+      data.add_vertex(coord, DplBkUpRt, point_dn, color, color_spec, texCoord);
+
+      //data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
+      //data.add_vertex(coord, bkLoLt, point_dn, color, color_spec, texCoord);
+      //data.add_vertex(coord, ftLoLt, point_dn, color, color_spec, texCoord);
+      //data.add_vertex(coord, ftLoLt, point_dn, color, color_spec, texCoord);
+      //data.add_vertex(coord, ftLoRt, point_dn, color, color_spec, texCoord);
+      //data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
     }
 
     if (hidden.right() != true)
     {
-      data.add_vertex(coord, ftUpRt, point_rt, color, color_specular, texCoord);
-      data.add_vertex(coord, bkUpRt, point_rt, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoRt, point_rt, color, color_specular, texCoord);
-      data.add_vertex(coord, bkLoRt, point_rt, color, color_specular, texCoord);
-      data.add_vertex(coord, ftLoRt, point_rt, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpRt, point_rt, color, color_specular, texCoord);
+      data.add_vertex(coord, ftUpRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoRt, point_rt, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpRt, point_rt, color, color_spec, texCoord);
     }
 
     if (hidden.front() != true)
     {
-      data.add_vertex(coord, ftLoLt, point_fd, color, color_specular, texCoord);
-      data.add_vertex(coord, ftLoRt, point_fd, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpRt, point_fd, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpRt, point_fd, color, color_specular, texCoord);
-      data.add_vertex(coord, ftUpLt, point_fd, color, color_specular, texCoord);
-      data.add_vertex(coord, ftLoLt, point_fd, color, color_specular, texCoord);
+      data.add_vertex(coord, ftLoLt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpRt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpLt, point_fd, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoLt, point_fd, color, color_spec, texCoord);
     }
   }
 
   typedef boost::ptr_map<StageChunk*, ChunkRenderData> ChunkRenderDataMap;
-  typedef boost::container::list<StageChunk*> StaleChunkCollection;
+  typedef std::list<StageChunk*> StaleChunkCollection;
 
-  ChunkRenderDataMap chunk_data_;     ///< Map of rendering data to StageChunks
+  ChunkRenderDataMap chunk_data;     ///< Map of rendering data to StageChunks
   StaleChunkCollection stale_chunks_; ///< List of chunks that need refreshing
 
-  glm::mat4 projection_matrix_;       ///< Projection matrix
-  glm::mat4 view_matrix_;             ///< View matrix
+  glm::vec3 light_dir;               ///< Light direction in world space
+  glm::vec3 light_color;             ///< Light color
 
-  glm::vec3 light_position_;          ///< Light position in world space
-  glm::vec3 light_color_;             ///< Light color
-  GLfloat light_power_;               ///< Light power
+  GLfloat angle_of_view;              ///< Current angle of view, in degrees
+  GLfloat camera_zoom;               ///< Camera zoom, from -100 to 100.
+  GLfloat camera_x_angle;             ///< Camera X angle, from -30 to 30.
+  GLfloat camera_y_angle;             ///< Camera Y angle, from -90 to 90.
 
-  GLfloat camera_zoom_;               ///< Camera zoom, from 0 to 100.
-  GLfloat last_camera_zoom_;          ///< Previous camera zoom setting
-
-  GLfloat camera_height_;             ///< Camera height, from -90 to 90.
-  GLfloat last_camera_height_;        ///< Previous camera height setting
-
-  GLuint frame_counter_;              ///< Frame counter
-
-  StageCoord3 last_cursor_location_;  ///< Previous cursor position
+  GLuint frame_counter;              ///< Frame counter
 
   /// Mutex for stale chunks set.
   boost::mutex stale_chunks_mutex_;
 
-  std::unique_ptr<GLShaderProgram> chunk_program_; ///< Chunk rendering program
+  std::unique_ptr<GLShaderProgram> chunk_program; ///< Chunk rendering program
 
   /// IDs for some uniform variables: chunk rendering program.
   struct _chunk_program_id_
   {
-    GLuint projection_matrix;
-    GLuint view_matrix;
-    GLuint model_matrix;
-    GLuint light_position;
+    GLuint light_dir;
     GLuint light_color;
-    GLuint light_power;
     GLuint cursor_location;
     GLuint frame_counter;
-  } chunk_program_id_;
 
-  CursorRenderData cursor_data_;  ///< Cursor rendering data
+    GLuint angle_of_view;
+    GLuint aspect_ratio;
+    GLuint z_near;
+    GLuint z_far;
+    GLuint camera_zoom;
+    GLuint camera_x_angle;
+    GLuint camera_y_angle;
+  } chunk_program_id;
 
-  std::unique_ptr<GLShaderProgram> cursor_program_; ///< Cursor rendering program
+  CursorRenderData cursor_data;  ///< Cursor rendering data
+
+  std::unique_ptr<GLShaderProgram> cursor_program; ///< Cursor rendering program
 
   /// IDs for some uniform variables: cursor rendering program.
   struct _cursor_program_id_
   {
-    GLuint projection_matrix;
-    GLuint view_matrix;
+    GLuint cursor_location;
     GLuint frame_counter;
-  } cursor_program_id_;
+  } cursor_program_id;
 };
 
 StageRenderer3D::StageRenderer3D()
@@ -263,46 +412,47 @@ StageRenderer3D::StageRenderer3D()
   name_ = "3D Renderer";
 
   // Create and compile the GLSL chunk rendering program from the shaders.
-  impl->chunk_program_.reset(
+  impl->chunk_program.reset(
     new GLShaderProgram("shaders/ChunkVertexShader.glsl",
                         "shaders/ChunkFragmentShader.glsl"));
 
   // Get the IDs for the chunk rendering program.
-  impl->chunk_program_id_.projection_matrix = impl->chunk_program_->getUniformId("projection_matrix");
-  impl->chunk_program_id_.view_matrix = impl->chunk_program_->getUniformId("view_matrix");
-  impl->chunk_program_id_.light_position = impl->chunk_program_->getUniformId("light_position_worldspace");
-  impl->chunk_program_id_.light_color = impl->chunk_program_->getUniformId("light_color");
-  impl->chunk_program_id_.light_power = impl->chunk_program_->getUniformId("light_power");
-  impl->chunk_program_id_.cursor_location = impl->chunk_program_->getUniformId("cursor_location");
-  impl->chunk_program_id_.frame_counter = impl->chunk_program_->getUniformId("frame_counter");
+  impl->chunk_program_id.light_dir = impl->chunk_program->get_uniform_id("light_dir_worldspace");
+  impl->chunk_program_id.light_color = impl->chunk_program->get_uniform_id("light_color");
+
+  impl->chunk_program_id.cursor_location = impl->chunk_program->get_uniform_id("cursor_location");
+  impl->chunk_program_id.frame_counter = impl->chunk_program->get_uniform_id("frame_counter");
+
+  impl->chunk_program_id.angle_of_view = impl->chunk_program->get_uniform_id("angle_of_view");
+  impl->chunk_program_id.aspect_ratio = impl->chunk_program->get_uniform_id("aspect_ratio");
+  impl->chunk_program_id.z_near = impl->chunk_program->get_uniform_id("z_near");
+  impl->chunk_program_id.z_far = impl->chunk_program->get_uniform_id("z_far");
+  impl->chunk_program_id.camera_zoom = impl->chunk_program->get_uniform_id("camera_zoom");
+  impl->chunk_program_id.camera_x_angle = impl->chunk_program->get_uniform_id("camera_x_angle");
+  impl->chunk_program_id.camera_y_angle = impl->chunk_program->get_uniform_id("camera_y_angle");
 
   // Create and compile the GLSL cursor rendering program from the shaders.
-  impl->cursor_program_.reset(
+  impl->cursor_program.reset(
     new GLShaderProgram("shaders/CursorVertexShader.glsl",
                         "shaders/CursorFragmentShader.glsl"));
 
   // Get the IDs for the cursor rendering program.
-  impl->cursor_program_id_.projection_matrix = impl->cursor_program_->getUniformId("projection_matrix");
-  impl->cursor_program_id_.view_matrix = impl->cursor_program_->getUniformId("view_matrix");
-  impl->cursor_program_id_.frame_counter = impl->cursor_program_->getUniformId("frame_counter");
+  impl->cursor_program_id.cursor_location = impl->chunk_program->get_uniform_id("cursor_location");
+  impl->cursor_program_id.frame_counter = impl->cursor_program->get_uniform_id("frame_counter");
 
   // Draw the cursor wireframe.
-  impl->draw_cursor(impl->cursor_data_, glm::vec4(1.0));
-  impl->cursor_data_.update_VAOs();
+  impl->draw_cursor(impl->cursor_data, glm::vec4(1.0));
+  impl->cursor_data.update_VAOs();
 
-  // Initialize the view and projection matrices.
-  impl->view_matrix_ = glm::mat4(1.0f);
-  impl->projection_matrix_ =
-    glm::perspective(45.0f, 16.0f / 9.0f, 0.75f, 500.0f);
-
-  // Initialize the light position (in worldspace), color, and power.
-  impl->light_position_ = glm::vec3(0.0f, 0.0f, -50.0f);
-  impl->light_color_ = glm::vec3(1.0f);
-  impl->light_power_ = 25000.0f; // It IS the sun, after all!
+  // Initialize the light direction and color.
+  impl->light_dir = glm::vec3(0.0f, 1.0f, 0.0f);
+  impl->light_color = glm::vec3(1.0f);
 
   // Set our camera variables.
-  impl->camera_zoom_ = 40.0f;
-  impl->camera_height_ = 15.0f;
+  impl->angle_of_view = 45.0f;
+  impl->camera_zoom = -50.0f;
+  impl->camera_x_angle = 0.0f;
+  impl->camera_y_angle = 20.0f;
 }
 
 StageRenderer3D::~StageRenderer3D()
@@ -357,10 +507,6 @@ EventResult StageRenderer3D::handleWindowResize(int w, int h)
   // Reset the viewport.
   glViewport(0.0f, 0.0f, (float) w, (float) h);
 
-  // Reset the projection matrix.
-  impl->projection_matrix_ =
-    glm::perspective(45.0f, (GLfloat) w / (GLfloat) h, 0.75f, 300.0f);
-
   return EventResult::Handled;
 }
 
@@ -372,30 +518,50 @@ EventResult StageRenderer3D::handleKeyDown(sf::Event::KeyEvent key)
     switch (key.code)
     {
     case sf::Keyboard::Up:
-      if (impl->camera_height_ < 90)
+      if (impl->camera_y_angle < 90)
       {
-        impl->camera_height_ += 1;
+        impl->camera_y_angle += 1;
+        std::cout << "Camera Y angle now " << impl->camera_y_angle << std::endl;
       }
       return EventResult::Handled;
 
     case sf::Keyboard::Down:
-      if (impl->camera_height_ > -90)
+      if (impl->camera_y_angle > -90)
       {
-        impl->camera_height_ -= 1;
+        impl->camera_y_angle -= 1;
+        std::cout << "Camera Y angle now " << impl->camera_y_angle << std::endl;
+      }
+      return EventResult::Handled;
+
+    case sf::Keyboard::Left:
+      if (impl->camera_x_angle < 45)
+      {
+        impl->camera_x_angle += 1;
+        std::cout << "Camera X angle now " << impl->camera_x_angle << std::endl;
+      }
+      return EventResult::Handled;
+
+    case sf::Keyboard::Right:
+      if (impl->camera_x_angle > -45)
+      {
+        impl->camera_x_angle -= 1;
+        std::cout << "Camera X angle now " << impl->camera_x_angle << std::endl;
       }
       return EventResult::Handled;
 
     case sf::Keyboard::Comma:
-      if (impl->camera_zoom_ > 0.0f)
+      if (impl->camera_zoom > -100.0f)
       {
-        impl->camera_zoom_ -= 0.25f;
+        impl->camera_zoom -= 0.5f;
+        std::cout << "Camera zoom now " << impl->camera_zoom << std::endl;
       }
       return EventResult::Handled;
 
     case sf::Keyboard::Period:
-      if (impl->camera_zoom_ < 100.0f)
+      if (impl->camera_zoom < 100.0f)
       {
-        impl->camera_zoom_ += 0.25f;
+        impl->camera_zoom += 0.5f;
+        std::cout << "Camera zoom now " << impl->camera_zoom << std::endl;
       }
       return EventResult::Handled;
 
@@ -410,12 +576,12 @@ EventResult StageRenderer3D::handleKeyDown(sf::Event::KeyEvent key)
 void StageRenderer3D::prepare()
 {
   sf::Window& window = App::instance().window();
-  const sf::Vector2u& windowSize = window.getSize();
+  const sf::Vector2u& window_size = window.getSize();
 
   static bool firstPrepare = true;
   if (firstPrepare)
   {
-    handleWindowResize(windowSize.x, windowSize.y);
+    handleWindowResize(window_size.x, window_size.y);
     firstPrepare = false;
   }
 
@@ -431,7 +597,7 @@ void StageRenderer3D::prepare()
       --stale_chunk_count;
       StageChunk* chunk = impl->stale_chunks_.front();
       impl->stale_chunks_.pop_front();
-      ChunkRenderData& render_data = impl->chunk_data_[chunk];
+      ChunkRenderData& render_data = impl->chunk_data[chunk];
 
       render_data.clear_vertices();
 
@@ -463,121 +629,95 @@ void StageRenderer3D::prepare()
 
 void StageRenderer3D::draw()
 {
+  sf::Window& window = App::instance().window();
+  const sf::Vector2u& window_size = window.getSize();
+
   Stage& stage = Stage::getInstance();
 
   if (stage.isReady())
   {
-    impl->chunk_program_->Bind();
+    impl->chunk_program->bind();
 
     StageCoord3 stage_size = stage.size();
     StageCoord3 cursor_location = stage.cursor();
 
-    // Figure out the angle to tilt.
-    if ((impl->last_cursor_location_ != cursor_location) ||
-        (impl->last_camera_zoom_ != impl->camera_zoom_) ||
-        (impl->last_camera_height_ != impl->camera_height_))
-    {
-      // Start view matrix at identity.
-      impl->view_matrix_ = glm::mat4(1.0f);
-
-      // Translate to back the camera out.
-      impl->view_matrix_ = glm::translate(impl->view_matrix_,
-                                          0.0f, 0.0f, -impl->camera_zoom_);
-
-      // Rotate the view.
-      impl->view_matrix_ = glm::rotate(impl->view_matrix_,
-                                       impl->camera_height_,
-                                       1.0f, 0.0f, 0.0f);
-
-      // Translate so the cursor is in the center.
-      impl->view_matrix_ = glm::translate(impl->view_matrix_,
-                                          glm::vec3((stage_size.x / 2) - cursor_location.x,
-                                              (stage_size.z / 2) - cursor_location.z,
-                                              (stage_size.y / 2) - cursor_location.y));
-
-      impl->last_cursor_location_ = cursor_location;
-      impl->last_camera_zoom_ = impl->camera_zoom_;
-      impl->last_camera_height_ = impl->camera_height_;
-    }
-
-    // Reposition light if necessary.
-    impl->light_position_ = glm::vec3(0.0f, (float)stage_size.z + 32.0f, 0.0f);
-
-    // Send matrices to GLSL.
-    glUniformMatrix4fv(impl->chunk_program_id_.projection_matrix, 1, GL_FALSE,
-                       &impl->projection_matrix_[0][0]);
-    glUniformMatrix4fv(impl->chunk_program_id_.view_matrix, 1, GL_FALSE,
-                       &impl->view_matrix_[0][0]);
+    // Send camera data to GLSL.
+    glUniform1f(impl->chunk_program_id.angle_of_view, impl->angle_of_view);
+    glUniform1f(impl->chunk_program_id.aspect_ratio, (GLfloat) window_size.x /
+                                                     (GLfloat) window_size.y);
+    glUniform1f(impl->chunk_program_id.z_near, 0.75f);
+    glUniform1f(impl->chunk_program_id.z_far, 300.0f);
+    glUniform1f(impl->chunk_program_id.camera_zoom, impl->camera_zoom);
+    glUniform1f(impl->chunk_program_id.camera_x_angle, impl->camera_x_angle);
+    glUniform1f(impl->chunk_program_id.camera_y_angle, impl->camera_y_angle);
 
     // Send light data to GLSL.
-    glUniform3f(impl->chunk_program_id_.light_position,
-                impl->light_position_.x,
-                impl->light_position_.y,
-                impl->light_position_.z);
-    glUniform3f(impl->chunk_program_id_.light_color,
-                impl->light_color_.r,
-                impl->light_color_.g,
-                impl->light_color_.b);
-    glUniform1f(impl->chunk_program_id_.light_power,
-                impl->light_power_);
+    glm::vec3& ldir = impl->light_dir;
+    glm::vec3& lcol = impl->light_color;
+    glUniform3f(impl->chunk_program_id.light_dir, ldir.x, ldir.y, ldir.z);
+    glUniform3f(impl->chunk_program_id.light_color, lcol.r, lcol.g, lcol.b);
 
     // Send cursor location to GLSL.
-    glUniform3f(impl->chunk_program_id_.cursor_location,
-                cursor_location.x,
-                cursor_location.y,
-                cursor_location.z);
+    StageCoord3& cloc = cursor_location;
+    glUniform3f(impl->chunk_program_id.cursor_location, cloc.x, cloc.y, cloc.z);
 
     // Send frame counter to GLSL.
-    glUniform1f(impl->chunk_program_id_.frame_counter, impl->frame_counter_);
+    glUniform1f(impl->chunk_program_id.frame_counter, impl->frame_counter);
 
     // Draw solid vertices.
     for (Impl::ChunkRenderDataMap::iterator data_iterator =
-           impl->chunk_data_.begin(); data_iterator != impl->chunk_data_.end();
+           impl->chunk_data.begin(); data_iterator != impl->chunk_data.end();
          ++data_iterator)
     {
-      glBindVertexArray(data_iterator->second->solid_vao_id);
-      glDrawArrays(GL_TRIANGLES, 0,
-                   data_iterator->second->solid_vertex_count);
+      ChunkRenderData* chunk = data_iterator->second;
+      glBindVertexArray(chunk->solid_vao_id);
+      glDrawArrays(GL_TRIANGLES, 0, chunk->solid_vertex_count);
     }
 
     // Draw translucent vertices.
     for (Impl::ChunkRenderDataMap::iterator data_iterator =
-           impl->chunk_data_.begin(); data_iterator != impl->chunk_data_.end();
+           impl->chunk_data.begin(); data_iterator != impl->chunk_data.end();
          ++data_iterator)
     {
-      glBindVertexArray(data_iterator->second->translucent_vao_id);
-      glDrawArrays(GL_TRIANGLES, 0,
-                   data_iterator->second->translucent_vertex_count);
+      ChunkRenderData* chunk = data_iterator->second;
+      glBindVertexArray(chunk->translucent_vao_id);
+      glDrawArrays(GL_TRIANGLES, 0, chunk->translucent_vertex_count);
     }
 
     glBindVertexArray(0);
 
-    impl->chunk_program_->Unbind();
+    impl->chunk_program->unbind();
 
+/*
     // Draw the wireframe cursor.
     // TODO: Instead of solid white, make it pulsate between black and white.
 
-    impl->cursor_program_->Bind();
+    impl->cursor_program->bind();
 
     // Send uniforms to the cursor program.
-    glUniformMatrix4fv(impl->cursor_program_id_.projection_matrix, 1, GL_FALSE,
+    glUniformMatrix4fv(impl->cursor_program_id.projection_matrix, 1, GL_FALSE,
                        &impl->projection_matrix_[0][0]);
-    glUniformMatrix4fv(impl->cursor_program_id_.view_matrix, 1, GL_FALSE,
-                       &impl->view_matrix_[0][0]);
-    glUniform1f(impl->cursor_program_id_.frame_counter, impl->frame_counter_);
+    glUniformMatrix4fv(impl->cursor_program_id.view_matrix, 1, GL_FALSE,
+                       &impl->view_matrix[0][0]);
+    glUniform3f(impl->cursor_program_id.cursor_location,
+                cursor_location.x,
+                cursor_location.y,
+                cursor_location.z);
+    glUniform1f(impl->cursor_program_id.frame_counter, impl->frame_counter);
 
-    glBindVertexArray(impl->cursor_data_.vao_id);
-    glDrawArrays(GL_LINES, 0, impl->cursor_data_.vertex_count);
+    glBindVertexArray(impl->cursor_data.vao_id);
+    glDrawArrays(GL_LINES, 0, impl->cursor_data.vertex_count);
     glBindVertexArray(0);
 
-    impl->cursor_program_->Unbind();
+    impl->cursor_program->unbind();
+*/
   }
 }
 
 void StageRenderer3D::finish()
 {
   // Increment frame counter.
-  ++(impl->frame_counter_);
+  ++(impl->frame_counter);
 }
 
 } // namespace rectopia

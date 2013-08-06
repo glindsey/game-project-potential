@@ -41,10 +41,10 @@ void BGRenderData::add_vertex(glm::vec2 vertex,
 
 void BGRenderData::update_VAO()
 {
-  // Bind the solid VAO.
+  // bind the solid VAO.
   glBindVertexArray(vao_id);
 
-  // Bind the solid VBO.
+  // bind the solid VBO.
   glBindBuffer(GL_ARRAY_BUFFER, vbo_id);
 
   // Copy the data to the solid VBO.
@@ -66,7 +66,7 @@ void BGRenderData::update_VAO()
   // Clear the vertex data, but keep the count.
   vertices.clear();
 
-  // Unbind the VAO (for now).
+  // unbind the VAO (for now).
   glBindVertexArray(0);
 }
 

@@ -20,6 +20,7 @@ out vec4 pass_color;
 
 uniform mat4 projection_matrix;
 uniform mat4 view_matrix;
+uniform vec3 cursor_location;
 
 uniform uint frame_counter;
 
@@ -27,8 +28,13 @@ const vec3 zero_vector = vec3(0, 0, 0);
 
 void main()
 {
+    // Get cursor position in modelspace, flipping cursor location Z/Y coords
+    // since OpenGL axes are different than game axes.
+    vec3 cursor_position_modelspace = in_position_modelspace.xyz +
+                                      cursor_location.xzy;
+
     // Output position of the vertex
-    gl_Position = projection_matrix * view_matrix * vec4(in_position_modelspace, 1.0);
+    gl_Position = projection_matrix * view_matrix * vec4(cursor_position_modelspace, 1.0);
 
     // Get modulo of frame counter to do pulsing features.
     // (Is modulo faster, or would a bitwise AND be better?)

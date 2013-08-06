@@ -42,80 +42,80 @@ struct GUIRenderer3D::Impl
     // Draw the background rect as two triangles.
     if (textured == true)
     {
-      render_data_->add_vertex(glm::vec2(left, top), border_color, texture_left, texture_top, textured);
-      render_data_->add_vertex(glm::vec2(right, top), border_color, texture_right, texture_top, textured);
-      render_data_->add_vertex(glm::vec2(left, bottom), border_color, texture_left, texture_bottom, textured);
-      render_data_->add_vertex(glm::vec2(left, bottom), border_color, texture_left, texture_bottom, textured);
-      render_data_->add_vertex(glm::vec2(right, bottom), border_color, texture_right, texture_bottom, textured);
-      render_data_->add_vertex(glm::vec2(right, top), border_color, texture_right, texture_top, textured);
+      render_data->add_vertex(glm::vec2(left, top), border_color, texture_left, texture_top, textured);
+      render_data->add_vertex(glm::vec2(right, top), border_color, texture_right, texture_top, textured);
+      render_data->add_vertex(glm::vec2(left, bottom), border_color, texture_left, texture_bottom, textured);
+      render_data->add_vertex(glm::vec2(left, bottom), border_color, texture_left, texture_bottom, textured);
+      render_data->add_vertex(glm::vec2(right, bottom), border_color, texture_right, texture_bottom, textured);
+      render_data->add_vertex(glm::vec2(right, top), border_color, texture_right, texture_top, textured);
     }
     else
     {
-      render_data_->add_vertex(glm::vec2(left, top), rect_color, texture_left, texture_top, textured);
-      render_data_->add_vertex(glm::vec2(right, top), rect_color, texture_right, texture_top, textured);
-      render_data_->add_vertex(glm::vec2(left, bottom), rect_color, texture_left, texture_bottom, textured);
-      render_data_->add_vertex(glm::vec2(left, bottom), rect_color, texture_left, texture_bottom, textured);
-      render_data_->add_vertex(glm::vec2(right, bottom), rect_color, texture_right, texture_bottom, textured);
-      render_data_->add_vertex(glm::vec2(right, top), rect_color, texture_right, texture_top, textured);
+      render_data->add_vertex(glm::vec2(left, top), rect_color, texture_left, texture_top, textured);
+      render_data->add_vertex(glm::vec2(right, top), rect_color, texture_right, texture_top, textured);
+      render_data->add_vertex(glm::vec2(left, bottom), rect_color, texture_left, texture_bottom, textured);
+      render_data->add_vertex(glm::vec2(left, bottom), rect_color, texture_left, texture_bottom, textured);
+      render_data->add_vertex(glm::vec2(right, bottom), rect_color, texture_right, texture_bottom, textured);
+      render_data->add_vertex(glm::vec2(right, top), rect_color, texture_right, texture_top, textured);
     }
 
     if (border_width > 0)
     {
-      render_data_->add_vertex(glm::vec2(left, top), border_color);
-      render_data_->add_vertex(glm::vec2(right, top), border_color);
-      render_data_->add_vertex(glm::vec2(right, top + border_width), border_color);
-      render_data_->add_vertex(glm::vec2(right, top + border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left, top + border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left, top), border_color);
+      render_data->add_vertex(glm::vec2(left, top), border_color);
+      render_data->add_vertex(glm::vec2(right, top), border_color);
+      render_data->add_vertex(glm::vec2(right, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(right, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(left, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(left, top), border_color);
 
-      render_data_->add_vertex(glm::vec2(left, bottom), border_color);
-      render_data_->add_vertex(glm::vec2(right, bottom), border_color);
-      render_data_->add_vertex(glm::vec2(right, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(right, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left, bottom), border_color);
+      render_data->add_vertex(glm::vec2(left, bottom), border_color);
+      render_data->add_vertex(glm::vec2(right, bottom), border_color);
+      render_data->add_vertex(glm::vec2(right, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(right, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(left, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(left, bottom), border_color);
 
-      render_data_->add_vertex(glm::vec2(left, top + border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left + border_width, top + border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left + border_width, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left + border_width, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(left, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(left, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(left + border_width, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(left + border_width, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(left + border_width, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(left, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(left, top + border_width), border_color);
 
-      render_data_->add_vertex(glm::vec2(right, top + border_width), border_color);
-      render_data_->add_vertex(glm::vec2(right - border_width, top + border_width), border_color);
-      render_data_->add_vertex(glm::vec2(right - border_width, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(right - border_width, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(right, bottom - border_width), border_color);
-      render_data_->add_vertex(glm::vec2(right, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(right, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(right - border_width, top + border_width), border_color);
+      render_data->add_vertex(glm::vec2(right - border_width, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(right - border_width, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(right, bottom - border_width), border_color);
+      render_data->add_vertex(glm::vec2(right, top + border_width), border_color);
     }
   }
 
-  std::unique_ptr<GUIRenderData> render_data_;
-  std::unique_ptr<GLShaderProgram> shader_program_; ///< Rendering program
+  std::unique_ptr<GUIRenderData> render_data;
+  std::unique_ptr<GLShaderProgram> shader_program; ///< Rendering program
 
   // IDs for uniforms.
-  GLuint window_size_id_;
-  GLuint frame_counter_id_;
+  GLuint window_size_id;
+  GLuint frame_counter_id;
 
-  bool vao_dirty_;  ///< Boolean indicating whether VAO needs updating
+  bool vao_dirty;  ///< Boolean indicating whether VAO needs updating
 };
 
 GUIRenderer3D::GUIRenderer3D()
   : impl(new Impl())
 {
   name_ = "3D Renderer";
-  impl->render_data_.reset(new GUIRenderData());
+  impl->render_data.reset(new GUIRenderData());
   // Create and compile our GLSL program from the shaders
-  impl->shader_program_.reset(
+  impl->shader_program.reset(
     new GLShaderProgram("shaders/GUIVertexShader.glsl",
                         "shaders/GUIFragmentShader.glsl"));
 
   // Get IDs for uniforms.
-  impl->window_size_id_ = impl->shader_program_->getUniformId("window_size");
-  impl->frame_counter_id_ = impl->shader_program_->getUniformId("frame_counter");
+  impl->window_size_id = impl->shader_program->get_uniform_id("window_size");
+  impl->frame_counter_id = impl->shader_program->get_uniform_id("frame_counter");
 
-  impl->vao_dirty_ = true;
+  impl->vao_dirty = true;
 }
 
 GUIRenderer3D::~GUIRenderer3D()
@@ -129,8 +129,8 @@ bool GUIRenderer3D::visit(GUI& gui)
   {
     std::cout << "DEBUG: GUI is dirty, recalculating vertices" << std::endl;
     gui.clear_dirty();
-    impl->vao_dirty_ = true;
-    impl->render_data_->clear_vertices();
+    impl->vao_dirty = true;
+    impl->render_data->clear_vertices();
 
     return true;
   }
@@ -249,7 +249,7 @@ bool GUIRenderer3D::visit(GUILabel& label)
 void GUIRenderer3D::prepare()
 {
   // Use our shader program.
-  impl->shader_program_->Bind();
+  impl->shader_program->bind();
 }
 
 void GUIRenderer3D::draw()
@@ -260,24 +260,24 @@ void GUIRenderer3D::draw()
 
   static unsigned int frame_counter;
 
-  if (impl->vao_dirty_)
+  if (impl->vao_dirty)
   {
     printf("DEBUG: Updating VAO for GUI\n");
-    impl->render_data_->update_VAO();
-    impl->vao_dirty_ = false;
+    impl->render_data->update_VAO();
+    impl->vao_dirty = false;
     printf("DEBUG: Done updating VAO\n");
-    printf("DEBUG: Vertex count is %u\n", impl->render_data_->vertex_count);
+    printf("DEBUG: Vertex count is %u\n", impl->render_data->vertex_count);
   }
 
   // Send window size uniform to renderer.
-  glUniform2f(impl->window_size_id_,
+  glUniform2f(impl->window_size_id,
               window_size.x,
               window_size.y);
 
   // Send frame counter to renderer.
-  glUniform1f(impl->frame_counter_id_, frame_counter);
+  glUniform1f(impl->frame_counter_id, frame_counter);
 
-  // Bind texture sampler to renderer.
+  // bind texture sampler to renderer.
   font.bind();
 
   // Send texture sampler to renderer.
@@ -296,8 +296,8 @@ void GUIRenderer3D::draw()
 
   // TODO: this
 
-  glBindVertexArray(impl->render_data_->vao_id);
-  glDrawArrays(GL_TRIANGLES, 0, impl->render_data_->vertex_count);
+  glBindVertexArray(impl->render_data->vao_id);
+  glDrawArrays(GL_TRIANGLES, 0, impl->render_data->vertex_count);
 
   ++frame_counter;
 }
@@ -307,7 +307,7 @@ void GUIRenderer3D::finish()
   glBindVertexArray(0);
 
   // Use our shader program.
-  impl->shader_program_->Unbind();
+  impl->shader_program->unbind();
 }
 
 

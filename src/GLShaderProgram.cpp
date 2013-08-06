@@ -126,17 +126,17 @@ GLuint GLShaderProgram::id()
   return impl->id_;
 }
 
-GLuint GLShaderProgram::getUniformId(const char* variable_name)
+GLuint GLShaderProgram::get_uniform_id(const char* variable_name)
 {
   return glGetUniformLocation(impl->id_, variable_name);
 }
 
-void GLShaderProgram::Bind()
+void GLShaderProgram::bind()
 {
   glUseProgram(impl->id_);
 }
 
-void GLShaderProgram::Unbind()
+void GLShaderProgram::unbind()
 {
   glUseProgram(0);
 }

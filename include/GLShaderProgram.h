@@ -21,10 +21,10 @@ namespace rectopia
 
       GLuint id();
 
-      GLuint getUniformId(const char* variable_name);
+      GLuint get_uniform_id(const char* variable_name);
 
-      void Bind();
-      void Unbind();
+      void bind();
+      void unbind();
 
     protected:
     private:

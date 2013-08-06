@@ -59,10 +59,10 @@ void ChunkRenderData::add_vertex(glm::vec3 block_coords,
 
 void ChunkRenderData::update_VAOs()
 {
-  // Bind the solid VAO.
+  // bind the solid VAO.
   glBindVertexArray(solid_vao_id);
 
-  // Bind the solid VBO.
+  // bind the solid VBO.
   glBindBuffer(GL_ARRAY_BUFFER, solid_vbo_id);
 
   // Copy the data to the solid VBO.
@@ -102,10 +102,10 @@ void ChunkRenderData::update_VAOs()
   // Clear the vertex data, but keep the count.
   solid_vertices.clear();
 
-  // Bind the translucent VAO.
+  // bind the translucent VAO.
   glBindVertexArray(translucent_vao_id);
 
-  // Bind the translucent VBO.
+  // bind the translucent VBO.
   glBindBuffer(GL_ARRAY_BUFFER, translucent_vbo_id);
 
   // Upload the data to the VBO.
@@ -145,7 +145,7 @@ void ChunkRenderData::update_VAOs()
   // Clear the vertex data, but keep the count.
   translucent_vertices.clear();
 
-  // Unbind the VAO (for now).
+  // unbind the VAO (for now).
   glBindVertexArray(0);
 }
 

@@ -39,10 +39,10 @@ void CursorRenderData::add_vertex(glm::vec3 coord, glm::vec4 color)
 
 void CursorRenderData::update_VAOs()
 {
-  // Bind the VAO.
+  // bind the VAO.
   glBindVertexArray(vao_id);
 
-  // Bind the VBO.
+  // bind the VBO.
   glBindBuffer(GL_ARRAY_BUFFER, vbo_id);
 
   // Copy the data to the VBO.
@@ -64,7 +64,7 @@ void CursorRenderData::update_VAOs()
   // Clear the vertex data, but keep the count.
   vertices.clear();
 
-  // Unbind the VAO (for now).
+  // unbind the VAO (for now).
   glBindVertexArray(0);
 }
 

@@ -10209,7 +10209,7 @@
 	"common_includes.h"
 	"common_typedefs.h"
 
-1375466770 source:c:\dropbox\projects\game-project-potential\src\chunkrenderdata.cpp
+1375808744 source:c:\dropbox\projects\game-project-potential\src\chunkrenderdata.cpp
 	"ChunkRenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
@@ -10232,7 +10232,7 @@
 	"common_typedefs.h"
 	<SFML/Graphics.hpp>
 
-1375466770 source:c:\dropbox\projects\game-project-potential\src\cursorrenderdata.cpp
+1375808744 source:c:\dropbox\projects\game-project-potential\src\cursorrenderdata.cpp
 	"CursorRenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
@@ -10278,7 +10278,7 @@
 1375388963 source:c:\dropbox\projects\game-project-potential\src\fpscontrol.cpp
 	"FPSControl.h"
 
-1375473813 source:c:\dropbox\projects\game-project-potential\src\glshaderprogram.cpp
+1375808744 source:c:\dropbox\projects\game-project-potential\src\glshaderprogram.cpp
 	"GLShaderProgram.h"
 	<cstdio>
 	<fstream>
@@ -10286,7 +10286,7 @@
 	<vector>
 	"ErrorMacros.h"
 
-1375468913 c:\dropbox\projects\game-project-potential\include\glshaderprogram.h
+1375808744 c:\dropbox\projects\game-project-potential\include\glshaderprogram.h
 	<boost/noncopyable.hpp>
 	<memory>
 	<GL/glew.h>
@@ -10336,7 +10336,7 @@
 	"ErrorMacros.h"
 	"GUIElementVisitor.h"
 
-1375466916 source:c:\dropbox\projects\game-project-potential\src\guirenderdata.cpp
+1375808744 source:c:\dropbox\projects\game-project-potential\src\guirenderdata.cpp
 	"GUIRenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
@@ -10355,7 +10355,7 @@
 	"GUIRenderer.h"
 	"Settings.h"
 
-1375471741 source:c:\dropbox\projects\game-project-potential\src\guirenderer3d.cpp
+1375808744 source:c:\dropbox\projects\game-project-potential\src\guirenderer3d.cpp
 	"GUIRenderer3D.h"
 	<algorithm>
 	<iterator>
@@ -10506,7 +10506,7 @@
 	"common_includes.h"
 	"common_typedefs.h"
 
-1375388963 c:\dropbox\projects\game-project-potential\include\mathutils.h
+1375806041 c:\dropbox\projects\game-project-potential\include\mathutils.h
 	<complex>
 	<iterator>
 	<glm/glm.hpp>
@@ -10698,10 +10698,11 @@
 	"Settings.h"
 	"Stage.h"
 
-1375474237 source:c:\dropbox\projects\game-project-potential\src\stagerenderer3d.cpp
+1375820509 source:c:\dropbox\projects\game-project-potential\src\stagerenderer3d.cpp
 	"StageRenderer3D.h"
 	<algorithm>
 	<iterator>
+	<list>
 	<vector>
 	<boost/container/list.hpp>
 	<boost/thread/condition_variable.hpp>
@@ -10786,7 +10787,7 @@
 	<boost/noncopyable.hpp>
 	<string>
 
-1375472034 source:c:\dropbox\projects\game-project-potential\src\bgrenderer3d.cpp
+1375808744 source:c:\dropbox\projects\game-project-potential\src\bgrenderer3d.cpp
 	"BGRenderer3D.h"
 	<algorithm>
 	<iterator>
@@ -10805,7 +10806,7 @@
 	<glm/glm.hpp>
 	"common.h"
 
-1375470008 source:c:\dropbox\projects\game-project-potential\src\bgrenderdata.cpp
+1375808744 source:c:\dropbox\projects\game-project-potential\src\bgrenderdata.cpp
 	"BGRenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
