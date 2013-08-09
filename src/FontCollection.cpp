@@ -66,7 +66,7 @@ TextureFont& FontCollection::get(std::string fontName)
   }
 }
 
-TextureFont& FontCollection::getDefault()
+TextureFont& FontCollection::get_default()
 {
   return *(impl->fontCollection["default"].get());
 }

@@ -234,7 +234,7 @@ StageChunk& StageChunkCollection::getChunk(int idx)
   return *(impl->get_chunk_location(idx));
 }
 
-StageChunk& StageChunkCollection::getChunkContaining(StageCoord block_x,
+StageChunk& StageChunkCollection::get_chunk_containing(StageCoord block_x,
                                                      StageCoord block_y,
                                                      StageCoord block_z)
 {

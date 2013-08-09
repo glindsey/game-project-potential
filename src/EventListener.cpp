@@ -19,103 +19,103 @@ EventListener::~EventListener()
   //Do nothing
 }
 
-EventResult EventListener::handleEvent(const sf::Event& event)
+EventResult EventListener::handle_event(const sf::Event& event)
 {
   switch (event.type)
   {
   case sf::Event::GainedFocus:
-    return this->handleFocusGained();
+    return this->handle_focus_gained();
 
   case sf::Event::LostFocus:
-    return this->handleFocusLost();
+    return this->handle_focus_lost();
 
   case sf::Event::KeyPressed:
-    return this->handleKeyDown(event.key);
+    return this->handle_key_down(event.key);
 
   case sf::Event::KeyReleased:
-    return this->handleKeyUp(event.key);
+    return this->handle_key_up(event.key);
 
   case sf::Event::MouseMoved:
-    return this->handleMouseMove(event.mouseMove);
+    return this->handle_mouse_move(event.mouseMove);
 
   case sf::Event::MouseWheelMoved:
-    return this->handleMouseWheel(event.mouseWheel);
+    return this->handle_mouse_wheel(event.mouseWheel);
 
   case sf::Event::MouseButtonPressed:
-    return this->handleMouseButtonDown(event.mouseButton);
+    return this->handle_mouse_button_down(event.mouseButton);
 
   case sf::Event::MouseButtonReleased:
-    return this->handleMouseButtonUp(event.mouseButton);
+    return this->handle_mouse_button_up(event.mouseButton);
 
   case sf::Event::JoystickButtonPressed:
-    return this->handleJoyButtonDown(event.joystickButton);
+    return this->handle_joy_button_down(event.joystickButton);
 
   case sf::Event::JoystickButtonReleased:
-    return this->handleJoyButtonUp(event.joystickButton);
+    return this->handle_joy_button_up(event.joystickButton);
 
   case sf::Event::JoystickMoved:
-    return this->handleJoyMove(event.joystickMove);
+    return this->handle_joy_move(event.joystickMove);
 
   case sf::Event::Closed:
-    return this->handleWindowExit();
+    return this->handle_window_exit();
 
   case sf::Event::Resized:
-    return this->handleWindowResize(event.size.width, event.size.height);
+    return this->handle_window_resize(event.size.width, event.size.height);
 
   default:
     return EventResult::Unknown;
   }
 }
 
-EventResult EventListener::handleFocusGained()
+EventResult EventListener::handle_focus_gained()
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleFocusLost()
+EventResult EventListener::handle_focus_lost()
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleKeyDown(sf::Event::KeyEvent key)
+EventResult EventListener::handle_key_down(sf::Event::KeyEvent key)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleKeyUp(sf::Event::KeyEvent key)
+EventResult EventListener::handle_key_up(sf::Event::KeyEvent key)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleMouseMove(sf::Event::MouseMoveEvent mouseMove)
+EventResult EventListener::handle_mouse_move(sf::Event::MouseMoveEvent mouseMove)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleMouseWheel(sf::Event::MouseWheelEvent mouseWheel)
+EventResult EventListener::handle_mouse_wheel(sf::Event::MouseWheelEvent mouseWheel)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleMouseButtonDown(sf::Event::MouseButtonEvent mouseButton)
+EventResult EventListener::handle_mouse_button_down(sf::Event::MouseButtonEvent mouseButton)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleMouseButtonUp(sf::Event::MouseButtonEvent mouseButton)
+EventResult EventListener::handle_mouse_button_up(sf::Event::MouseButtonEvent mouseButton)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleJoyButtonDown(sf::Event::JoystickButtonEvent joystickButton)
+EventResult EventListener::handle_joy_button_down(sf::Event::JoystickButtonEvent joystickButton)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleJoyButtonUp(sf::Event::JoystickButtonEvent joystickButton)
+EventResult EventListener::handle_joy_button_up(sf::Event::JoystickButtonEvent joystickButton)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleJoyMove(sf::Event::JoystickMoveEvent joystickMove)
+EventResult EventListener::handle_joy_move(sf::Event::JoystickMoveEvent joystickMove)
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleWindowExit()
+EventResult EventListener::handle_window_exit()
 {
   return EventResult::Ignored;
 }
-EventResult EventListener::handleWindowResize(int w, int h)
+EventResult EventListener::handle_window_resize(int w, int h)
 {
   return EventResult::Ignored;
 }

@@ -26,7 +26,7 @@ public:
   void accept(StageComponentVisitor& visitor);
 
   /// Get the chunk containing the requested block.
-  StageChunk& getChunkContaining(StageCoord block_x,
+  StageChunk& get_chunk_containing(StageCoord block_x,
                                  StageCoord block_y,
                                  StageCoord block_z);
 

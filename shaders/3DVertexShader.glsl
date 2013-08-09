@@ -27,6 +27,10 @@ out vec4 eye_cameraspace;
 
 uniform vec3 cursor_location;
 
+uniform uint lighting_enabled;
+uniform uint center_on_cursor;
+uniform uint pulse_color;
+
 uniform uint frame_counter;
 
 uniform float angle_of_view;
@@ -102,54 +106,55 @@ mat4 rotate_y(float theta_deg)
 
 void main()
 {
-    // View/Model matrix translates world space to camera space.
-    mat4 mv_matrix = mat4(1.0);
+  // View/Model matrix translates world space to camera space.
+  mat4 mv_matrix = mat4(1.0);
 
+  if (center_on_cursor != 0u)
+  {
     mv_matrix = translate(-cursor_location.x,
                              -cursor_location.z,
                              -cursor_location.y) * mv_matrix;
+  }
 
-    mv_matrix = rotate_y(-camera_x_angle) * mv_matrix;
-    mv_matrix = rotate_x(-camera_y_angle) * mv_matrix;
-    mv_matrix = translate(0.0, 0.0, camera_zoom) * mv_matrix;
+  mv_matrix = rotate_y(-camera_x_angle) * mv_matrix;
+  mv_matrix = rotate_x(-camera_y_angle) * mv_matrix;
+  mv_matrix = translate(0.0, 0.0, camera_zoom) * mv_matrix;
 
-    // Projection matrix creates a perspective view for the camera.
-    mat4 proj_matrix = view_frustum(angle_of_view, aspect_ratio, z_near, z_far);
+  // Projection matrix creates a perspective view for the camera.
+  mat4 proj_matrix = view_frustum(angle_of_view, aspect_ratio, z_near, z_far);
 
-    mat4 mvp_matrix = proj_matrix * mv_matrix;
+  mat4 mvp_matrix = proj_matrix * mv_matrix;
 
-    // Position of the vertex in camera space.
-    vec4 pos_cameraspace = mv_matrix * vec4(in_pos_modelspace, 1.0);
+  // Position of the vertex in camera space.
+  vec4 pos_cameraspace = mv_matrix * vec4(in_pos_modelspace, 1.0);
 
-    // Output position of the vertex, in clip space
-    gl_Position = mvp_matrix * vec4(in_pos_modelspace, 1.0);
+  // Output position of the vertex, in clip space
+  gl_Position = mvp_matrix * vec4(in_pos_modelspace, 1.0);
 
-    // Calculate normal matrix
-    mat3 normal_matrix = transpose(inverse(mat3(mv_matrix)));
+  // Calculate normal matrix
+  mat3 normal_matrix = transpose(inverse(mat3(mv_matrix)));
 
-    // Normal of the the vertex, in camera space
-    nml_cameraspace = normalize(normal_matrix * in_normal_modelspace);
+  // Normal of the the vertex, in camera space
+  nml_cameraspace = normalize(normal_matrix * in_normal_modelspace);
 
-    // Vector that goes from the vertex to the camera, in camera space.
-    eye_cameraspace = -(mv_matrix * pos_cameraspace);
+  // Vector that goes from the vertex to the camera, in camera space.
+  eye_cameraspace = -(mv_matrix * pos_cameraspace);
 
-    // Get modulo of frame counter to do pulsing features.
-    // (Is modulo faster, or would a bitwise AND be better?)
-    uint frame_counter_modulo = frame_counter % 256u;
-
+  if (lighting_enabled != 0u)
+  {
     // On-axis calculation.
     vec3 gnomon_color = ((in_block_coords.x == cursor_location.x) ||
                          (in_block_coords.y == cursor_location.y) ||
                          (in_block_coords.z == cursor_location.z)) ?
                            vec3(0.5) : vec3(0.0);
 
-    // Alpha -- if above the cursor, alpha is dropped down to 20%.
+    // Alpha -- if above the cursor, alpha is dropped down to 10%.
     float alpha_adjustment = 1.0;
-    //if (in_block_coords.z > cursor_location.z)
-    //{
-    //  alpha_adjustment = 0.2 - clamp((in_block_coords.z -
-    //                                  cursor_location.z) / 100, 0, 0.2);
-    //}
+    if (in_block_coords.z > cursor_location.z)
+    {
+      alpha_adjustment = 0.1 - clamp((in_block_coords.z -
+                                      cursor_location.z) / 100, 0, 0.1);
+    }
 
     // Diffuse color passed to the fragment shader.
     color_diffuse = vec4(in_color.r + gnomon_color.r,
@@ -159,4 +164,32 @@ void main()
 
     // Specular color passed to the fragment shader.
     color_specular = in_color_specular;
+  }
+  else
+  {
+    if (pulse_color != 0u)
+    {
+      // Get modulo of frame counter to do pulsing features.
+      // (Is modulo faster, or would a bitwise AND be better?)
+      int frame_counter_modulo = int(frame_counter & 63u);
+
+      if (frame_counter_modulo >= 32)
+      {
+        frame_counter_modulo = 63 - frame_counter_modulo;
+      }
+
+      float fraction = float(frame_counter_modulo) / 32.0;
+
+      color_diffuse = (in_color * fraction) +
+                      (in_color_specular * (1 - fraction));
+      color_specular = vec4(0.0);
+    }
+    else
+    {
+      // Lighting disabled, just use color_diffuse directly.
+      color_diffuse = in_color;
+      // Specular color passed to the fragment shader.
+      color_specular = in_color_specular;
+    }
+  }
 }

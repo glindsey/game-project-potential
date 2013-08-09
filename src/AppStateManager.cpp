@@ -24,8 +24,6 @@ struct AppStateManager::Impl
 AppStateManager::AppStateManager()
   : impl(new Impl())
 {
-  std::cout << "DEBUG: Created AppStateManager." << std::endl;
-
   AppStateID appStateSplash = AppStateID::SplashScreen;
   AppStateID appStateGame = AppStateID::Game;
 
@@ -36,16 +34,15 @@ AppStateManager::AppStateManager()
 
 AppStateManager::~AppStateManager()
 {
-  std::cout << "DEBUG: Destroyed AppStateManager." << std::endl;
 }
 
 /** Event handler.  Passes events on to the active app state. */
-EventResult AppStateManager::handleEvent(const sf::Event& event)
+EventResult AppStateManager::handle_event(const sf::Event& event)
 {
   if (impl->activeAppState != AppStateID::None)
   {
     AppState& state = impl->appStates.at(impl->activeAppState);
-    EventResult result = state.handleEvent(event);
+    EventResult result = state.handle_event(event);
     return result;
   }
   else
@@ -74,14 +71,14 @@ void AppStateManager::SetActiveAppState(AppStateID state)
 {
   if (impl->activeAppState != AppStateID::None)
   {
-    impl->appStates.at(impl->activeAppState).leaveState();
+    impl->appStates.at(impl->activeAppState).leave_state();
   }
 
   impl->activeAppState = state;
 
   if (impl->activeAppState != AppStateID::None)
   {
-    impl->appStates.at(impl->activeAppState).enterState();
+    impl->appStates.at(impl->activeAppState).enter_state();
   }
 }
 

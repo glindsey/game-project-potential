@@ -18,9 +18,7 @@ public:
   BGRenderer3D();
   virtual ~BGRenderer3D();
 
-  void prepare();
   void draw();
-  void finish();
 
 protected:
 private:

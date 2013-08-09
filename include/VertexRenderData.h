@@ -1,5 +1,5 @@
-#ifndef CHUNKVERTEXRENDERDATA_H
-#define CHUNKVERTEXRENDERDATA_H
+#ifndef VERTEXRENDERDATA_H
+#define VERTEXRENDERDATA_H
 
 #include <glm/glm.hpp>
 
@@ -9,9 +9,9 @@ namespace rectopia
 {
 
 /** Struct representing a vertex to send to openGL. */
-struct ChunkVertexRenderData
+struct VertexRenderData
 {
-  ChunkVertexRenderData()
+  VertexRenderData()
   {
     bx = 0;
     by = 0;
@@ -34,12 +34,12 @@ struct ChunkVertexRenderData
     t = 0;
   }
 
-  ChunkVertexRenderData(glm::vec3 _block_coords,
-                        glm::vec3 _coord,
-                        glm::vec3 _normal,
-                        glm::vec4 _color,
-                        glm::vec4 _color_specular,
-                        glm::vec2 _tex_coord)
+  VertexRenderData(glm::vec3 _block_coords,
+                   glm::vec3 _coord,
+                   glm::vec3 _normal,
+                   glm::vec4 _color,
+                   glm::vec4 _color_specular,
+                   glm::vec2 _tex_coord)
   {
     bx = _block_coords.x;
     by = _block_coords.y;

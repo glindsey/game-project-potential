@@ -69,7 +69,7 @@ struct StageBuilderDeposits::Impl
                     BlockLayer const& layer,
                     Substance const& substance)
   {
-    if (stage_.validCoordinates(x, y, z))
+    if (stage_.valid_coordinates(x, y, z))
     {
       stage_.get_block(x, y, z).set_substance(layer, substance);
     }
@@ -279,7 +279,7 @@ struct StageBuilderDeposits::Impl
   PlacerState placer_state_;
 
   /// Returns a random number within a given distribution.
-  int GetRandom(RDPointer& distribution)
+  int get_random(RDPointer& distribution)
   {
     RandomDistribution& dist = *(distribution.get());
     return dist(App::instance().twister());
@@ -355,9 +355,9 @@ bool StageBuilderDeposits::Build()
     if (impl->number_remaining_ != 0)
     {
       StageCoord3 random = StageCoord3(
-                             impl->GetRandom(impl->x_distribution_),
-                             impl->GetRandom(impl->y_distribution_),
-                             impl->GetRandom(impl->z_distribution_));
+                             impl->get_random(impl->x_distribution_),
+                             impl->get_random(impl->y_distribution_),
+                             impl->get_random(impl->z_distribution_));
       StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);
@@ -383,13 +383,13 @@ bool StageBuilderDeposits::Build()
           do
           {
             StageCoord3 offset = StageCoord3(
-                                   impl->GetRandom(impl->medium_displacement_distribution_),
-                                   impl->GetRandom(impl->medium_displacement_distribution_),
-                                   impl->GetRandom(impl->tiny_displacement_distribution_));
+                                   impl->get_random(impl->medium_displacement_distribution_),
+                                   impl->get_random(impl->medium_displacement_distribution_),
+                                   impl->get_random(impl->tiny_displacement_distribution_));
             try_coord.x = coord.x + offset.x;
             try_coord.y = coord.y + offset.y;
             try_coord.z = coord.z + offset.z;
-            try_coord = constrainToBox(zero_vector, try_coord, max_vector);
+            try_coord = constrain_to_box(zero_vector, try_coord, max_vector);
           }
           while (!impl->stage_.get_block(try_coord.x,
                                         try_coord.y,
@@ -420,9 +420,9 @@ bool StageBuilderDeposits::Build()
     if (impl->number_remaining_ != 0)
     {
       StageCoord3 random = StageCoord3(
-                             impl->GetRandom(impl->x_distribution_),
-                             impl->GetRandom(impl->y_distribution_),
-                             impl->GetRandom(impl->z_distribution_));
+                             impl->get_random(impl->x_distribution_),
+                             impl->get_random(impl->y_distribution_),
+                             impl->get_random(impl->z_distribution_));
       StageBlock& chosen_block = impl->stage_.get_block(random.x, random.y, random.z);
       const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
 
@@ -446,14 +446,14 @@ bool StageBuilderDeposits::Build()
           do
           {
             StageCoord3 offset = StageCoord3(
-                                   impl->GetRandom(impl->tiny_displacement_distribution_),
-                                   impl->GetRandom(impl->tiny_displacement_distribution_),
-                                   impl->GetRandom(impl->tiny_displacement_distribution_));
+                                   impl->get_random(impl->tiny_displacement_distribution_),
+                                   impl->get_random(impl->tiny_displacement_distribution_),
+                                   impl->get_random(impl->tiny_displacement_distribution_));
             StageCoord3 try_coord;
             try_coord.x = coord.x + offset.x;
             try_coord.y = coord.y + offset.y;
             try_coord.z = coord.z + offset.z;
-            try_coord = constrainToBox(zero_vector, try_coord, max_vector);
+            try_coord = constrain_to_box(zero_vector, try_coord, max_vector);
           }
           while (!impl->stage_.get_block(try_coord.x,
                                         try_coord.y,
@@ -484,9 +484,9 @@ bool StageBuilderDeposits::Build()
     if (impl->number_remaining_ != 0)
     {
       StageCoord3 random = StageCoord3(
-                             impl->GetRandom(impl->x_distribution_),
-                             impl->GetRandom(impl->y_distribution_),
-                             impl->GetRandom(impl->z_distribution_));
+                             impl->get_random(impl->x_distribution_),
+                             impl->get_random(impl->y_distribution_),
+                             impl->get_random(impl->z_distribution_));
       StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);
@@ -510,14 +510,14 @@ bool StageBuilderDeposits::Build()
         do
         {
           StageCoord3 offset = StageCoord3(
-                                 impl->GetRandom(impl->huge_displacement_distribution_),
-                                 impl->GetRandom(impl->huge_displacement_distribution_),
-                                 impl->GetRandom(impl->huge_displacement_distribution_));
+                                 impl->get_random(impl->huge_displacement_distribution_),
+                                 impl->get_random(impl->huge_displacement_distribution_),
+                                 impl->get_random(impl->huge_displacement_distribution_));
 
           try_dest.x = dest.x + offset.x;
           try_dest.y = dest.y + offset.y;
           try_dest.z = dest.z + offset.z;
-          try_dest = constrainToBox(zero_vector, try_dest, max_vector);
+          try_dest = constrain_to_box(zero_vector, try_dest, max_vector);
         }
         while (!impl->stage_.get_block(try_dest.x, try_dest.y, try_dest.z).is_solid());
 
@@ -545,9 +545,9 @@ bool StageBuilderDeposits::Build()
     if (impl->number_remaining_ != 0)
     {
       StageCoord3 random = StageCoord3(
-                             impl->GetRandom(impl->x_distribution_),
-                             impl->GetRandom(impl->y_distribution_),
-                             impl->GetRandom(impl->z_distribution_));
+                             impl->get_random(impl->x_distribution_),
+                             impl->get_random(impl->y_distribution_),
+                             impl->get_random(impl->z_distribution_));
       StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);

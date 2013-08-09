@@ -8,6 +8,7 @@
 #include <glm/gtx/transform.hpp>
 
 #include "Application.h"
+#include "ErrorMacros.h"
 #include "GUI.h"
 #include "GUIElement.h"
 #include "GUIFrame.h"
@@ -127,7 +128,6 @@ bool GUIRenderer3D::visit(GUI& gui)
 {
   if (gui.is_dirty())
   {
-    std::cout << "DEBUG: GUI is dirty, recalculating vertices" << std::endl;
     gui.clear_dirty();
     impl->vao_dirty = true;
     impl->render_data->clear_vertices();
@@ -150,7 +150,7 @@ bool GUIRenderer3D::visit(GUIElement& element)
   }
   else
   {
-    printf("DEBUG: GUIElement %p is invisible, so ignoring\n", (void*)&element);
+    DEEP_TRACE("GUIElement %p is invisible, so ignoring", (void*)&element);
     return false;
   }
 }
@@ -165,7 +165,7 @@ bool GUIRenderer3D::visit(GUIParentElement& element)
   }
   else
   {
-    printf("DEBUG: GUIParentElement %p is invisible, so ignoring\n", (void*)&element);
+    DEEP_TRACE("GUIParentElement %p is invisible, so ignoring", (void*)&element);
     return false;
   }
 }
@@ -177,8 +177,9 @@ bool GUIRenderer3D::visit(GUIFrame& frame)
   {
     glm::vec2 element_location = frame.getAbsoluteLocation();
     glm::vec2 element_size = frame.getAbsoluteSize();
-    std::cout << "DEBUG: Drawing GUIFrame @ (" << element_location.x << ", " << element_location.y << ")"
-              << " + (" << element_size.x << ", " << element_size.y << ")" << std::endl;
+    DEEP_TRACE("Drawing GUIFrame @ (%f, %f) + (%f, %f)",
+               element_location.x, element_location.y,
+               element_size.x, element_size.y);
     impl->draw_rect(element_location.x, element_location.x + element_size.x - 1,
                     element_location.y, element_location.y + element_size.y - 1,
                     frame.get_bg_color(), 2, frame.get_fg_color());
@@ -186,22 +187,23 @@ bool GUIRenderer3D::visit(GUIFrame& frame)
   }
   else
   {
-    printf("DEBUG: GUIFrame %p is invisible, so ignoring\n", (void*)&frame);
+    DEEP_TRACE("GUIFrame %p is invisible, so ignoring", (void*)&frame);
     return false;
   }
 }
 
 bool GUIRenderer3D::visit(GUILabel& label)
 {
-  TextureFont& font = App::instance().getFonts().getDefault();
+  TextureFont& font = App::instance().get_fonts().get_default();
 
   label.clear_dirty();
   if (label.get_absolute_visibility())
   {
     glm::vec2 element_location = label.getAbsoluteLocation();
     glm::vec2 element_size = label.getAbsoluteSize();
-    std::cout << "DEBUG: Drawing GUILabel @ (" << element_location.x << ", " << element_location.y << ")"
-              << " + (" << element_size.x << ", " << element_size.y << ")" << std::endl;
+    DEEP_TRACE("Drawing GUILabel @ (%f, %f) + (%f, %f)",
+               element_location.x, element_location.y,
+               element_size.x, element_size.y);
     impl->draw_rect(element_location.x, element_location.x + element_size.x - 1,
                    element_location.y, element_location.y + element_size.y - 1,
                    label.get_bg_color(), 0, label.get_fg_color());
@@ -241,76 +243,49 @@ bool GUIRenderer3D::visit(GUILabel& label)
   }
   else
   {
-    printf("DEBUG: GUILabel %p is invisible, so ignoring\n", (void*)&label);
+    DEEP_TRACE("GUILabel %p is invisible, so ignoring", (void*)&label);
     return false;
   }
-}
-
-void GUIRenderer3D::prepare()
-{
-  // Use our shader program.
-  impl->shader_program->bind();
 }
 
 void GUIRenderer3D::draw()
 {
   sf::Window& window = App::instance().window();
   const sf::Vector2u& window_size = window.getSize();
-  TextureFont& font = App::instance().getFonts().getDefault();
+  TextureFont& font = App::instance().get_fonts().get_default();
 
   static unsigned int frame_counter;
 
+  // Use our shader program.
+  impl->shader_program->bind();
+
   if (impl->vao_dirty)
   {
-    printf("DEBUG: Updating VAO for GUI\n");
     impl->render_data->update_VAO();
     impl->vao_dirty = false;
-    printf("DEBUG: Done updating VAO\n");
-    printf("DEBUG: Vertex count is %u\n", impl->render_data->vertex_count);
   }
-
-  // Send window size uniform to renderer.
-  glUniform2f(impl->window_size_id,
-              window_size.x,
-              window_size.y);
-
-  // Send frame counter to renderer.
-  glUniform1f(impl->frame_counter_id, frame_counter);
 
   // bind texture sampler to renderer.
   font.bind();
 
-  // Send texture sampler to renderer.
-  //glTexImage2D(GL_TEXTURE_2D,
-  //             0,
-  //             GL_RGB,
-  //             font.getWidth(),
-  //             font.getHeight(),
-  //             0,
-  //             GL_BGR,
-  //             GL_UNSIGNED_BYTE,
-  //             font.getData());
+  // Send uniforms to renderer.
+  glUniform2f(impl->window_size_id, window_size.x, window_size.y);
+  glUniform1f(impl->frame_counter_id, frame_counter);
 
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-  // TODO: this
-
   glBindVertexArray(impl->render_data->vao_id);
   glDrawArrays(GL_TRIANGLES, 0, impl->render_data->vertex_count);
+  glBindVertexArray(0);
+
+  font.unbind();
+
+  // Unbind our shader program.
+  impl->shader_program->unbind();
 
   ++frame_counter;
 }
-
-void GUIRenderer3D::finish()
-{
-  glBindVertexArray(0);
-
-  // Use our shader program.
-  impl->shader_program->unbind();
-}
-
-
 
 } // end namespace rectopia
 } // end namespace gsl

@@ -1,5 +1,5 @@
-#ifndef CHUNKRENDERDATA_H
-#define CHUNKRENDERDATA_H
+#ifndef RENDERDATA_H
+#define RENDERDATA_H
 
 #include <boost/container/vector.hpp>
 #include <glm/glm.hpp>
@@ -12,13 +12,13 @@ namespace rectopia
 {
 
 // Forward declarations
-struct ChunkVertexRenderData;
+struct VertexRenderData;
 
 /** Struct representing all of the rendering data associated with a chunk. */
-struct ChunkRenderData
+struct RenderData
 {
-  ChunkRenderData();
-  ~ChunkRenderData();
+  RenderData();
+  ~RenderData();
   void clear_vertices();
   void add_vertex(glm::vec3 block_coords,
                   glm::vec3 vertex,
@@ -29,10 +29,10 @@ struct ChunkRenderData
   void update_VAOs();
 
   /// SOLID vertex vector.
-  boost::container::vector<ChunkVertexRenderData> solid_vertices;
+  boost::container::vector<VertexRenderData> solid_vertices;
 
   /// TRANSLUCENT vertex vector.
-  boost::container::vector<ChunkVertexRenderData> translucent_vertices;
+  boost::container::vector<VertexRenderData> translucent_vertices;
 
   /// VBO ID for the SOLID vertex array.
   unsigned int solid_vbo_id;

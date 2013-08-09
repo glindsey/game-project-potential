@@ -1,5 +1,6 @@
 #include "GUIFrame.h"
 
+#include "ErrorMacros.h"
 #include "GUIElementVisitor.h"
 
 namespace gsl
@@ -35,11 +36,11 @@ void GUIFrame::accept(GUIElementVisitor& visitor)
   bool visit_children = visitor.visit(*this);
   if (visit_children)
   {
-    printf("DEBUG: Visiting children of GUIFrame node %p\n", (void*)this);
+    DEEP_TRACE("Visiting children of GUIFrame node %p", (void*)this);
     boost::ptr_map<std::string, GUIElement>::iterator iter;
 
-    for (iter = getChildren().begin();
-         iter != getChildren().end();
+    for (iter = get_children().begin();
+         iter != get_children().end();
          ++iter)
     {
       iter->second->accept(visitor);

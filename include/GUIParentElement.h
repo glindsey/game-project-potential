@@ -31,29 +31,29 @@ public:
   /// Handle an event.
   /// First we attempt to act upon the event ourselves; if the event is not
   /// handled, we pass it along to each child element in turn.
-  EventResult handleEvent(sf::Event const& event);
+  EventResult handle_event(sf::Event const& event);
 
   /// Add a child to this element.
-  bool addChild(GUIElement* child);
+  bool add_child(GUIElement* child);
 
   /// Delete a child from this element.
-  bool delChild(std::string _name);
+  bool del_child(std::string _name);
 
   /// Clear all children of this element.
-  void clearChildren();
+  void clear_children();
 
   /// Get a child of this element.
-  GUIElement* getChild(std::string _name);
+  GUIElement* get_child(std::string _name);
 
   /// Get the total number of children of this element.
-  unsigned int getChildCount();
+  unsigned int get_child_count();
 
   /// Clear dirty flag, and dirty flag on all child elements.
   virtual void clear_dirty();
 
 protected:
   /// Return container of children.
-  boost::ptr_map<std::string, GUIElement>& getChildren();
+  boost::ptr_map<std::string, GUIElement>& get_children();
 
 private:
   struct Impl;

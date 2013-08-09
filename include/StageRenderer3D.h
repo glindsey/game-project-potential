@@ -31,12 +31,10 @@ public:
   bool visit(StageChunk& chunk);
   bool visit(StageChunkCollection& collection);
 
-  void prepare();
   void draw();
-  void finish();
 
-  EventResult handleWindowResize(int w, int h);
-  EventResult handleKeyDown(sf::Event::KeyEvent key);
+  EventResult handle_window_resize(int w, int h);
+  EventResult handle_key_down(sf::Event::KeyEvent key);
 
 protected:
 private:

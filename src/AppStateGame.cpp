@@ -20,84 +20,78 @@ namespace rectopia
 
 struct AppStateGame::Impl
 {
-  std::unique_ptr<BGRenderer> bg_renderer_;
-  std::unique_ptr<StageRenderer> stage_renderer_;
-  std::unique_ptr<GUIRenderer> gui_renderer_;
+  std::unique_ptr<BGRenderer> bg_renderer;
+  std::unique_ptr<StageRenderer> stage_renderer;
+  std::unique_ptr<GUIRenderer> gui_renderer;
 
   /// Game GUI instance.
-  std::unique_ptr<GUI> gui_;
+  std::unique_ptr<GUI> gui;
 
-  static const unsigned int status_bar_height_;
-  static const unsigned int menu_bar_width_;
+  static const unsigned int status_bar_height;
+  static const unsigned int menu_bar_width;
 };
 
-const unsigned int AppStateGame::Impl::status_bar_height_ = 150;
-const unsigned int AppStateGame::Impl::menu_bar_width_ = 250;
+const unsigned int AppStateGame::Impl::status_bar_height = 150;
+const unsigned int AppStateGame::Impl::menu_bar_width = 250;
 
 AppStateGame::AppStateGame(AppStateManager* manager)
   : AppState(manager), impl(new Impl())
 {
-  std::cout << "DEBUG: Creating AppStateGame." << std::endl;
-
-  impl->gui_.reset(new GUI());
+  impl->gui.reset(new GUI());
 
   // Create the status area.
-  StatusArea* status_area = new StatusArea(impl->gui_.get());
-  status_area->set_size(glm::vec2(-10, impl->status_bar_height_));
+  StatusArea* status_area = new StatusArea(impl->gui.get());
+  status_area->set_size(glm::vec2(-10, impl->status_bar_height));
   status_area->set_location(glm::vec2(5, -5));
   status_area->set_visible(true);
-  impl->gui_->addChild(status_area);  //<-- Takes over ownership of status_area
+  impl->gui->add_child(status_area);  //<-- Takes over ownership of status_area
 
   // Create the menu area.
-  MenuArea* menu_area = new MenuArea(impl->gui_.get());
-  menu_area->set_size(glm::vec2(impl->menu_bar_width_,
-                                  -(10 + impl->status_bar_height_)));
+  MenuArea* menu_area = new MenuArea(impl->gui.get());
+  menu_area->set_size(glm::vec2(impl->menu_bar_width,
+                                  -(10 + impl->status_bar_height)));
   menu_area->set_location(glm::vec2(5, 5));
   menu_area->set_visible(false);  // DEBUG: shut off for now
-  impl->gui_->addChild(menu_area);  //<-- Takes over ownership of menu_area
+  impl->gui->add_child(menu_area);  //<-- Takes over ownership of menu_area
 }
 
 AppStateGame::~AppStateGame()
 {
-  std::cout << "DEBUG: Destroying AppStateGame." << std::endl;
 }
 
-void AppStateGame::enterState()
+void AppStateGame::enter_state()
 {
-  std::cout << "DEBUG: Entering state AppStateGame." << std::endl;
-
   // Build the terrain.
   // TODO: choose a seed
   Stage::getInstance().build(Settings::terrainSize, 2);
 }
 
-void AppStateGame::leaveState()
+void AppStateGame::leave_state()
 {
-  std::cout << "DEBUG: Leaving state AppStateGame." << std::endl;
 }
 
-EventResult AppStateGame::handleEvent(const sf::Event& event)
+EventResult AppStateGame::handle_event(const sf::Event& event)
 {
   EventResult result = EventResult::Pending;
 
   // 1. Try to handle the event ourselves.
-  result = EventListener::handleEvent(event);
+  result = EventListener::handle_event(event);
   if (result == EventResult::Handled)
   {
     return result;
   }
 
   // 2. Pass the event to the GUI.
-  result = impl->gui_->handleEvent(event);
+  result = impl->gui->handle_event(event);
   if (result == EventResult::Handled)
   {
     return result;
   }
 
   // 3. Pass the event to the stage renderer, if it exists.
-  if (impl->stage_renderer_ != nullptr)
+  if (impl->stage_renderer != nullptr)
   {
-    result = impl->stage_renderer_->handleEvent(event);
+    result = impl->stage_renderer->handle_event(event);
     if (result == EventResult::Handled)
     {
       return result;
@@ -105,7 +99,7 @@ EventResult AppStateGame::handleEvent(const sf::Event& event)
   }
 
   // 4. Pass the event to the game stage.
-  result = Stage::getInstance().handleEvent(event);
+  result = Stage::getInstance().handle_event(event);
   if (result == EventResult::Handled)
   {
     return result;
@@ -122,59 +116,38 @@ void AppStateGame::process()
 
 void AppStateGame::render()
 {
-  if (impl->bg_renderer_.get() == nullptr)
+  if (impl->bg_renderer.get() == nullptr)
   {
-    impl->bg_renderer_.reset(new BGRenderer3D());
+    impl->bg_renderer.reset(new BGRenderer3D());
   }
-  if (impl->stage_renderer_.get() == nullptr)
+  if (impl->stage_renderer.get() == nullptr)
   {
-    impl->stage_renderer_.reset(new StageRenderer3D());
+    impl->stage_renderer.reset(new StageRenderer3D());
   }
-  if (impl->gui_renderer_.get() == nullptr)
+  if (impl->gui_renderer.get() == nullptr)
   {
-    impl->gui_renderer_.reset(new GUIRenderer3D());
+    impl->gui_renderer.reset(new GUIRenderer3D());
   }
 
-  if (1)
-  {
-    // Get the renderer ready.
-    impl->bg_renderer_->prepare();
-
-    // Render the vertices to the screen.
-    impl->bg_renderer_->draw();
-
-    // Finish the drawing procedure.
-    impl->bg_renderer_->finish();
-  }
+  // Render background.
+  impl->bg_renderer->draw();
 
   if (Stage::getInstance().okay_to_render_map())
   {
     // Tell renderer to visit the stage to create the vertex array.
-    Stage::getInstance().accept(*(impl->stage_renderer_));
+    Stage::getInstance().accept(*(impl->stage_renderer));
 
-    // Get the renderer ready.
-    impl->stage_renderer_->prepare();
-
-    // Render the vertices to the screen.
-    impl->stage_renderer_->draw();
-
-    // Finish the drawing procedure.
-    impl->stage_renderer_->finish();
+    // Render stage.
+    impl->stage_renderer->draw();
   }
 
-  if (1)
+  if (0)
   {
     // Tell renderer to visit the GUI to create the vertex array.
-    impl->gui_->accept(*(impl->gui_renderer_));
+    impl->gui->accept(*(impl->gui_renderer));
 
-    // Get the renderer ready.
-    impl->gui_renderer_->prepare();
-
-    // Render the vertices to the screen.
-    impl->gui_renderer_->draw();
-
-    // Finish the drawing procedure.
-    impl->gui_renderer_->finish();
+    // Render GUI.
+    impl->gui_renderer->draw();
   }
 }
 

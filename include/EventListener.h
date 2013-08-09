@@ -30,21 +30,21 @@ public:
   EventListener();
   virtual ~EventListener();
 
-  virtual EventResult handleEvent(const sf::Event& event);
+  virtual EventResult handle_event(const sf::Event& event);
 
-  virtual EventResult handleFocusGained();
-  virtual EventResult handleFocusLost();
-  virtual EventResult handleKeyDown(sf::Event::KeyEvent key);
-  virtual EventResult handleKeyUp(sf::Event::KeyEvent key);
-  virtual EventResult handleMouseMove(sf::Event::MouseMoveEvent mouseMove);
-  virtual EventResult handleMouseWheel(sf::Event::MouseWheelEvent mouseWheel);
-  virtual EventResult handleMouseButtonDown(sf::Event::MouseButtonEvent mouseButton);
-  virtual EventResult handleMouseButtonUp(sf::Event::MouseButtonEvent mouseButton);
-  virtual EventResult handleJoyButtonDown(sf::Event::JoystickButtonEvent joystickButton);
-  virtual EventResult handleJoyButtonUp(sf::Event::JoystickButtonEvent joystickButton);
-  virtual EventResult handleJoyMove(sf::Event::JoystickMoveEvent joystickMove);
-  virtual EventResult handleWindowExit();
-  virtual EventResult handleWindowResize(int w, int h);
+  virtual EventResult handle_focus_gained();
+  virtual EventResult handle_focus_lost();
+  virtual EventResult handle_key_down(sf::Event::KeyEvent key);
+  virtual EventResult handle_key_up(sf::Event::KeyEvent key);
+  virtual EventResult handle_mouse_move(sf::Event::MouseMoveEvent mouseMove);
+  virtual EventResult handle_mouse_wheel(sf::Event::MouseWheelEvent mouseWheel);
+  virtual EventResult handle_mouse_button_down(sf::Event::MouseButtonEvent mouseButton);
+  virtual EventResult handle_mouse_button_up(sf::Event::MouseButtonEvent mouseButton);
+  virtual EventResult handle_joy_button_down(sf::Event::JoystickButtonEvent joystickButton);
+  virtual EventResult handle_joy_button_up(sf::Event::JoystickButtonEvent joystickButton);
+  virtual EventResult handle_joy_move(sf::Event::JoystickMoveEvent joystickMove);
+  virtual EventResult handle_window_exit();
+  virtual EventResult handle_window_resize(int w, int h);
 };
 
 } // namespace rectopia

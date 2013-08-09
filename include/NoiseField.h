@@ -19,7 +19,7 @@ public:
   NoiseField(int _xySize, int _zLo, int _zHi, int _variance, int _seed);
   ~NoiseField();
 
-  int getScaledValue(int x, int y);
+  int get_scaled_value(int x, int y);
 
 protected:
 private:

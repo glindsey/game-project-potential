@@ -26,11 +26,11 @@ public:
 
   virtual ~AppState();
 
-  virtual void enterState()
+  virtual void enter_state()
   {
   }
 
-  virtual void leaveState()
+  virtual void leave_state()
   {
   }
 

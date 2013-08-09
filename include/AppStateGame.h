@@ -32,10 +32,10 @@ public:
   /// 3. Game stage
   /// @param event The event to be handled.
   /// @return EventResult indicating if/how the event was handled.
-  EventResult handleEvent(const sf::Event& event);
+  EventResult handle_event(const sf::Event& event);
 
-  void enterState();
-  void leaveState();
+  void enter_state();
+  void leave_state();
   void process();
   void render();
 

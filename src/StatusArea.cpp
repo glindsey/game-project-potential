@@ -27,7 +27,7 @@ StatusArea::StatusArea(GUIElement* parent)
   GUIFrame* frame = new GUIFrame(this, "frame");
   frame->set_bg_color(glm::vec4(0.0f, 0.0f, 0.1f, 0.5f));
   frame->set_visible(true);
-  addChild(frame);
+  add_child(frame);
 
   GUILabel* test_label = new GUILabel(frame, "test_label");
   test_label->set_bg_color(glm::vec4(1.0f, 0.0f, 0.0f, 0.5f));
@@ -36,7 +36,7 @@ StatusArea::StatusArea(GUIElement* parent)
   test_label->set_size(glm::vec2(300, 20));
   test_label->set_visible(true);
   test_label->setText(U"Testing GUILabel");
-  frame->addChild(test_label);
+  frame->add_child(test_label);
 }
 
 StatusArea::~StatusArea()
@@ -87,7 +87,7 @@ void StatusArea::render()
   }
 
   text.setString(stream.str());
-  text.setFont(GUIElement::getDefaultFont());
+  text.setFont(GUIElement::get_defaultFont());
   text.setCharacterSize(16);
   text.setPosition(areaLocation.x + 2, areaLocation.y + 2);
   window->draw(text);

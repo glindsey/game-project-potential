@@ -34,15 +34,13 @@ int main(int argc, char** argv)
   }
   catch (std::exception& e)
   {
-    std::cout << "FATAL: Exception thrown: " << e.what() << std::endl;
+    std::cout << "Exception thrown: " << e.what() << std::endl;
   }
   catch (boost::exception& e)
   {
-    std::cout << "FATAL: Boost exception thrown: " << std::endl;
-    std::cout << boost::diagnostic_information(e);
+    std::cout << "Boost exception thrown: %s" <<
+                 boost::diagnostic_information(e) << std::endl;
   }
-
-  std::cout << "DEBUG: Exited main." << std::endl;
 
   return 0;
 }

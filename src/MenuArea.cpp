@@ -20,7 +20,7 @@ MenuArea::MenuArea(GUIElement* parent)
   GUIFrame* frame = new GUIFrame(this, "frame");
   frame->set_bg_color(glm::vec4(0.0f, 0.0f, 0.1f, 1.0f));
   frame->set_visible(true);
-  addChild(frame);
+  add_child(frame);
 }
 
 void MenuArea::render()

@@ -117,7 +117,7 @@ struct StageBuilderTerrain::Impl
   int igneous_type_count_;
 
   /// Returns a random number within a given distribution.
-  int GetRandom(RDPointer& distribution)
+  int get_random(RDPointer& distribution)
   {
     RandomDistribution& dist = *(distribution.get());
     return dist(App::instance().twister());
@@ -218,7 +218,7 @@ bool StageBuilderTerrain::Build()
         double perlin_x = (double) column.x / (double) stage_size.x;
         double perlin_y = (double) column.y / (double) stage_size.y;
         int value = scale_bias.GetValue(perlin_x, perlin_y, perlin_seed);
-        impl->stage_.setColumnInitialHeight(column.x, column.y, value);
+        impl->stage_.set_column_initial_height(column.x, column.y, value);
       }
     }
 
@@ -274,17 +274,17 @@ bool StageBuilderTerrain::Build()
       }
       else if (z <= impl->sedimentary_level_)
       {
-        substance = Substance::layerSedimentary[impl->GetRandom(
+        substance = Substance::layerSedimentary[impl->get_random(
             impl->sedimentary_distribution_)];
       }
       else if (z <= impl->metamorphic_level_)
       {
-        substance = Substance::layerMetamorphic[impl->GetRandom(
+        substance = Substance::layerMetamorphic[impl->get_random(
             impl->metamorphic_distribution_)];
       }
       else
       {
-        substance = Substance::layerIgneousIntrusive[impl->GetRandom(
+        substance = Substance::layerIgneousIntrusive[impl->get_random(
                       impl->igneous_distribution_)];
       }
 
@@ -305,7 +305,7 @@ bool StageBuilderTerrain::Build()
       if (impl->column_.x < stage_size.x)
       {
         int stratum = 0;
-        for (int z = impl->stage_.getColumnInitialHeight(impl->column_.x,
+        for (int z = impl->stage_.get_column_initial_height(impl->column_.x,
                                                          impl->column_.y) - 1;
              z >= 0; --z)
         {

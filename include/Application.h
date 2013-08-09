@@ -56,7 +56,7 @@ public:
   AppStateManager& getStateManager();
 
   /// Get the FontCollection instance.
-  FontCollection& getFonts();
+  FontCollection& get_fonts();
 
 protected:
 private:
@@ -89,20 +89,20 @@ private:
   /// manager.
   /// @param event Event to handle.
   /// @return Result of handling the event.
-  EventResult handleEvent(const sf::Event& event);
+  EventResult handle_event(const sf::Event& event);
 
   /// Window closing handler.
   /// If the application sees that the window has been closed, it sets
   /// isRunning to false, which tells the processing and rendering loops to
   /// halt.
-  EventResult handleWindowExit();
+  EventResult handle_window_exit();
 
   /// Key down handler.
   /// This handler looks for application-wide keypresses, such as "Escape" to
   /// close the window.
   /// @todo Eventually Escape should be handled by the app state manager, since
   ///       we don't want the app to simply bail when Escape is pressed!
-  EventResult handleKeyDown(sf::Event::KeyEvent key);
+  EventResult handle_key_down(sf::Event::KeyEvent key);
 
 };
 

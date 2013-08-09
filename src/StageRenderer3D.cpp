@@ -14,17 +14,15 @@
 #include <glm/gtx/transform.hpp>
 
 #include "Application.h"
-#include "ChunkRenderData.h"
-#include "ChunkVertexRenderData.h"
-#include "CursorRenderData.h"
-#include "CursorVertexRenderData.h"
 #include "GLShaderProgram.h"
 #include "MathUtils.h"
+#include "RenderData.h"
 #include "Settings.h"
 #include "Stage.h"
 #include "StageBlock.h"
 #include "StageChunk.h"
 #include "StageChunkCollection.h"
+#include "VertexRenderData.h"
 
 namespace gsl
 {
@@ -34,7 +32,7 @@ namespace rectopia
 struct StageRenderer3D::Impl
 {
   /// Draws the stage block requested.
-  void draw_stage_block(StageBlock& block, ChunkRenderData& data)
+  void draw_stage_block(StageBlock& block, RenderData& data)
   {
     static StageCoord3 stage_size = Stage::getInstance().size();
 
@@ -60,11 +58,16 @@ struct StageRenderer3D::Impl
   }
 
   /// Draw the cursor.
-  void draw_cursor(CursorRenderData& data,
-                  glm::vec4 color)
+  void draw_cursor(RenderData& data, glm::vec4 color1, glm::vec4 color2)
   {
     // Set up the vertex coordinates.  Z and Y are flipped because the game
     // treats Y as the back-to-front coord and Z as the top-to-bottom coord.
+    glm::vec3 farLt(-3, 0.5, 0.5);
+    glm::vec3 farRt(4, 0.5, 0.5);
+    glm::vec3 farLo(0.5, -3, 0.5);
+    glm::vec3 farUp(0.5, 4, 0.5);
+    glm::vec3 farBk(0.5, 0.5, -3);
+    glm::vec3 farFt(0.5, 0.5, 4);
     glm::vec3 bkLoLt(0, 0, 0);
     glm::vec3 bkLoRt(1, 0, 0);
     glm::vec3 ftLoLt(0, 0, 1);
@@ -74,34 +77,46 @@ struct StageRenderer3D::Impl
     glm::vec3 ftUpRt(1, 1, 1);
     glm::vec3 ftUpLt(0, 1, 1);
 
-    data.add_vertex(bkLoLt, color);
-    data.add_vertex(bkLoRt, color);
-    data.add_vertex(bkLoRt, color);
-    data.add_vertex(bkUpRt, color);
-    data.add_vertex(bkUpRt, color);
-    data.add_vertex(bkUpLt, color);
-    data.add_vertex(bkUpLt, color);
-    data.add_vertex(bkLoLt, color);
-    data.add_vertex(bkLoLt, color);
-    data.add_vertex(ftLoLt, color);
-    data.add_vertex(bkLoRt, color);
-    data.add_vertex(ftLoRt, color);
-    data.add_vertex(bkUpRt, color);
-    data.add_vertex(ftUpRt, color);
-    data.add_vertex(bkUpLt, color);
-    data.add_vertex(ftUpLt, color);
-    data.add_vertex(ftLoLt, color);
-    data.add_vertex(ftLoRt, color);
-    data.add_vertex(ftLoRt, color);
-    data.add_vertex(ftUpRt, color);
-    data.add_vertex(ftUpRt, color);
-    data.add_vertex(ftUpLt, color);
-    data.add_vertex(ftUpLt, color);
-    data.add_vertex(ftLoLt, color);
+    static glm::vec2 const dummy2(0, 0);
+    static glm::vec3 const dummy3(0, 0, 0);
+
+    // Gnomon
+    data.add_vertex(dummy3, farLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, farRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, farLo, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, farUp, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, farBk, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, farFt, dummy3, color1, color2, dummy2);
+
+    // Wireframe block
+    data.add_vertex(dummy3, bkLoLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkLoRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkLoRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkUpRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkUpRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkUpLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkUpLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkLoLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkLoLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftLoLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkLoRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftLoRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkUpRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftUpRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, bkUpLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftUpLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftLoLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftLoRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftLoRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftUpRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftUpRt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftUpLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftUpLt, dummy3, color1, color2, dummy2);
+    data.add_vertex(dummy3, ftLoLt, dummy3, color1, color2, dummy2);
   }
 
   /// Draws a stage block, taking into account hidden faces.
-  void draw_block(ChunkRenderData& data,
+  void draw_block(RenderData& data,
                   glm::vec3 coord,
                   glm::vec4 color,
                   glm::vec4 color_spec,
@@ -131,32 +146,35 @@ struct StageRenderer3D::Impl
     glm::vec3 ftUpRt(xc + 1.0f, yc + 1.0f, zc + 1.0f);
     glm::vec3 ftUpLt(xc, yc + 1.0f, zc + 1.0f);
 
+    static float const bump = 0.25f;   /// @todo move magic number
+    static float const b_ht = 0.25f;   /// @todo move magic number
+
     // Coordinates to make a little cap on top of the block.
-    glm::vec3 CapBkLoRt(xc + 0.8f, yc + 1.0f, zc + 0.2f);
-    glm::vec3 CapBkLoLt(xc + 0.2f, yc + 1.0f, zc + 0.2f);
-    glm::vec3 CapFtLoRt(xc + 0.8f, yc + 1.0f, zc + 0.8f);
-    glm::vec3 CapFtLoLt(xc + 0.2f, yc + 1.0f, zc + 0.8f);
-    glm::vec3 CapBkUpRt(xc + 0.8f, yc + 1.2f, zc + 0.2f);
-    glm::vec3 CapBkUpLt(xc + 0.2f, yc + 1.2f, zc + 0.2f);
-    glm::vec3 CapFtUpRt(xc + 0.8f, yc + 1.2f, zc + 0.8f);
-    glm::vec3 CapFtUpLt(xc + 0.2f, yc + 1.2f, zc + 0.8f);
+    glm::vec3 CapBkLoRt(xc + 1.0f - bump, yc + 1.0f, zc + 0.0f + bump);
+    glm::vec3 CapBkLoLt(xc + 0.0f + bump, yc + 1.0f, zc + 0.0f + bump);
+    glm::vec3 CapFtLoRt(xc + 1.0f - bump, yc + 1.0f, zc + 1.0f - bump);
+    glm::vec3 CapFtLoLt(xc + 0.0f + bump, yc + 1.0f, zc + 1.0f - bump);
+    glm::vec3 CapBkUpRt(xc + 1.0f - bump, yc + 1.0f + b_ht, zc + 0.0f + bump);
+    glm::vec3 CapBkUpLt(xc + 0.0f + bump, yc + 1.0f + b_ht, zc + 0.0f + bump);
+    glm::vec3 CapFtUpRt(xc + 1.0f - bump, yc + 1.0f + b_ht, zc + 1.0f - bump);
+    glm::vec3 CapFtUpLt(xc + 0.0f + bump, yc + 1.0f + b_ht, zc + 1.0f - bump);
 
     // Coordinates to make a little dimple on bottom of the block.
-    glm::vec3 DplBkLoRt(xc + 0.8f, yc + 0.0f, zc + 0.2f);
-    glm::vec3 DplBkLoLt(xc + 0.2f, yc + 0.0f, zc + 0.2f);
-    glm::vec3 DplFtLoRt(xc + 0.8f, yc + 0.0f, zc + 0.8f);
-    glm::vec3 DplFtLoLt(xc + 0.2f, yc + 0.0f, zc + 0.8f);
-    glm::vec3 DplBkUpRt(xc + 0.8f, yc + 0.2f, zc + 0.2f);
-    glm::vec3 DplBkUpLt(xc + 0.2f, yc + 0.2f, zc + 0.2f);
-    glm::vec3 DplFtUpRt(xc + 0.8f, yc + 0.2f, zc + 0.8f);
-    glm::vec3 DplFtUpLt(xc + 0.2f, yc + 0.2f, zc + 0.8f);
+    glm::vec3 DplBkLoRt(xc + 1.0f - bump, yc + 0.0f, zc + 0.0f + bump);
+    glm::vec3 DplBkLoLt(xc + 0.0f + bump, yc + 0.0f, zc + 0.0f + bump);
+    glm::vec3 DplFtLoRt(xc + 1.0f - bump, yc + 0.0f, zc + 1.0f - bump);
+    glm::vec3 DplFtLoLt(xc + 0.0f + bump, yc + 0.0f, zc + 1.0f - bump);
+    glm::vec3 DplBkUpRt(xc + 1.0f - bump, yc + 0.0f + b_ht, zc + 0.0f + bump);
+    glm::vec3 DplBkUpLt(xc + 0.0f + bump, yc + 0.0f + b_ht, zc + 0.0f + bump);
+    glm::vec3 DplFtUpRt(xc + 1.0f - bump, yc + 0.0f + b_ht, zc + 1.0f - bump);
+    glm::vec3 DplFtUpLt(xc + 0.0f + bump, yc + 0.0f + b_ht, zc + 1.0f - bump);
 
-    static const glm::vec3 point_bk = glm::vec3(0.0f, 0.0f, -1.0f);
-    static const glm::vec3 point_fd = glm::vec3(0.0f, 0.0f, 1.0f);
-    static const glm::vec3 point_lt = glm::vec3(-1.0f, 0.0f, 0.0f);
-    static const glm::vec3 point_rt = glm::vec3(1.0f, 0.0f, 0.0f);
-    static const glm::vec3 point_dn = glm::vec3(0.0f, -1.0f, 0.0f);
-    static const glm::vec3 point_up = glm::vec3(0.0f, 1.0f, 0.0f);
+    static glm::vec3 const point_bk = glm::vec3( 0.0f,  0.0f, -1.0f);
+    static glm::vec3 const point_fd = glm::vec3( 0.0f,  0.0f,  1.0f);
+    static glm::vec3 const point_lt = glm::vec3(-1.0f,  0.0f,  0.0f);
+    static glm::vec3 const point_rt = glm::vec3( 1.0f,  0.0f,  0.0f);
+    static glm::vec3 const point_dn = glm::vec3( 0.0f, -1.0f,  0.0f);
+    static glm::vec3 const point_up = glm::vec3( 0.0f,  1.0f,  0.0f);
 
     if (hidden.back() != true)
     {
@@ -326,13 +344,6 @@ struct StageRenderer3D::Impl
       data.add_vertex(coord, DplFtUpLt, point_dn, color, color_spec, texCoord);
       data.add_vertex(coord, DplFtUpRt, point_dn, color, color_spec, texCoord);
       data.add_vertex(coord, DplBkUpRt, point_dn, color, color_spec, texCoord);
-
-      //data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
-      //data.add_vertex(coord, bkLoLt, point_dn, color, color_spec, texCoord);
-      //data.add_vertex(coord, ftLoLt, point_dn, color, color_spec, texCoord);
-      //data.add_vertex(coord, ftLoLt, point_dn, color, color_spec, texCoord);
-      //data.add_vertex(coord, ftLoRt, point_dn, color, color_spec, texCoord);
-      //data.add_vertex(coord, bkLoRt, point_dn, color, color_spec, texCoord);
     }
 
     if (hidden.right() != true)
@@ -356,34 +367,37 @@ struct StageRenderer3D::Impl
     }
   }
 
-  typedef boost::ptr_map<StageChunk*, ChunkRenderData> ChunkRenderDataMap;
+  typedef boost::ptr_map<StageChunk*, RenderData> RenderDataMap;
   typedef std::list<StageChunk*> StaleChunkCollection;
 
-  ChunkRenderDataMap chunk_data;     ///< Map of rendering data to StageChunks
+  RenderDataMap chunk_data;         ///< Map of rendering data to StageChunks
   StaleChunkCollection stale_chunks_; ///< List of chunks that need refreshing
 
-  glm::vec3 light_dir;               ///< Light direction in world space
-  glm::vec3 light_color;             ///< Light color
+  glm::vec3 light_dir;              ///< Light direction in world space
+  glm::vec3 light_color;            ///< Light color
 
-  GLfloat angle_of_view;              ///< Current angle of view, in degrees
-  GLfloat camera_zoom;               ///< Camera zoom, from -100 to 100.
-  GLfloat camera_x_angle;             ///< Camera X angle, from -30 to 30.
-  GLfloat camera_y_angle;             ///< Camera Y angle, from -90 to 90.
+  GLfloat angle_of_view;            ///< Current angle of view, in degrees
+  GLfloat camera_zoom;              ///< Camera zoom, from -100 to 100.
+  GLfloat camera_x_angle;           ///< Camera X angle, from -30 to 30.
+  GLfloat camera_y_angle;           ///< Camera Y angle, from -90 to 90.
 
-  GLuint frame_counter;              ///< Frame counter
+  GLuint frame_counter;             ///< Frame counter
 
-  /// Mutex for stale chunks set.
-  boost::mutex stale_chunks_mutex_;
+  boost::mutex stale_chunks_mutex; ///< Mutex for stale chunks set.
 
-  std::unique_ptr<GLShaderProgram> chunk_program; ///< Chunk rendering program
+  std::unique_ptr<GLShaderProgram> render_program; ///< Chunk rendering program
 
   /// IDs for some uniform variables: chunk rendering program.
-  struct _chunk_program_id_
+  struct _render_program_id_
   {
     GLuint light_dir;
     GLuint light_color;
+
     GLuint cursor_location;
     GLuint frame_counter;
+    GLuint lighting_enabled;
+    GLuint center_on_cursor;
+    GLuint pulse_color;
 
     GLuint angle_of_view;
     GLuint aspect_ratio;
@@ -392,18 +406,11 @@ struct StageRenderer3D::Impl
     GLuint camera_zoom;
     GLuint camera_x_angle;
     GLuint camera_y_angle;
-  } chunk_program_id;
+  } render_program_id;
 
-  CursorRenderData cursor_data;  ///< Cursor rendering data
+  RenderData cursor_data;  ///< Cursor rendering data
 
   std::unique_ptr<GLShaderProgram> cursor_program; ///< Cursor rendering program
-
-  /// IDs for some uniform variables: cursor rendering program.
-  struct _cursor_program_id_
-  {
-    GLuint cursor_location;
-    GLuint frame_counter;
-  } cursor_program_id;
 };
 
 StageRenderer3D::StageRenderer3D()
@@ -412,36 +419,35 @@ StageRenderer3D::StageRenderer3D()
   name_ = "3D Renderer";
 
   // Create and compile the GLSL chunk rendering program from the shaders.
-  impl->chunk_program.reset(
-    new GLShaderProgram("shaders/ChunkVertexShader.glsl",
-                        "shaders/ChunkFragmentShader.glsl"));
+  impl->render_program.reset(
+    new GLShaderProgram("shaders/3DVertexShader.glsl",
+                        "shaders/3DFragmentShader.glsl"));
 
   // Get the IDs for the chunk rendering program.
-  impl->chunk_program_id.light_dir = impl->chunk_program->get_uniform_id("light_dir_worldspace");
-  impl->chunk_program_id.light_color = impl->chunk_program->get_uniform_id("light_color");
+  GLShaderProgram& program = *(impl->render_program.get());
+  Impl::_render_program_id_& program_id = impl->render_program_id;
 
-  impl->chunk_program_id.cursor_location = impl->chunk_program->get_uniform_id("cursor_location");
-  impl->chunk_program_id.frame_counter = impl->chunk_program->get_uniform_id("frame_counter");
+  program_id.light_dir =        program.get_uniform_id("light_dir_worldspace");
+  program_id.light_color =      program.get_uniform_id("light_color");
 
-  impl->chunk_program_id.angle_of_view = impl->chunk_program->get_uniform_id("angle_of_view");
-  impl->chunk_program_id.aspect_ratio = impl->chunk_program->get_uniform_id("aspect_ratio");
-  impl->chunk_program_id.z_near = impl->chunk_program->get_uniform_id("z_near");
-  impl->chunk_program_id.z_far = impl->chunk_program->get_uniform_id("z_far");
-  impl->chunk_program_id.camera_zoom = impl->chunk_program->get_uniform_id("camera_zoom");
-  impl->chunk_program_id.camera_x_angle = impl->chunk_program->get_uniform_id("camera_x_angle");
-  impl->chunk_program_id.camera_y_angle = impl->chunk_program->get_uniform_id("camera_y_angle");
+  program_id.cursor_location =  program.get_uniform_id("cursor_location");
+  program_id.frame_counter =    program.get_uniform_id("frame_counter");
+  program_id.lighting_enabled = program.get_uniform_id("lighting_enabled");
+  program_id.center_on_cursor = program.get_uniform_id("center_on_cursor");
+  program_id.pulse_color =      program.get_uniform_id("pulse_color");
 
-  // Create and compile the GLSL cursor rendering program from the shaders.
-  impl->cursor_program.reset(
-    new GLShaderProgram("shaders/CursorVertexShader.glsl",
-                        "shaders/CursorFragmentShader.glsl"));
-
-  // Get the IDs for the cursor rendering program.
-  impl->cursor_program_id.cursor_location = impl->chunk_program->get_uniform_id("cursor_location");
-  impl->cursor_program_id.frame_counter = impl->cursor_program->get_uniform_id("frame_counter");
+  program_id.angle_of_view =    program.get_uniform_id("angle_of_view");
+  program_id.aspect_ratio =     program.get_uniform_id("aspect_ratio");
+  program_id.z_near =           program.get_uniform_id("z_near");
+  program_id.z_far =            program.get_uniform_id("z_far");
+  program_id.camera_zoom =      program.get_uniform_id("camera_zoom");
+  program_id.camera_x_angle =   program.get_uniform_id("camera_x_angle");
+  program_id.camera_y_angle =   program.get_uniform_id("camera_y_angle");
 
   // Draw the cursor wireframe.
-  impl->draw_cursor(impl->cursor_data, glm::vec4(1.0));
+  impl->draw_cursor(impl->cursor_data,
+                    glm::vec4(0.0f, 0.0f, 0.0f, 1.0f),
+                    glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
   impl->cursor_data.update_VAOs();
 
   // Initialize the light direction and color.
@@ -450,9 +456,9 @@ StageRenderer3D::StageRenderer3D()
 
   // Set our camera variables.
   impl->angle_of_view = 45.0f;
-  impl->camera_zoom = -50.0f;
-  impl->camera_x_angle = 0.0f;
-  impl->camera_y_angle = 20.0f;
+  impl->camera_zoom = -30.0f;
+  impl->camera_x_angle = -10.0f;
+  impl->camera_y_angle = 30.0f;
 }
 
 StageRenderer3D::~StageRenderer3D()
@@ -479,7 +485,7 @@ bool StageRenderer3D::visit(StageChunk& chunk)
   // See if the chunk's vertex data needs to be recalculated.
   if (chunk.is_render_data_dirty())
   {
-    boost::mutex::scoped_lock lock(impl->stale_chunks_mutex_);
+    boost::mutex::scoped_lock lock(impl->stale_chunks_mutex);
 
     // Try to avoid pushing the exact same chunk onto the list twice in a row.
     // This will not eliminate all repeat chunks, but it will reduce them.
@@ -502,7 +508,7 @@ bool StageRenderer3D::visit(StageChunkCollection& collection)
   return true;
 }
 
-EventResult StageRenderer3D::handleWindowResize(int w, int h)
+EventResult StageRenderer3D::handle_window_resize(int w, int h)
 {
   // Reset the viewport.
   glViewport(0.0f, 0.0f, (float) w, (float) h);
@@ -510,7 +516,7 @@ EventResult StageRenderer3D::handleWindowResize(int w, int h)
   return EventResult::Handled;
 }
 
-EventResult StageRenderer3D::handleKeyDown(sf::Event::KeyEvent key)
+EventResult StageRenderer3D::handle_key_down(sf::Event::KeyEvent key)
 {
   // Control+Arrows, Control+<> moves the camera.
   if (key.shift != true && key.control == true && key.alt != true)
@@ -573,23 +579,24 @@ EventResult StageRenderer3D::handleKeyDown(sf::Event::KeyEvent key)
   return EventResult::Ignored;
 }
 
-void StageRenderer3D::prepare()
+void StageRenderer3D::draw()
 {
   sf::Window& window = App::instance().window();
   const sf::Vector2u& window_size = window.getSize();
+  Stage& stage = Stage::getInstance();
 
   static bool firstPrepare = true;
   if (firstPrepare)
   {
-    handleWindowResize(window_size.x, window_size.y);
+    handle_window_resize(window_size.x, window_size.y);
     firstPrepare = false;
   }
 
   // See if any chunks are stale and need re-rendering.
   {
-    unsigned int stale_chunk_count = 16; /// @todo eliminate magic number
+    unsigned int stale_chunk_count = 8; /// @todo eliminate magic number
 
-    boost::mutex::scoped_lock lock(impl->stale_chunks_mutex_);
+    boost::mutex::scoped_lock lock(impl->stale_chunks_mutex);
 
     // Update stale chunks on the list, up to the number defined above.
     while ((impl->stale_chunks_.size() > 0) && (stale_chunk_count > 0))
@@ -597,7 +604,7 @@ void StageRenderer3D::prepare()
       --stale_chunk_count;
       StageChunk* chunk = impl->stale_chunks_.front();
       impl->stale_chunks_.pop_front();
-      ChunkRenderData& render_data = impl->chunk_data[chunk];
+      RenderData& render_data = impl->chunk_data[chunk];
 
       render_data.clear_vertices();
 
@@ -625,97 +632,70 @@ void StageRenderer3D::prepare()
       render_data.update_VAOs();
     }
   }
-}
 
-void StageRenderer3D::draw()
-{
-  sf::Window& window = App::instance().window();
-  const sf::Vector2u& window_size = window.getSize();
-
-  Stage& stage = Stage::getInstance();
-
-  if (stage.isReady())
+  if (stage.is_ready())
   {
-    impl->chunk_program->bind();
+    impl->render_program->bind();
 
     StageCoord3 stage_size = stage.size();
     StageCoord3 cursor_location = stage.cursor();
-
-    // Send camera data to GLSL.
-    glUniform1f(impl->chunk_program_id.angle_of_view, impl->angle_of_view);
-    glUniform1f(impl->chunk_program_id.aspect_ratio, (GLfloat) window_size.x /
-                                                     (GLfloat) window_size.y);
-    glUniform1f(impl->chunk_program_id.z_near, 0.75f);
-    glUniform1f(impl->chunk_program_id.z_far, 300.0f);
-    glUniform1f(impl->chunk_program_id.camera_zoom, impl->camera_zoom);
-    glUniform1f(impl->chunk_program_id.camera_x_angle, impl->camera_x_angle);
-    glUniform1f(impl->chunk_program_id.camera_y_angle, impl->camera_y_angle);
-
-    // Send light data to GLSL.
     glm::vec3& ldir = impl->light_dir;
     glm::vec3& lcol = impl->light_color;
-    glUniform3f(impl->chunk_program_id.light_dir, ldir.x, ldir.y, ldir.z);
-    glUniform3f(impl->chunk_program_id.light_color, lcol.r, lcol.g, lcol.b);
-
-    // Send cursor location to GLSL.
     StageCoord3& cloc = cursor_location;
-    glUniform3f(impl->chunk_program_id.cursor_location, cloc.x, cloc.y, cloc.z);
 
-    // Send frame counter to GLSL.
-    glUniform1f(impl->chunk_program_id.frame_counter, impl->frame_counter);
+    glUniform1f(impl->render_program_id.angle_of_view, impl->angle_of_view);
+    glUniform1f(impl->render_program_id.aspect_ratio, (GLfloat) window_size.x /
+                                                     (GLfloat) window_size.y);
+    glUniform1f(impl->render_program_id.z_near, 0.75f);
+    glUniform1f(impl->render_program_id.z_far, 300.0f);
+    glUniform1f(impl->render_program_id.camera_zoom, impl->camera_zoom);
+    glUniform1f(impl->render_program_id.camera_x_angle, impl->camera_x_angle);
+    glUniform1f(impl->render_program_id.camera_y_angle, impl->camera_y_angle);
+    glUniform3f(impl->render_program_id.light_dir, ldir.x, ldir.y, ldir.z);
+    glUniform3f(impl->render_program_id.light_color, lcol.r, lcol.g, lcol.b);
+    glUniform1ui(impl->render_program_id.lighting_enabled, 1);
+    glUniform1ui(impl->render_program_id.center_on_cursor, 1);
+    glUniform1ui(impl->render_program_id.pulse_color, 0);
+    glUniform3f(impl->render_program_id.cursor_location, cloc.x, cloc.y, cloc.z);
+    glUniform1ui(impl->render_program_id.frame_counter, impl->frame_counter);
 
     // Draw solid vertices.
-    for (Impl::ChunkRenderDataMap::iterator data_iterator =
-           impl->chunk_data.begin(); data_iterator != impl->chunk_data.end();
-         ++data_iterator)
+    for (Impl::RenderDataMap::iterator iter = impl->chunk_data.begin();
+         iter != impl->chunk_data.end();
+         ++iter)
     {
-      ChunkRenderData* chunk = data_iterator->second;
+      RenderData* chunk = iter->second;
       glBindVertexArray(chunk->solid_vao_id);
       glDrawArrays(GL_TRIANGLES, 0, chunk->solid_vertex_count);
     }
 
     // Draw translucent vertices.
-    for (Impl::ChunkRenderDataMap::iterator data_iterator =
-           impl->chunk_data.begin(); data_iterator != impl->chunk_data.end();
-         ++data_iterator)
+    for (Impl::RenderDataMap::iterator iter = impl->chunk_data.begin();
+         iter != impl->chunk_data.end();
+         ++iter)
     {
-      ChunkRenderData* chunk = data_iterator->second;
+      RenderData* chunk = iter->second;
       glBindVertexArray(chunk->translucent_vao_id);
       glDrawArrays(GL_TRIANGLES, 0, chunk->translucent_vertex_count);
     }
 
-    glBindVertexArray(0);
-
-    impl->chunk_program->unbind();
-
-/*
     // Draw the wireframe cursor.
     // TODO: Instead of solid white, make it pulsate between black and white.
 
-    impl->cursor_program->bind();
+    // Send uniforms to the program.
+    glUniform1ui(impl->render_program_id.lighting_enabled, 0);
+    glUniform1ui(impl->render_program_id.center_on_cursor, 0);
+    glUniform1ui(impl->render_program_id.pulse_color, 1);
 
-    // Send uniforms to the cursor program.
-    glUniformMatrix4fv(impl->cursor_program_id.projection_matrix, 1, GL_FALSE,
-                       &impl->projection_matrix_[0][0]);
-    glUniformMatrix4fv(impl->cursor_program_id.view_matrix, 1, GL_FALSE,
-                       &impl->view_matrix[0][0]);
-    glUniform3f(impl->cursor_program_id.cursor_location,
-                cursor_location.x,
-                cursor_location.y,
-                cursor_location.z);
-    glUniform1f(impl->cursor_program_id.frame_counter, impl->frame_counter);
-
-    glBindVertexArray(impl->cursor_data.vao_id);
-    glDrawArrays(GL_LINES, 0, impl->cursor_data.vertex_count);
+    glBindVertexArray(impl->cursor_data.solid_vao_id);
+    glDrawArrays(GL_LINES, 0, impl->cursor_data.solid_vertex_count);
+    glBindVertexArray(impl->cursor_data.translucent_vao_id);
+    glDrawArrays(GL_LINES, 0, impl->cursor_data.translucent_vertex_count);
     glBindVertexArray(0);
 
-    impl->cursor_program->unbind();
-*/
+    impl->render_program->unbind();
   }
-}
 
-void StageRenderer3D::finish()
-{
   // Increment frame counter.
   ++(impl->frame_counter);
 }

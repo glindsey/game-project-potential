@@ -16,7 +16,7 @@ struct NoiseField::Impl
   void initialize(int _xySize, int _zLo, int _zHi, int _variance, int _seed);
   void generate();
   int coord(int x, int y);
-  int getWrappedValue(int x, int y);
+  int get_wrapped_value(int x, int y);
 
   int xySize;
   int zLo, zHi;
@@ -38,8 +38,6 @@ void NoiseField::Impl::initialize(int _xySize,
                                   int _variance,
                                   int _seed)
 {
-  std::cout << "DEBUG: init Noisefield: Size = " << _xySize << ", Z = (" << _zLo
-            << " to " << _zHi << "), Variance = " << _variance << std::endl;
   xySize = _xySize;
   zLo = _zLo;
   zHi = _zHi;
@@ -69,8 +67,6 @@ void NoiseField::Impl::generate()
   {
     int halfLength = (sideLength >> 1);
 
-    std::cout << "DEBUG: Side length = " << sideLength << std::endl;
-
     boost::random::uniform_int_distribution<> dist(-offset, offset);
 
     // Diamond step.
@@ -79,10 +75,10 @@ void NoiseField::Impl::generate()
       for (xCoord = 0; xCoord < xySize; xCoord += sideLength)
       {
         // Calculate average of square @ (xc + h, yc + h).
-        zAvg = (getWrappedValue(xCoord, yCoord)
-                + getWrappedValue(xCoord, yCoord + sideLength)
-                + getWrappedValue(xCoord + sideLength, yCoord)
-                + getWrappedValue(xCoord + sideLength, yCoord + sideLength))
+        zAvg = (get_wrapped_value(xCoord, yCoord)
+                + get_wrapped_value(xCoord, yCoord + sideLength)
+                + get_wrapped_value(xCoord + sideLength, yCoord)
+                + get_wrapped_value(xCoord + sideLength, yCoord + sideLength))
                >> 2;
 
         zNew = zAvg + dist(twister);
@@ -105,10 +101,10 @@ void NoiseField::Impl::generate()
       for (xCoord = 0; xCoord < xySize; xCoord += sideLength)
       {
         // Calculate top diamond point @ (xc + h, yc).
-        zAvg = (getWrappedValue(xCoord + halfLength, yCoord - halfLength)
-                + getWrappedValue(xCoord, yCoord)
-                + getWrappedValue(xCoord + sideLength, yCoord)
-                + getWrappedValue(xCoord + halfLength, yCoord + halfLength))
+        zAvg = (get_wrapped_value(xCoord + halfLength, yCoord - halfLength)
+                + get_wrapped_value(xCoord, yCoord)
+                + get_wrapped_value(xCoord + sideLength, yCoord)
+                + get_wrapped_value(xCoord + halfLength, yCoord + halfLength))
                >> 2;
 
         zNew = zAvg + dist(twister);
@@ -124,10 +120,10 @@ void NoiseField::Impl::generate()
         values[coord(xCoord + halfLength, yCoord)] = zNew;
 
         // Calculate left diamond point @ (xc, yc + h).
-        zAvg = (getWrappedValue(xCoord, yCoord)
-                + getWrappedValue(xCoord - halfLength, yCoord + halfLength)
-                + getWrappedValue(xCoord + halfLength, yCoord + halfLength)
-                + getWrappedValue(xCoord, yCoord + sideLength))
+        zAvg = (get_wrapped_value(xCoord, yCoord)
+                + get_wrapped_value(xCoord - halfLength, yCoord + halfLength)
+                + get_wrapped_value(xCoord + halfLength, yCoord + halfLength)
+                + get_wrapped_value(xCoord, yCoord + sideLength))
                >> 2;
 
         zNew = zAvg + dist(twister);
@@ -156,7 +152,7 @@ int NoiseField::Impl::coord(int x, int y)
   return (y * xySize) + x;
 }
 
-int NoiseField::Impl::getWrappedValue(int x, int y)
+int NoiseField::Impl::get_wrapped_value(int x, int y)
 {
   while (x < 0)
   {
@@ -191,9 +187,9 @@ NoiseField::~NoiseField()
 }
 
 // TODO: Scale based on x, y size as well?
-int NoiseField::getScaledValue(int x, int y)
+int NoiseField::get_scaled_value(int x, int y)
 {
-  int value = impl->getWrappedValue(x, y);
+  int value = impl->get_wrapped_value(x, y);
   int zRange = (impl->zHi - impl->zLo) + 1;
   int scaledValue = ((value * zRange) / 16384) + (float) impl->zLo;
 

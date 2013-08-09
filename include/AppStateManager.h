@@ -31,7 +31,7 @@ public:
 
   ~AppStateManager();
 
-  EventResult handleEvent(const sf::Event& event);
+  EventResult handle_event(const sf::Event& event);
 
   /// Call the process function of the active app state.
   /// @note Called in the processing thread ONLY!
@@ -43,8 +43,8 @@ public:
 
 public:
   /// Set the active app state.
-  /// When called, this function calls the leaveState function of the
-  /// current state, switches states, and then calls the enterState function
+  /// When called, this function calls the leave_state function of the
+  /// current state, switches states, and then calls the enter_state function
   /// of the new state.
   /// @param state ID of the application state to switch to.
   void SetActiveAppState(AppStateID state);

@@ -97,7 +97,7 @@ bool StageBuilderFlora::Build()
     for (impl->column_.x = 0; impl->column_.x < stage_size.x;
          ++(impl->column_.x))
     {
-      int height = impl->stage_.getColumnSolidHeight(impl->column_.x,
+      int height = impl->stage_.get_column_solid_height(impl->column_.x,
                                                      impl->column_.y);
 
       if (height < 0)
@@ -157,7 +157,7 @@ bool StageBuilderFlora::Build()
           //      bias = bias toward forest or plains (0 = forest, 1 = plains)
           // sharpness = sharpness of transition (20 is a good middle)
           int chance = forest_distribution(App::instance().twister());
-          int value = (forest_noisefield.getScaledValue(impl->column_.x,
+          int value = (forest_noisefield.get_scaled_value(impl->column_.x,
                        impl->column_.y));
 
           // Check the tree noisefield, put down trees if appropriate.

@@ -78,7 +78,7 @@ bool StageBuilderSmoother::Build()
   {
     for (impl->coord_.x = 0; impl->coord_.x < stage_size.x; ++(impl->coord_.x))
     {
-      int height = impl->stage_.getColumnSolidHeight(impl->coord_.x,
+      int height = impl->stage_.get_column_solid_height(impl->coord_.x,
                                                      impl->coord_.y);
 
       StageBlock& block = impl->stage_.get_block(impl->coord_.x,
@@ -90,14 +90,14 @@ bool StageBuilderSmoother::Build()
       int y_up = std::max(0, impl->coord_.y - 1);
       int y_down = std::min(impl->coord_.y + 1, stage_size.y - 1);
 
-      int heightN = impl->stage_.getColumnSolidHeight(impl->coord_.x, y_up);
-      int heightNE = impl->stage_.getColumnSolidHeight(x_right, y_up);
-      int heightE = impl->stage_.getColumnSolidHeight(x_right, impl->coord_.y);
-      int heightSE = impl->stage_.getColumnSolidHeight(x_right, y_down);
-      int heightS = impl->stage_.getColumnSolidHeight(impl->coord_.x, y_down);
-      int heightSW = impl->stage_.getColumnSolidHeight(x_left, y_down);
-      int heightW = impl->stage_.getColumnSolidHeight(x_left, impl->coord_.y);
-      int heightNW = impl->stage_.getColumnSolidHeight(x_left, y_up);
+      int heightN = impl->stage_.get_column_solid_height(impl->coord_.x, y_up);
+      int heightNE = impl->stage_.get_column_solid_height(x_right, y_up);
+      int heightE = impl->stage_.get_column_solid_height(x_right, impl->coord_.y);
+      int heightSE = impl->stage_.get_column_solid_height(x_right, y_down);
+      int heightS = impl->stage_.get_column_solid_height(impl->coord_.x, y_down);
+      int heightSW = impl->stage_.get_column_solid_height(x_left, y_down);
+      int heightW = impl->stage_.get_column_solid_height(x_left, impl->coord_.y);
+      int heightNW = impl->stage_.get_column_solid_height(x_left, y_up);
 
       block.invalidate_face_data();
     }

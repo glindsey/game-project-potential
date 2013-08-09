@@ -2,6 +2,8 @@
 
 #include "SimpleMatrixFont.h"
 
+#include "ErrorMacros.h"
+
 namespace gsl
 {
 namespace rectopia
@@ -9,21 +11,21 @@ namespace rectopia
 
 struct SimpleMatrixFont::Impl
 {
-  sf::Texture fontTexture;
-  glm::uvec2 glyphSize;
-  glm::uvec2 glyphCount;
+  sf::Texture font_texture;
+  glm::uvec2 glyph_size;
+  glm::uvec2 glyph_count;
 };
 
-SimpleMatrixFont::SimpleMatrixFont(unsigned int xGlyphSize,
-                                   unsigned int yGlyphSize,
-                                   unsigned int xGlyphCount,
-                                   unsigned int yGlyphCount)
+SimpleMatrixFont::SimpleMatrixFont(unsigned int x_glyph_size,
+                                   unsigned int y_glyph_size,
+                                   unsigned int x_glyph_count,
+                                   unsigned int y_glyph_count)
   : TextureFont(), impl(new Impl())
 {
-  impl->glyphSize.x = xGlyphSize;
-  impl->glyphSize.y = yGlyphSize;
-  impl->glyphCount.x = xGlyphCount;
-  impl->glyphCount.y = yGlyphCount;
+  impl->glyph_size.x = x_glyph_size;
+  impl->glyph_size.y = y_glyph_size;
+  impl->glyph_count.x = x_glyph_count;
+  impl->glyph_count.y = y_glyph_count;
 }
 
 SimpleMatrixFont::~SimpleMatrixFont()
@@ -38,33 +40,38 @@ bool SimpleMatrixFont::load(std::string name)
   // TODO: setting choosing whether "magic purple" should be treated as a mask
   image.createMaskFromColor(sf::Color(255, 0, 255));
 
-  return impl->fontTexture.loadFromImage(image);
+  return impl->font_texture.loadFromImage(image);
 }
 
 void SimpleMatrixFont::bind()
 {
-  impl->fontTexture.bind(&impl->fontTexture);
+  sf::Texture::bind(&impl->font_texture);
+}
+
+void SimpleMatrixFont::unbind()
+{
+  sf::Texture::bind(nullptr);
 }
 
 glm::vec4 SimpleMatrixFont::getTextureCoordinates(char32_t character)
 {
-  unsigned int xLocation = (unsigned int)character % impl->glyphCount.x;
-  unsigned int yLocation = (unsigned int)character / impl->glyphCount.x;
-  float xCoord = (float)xLocation / (float)impl->glyphCount.x;
-  float yCoord = (float)yLocation / (float)impl->glyphCount.y;
-  float xSize = 1 / (float)impl->glyphCount.x;
-  float ySize = 1 / (float)impl->glyphCount.y;
+  unsigned int xLocation = (unsigned int)character % impl->glyph_count.x;
+  unsigned int yLocation = (unsigned int)character / impl->glyph_count.x;
+  float xCoord = (float)xLocation / (float)impl->glyph_count.x;
+  float yCoord = (float)yLocation / (float)impl->glyph_count.y;
+  float xSize = 1 / (float)impl->glyph_count.x;
+  float ySize = 1 / (float)impl->glyph_count.y;
   return glm::vec4(xCoord, yCoord, xSize, ySize);
 }
 
 glm::vec2 SimpleMatrixFont::getGlyphSize(char32_t character)
 {
-  return glm::vec2(impl->glyphSize.x, impl->glyphSize.y);
+  return glm::vec2(impl->glyph_size.x, impl->glyph_size.y);
 }
 
 int32_t SimpleMatrixFont::getXAdvance(char32_t character)
 {
-  return impl->glyphSize.x;
+  return impl->glyph_size.x;
 }
 
 int32_t SimpleMatrixFont::getKerning(char32_t char1, char32_t char2)
@@ -74,12 +81,12 @@ int32_t SimpleMatrixFont::getKerning(char32_t char1, char32_t char2)
 
 int32_t SimpleMatrixFont::getLineHeight()
 {
-  return impl->glyphSize.y;
+  return impl->glyph_size.y;
 }
 
 int32_t SimpleMatrixFont::getBaseline()
 {
-  return impl->glyphSize.y;
+  return impl->glyph_size.y;
 }
 
 } // end namespace rectopia

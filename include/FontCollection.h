@@ -31,7 +31,7 @@ class FontCollection : public boost::noncopyable
     TextureFont& get(std::string fontName);
 
     // Get the default font.  Use for speed when you just want the default.
-    TextureFont& getDefault();
+    TextureFont& get_default();
 
   protected:
   private:

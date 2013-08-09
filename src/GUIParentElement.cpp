@@ -42,7 +42,7 @@ void GUIParentElement::accept(GUIElementVisitor& visitor)
   {
     boost::ptr_map<std::string, GUIElement>::iterator iter;
 
-    printf("DEBUG: Visiting children of GUIParentElement node %p\n", (void*)this);
+    DEEP_TRACE("Visiting children of GUIParentElement node %p", (void*)this);
     for (iter = impl->children_.begin();
          iter != impl->children_.end();
          ++iter)
@@ -52,12 +52,12 @@ void GUIParentElement::accept(GUIElementVisitor& visitor)
   }
 }
 
-EventResult GUIParentElement::handleEvent(sf::Event const& event)
+EventResult GUIParentElement::handle_event(sf::Event const& event)
 {
   EventResult result = EventResult::Pending;
 
   // First try to act upon it ourselves.
-  result = GUIElement::handleEvent(event);
+  result = GUIElement::handle_event(event);
   if (result == EventResult::Handled)
   {
     return result;
@@ -70,7 +70,7 @@ EventResult GUIParentElement::handleEvent(sf::Event const& event)
        iter != impl->children_.end();
        ++iter)
   {
-    result = iter->second->handleEvent(event);
+    result = iter->second->handle_event(event);
     if (result == EventResult::Handled)
     {
       return result;
@@ -81,7 +81,7 @@ EventResult GUIParentElement::handleEvent(sf::Event const& event)
   return result;
 }
 
-bool GUIParentElement::addChild(GUIElement* _child)
+bool GUIParentElement::add_child(GUIElement* _child)
 {
   if (_child == nullptr)
   {
@@ -93,7 +93,7 @@ bool GUIParentElement::addChild(GUIElement* _child)
 
   if (impl->children_.count(name) == 0)
   {
-    printf("DEBUG: Adding child element \"%s\" to parent element \"%s\"\n",
+    DEEP_TRACE("Adding child element \"%s\" to parent element \"%s\"",
            name.c_str(), this->getElementName().c_str());
     impl->children_.insert(name, _child);
     set_dirty();
@@ -105,7 +105,7 @@ bool GUIParentElement::addChild(GUIElement* _child)
   }
 }
 
-bool GUIParentElement::delChild(std::string _name)
+bool GUIParentElement::del_child(std::string _name)
 {
   if (impl->children_.count(_name) != 0)
   {
@@ -119,13 +119,13 @@ bool GUIParentElement::delChild(std::string _name)
   }
 }
 
-void GUIParentElement::clearChildren()
+void GUIParentElement::clear_children()
 {
   impl->children_.clear();
   set_dirty();
 }
 
-GUIElement* GUIParentElement::getChild(std::string _name)
+GUIElement* GUIParentElement::get_child(std::string _name)
 {
   if (impl->children_.count(_name) != 0)
   {
@@ -137,7 +137,7 @@ GUIElement* GUIParentElement::getChild(std::string _name)
   }
 }
 
-unsigned int GUIParentElement::getChildCount()
+unsigned int GUIParentElement::get_child_count()
 {
   return impl->children_.size();
 }
@@ -157,7 +157,7 @@ void GUIParentElement::clear_dirty()
   }
 }
 
-boost::ptr_map<std::string, GUIElement>& GUIParentElement::getChildren()
+boost::ptr_map<std::string, GUIElement>& GUIParentElement::get_children()
 {
   return impl->children_;
 }

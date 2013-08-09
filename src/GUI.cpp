@@ -1,6 +1,7 @@
 #include "GUI.h"
 
 #include "Application.h"
+#include "ErrorMacros.h"
 #include "GUIRenderer.h"
 #include "GUIRenderer3D.h"
 #include "MenuArea.h"
@@ -19,8 +20,6 @@ struct GUI::Impl
 GUI::GUI()
   : GUIParentElement(nullptr, "GUI"), impl(new Impl())
 {
-  std::cout << "Debug: Creating GUI instance." << std::endl;
-
   sf::Window& app_window = App::instance().window();
   // Set up our own variables.
   glm::vec2 window_size = glm::vec2(app_window.getSize().x,
@@ -41,11 +40,11 @@ void GUI::accept(GUIElementVisitor& visitor)
   bool visit_children = visitor.visit(*this);
   if (visit_children)
   {
-    printf("DEBUG: Visiting children of GUI node %p\n", (void*)this);
+    DEEP_TRACE("Visiting children of GUI node %p\n", (void*)this);
 
     boost::ptr_map<std::string, GUIElement>::iterator iter;
-    for (iter = getChildren().begin();
-         iter != getChildren().end();
+    for (iter = get_children().begin();
+         iter != get_children().end();
          ++iter)
     {
       iter->second->accept(visitor);
@@ -53,7 +52,7 @@ void GUI::accept(GUIElementVisitor& visitor)
   }
 }
 
-EventResult GUI::handleWindowResize(int w, int h)
+EventResult GUI::handle_window_resize(int w, int h)
 {
   glm::vec2 window_size = glm::vec2(w, h);
   this->set_size(window_size);

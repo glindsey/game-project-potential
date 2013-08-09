@@ -38,9 +38,7 @@ public:
   bool visit(GUIFrame& frame);
   bool visit(GUILabel& label);
 
-  void prepare();
   void draw();
-  void finish();
 
 protected:
 private:

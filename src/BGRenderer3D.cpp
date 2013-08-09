@@ -73,18 +73,15 @@ BGRenderer3D::~BGRenderer3D()
 
 }
 
-void BGRenderer3D::prepare()
+void BGRenderer3D::draw()
 {
+  static unsigned int frame_counter;
+
   // Use our shader program.
   impl->shader_program->bind();
 
   // Clear everything in preparation for a new frame.
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-}
-
-void BGRenderer3D::draw()
-{
-  static unsigned int frame_counter;
 
   if (impl->vao_dirty)
   {
@@ -98,18 +95,13 @@ void BGRenderer3D::draw()
   glBindVertexArray(impl->render_data->vao_id);
   glDrawArrays(GL_TRIANGLES, 0, impl->render_data->vertex_count);
 
-  ++frame_counter;
-}
-
-void BGRenderer3D::finish()
-{
   glBindVertexArray(0);
 
-  // Use our shader program.
+  // Unbind our shader program.
   impl->shader_program->unbind();
+
+  ++frame_counter;
 }
-
-
 
 } // end namespace rectopia
 } // end namespace gsl

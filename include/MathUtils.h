@@ -69,9 +69,9 @@ template<typename T> inline T forceBounds(T lo_bound, T variable, T hi_bound)
 /// @param variable Variable to constrain.
 /// @param hi_bound Upper boundary.
 /// @return Variable value constrained between lo_bound and hi_bound.
-inline StageCoord3 constrainToBox(StageCoord3 lo_bound,
-                                  StageCoord3 variable,
-                                  StageCoord3 hi_bound)
+inline StageCoord3 constrain_to_box(StageCoord3 lo_bound,
+                                   StageCoord3 variable,
+                                   StageCoord3 hi_bound)
 {
   StageCoord3 result;
   result.x =

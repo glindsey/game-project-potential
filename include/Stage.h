@@ -51,31 +51,31 @@ public:
   void build(StageCoord3 stage_size, int _seed);
 
   /// Returns true if the Stage is ready for use.
-  bool isReady();
+  bool is_ready();
 
-  EventResult handleKeyDown(sf::Event::KeyEvent key);
+  EventResult handle_key_down(sf::Event::KeyEvent key);
 
-  void setCursor(StageCoord x, StageCoord y, StageCoord z);
-  void moveCursor(StageCoord xAdd, StageCoord yAdd, StageCoord zAdd);
+  void set_cursor(StageCoord x, StageCoord y, StageCoord z);
+  void move_cursor(StageCoord xAdd, StageCoord yAdd, StageCoord zAdd);
 
   /// Process stage data.
   void process(void);
 
   /// Gets the initial height of a column.
-  StageCoord getColumnInitialHeight(StageCoord x, StageCoord y);
+  StageCoord get_column_initial_height(StageCoord x, StageCoord y);
 
   /// Gets the solid height of a column.
-  StageCoord getColumnSolidHeight(StageCoord x, StageCoord y);
+  StageCoord get_column_solid_height(StageCoord x, StageCoord y);
 
   /// Gets the outdoor height of a column.
-  StageCoord getColumnOutdoorHeight(StageCoord x, StageCoord y);
+  StageCoord get_column_outdoor_height(StageCoord x, StageCoord y);
 
   /// Sets the initial height of a column.
   /// @warning Should ONLY be called during the initial height-map generation!
-  void setColumnInitialHeight(StageCoord x, StageCoord y, StageCoord height);
+  void set_column_initial_height(StageCoord x, StageCoord y, StageCoord height);
 
   /// Sets that a column needs recalculating.
-  void setColumnDirty(StageCoord x, StageCoord y);
+  void set_column_dirty(StageCoord x, StageCoord y);
 
   /// Gets the minimum terrain height of the stage.
   StageCoord min_terrain_height();
@@ -83,15 +83,15 @@ public:
   /// Gets the maximum terrain height of the stage.
   StageCoord max_terrain_height();
 
-  bool atEdgeLeft(StageCoord3 const& coord) const;
-  bool atEdgeRight(StageCoord3 const& coord) const;
-  bool atEdgeBack(StageCoord3 const& coord) const;
-  bool atEdgeFront(StageCoord3 const& coord) const;
-  bool atEdgeTop(StageCoord3 const& coord) const;
-  bool atEdgeBottom(StageCoord3 const& coord) const;
+  bool at_edge_left(StageCoord3 const& coord) const;
+  bool at_edge_right(StageCoord3 const& coord) const;
+  bool at_edge_back(StageCoord3 const& coord) const;
+  bool at_edge_front(StageCoord3 const& coord) const;
+  bool at_edge_top(StageCoord3 const& coord) const;
+  bool at_edge_bottom(StageCoord3 const& coord) const;
 
   /// Gets the StageChunk containing a particular block.
-  StageChunk& getChunkContaining(StageCoord x, StageCoord y, StageCoord z);
+  StageChunk& get_chunk_containing(StageCoord x, StageCoord y, StageCoord z);
 
   /// Gets a particular StageBlock by absolute coordinates.
   StageBlock& get_block(StageCoord x, StageCoord y, StageCoord z);
@@ -103,10 +103,10 @@ public:
   StageCoord3 cursor() const;
 
   /// Checks to see if a set of coordinates is within the stage boundaries.
-  bool validCoordinates(StageCoord x, StageCoord y, StageCoord z) const;
+  bool valid_coordinates(StageCoord x, StageCoord y, StageCoord z) const;
 
   /// Called to update column heights.
-  void updateAllColumnHeights();
+  void update_all_column_heights();
 
   /// Indicates whether the terrain is ready for rendering.
   bool okay_to_render_map();

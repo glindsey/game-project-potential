@@ -23,6 +23,7 @@ class SimpleMatrixFont : public TextureFont
 
     bool load(std::string name);
     void bind();
+    void unbind();
     glm::vec4 getTextureCoordinates(char32_t character);
     glm::vec2 getGlyphSize(char32_t character);
     int32_t getXAdvance(char32_t character);

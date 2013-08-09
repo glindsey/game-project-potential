@@ -22,8 +22,8 @@ public:
   AppStateSplash(AppStateManager* manager);
   virtual ~AppStateSplash();
 
-  void enterState();
-  void leaveState();
+  void enter_state();
+  void leave_state();
   void process();
   void render();
 

@@ -60,24 +60,24 @@ void StageBlock::set_substance(BlockLayer layer, const Substance& substance)
   bool change = (substance_[(unsigned int) layer] != &substance);
   if (change)
   {
-    StageChunk& chunk = Stage::getInstance().getChunkContaining(coord_.x,
+    StageChunk& chunk = Stage::getInstance().get_chunk_containing(coord_.x,
                                                                 coord_.y,
                                                                 coord_.z);
     substance_[(unsigned int) layer] = &substance;
     invalidate_neighboring_faces();
-    Stage::getInstance().setColumnDirty(coord_.x, coord_.y);
+    Stage::getInstance().set_column_dirty(coord_.x, coord_.y);
     chunk.set_render_data_dirty(true);
   }
 }
 
 void StageBlock::set_substance_quickly(BlockLayer layer, const Substance& substance)
 {
-  StageChunk& chunk = Stage::getInstance().getChunkContaining(coord_.x,
+  StageChunk& chunk = Stage::getInstance().get_chunk_containing(coord_.x,
                                                               coord_.y,
                                                               coord_.z);
   substance_[(unsigned int) layer] = &substance;
   hidden_faces_dirty_ = true;
-  Stage::getInstance().setColumnDirty(coord_.x, coord_.y);
+  Stage::getInstance().set_column_dirty(coord_.x, coord_.y);
   chunk.set_render_data_dirty(true);
 }
 
@@ -123,10 +123,10 @@ void StageBlock::set_known(bool known)
   bool change = (known_ != known);
   if (change)
   {
-    StageChunk& chunk = Stage::getInstance().getChunkContaining(coord_.x, coord_.y, coord_.z);
+    StageChunk& chunk = Stage::getInstance().get_chunk_containing(coord_.x, coord_.y, coord_.z);
     known_ = known;
     invalidate_neighboring_faces();
-    Stage::getInstance().setColumnDirty(coord_.x, coord_.y);
+    Stage::getInstance().set_column_dirty(coord_.x, coord_.y);
     chunk.set_render_data_dirty(true);
   }
 }
@@ -180,7 +180,7 @@ void StageBlock::calculate_hidden_faces()
   // 2. Opaque and has no lowered corners.
 
   // Bottom face:
-  if (!stage.atEdgeBottom(coord_))
+  if (!stage.at_edge_bottom(coord_))
   {
     StageBlock& adjacent = stage.get_block(coord_.x, coord_.y, coord_.z - 1);
     if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
@@ -194,7 +194,7 @@ void StageBlock::calculate_hidden_faces()
   }
 
   // Top face...
-  if (!stage.atEdgeTop(coord_))
+  if (!stage.at_edge_top(coord_))
   {
     StageBlock& adjacent = stage.get_block(coord_.x, coord_.y, coord_.z + 1);
     if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
@@ -208,7 +208,7 @@ void StageBlock::calculate_hidden_faces()
   }
 
   // Back face...
-  if (!stage.atEdgeBack(coord_))
+  if (!stage.at_edge_back(coord_))
   {
     StageBlock& adjacent = stage.get_block(coord_.x, coord_.y - 1, coord_.z);
     if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
@@ -222,7 +222,7 @@ void StageBlock::calculate_hidden_faces()
   }
 
   // Front face...
-  if (!stage.atEdgeFront(coord_))
+  if (!stage.at_edge_front(coord_))
   {
     StageBlock& adjacent = stage.get_block(coord_.x, coord_.y + 1, coord_.z);
     if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
@@ -236,7 +236,7 @@ void StageBlock::calculate_hidden_faces()
   }
 
   // Left face...
-  if (!stage.atEdgeLeft(coord_))
+  if (!stage.at_edge_left(coord_))
   {
     StageBlock& adjacent = stage.get_block(coord_.x - 1, coord_.y, coord_.z);
     if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
@@ -250,7 +250,7 @@ void StageBlock::calculate_hidden_faces()
   }
 
   // Right face...
-  if (!stage.atEdgeRight(coord_))
+  if (!stage.at_edge_right(coord_))
   {
     StageBlock& adjacent = stage.get_block(coord_.x + 1, coord_.y, coord_.z);
     if (is_same_substance_as(adjacent, BlockLayer::Solid) || (adjacent.is_opaque()))
@@ -281,27 +281,27 @@ void StageBlock::invalidate_neighboring_faces()
 
   hidden_faces_dirty_ = true;
 
-  if (!stage.atEdgeLeft(coord_))
+  if (!stage.at_edge_left(coord_))
   {
     stage.get_block(coord_.x - 1, coord_.y, coord_.z).invalidate_face_data();
   }
-  if (!stage.atEdgeRight(coord_))
+  if (!stage.at_edge_right(coord_))
   {
     stage.get_block(coord_.x + 1, coord_.y, coord_.z).invalidate_face_data();
   }
-  if (!stage.atEdgeBack(coord_))
+  if (!stage.at_edge_back(coord_))
   {
     stage.get_block(coord_.x, coord_.y - 1, coord_.z).invalidate_face_data();
   }
-  if (!stage.atEdgeFront(coord_))
+  if (!stage.at_edge_front(coord_))
   {
     stage.get_block(coord_.x, coord_.y + 1, coord_.z).invalidate_face_data();
   }
-  if (!stage.atEdgeBottom(coord_))
+  if (!stage.at_edge_bottom(coord_))
   {
     stage.get_block(coord_.x, coord_.y, coord_.z - 1).invalidate_face_data();
   }
-  if (!stage.atEdgeTop(coord_))
+  if (!stage.at_edge_top(coord_))
   {
     stage.get_block(coord_.x, coord_.y, coord_.z + 1).invalidate_face_data();
   }

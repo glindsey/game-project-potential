@@ -31,7 +31,7 @@ public:
     return "GUI";
   }
 
-  virtual EventResult handleWindowResize(int w, int h);
+  virtual EventResult handle_window_resize(int w, int h);
 
 protected:
 private:

@@ -99,7 +99,7 @@ void App::execute()
   {
     while (impl->window_->pollEvent(event))
     {
-      handleEvent(event);
+      handle_event(event);
     }
     boost::thread::yield();
   }
@@ -182,19 +182,19 @@ void App::render()
   std::cout << "Rendering thread terminating." << std::endl;
 }
 
-EventResult App::handleEvent(const sf::Event& event)
+EventResult App::handle_event(const sf::Event& event)
 {
   EventResult result = EventResult::Pending;
   // Send the event to the proper listeners.
-  result = EventListener::handleEvent(event);
+  result = EventListener::handle_event(event);
   if (result != EventResult::Handled)
   {
-    result = impl->state_manager_->handleEvent(event);
+    result = impl->state_manager_->handle_event(event);
   }
   return result;
 }
 
-EventResult App::handleWindowExit()
+EventResult App::handle_window_exit()
 {
   impl->halt_program_ = true;
   return EventResult::Handled;
@@ -236,12 +236,12 @@ AppStateManager& App::getStateManager()
   return *(impl->state_manager_.get());
 }
 
-FontCollection& App::getFonts()
+FontCollection& App::get_fonts()
 {
   return *(impl->font_collection_.get());
 }
 
-EventResult App::handleKeyDown(sf::Event::KeyEvent key)
+EventResult App::handle_key_down(sf::Event::KeyEvent key)
 {
   if (key.code == sf::Keyboard::Escape)
   {

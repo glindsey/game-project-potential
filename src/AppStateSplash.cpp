@@ -23,31 +23,25 @@ namespace rectopia
 AppStateSplash::AppStateSplash(AppStateManager* manager)
   : AppState(manager)
 {
-  std::cout << "DEBUG: Creating AppStateSplash." << std::endl;
   // Create the required stores.
   Verb::initialize();                 // verb dictionary
   Substance::initialize();             // materials
   PropPrototype::initialize();        // prop prototypes
-  std::cout << "DEBUG: Created AppStateSplash." << std::endl;
 }
 
 AppStateSplash::~AppStateSplash()
 {
-  std::cout << "DEBUG: Destroying AppStateSplash." << std::endl;
 }
 
-void AppStateSplash::enterState()
+void AppStateSplash::enter_state()
 {
-  std::cout << "DEBUG: Entering state AppStateSplash." << std::endl;
   // TODO: Load Simple Logo
 
   clock.restart();
-  std::cout << "DEBUG: Entered state AppStateSplash." << std::endl;
 }
 
-void AppStateSplash::leaveState()
+void AppStateSplash::leave_state()
 {
-  std::cout << "DEBUG: Leaving state AppStateSplash." << std::endl;
 }
 
 void AppStateSplash::process()

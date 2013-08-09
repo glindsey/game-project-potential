@@ -19,9 +19,7 @@ public:
   BGRenderer();
   virtual ~BGRenderer();
 
-  virtual void prepare() = 0;
   virtual void draw() = 0;
-  virtual void finish() = 0;
 
   virtual std::string getName(void);
 

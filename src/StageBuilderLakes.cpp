@@ -96,7 +96,7 @@ bool StageBuilderLakes::Build()
         }
       }
       // Height, outdoor level need recalculating after this.
-      impl->stage_.setColumnDirty(impl->column_.x, impl->column_.y);
+      impl->stage_.set_column_dirty(impl->column_.x, impl->column_.y);
     }
 
     ++(impl->column_.y);

@@ -141,7 +141,7 @@ struct Stage::Impl
   }
 
   /// This function returns true if the specified coordinates are in-bounds.
-  inline bool validCoordinates(StageCoord x, StageCoord y, StageCoord z) const
+  inline bool valid_coordinates(StageCoord x, StageCoord y, StageCoord z) const
   {
     return (x >= 0) && (x < size_.x) && (y >= 0)
            && (y < size_.y) && (z >= 0) && (z < size_.z);
@@ -265,12 +265,12 @@ void Stage::build(StageCoord3 stage_size, int seed)
   impl->processing_state_ = Stage::ProcessingState::GenerateTerrain;
 }
 
-bool Stage::isReady()
+bool Stage::is_ready()
 {
   return impl->ready_;
 }
 
-EventResult Stage::handleKeyDown(sf::Event::KeyEvent key)
+EventResult Stage::handle_key_down(sf::Event::KeyEvent key)
 {
   // Shift+Arrows moves the camera, not the cursor.
   // Control+Arrows does... I don't know, but not this.
@@ -283,43 +283,43 @@ EventResult Stage::handleKeyDown(sf::Event::KeyEvent key)
   switch (key.code)
   {
   case sf::Keyboard::Left:
-    this->moveCursor(-1, 0, 0);
+    this->move_cursor(-1, 0, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::Home:
-    this->moveCursor(-1, -1, 0);
+    this->move_cursor(-1, -1, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::Up:
-    this->moveCursor(0, -1, 0);
+    this->move_cursor(0, -1, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::PageUp:
-    this->moveCursor(1, -1, 0);
+    this->move_cursor(1, -1, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::Right:
-    this->moveCursor(1, 0, 0);
+    this->move_cursor(1, 0, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::PageDown:
-    this->moveCursor(1, 1, 0);
+    this->move_cursor(1, 1, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::Down:
-    this->moveCursor(0, 1, 0);
+    this->move_cursor(0, 1, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::End:
-    this->moveCursor(-1, 1, 0);
+    this->move_cursor(-1, 1, 0);
     return EventResult::Handled;
 
   case sf::Keyboard::Period:
-    this->moveCursor(0, 0, -1);
+    this->move_cursor(0, 0, -1);
     return EventResult::Handled;
 
   case sf::Keyboard::Comma:
-    this->moveCursor(0, 0, 1);
+    this->move_cursor(0, 0, 1);
     return EventResult::Handled;
 
   default:
@@ -328,18 +328,18 @@ EventResult Stage::handleKeyDown(sf::Event::KeyEvent key)
   }
 }
 
-void Stage::setCursor(StageCoord x, StageCoord y, StageCoord z)
+void Stage::set_cursor(StageCoord x, StageCoord y, StageCoord z)
 {
-  impl->cursor_ = constrainToBox(StageCoord3(0, 0, 0),
+  impl->cursor_ = constrain_to_box(StageCoord3(0, 0, 0),
                                  StageCoord3(x, y, z),
                                  StageCoord3(impl->size_.x - 1,
                                              impl->size_.y - 1,
                                              impl->size_.z - 1));
 }
 
-void Stage::moveCursor(StageCoord xAdd, StageCoord yAdd, StageCoord zAdd)
+void Stage::move_cursor(StageCoord xAdd, StageCoord yAdd, StageCoord zAdd)
 {
-  setCursor(impl->cursor_.x + xAdd,
+  set_cursor(impl->cursor_.x + xAdd,
             impl->cursor_.y + yAdd,
             impl->cursor_.z + zAdd);
 }
@@ -354,42 +354,42 @@ StageCoord3 Stage::cursor() const
   return impl->cursor_;
 }
 
-void Stage::updateAllColumnHeights()
+void Stage::update_all_column_heights()
 {
   impl->UpdateAllColumnData();
 }
 
-bool Stage::atEdgeLeft(StageCoord3 const& coord) const
+bool Stage::at_edge_left(StageCoord3 const& coord) const
 {
   return (coord.x == 0);
 }
 
-bool Stage::atEdgeRight(StageCoord3 const& coord) const
+bool Stage::at_edge_right(StageCoord3 const& coord) const
 {
   return (coord.x == impl->size_.x - 1);
 }
 
-bool Stage::atEdgeBack(StageCoord3 const& coord) const
+bool Stage::at_edge_back(StageCoord3 const& coord) const
 {
   return (coord.y == 0);
 }
 
-bool Stage::atEdgeFront(StageCoord3 const& coord) const
+bool Stage::at_edge_front(StageCoord3 const& coord) const
 {
   return (coord.y == impl->size_.y - 1);
 }
 
-bool Stage::atEdgeBottom(StageCoord3 const& coord) const
+bool Stage::at_edge_bottom(StageCoord3 const& coord) const
 {
   return (coord.z == 0);
 }
 
-bool Stage::atEdgeTop(StageCoord3 const& coord) const
+bool Stage::at_edge_top(StageCoord3 const& coord) const
 {
   return (coord.z == impl->size_.z - 1);
 }
 
-StageChunk& Stage::getChunkContaining(StageCoord x, StageCoord y, StageCoord z)
+StageChunk& Stage::get_chunk_containing(StageCoord x, StageCoord y, StageCoord z)
 {
 #ifndef NDEBUG
   if ((x < 0) || (y < 0) || (z < 0) ||
@@ -401,7 +401,7 @@ StageChunk& Stage::getChunkContaining(StageCoord x, StageCoord y, StageCoord z)
                 x, y, z);  }
 #endif
 
-    return impl->chunks->getChunkContaining(x, y, z);
+    return impl->chunks->get_chunk_containing(x, y, z);
 }
 
 StageBlock& Stage::get_block(StageCoord x, StageCoord y, StageCoord z)
@@ -595,9 +595,9 @@ void Stage::process(void)
   }
 }
 
-bool Stage::validCoordinates(StageCoord x, StageCoord y, StageCoord z) const
+bool Stage::valid_coordinates(StageCoord x, StageCoord y, StageCoord z) const
 {
-  return impl->validCoordinates(x, y, z);
+  return impl->valid_coordinates(x, y, z);
 }
 
 StageCoord Stage::min_terrain_height()
@@ -610,24 +610,24 @@ StageCoord Stage::max_terrain_height()
   return impl->max_terrain_height_;
 }
 
-StageCoord Stage::getColumnInitialHeight(StageCoord x, StageCoord y)
+StageCoord Stage::get_column_initial_height(StageCoord x, StageCoord y)
 {
   return impl->getColumnData(x, y).initial_height;
 }
 
-StageCoord Stage::getColumnSolidHeight(StageCoord x, StageCoord y)
+StageCoord Stage::get_column_solid_height(StageCoord x, StageCoord y)
 {
   impl->UpdateColumnData(x, y);
   return impl->getColumnData(x, y).solid_height;
 }
 
-StageCoord Stage::getColumnOutdoorHeight(StageCoord x, StageCoord y)
+StageCoord Stage::get_column_outdoor_height(StageCoord x, StageCoord y)
 {
   impl->UpdateColumnData(x, y);
   return impl->getColumnData(x, y).outdoor_height;
 }
 
-void Stage::setColumnInitialHeight(StageCoord x,
+void Stage::set_column_initial_height(StageCoord x,
                                    StageCoord y,
                                    StageCoord height)
 {
@@ -637,7 +637,7 @@ void Stage::setColumnInitialHeight(StageCoord x,
   column.dirty = true;
 }
 
-void Stage::setColumnDirty(StageCoord x, StageCoord y)
+void Stage::set_column_dirty(StageCoord x, StageCoord y)
 {
   ColumnData& column = impl->getColumnData(x, y);
   if (!column.dirty)

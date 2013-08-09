@@ -32,6 +32,9 @@ class TextureFont : public boost::noncopyable
     /// Binds the font texture for OpenGL rendering.
     virtual void bind() = 0;
 
+    /// Unbinds the font texture for OpenGL rendering.
+    virtual void unbind() = 0;
+
     /// Gets the texture coordinates of a particular character.
     /// @param character Character to find.
     /// @return A vec4 containing the s/t/p/q coordinates of the texture.
