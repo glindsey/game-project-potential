@@ -45,7 +45,7 @@
 {                                                                         \
   if (ptr == nullptr)                                                     \
   {                                                                       \
-    FATAL_ERROR("Pointer %s is null!", ##ptr);                            \
+    FATAL_ERROR("Pointer %s is null!", #ptr);                             \
   }                                                                       \
 }                                                                         \
 
@@ -53,7 +53,7 @@
 {                                                                         \
   if (!condition)                                                         \
   {                                                                       \
-    FATAL_ERROR("Assertion failed: %s", ##condition);                     \
+    FATAL_ERROR("Assertion failed: %s", #condition);                      \
   }                                                                       \
 }                                                                         \
 

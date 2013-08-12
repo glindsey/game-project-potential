@@ -7615,7 +7615,7 @@
 	<boost/functional/hash_fwd.hpp>
 	<boost/unordered/detail/fwd.hpp>
 
-1344272347 c:\dropbox\projects\libraries\glew-1.9.0\include\gl\glew.h
+1356049530 c:\dropbox\projects\libraries\glew-1.9.0\include\gl\glew.h
 	<stddef.h>
 	<inttypes.h>
 	<stdint.h>
@@ -7750,7 +7750,7 @@
 	<cstdlib>
 	<SFML/System/Utf.inl>
 
-1351804980 c:\dropbox\projects\libraries\sfml\include\sfml\system\utf.inl
+1361400054 c:\dropbox\projects\libraries\sfml\include\sfml\system\utf.inl
 
 1365237034 c:\dropbox\projects\libraries\sfml\include\sfml\system\vector2.hpp
 	<SFML/System/Vector2.inl>
@@ -10042,7 +10042,7 @@
 	<memory>
 	<string>
 
-1375888053 c:\dropbox\projects\game-project-potential\include\errormacros.h
+1376063975 c:\dropbox\projects\game-project-potential\include\errormacros.h
 	"Settings.h"
 
 1375392563 c:\dropbox\projects\game-project-potential\include\settings.h
@@ -10286,11 +10286,10 @@
 	<vector>
 	"ErrorMacros.h"
 
-1375812344 c:\dropbox\projects\game-project-potential\include\glshaderprogram.h
+1376263883 c:\dropbox\projects\game-project-potential\include\glshaderprogram.h
 	<boost/noncopyable.hpp>
 	<memory>
 	<GL/glew.h>
-	<SFML/OpenGL.hpp>
 	"common.h"
 
 1375909084 source:c:\dropbox\projects\game-project-potential\src\gui.cpp
@@ -10338,7 +10337,7 @@
 	"ErrorMacros.h"
 	"GUIElementVisitor.h"
 
-1375808744 source:c:\dropbox\projects\game-project-potential\src\guirenderdata.cpp
+1375812344 source:c:\dropbox\projects\game-project-potential\src\guirenderdata.cpp
 	"GUIRenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
@@ -10349,7 +10348,7 @@
 	<glm/glm.hpp>
 	"common.h"
 
-1375388963 c:\dropbox\projects\game-project-potential\include\guivertexrenderdata.h
+1375392563 c:\dropbox\projects\game-project-potential\include\guivertexrenderdata.h
 
 1375392563 source:c:\dropbox\projects\game-project-potential\src\guirenderer.cpp
 	<iostream>
@@ -10638,7 +10637,7 @@
 	"StageChunk.h"
 	"Substance.h"
 
-1375905738 source:c:\dropbox\projects\game-project-potential\src\stagebuilderrivers.cpp
+1375909338 source:c:\dropbox\projects\game-project-potential\src\stagebuilderrivers.cpp
 	<iostream>
 	"StageBuilderRivers.h"
 	"Application.h"
@@ -10703,7 +10702,7 @@
 	"Settings.h"
 	"Stage.h"
 
-1375911024 source:c:\dropbox\projects\game-project-potential\src\stagerenderer3d.cpp
+1376084241 source:c:\dropbox\projects\game-project-potential\src\stagerenderer3d.cpp
 	"StageRenderer3D.h"
 	<algorithm>
 	<iterator>
@@ -10716,6 +10715,7 @@
 	<boost/unordered_set.hpp>
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
 	<glm/gtx/transform.hpp>
 	"Application.h"
 	"GLShaderProgram.h"
@@ -10817,17 +10817,64 @@
 
 1375472752 c:\dropbox\projects\game-project-potential\include\bgvertexrenderdata.h
 
-1375906270 source:c:\dropbox\projects\game-project-potential\src\renderdata.cpp
+1376069123 source:c:\dropbox\projects\game-project-potential\src\renderdata.cpp
 	"RenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
 	"VertexRenderData.h"
 
-1375900635 c:\dropbox\projects\game-project-potential\include\renderdata.h
+1376069076 c:\dropbox\projects\game-project-potential\include\renderdata.h
 	<boost/container/vector.hpp>
 	<glm/glm.hpp>
 	"common.h"
 
 1375900672 c:\dropbox\projects\game-project-potential\include\vertexrenderdata.h
 	<glm/glm.hpp>
+
+1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\type_ptr.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/quaternion.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\half_float.hpp
+	"../glm.hpp"
+	"half_float.inl"
+
+1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\half_float.inl
+
+1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\quaternion.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/constants.hpp"
+	"quaternion.inl"
+
+1356889263 c:\dropbox\projects\libraries\glm\glm\gtc\constants.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"constants.inl"
+
+1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\constants.inl
+
+1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\quaternion.inl
+	<limits>
+
+1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\type_ptr.inl
+
+1376267469 source:c:\dropbox\projects\game-project-potential\src\gltexture.cpp
+	"GLTexture.h"
+	"ErrorMacros.h"
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtx/transform.hpp>
+
+1376267346 c:\dropbox\projects\game-project-potential\include\gltexture.h
+	"Image.h"
+	<memory>
+	<GL/glew.h>
+	<glm/glm.hpp>
+
+1376267339 c:\dropbox\projects\game-project-potential\include\image.h
+	<memory>
 

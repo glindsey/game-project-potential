@@ -17,8 +17,8 @@
 <terrain>
 	<!-- The overall size of the map.  The sizes will be rounded to the nearest chunk size, which by default is 32x32. -->
 	<size>
-		<x>128</x>
-		<y>128</y>
+		<x>64</x> <!-- <x>128</x> -->
+		<y>64</y> <!-- <y>128</y> -->
 		<z>96</z>
 	</size>
 

@@ -5,7 +5,6 @@
 #include <boost/noncopyable.hpp>
 #include <memory>
 #include <GL/glew.h>
-#include <SFML/OpenGL.hpp>
 
 #include "common.h"
 

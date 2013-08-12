@@ -3,8 +3,11 @@
 in vec4 color_diffuse;
 in vec4 color_specular;
 
-in vec3 nml_cameraspace;
-in vec4 eye_cameraspace;
+in vec3 nml_eyespace;
+in vec4 eye_eyespace;
+
+in vec4 block_normalized;
+in vec4 cursor_normalized;
 
 out vec4 out_color;
 
@@ -21,8 +24,8 @@ void main()
     vec4 final_color_specular = vec4(0.0);
 
     // Normalize vectors.
-    vec3 n = normalize(nml_cameraspace);
-    vec3 e = normalize(eye_cameraspace.xyz);
+    vec3 n = normalize(nml_eyespace);
+    vec3 e = normalize(eye_eyespace.xyz);
 
     float intensity = max(dot(n, light_dir_worldspace), 0.0);
 
@@ -36,6 +39,19 @@ void main()
     // Create the proper color.
     out_color = max(intensity * color_diffuse + final_color_specular,
                     color_ambient);
+
+    // Test: if vertex_normalized.z is greater than cursor_normalized.z,
+    //       and we're in a specified diameter, discard the fragment.
+    float v_distance = distance(block_normalized.xy / block_normalized.w, vec2(0.0));
+    float z_level = (2 - block_normalized.z) / (block_normalized.w * 2);
+
+    //out_color = vec4(vec3(z_level), 1.0);
+
+    if ((block_normalized.z < cursor_normalized.z) && (v_distance <= 0.5))
+    {
+      out_color.r = 1.0;
+      discard;
+    }
   }
   else
   {

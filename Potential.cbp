@@ -56,6 +56,8 @@
 			<Add directory="C:/dropbox/Projects/libraries/glew-1.9.0/include" />
 			<Add directory="C:/dropbox/Projects/libraries/noise/include" />
 			<Add directory="C:/Dropbox/Projects/libraries/glm" />
+			<Add directory="C:/dropbox/projects/libraries/zlib-1.2.8" />
+			<Add directory="C:/Dropbox/Projects/libraries/libpng" />
 		</Compiler>
 		<Linker>
 			<Add library="opengl32" />
@@ -67,11 +69,15 @@
 			<Add library="winmm" />
 			<Add library="dxguid" />
 			<Add library="noise" />
+			<Add library="png" />
+			<Add library="zlib" />
 			<Add directory="C:/Dropbox/Projects/libraries/SFML/build/lib" />
 			<Add directory="C:/dropbox/Projects/libraries/boost/stage/lib" />
 			<Add directory="C:/dropbox/Projects/libraries/glfw-2.7.7/lib/win32" />
 			<Add directory="C:/dropbox/Projects/libraries/glew-1.9.0/lib" />
 			<Add directory="C:/dropbox/Projects/libraries/noise/lib" />
+			<Add directory="C:/dropbox/projects/libraries/zlib-1.2.8/build" />
+			<Add directory="C:/Dropbox/Projects/libraries/libpng/build/lib" />
 		</Linker>
 		<Unit filename="cb.bmp" />
 		<Unit filename="config/settings.xml" />
@@ -93,6 +99,7 @@
 		<Unit filename="include/FaceBools.h" />
 		<Unit filename="include/FontCollection.h" />
 		<Unit filename="include/GLShaderProgram.h" />
+		<Unit filename="include/GLTexture.h" />
 		<Unit filename="include/GUI.h" />
 		<Unit filename="include/GUIElement.h" />
 		<Unit filename="include/GUIElementVisitor.h" />
@@ -105,6 +112,7 @@
 		<Unit filename="include/GUIVertexRenderData.h" />
 		<Unit filename="include/HasInventory.h" />
 		<Unit filename="include/HasLocation.h" />
+		<Unit filename="include/Image.h" />
 		<Unit filename="include/Inventory.h" />
 		<Unit filename="include/MathUtils.h" />
 		<Unit filename="include/MenuArea.h" />
@@ -164,6 +172,7 @@
 		<Unit filename="src/FaceBools.cpp" />
 		<Unit filename="src/FontCollection.cpp" />
 		<Unit filename="src/GLShaderProgram.cpp" />
+		<Unit filename="src/GLTexture.cpp" />
 		<Unit filename="src/GUI.cpp" />
 		<Unit filename="src/GUIElement.cpp" />
 		<Unit filename="src/GUIFrame.cpp" />
@@ -172,6 +181,7 @@
 		<Unit filename="src/GUIRenderData.cpp" />
 		<Unit filename="src/GUIRenderer.cpp" />
 		<Unit filename="src/GUIRenderer3D.cpp" />
+		<Unit filename="src/Image.cpp" />
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/MenuArea.cpp" />
 		<Unit filename="src/NoiseField.cpp" />
