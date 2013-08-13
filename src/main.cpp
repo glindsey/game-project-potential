@@ -15,8 +15,6 @@
 
 #include "Application.h"
 
-using ::gsl::rectopia::App;
-
 /// Main function!
 /// Not much explanation required here.  It creates the Application instance,
 /// and then calls doProcessLoop to run the processing loop until the program

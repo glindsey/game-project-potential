@@ -20,11 +20,6 @@
 #include "StageBlock.h"
 #include "Substance.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Typedef for a random distribution.
 typedef boost::random::uniform_int_distribution<> RandomDistribution;
 
@@ -609,6 +604,3 @@ void StageBuilderDeposits::Reset()
 {
   impl->Reset();
 }
-
-} /* namespace rectopia */
-} /* namespace gsl */

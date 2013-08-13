@@ -3,11 +3,6 @@
 #include "Application.h"
 #include "GUIFrame.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct MenuArea::Impl
 {
   // Nothing here yet!
@@ -37,6 +32,3 @@ void MenuArea::render()
   //window->draw(whatever);
   */
 }
-
-} // namespace rectopia
-} // namespace gsl

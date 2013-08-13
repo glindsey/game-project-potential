@@ -11,11 +11,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// A set of booleans representing the six sides of a cube, or other six-sided polytope.
 class FaceBools
 {
@@ -61,8 +56,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* FACEBOOLS_H_ */

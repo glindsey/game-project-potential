@@ -20,11 +20,6 @@
 #include "StageChunk.h"
 #include "Substance.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct StageBuilderKnownStatus::Impl
 {
   Impl(Stage& stage, int seed)
@@ -121,6 +116,3 @@ void StageBuilderKnownStatus::Reset()
 {
   impl->Reset();
 }
-
-} /* namespace rectopia */
-} /* namespace gsl */

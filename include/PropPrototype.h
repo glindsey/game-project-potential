@@ -8,11 +8,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 typedef boost::unordered_map<std::string, bool> MaterialMustBeType;
 typedef boost::unordered_map<std::string, bool> MaterialShouldBeType;
 
@@ -111,8 +106,4 @@ private:
   /// Static collection of all types.
   static boost::ptr_map<std::string, PropPrototype> collection;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // PROPPROTOTYPE_H

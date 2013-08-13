@@ -11,6 +11,8 @@ class Image
 
     unsigned int* get_data_ptr();
 
+    bool load_png(char const* filename);
+
     bool blit(Image& src_image,
               unsigned int src_width,
               unsigned int src_height,

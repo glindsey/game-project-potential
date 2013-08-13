@@ -1,10 +1,5 @@
 #include "FPSControl.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 FrequencyControl::FrequencyControl()
 {
   frequency = 0;
@@ -37,6 +32,3 @@ float FrequencyControl::getFilteredFrequency()
 {
   return filteredFrequency;
 }
-
-} // namespace rectopia
-} // namespace gsl

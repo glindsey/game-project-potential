@@ -5,11 +5,6 @@
 #ifndef COLUMNDATA_H_
 #define COLUMNDATA_H_
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Data for a single column in the stage.
 struct ColumnData
 {
@@ -22,6 +17,3 @@ struct ColumnData
 };
 
 #endif /* COLUMNDATA_H_ */
-
-} // namespace rectopia
-} // namespace gsl

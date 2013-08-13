@@ -7,11 +7,6 @@
 
 #include "FontCollection.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct FontCollection::Impl
 {
   boost::container::map<std::string, boost::shared_ptr<TextureFont> > fontCollection;
@@ -70,6 +65,3 @@ TextureFont& FontCollection::get_default()
 {
   return *(impl->fontCollection["default"].get());
 }
-
-} // namespace rectopia
-} // namespace gsl

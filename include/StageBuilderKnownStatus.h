@@ -10,12 +10,7 @@
 
 #include "StageBuilder.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
-class StageBuilderKnownStatus: public gsl::rectopia::StageBuilder
+class StageBuilderKnownStatus: public StageBuilder
 {
 public:
   /// Create the builder for setting the known status of blocks.
@@ -36,7 +31,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} /* namespace rectopia */
-} /* namespace gsl */
 #endif /* STAGEBUILDERKNOWNSTATUS_H_ */

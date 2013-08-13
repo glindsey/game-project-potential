@@ -13,11 +13,6 @@
 #include "StageComponent.h"
 #include "StageComponentVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class PropPrototype;
 class Substance;
@@ -73,8 +68,4 @@ protected:
 
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // PROP_H

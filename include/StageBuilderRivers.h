@@ -10,12 +10,7 @@
 
 #include "StageBuilder.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
-class StageBuilderRivers: public gsl::rectopia::StageBuilder
+class StageBuilderRivers: public StageBuilder
 {
 public:
   /// Create the builder for adding rivers.
@@ -37,7 +32,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} /* namespace rectopia */
-} /* namespace gsl */
 #endif /* STAGEBUILDERRIVERS_H_ */

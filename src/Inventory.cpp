@@ -7,11 +7,6 @@
 #include "Prop.h"
 #include "Settings.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct Inventory::Impl
 {
   /// Set of HasLocation objects under this one.
@@ -72,6 +67,3 @@ Inventory& Inventory::getLimbo()
 {
   return Impl::limbo;
 }
-
-} // namespace rectopia
-} // namespace gsl

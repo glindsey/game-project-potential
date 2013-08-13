@@ -10,11 +10,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class GUI;
 class GUIElement;
@@ -35,8 +30,4 @@ public:
 protected:
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* GUIELEMENTVISITOR_H_ */

@@ -5,9 +5,6 @@
 #include <iterator>
 #include <glm/glm.hpp>
 
-namespace gsl
-{
-
 #define PI 3.141592653589791
 
 /// Converts degrees to radians.
@@ -291,7 +288,5 @@ inline StageCoord3 operator&(const StageCoord3& left,
 {
   return StageCoord3(left.x & right, left.y & right, left.z & right);
 }
-
-} // namespace gsl
 
 #endif // MATHUTILS_H

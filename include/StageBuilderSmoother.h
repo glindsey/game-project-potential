@@ -10,12 +10,7 @@
 
 #include "StageBuilder.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
-class StageBuilderSmoother: public gsl::rectopia::StageBuilder
+class StageBuilderSmoother: public StageBuilder
 {
 public:
   /// Create the builder for smoothing the terrain surface.
@@ -36,7 +31,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} /* namespace rectopia */
-} /* namespace gsl */
 #endif /* STAGEBUILDERSMOOTHER_H_ */

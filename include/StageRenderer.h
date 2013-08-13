@@ -11,11 +11,6 @@
 #include "EventListener.h"
 #include "StageComponentVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class FaceBools;
 class Stage;
@@ -41,8 +36,4 @@ protected:
 
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // CHUNKRENDERER_H

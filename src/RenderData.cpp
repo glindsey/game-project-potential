@@ -5,11 +5,6 @@
 
 #include "VertexRenderData.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 RenderData::RenderData()
 {
   glGenVertexArrays(1, &solid_vao_id);
@@ -207,7 +202,3 @@ void RenderData::update_VAOs()
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindVertexArray(0);
 }
-
-} // end namespace rectopia
-} // end namespace gsl
-

@@ -6,11 +6,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 struct VertexRenderData;
 
@@ -70,8 +65,4 @@ struct RenderData
   /// Number of OUTLINE vertices.
   int outline_vertex_count;
 };
-
-} // end namespace rectopia
-} // end namespace gsl
-
 #endif // CHUNKRENDERDATA_H

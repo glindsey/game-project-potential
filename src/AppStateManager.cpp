@@ -7,11 +7,6 @@
 #include "AppStateSplash.h"
 #include "AppStateGame.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct AppStateManager::Impl
 {
   /// Pointer to the currently active app state.
@@ -86,6 +81,3 @@ AppStateID AppStateManager::GetActiveAppState() const
 {
   return impl->activeAppState;
 }
-
-} // namespace rectopia
-} // namespace gsl

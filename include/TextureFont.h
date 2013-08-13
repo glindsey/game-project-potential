@@ -7,11 +7,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// A font with an OpenGL bindable texture.  Characters are returned as
 /// texture coordinates stored in a glm::vec4 (s,t,u,v).
 /// This is a virtual class used as an interface.  Implementations should
@@ -68,8 +63,5 @@ class TextureFont : public boost::noncopyable
   protected:
   private:
 };
-
-} // end namespace rectopia
-} // end namespace gsl
 
 #endif // TEXTUREFONT_H

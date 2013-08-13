@@ -1,10 +1,5 @@
 #include "AppState.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 AppState::AppState(AppStateManager* manager)
 {
   manager_ = manager;
@@ -13,6 +8,3 @@ AppState::AppState(AppStateManager* manager)
 AppState::~AppState()
 {
 }
-
-} // namespace rectopia
-} // namespace gsl

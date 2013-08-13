@@ -1,9 +1,6 @@
 #ifndef COMMON_TYPEDEFS_H_INCLUDED
 #define COMMON_TYPEDEFS_H_INCLUDED
 
-namespace gsl
-{
-
 /// Typedef to use for coordinates.
 /// I'm using short ints; although they limit the total stage
 /// size to 32767x32767x32767, that's already a ludicrously huge stage that
@@ -109,7 +106,5 @@ typedef double Percentage;
 /// Other options: GUIDs, or identifiers incorporating the creation date/time.
 typedef unsigned int SerialNumber;
 const SerialNumber SERIALNUMBER_NULL = (SerialNumber) (-1);
-
-} // namespace gsl
 
 #endif // COMMON_TYPEDEFS_H_INCLUDED

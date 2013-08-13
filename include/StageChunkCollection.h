@@ -6,11 +6,6 @@
 
 #include "StageComponent.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class Stage;
 class StageBlock;
@@ -49,8 +44,4 @@ private:
   /// Private implementation
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* STAGECHUNKCOLLECTION_H_ */

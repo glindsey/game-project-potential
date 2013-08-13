@@ -8,11 +8,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Description of an action that can be performed within the game engine.
 class Verb
 {
@@ -37,8 +32,5 @@ private:
   /// Static verb dictionary.
   static boost::ptr_map<std::string, Verb> dictionary;
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // VERB_H

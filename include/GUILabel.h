@@ -8,11 +8,6 @@
 
 #include "GUIElement.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Forward declarations
 class GUIElementVisitor;
 
@@ -39,8 +34,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // GUIFRAME_H

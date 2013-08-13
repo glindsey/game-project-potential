@@ -1,6 +1,10 @@
 #include "Image.h"
 
+#include <cstdio>
 #include <cstring>
+#include <libpng/png.h>
+
+#include "ErrorMacros.h"
 
 struct Image::Impl
 {
@@ -36,6 +40,31 @@ Image::~Image()
 unsigned int* Image::get_data_ptr()
 {
   return impl->data.get();
+}
+
+bool Image::load_png(char const* filename)
+{
+  /*
+  char header[8];
+  bool is_png;
+  FILE *fp = fopen(filename, "rb");
+  if (!fp)
+  {
+    FATAL_ERROR("Could not load \"%s\"", filename);
+    return false;
+  }
+  fread(header, 1, 8, fp);
+  is_png = !png_sig_cmp(header, 0, 8);
+  if (!is_png)
+  {
+    FATAL_ERROR("\"%s\" is not a PNG file", filename);
+    return false;
+  }
+
+  return true;
+  */
+  /// @todo finish me and make me work!
+  return false;
 }
 
 bool Image::blit(Image& src_image,

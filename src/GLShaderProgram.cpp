@@ -8,11 +8,6 @@
 
 #include "ErrorMacros.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct GLShaderProgram::Impl
 {
   // GL Program ID.
@@ -140,6 +135,3 @@ void GLShaderProgram::unbind()
 {
   glUseProgram(0);
 }
-
-} // end namespace rectopia
-} // end namespace gsl

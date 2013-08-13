@@ -10,12 +10,7 @@
 
 #include "StageBuilder.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
-class StageBuilderBeaches: public gsl::rectopia::StageBuilder
+class StageBuilderBeaches: public StageBuilder
 {
 public:
   /// Create the builder for adding beaches.
@@ -37,6 +32,4 @@ private:
   std::unique_ptr<Impl> impl;
 };
 
-} /* namespace rectopia */
-} /* namespace gsl */
 #endif /* STAGEBUILDERBEACHES_H_ */

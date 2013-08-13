@@ -13,11 +13,6 @@
 #include "AppStateManager.h"
 #include "FontCollection.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// The primary application class.  This class is instantiated by main(), and
 /// is the class wrapper for the entire program.  Since there's obviously one
 /// instance of the application, it is a singleton class.
@@ -105,8 +100,5 @@ private:
   EventResult handle_key_down(sf::Event::KeyEvent key);
 
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // CAPP_H

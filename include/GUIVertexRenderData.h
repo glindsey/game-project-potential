@@ -1,11 +1,6 @@
 #ifndef GUIVERTEXRENDERDATA_H
 #define GUIVERTEXRENDERDATA_H
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /** Struct representing a GUI vertex to send to openGL. */
 struct GUIVertexRenderData
 {
@@ -48,8 +43,4 @@ struct GUIVertexRenderData
   float s, t;               ///< Texture coordinates
   float textured;           ///< >=0.5 means vertex is textured
 };
-
-} // end namespace rectopia
-} // end namespace gsl
-
 #endif // GUIVERTEXRENDERDATA_H

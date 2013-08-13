@@ -9,11 +9,6 @@
 #include "StageChunkCollection.h"
 #include "StageComponentVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 const StageCoord StageChunk::chunk_side_length;
 
 StageChunk::StageChunk(StageChunkCollection* parent,
@@ -216,6 +211,3 @@ void StageChunk::set_render_data_dirty(bool dirty)
 {
   render_data_dirty_ = dirty;
 }
-
-} // namespace rectopia
-} // namespace gsl

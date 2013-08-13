@@ -6,11 +6,6 @@
 
 #include "Settings.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 BGRenderer::BGRenderer()
 {
   name_ = "Null Renderer";
@@ -25,6 +20,3 @@ std::string BGRenderer::getName()
 {
   return name_;
 }
-
-} // namespace rectopia
-} // namespace gsl

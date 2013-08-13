@@ -15,11 +15,6 @@
 #include "Settings.h"
 #include "TextureAtlas.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 boost::ptr_map<std::string, PropPrototype> PropPrototype::collection;
 
 typedef boost::filesystem::path TypePath;
@@ -267,6 +262,3 @@ void PropPrototype::drawTextOntoTexture(sf::Text& renderText,
 
   renderTexture.display();
 }
-
-} // namespace rectopia
-} // namespace gsl

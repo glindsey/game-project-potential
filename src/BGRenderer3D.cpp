@@ -8,11 +8,6 @@
 #include "BGRenderData.h"
 #include "GLShaderProgram.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct BGRenderer3D::Impl
 {
   void draw_gradient_rect(float left,
@@ -102,6 +97,3 @@ void BGRenderer3D::draw()
 
   ++frame_counter;
 }
-
-} // end namespace rectopia
-} // end namespace gsl

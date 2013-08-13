@@ -10,12 +10,7 @@
 
 #include "StageBuilder.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
-class StageBuilderFlora: public gsl::rectopia::StageBuilder
+class StageBuilderFlora: public StageBuilder
 {
 public:
   /// Create the builder for adding water features.
@@ -41,7 +36,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} /* namespace rectopia */
-} /* namespace gsl */
 #endif /* STAGEBUILDERFLORA_H_ */

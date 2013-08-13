@@ -7,11 +7,6 @@
 #include "Settings.h"
 #include "Stage.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 StageRenderer::StageRenderer()
 {
   name_ = "Null Renderer";
@@ -26,6 +21,3 @@ std::string StageRenderer::getName()
 {
   return name_;
 }
-
-} // namespace rectopia
-} // namespace gsl

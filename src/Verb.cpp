@@ -9,11 +9,6 @@
 #include "ErrorMacros.h"
 #include "Settings.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 boost::ptr_map<std::string, Verb> Verb::dictionary;
 
 void Verb::initialize()
@@ -73,6 +68,3 @@ Verb::Verb(std::string _name, const boost::property_tree::ptree& propertyTree)
 
   // TODO MAYBE: any other data aggregation required?
 }
-
-} // namespace rectopia
-} // namespace gsl

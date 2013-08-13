@@ -3,11 +3,6 @@
 
 #include "StageComponent.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class Inventory;
 
@@ -27,8 +22,4 @@ public:
   /// Try to move this object to a new location.
   virtual bool move_to(Inventory& new_location) = 0;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* HASINVENTORY_H_ */

@@ -7,11 +7,6 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Representation of a 2-D cubic Bezier curve.
 class CubicBezier
 {
@@ -33,5 +28,3 @@ private:
 };
 
 #endif // CUBICBEZIER_H
-} // namespace rectopia
-} // namespace gsl

@@ -7,11 +7,6 @@
 
 #include "AppState.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class StageRenderer;
 
@@ -45,8 +40,5 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // APPSTATEGAME_H

@@ -5,11 +5,6 @@
 
 #include "BGVertexRenderData.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 BGRenderData::BGRenderData()
 {
   glGenVertexArrays(1, &vao_id);
@@ -69,6 +64,3 @@ void BGRenderData::update_VAO()
   // unbind the VAO (for now).
   glBindVertexArray(0);
 }
-
-} // end namespace rectopia
-} // end namespace gsl

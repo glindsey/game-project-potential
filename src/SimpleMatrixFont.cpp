@@ -4,11 +4,6 @@
 
 #include "ErrorMacros.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct SimpleMatrixFont::Impl
 {
   sf::Texture font_texture;
@@ -88,6 +83,3 @@ int32_t SimpleMatrixFont::getBaseline()
 {
   return impl->glyph_size.y;
 }
-
-} // end namespace rectopia
-} // end namespace gsl

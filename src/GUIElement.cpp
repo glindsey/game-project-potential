@@ -6,11 +6,6 @@
 #include "GUIElementVisitor.h"
 #include "Settings.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct GUIElement::Impl
 {
   /// Pointer to parent of this element.
@@ -269,6 +264,3 @@ bool GUIElement::is_dirty_flag_set()
 {
   return impl->dirty_;
 }
-
-} // namespace rectopia
-} // namespace gsl

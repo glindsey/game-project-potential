@@ -7,11 +7,6 @@
 
 #include "AppState.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 enum class AppStateID
 {
   // Add your Other App States Here
@@ -58,8 +53,5 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // APPSTATEMANAGER_H

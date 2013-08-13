@@ -13,11 +13,6 @@
 
 #include "SubstanceData.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Representation of a Substance that a StageChunk or a Prop can be made out of.
 class Substance: public boost::noncopyable
 {
@@ -79,8 +74,4 @@ public:
 
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // SUBSTANCE_H_

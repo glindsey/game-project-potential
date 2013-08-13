@@ -9,11 +9,6 @@
 
 #include <boost/property_tree/xml_parser.hpp>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 bool Settings::debugMapRevealAll;
 bool Settings::debugDieOnMinorError;
 bool Settings::debugDieOnMajorError;
@@ -141,6 +136,3 @@ void Settings::handleFatalError(char* buf,
   getchar();
   exit(-1);
 }
-
-} // namespace rectopia
-} // namespace gsl

@@ -10,11 +10,6 @@
 
 #include "GUIParentElement.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 class MenuArea: public GUIParentElement
 {
 public:
@@ -38,8 +33,4 @@ private:
   static const unsigned int menuMargin = 10;
   static const unsigned int statusBarHeight = 100;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // MENUAREA_H

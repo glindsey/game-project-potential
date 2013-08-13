@@ -35,5 +35,4 @@ public:
   ///          to unpredictable results!
   virtual void Reset() = 0;
 };
-
 #endif /* STAGEBUILDER_H_ */

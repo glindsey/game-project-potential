@@ -21,11 +21,6 @@
 #include "StageChunk.h"
 #include "Substance.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct StageBuilderFlora::Impl
 {
   Impl(Stage& stage, int seed, int plains_threshold, int forest_threshold)
@@ -186,6 +181,3 @@ void StageBuilderFlora::Reset()
 {
   impl->Reset();
 }
-
-} /* namespace rectopia */
-} /* namespace gsl */

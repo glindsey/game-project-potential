@@ -7,11 +7,6 @@
 #include "ErrorMacros.h"
 #include "GUIElementVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct GUIParentElement::Impl
 {
   /// Vector of GUI Elements that this element contains.
@@ -161,6 +156,3 @@ boost::ptr_map<std::string, GUIElement>& GUIParentElement::get_children()
 {
   return impl->children_;
 }
-
-} // namespace rectopia
-} // namespace gsl

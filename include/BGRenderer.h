@@ -6,11 +6,6 @@
 #include <boost/noncopyable.hpp>
 #include <string>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Base class implementing a renderer for the window background.
 class BGRenderer:
   public boost::noncopyable
@@ -28,8 +23,5 @@ protected:
 
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // BGRENDERER_H

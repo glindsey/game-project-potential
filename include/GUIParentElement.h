@@ -7,11 +7,6 @@
 
 #include "GUIElement.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Base class for a GUI element that can have child elements underneath it.
 /// It inherits from GUIElement as its parent class.
 class GUIParentElement: public GUIElement
@@ -60,8 +55,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // GUIPARENTELEMENT_H

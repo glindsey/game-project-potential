@@ -5,11 +5,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// A two-dimensional height map used to generate terrain, forests,
 /// anything that needs smooth noise.
 /// @todo Dump this.  libnoise works far better.
@@ -27,8 +22,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // HEIGHTMAP_H

@@ -22,11 +22,6 @@
 
 #include <noise/noise.h>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Typedef for a random distribution.
 typedef boost::random::uniform_int_distribution<> RandomDistribution;
 
@@ -352,6 +347,3 @@ void StageBuilderTerrain::Reset()
 {
   impl->Reset();
 }
-
-} /* namespace rectopia */
-} /* namespace gsl */

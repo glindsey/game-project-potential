@@ -13,11 +13,6 @@
 #include "StageRenderer3D.h"
 #include "StatusArea.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct AppStateGame::Impl
 {
   std::unique_ptr<BGRenderer> bg_renderer;
@@ -150,6 +145,3 @@ void AppStateGame::render()
     impl->gui_renderer->draw();
   }
 }
-
-} // namespace rectopia
-} // namespace gsl

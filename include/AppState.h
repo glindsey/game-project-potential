@@ -7,11 +7,6 @@
 
 #include "EventListener.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class AppStateManager;
 
@@ -46,8 +41,5 @@ protected:
   /// Reference to state manager that this state belongs to.
   AppStateManager* manager_;
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // CAPPSTATE_H

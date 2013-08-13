@@ -5,11 +5,6 @@
 #include "ErrorMacros.h"
 #include "Settings.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 std::unique_ptr<TextureAtlas> TextureAtlas::instance_;
 
 TextureAtlas* TextureAtlas::instance()
@@ -154,7 +149,3 @@ const sf::Texture* TextureAtlas::getAtlasTexture(void)
 {
   return &atlas;
 }
-
-} // namespace rectopia
-} // namespace gsl
-

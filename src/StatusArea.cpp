@@ -11,11 +11,6 @@
 #include "Stage.h"
 #include "StageBlock.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct StatusArea::Impl
 {
   char dummy_;
@@ -130,6 +125,3 @@ void StatusArea::render()
   window->draw(text);
   */
 }
-
-} // namespace rectopia
-} // namespace gsl

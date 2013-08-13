@@ -3,11 +3,6 @@
 #include "ErrorMacros.h"
 #include "GUIElementVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct GUIFrame::Impl
 {
   // Actually nothing to put here for now!
@@ -52,6 +47,3 @@ std::string const GUIFrame::getElementType()
 {
   return "GUIFrame";
 }
-
-} // namespace rectopia
-} // namespace gsl

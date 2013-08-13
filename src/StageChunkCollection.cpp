@@ -5,11 +5,6 @@
 #include "StageChunk.h"
 #include "StageComponentVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct StageChunkCollection::Impl
 {
   inline int calc_chunk_index(int chunk_x, int chunk_y, int chunk_z)
@@ -270,6 +265,3 @@ StageBlock* StageChunkCollection::getBlockPointer(StageCoord block_x,
   int block_index = impl->calc_block_index(block_x, block_y, block_z);
   return impl->get_block_location(block_index);
 }
-
-} // namespace rectopia
-} // namespace gsl

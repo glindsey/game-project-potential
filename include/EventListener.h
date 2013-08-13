@@ -8,11 +8,6 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Enum for results of processing an event.
 enum class EventResult
 {
@@ -46,8 +41,5 @@ public:
   virtual EventResult handle_window_exit();
   virtual EventResult handle_window_resize(int w, int h);
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // EVENTLISTENER_H

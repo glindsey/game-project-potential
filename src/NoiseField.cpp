@@ -6,11 +6,6 @@
 #include "NoiseField.h"
 #include <ctime>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct NoiseField::Impl
 {
   void initialize(int _xySize, int _zLo, int _zHi, int _variance, int _seed);
@@ -195,6 +190,3 @@ int NoiseField::get_scaled_value(int x, int y)
 
   return (int) scaledValue;
 }
-
-} // namespace rectopia
-} // namespace gsl

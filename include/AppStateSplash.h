@@ -10,11 +10,6 @@
 
 #include "AppState.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Class representing the splash screen state of the application.
 class AppStateSplash: public AppState
 {
@@ -32,8 +27,5 @@ private:
   sf::Sprite spriteLogo;
   sf::Clock clock;
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // CAPPSTATESPLASH_H

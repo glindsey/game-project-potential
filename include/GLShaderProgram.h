@@ -8,32 +8,24 @@
 
 #include "common.h"
 
-namespace gsl
+class GLShaderProgram: public boost::noncopyable
 {
-namespace rectopia
-{
-  class GLShaderProgram: public boost::noncopyable
-  {
-    public:
-      GLShaderProgram(const char* vertex_file_path, const char* fragment_file_path);
-      ~GLShaderProgram();
+  public:
+    GLShaderProgram(const char* vertex_file_path, const char* fragment_file_path);
+    ~GLShaderProgram();
 
-      GLuint id();
+    GLuint id();
 
-      GLuint get_uniform_id(const char* variable_name);
+    GLuint get_uniform_id(const char* variable_name);
 
-      void bind();
-      void unbind();
+    void bind();
+    void unbind();
 
-    protected:
-    private:
-      struct Impl;
-      // Private implementation pointer
-      std::unique_ptr<Impl> impl;
-  };
-
-
-} // end namespace rectopia
-} // end namespace gsl
+  protected:
+  private:
+    struct Impl;
+    // Private implementation pointer
+    std::unique_ptr<Impl> impl;
+};
 
 #endif // GLSHADERPROGRAM_H_

@@ -12,11 +12,6 @@
 // Forward declarations
 class GUIElementVisitor;
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // The "trunk" node for all GUI elements.
 class GUI: public GUIParentElement
 {
@@ -39,8 +34,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // GAMEGUI_H

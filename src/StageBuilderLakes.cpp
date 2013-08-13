@@ -19,11 +19,6 @@
 #include "StageChunk.h"
 #include "Substance.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct StageBuilderLakes::Impl
 {
   Impl(Stage& stage, int seed, StageCoord sea_level)
@@ -113,6 +108,3 @@ void StageBuilderLakes::Reset()
 {
   impl->Reset();
 }
-
-} /* namespace rectopia */
-} /* namespace gsl */

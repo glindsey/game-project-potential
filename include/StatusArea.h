@@ -10,11 +10,6 @@
 
 #include "GUIParentElement.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class Stage;
 class GUIFrame;
@@ -38,8 +33,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // STATUSAREA_H

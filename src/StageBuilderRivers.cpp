@@ -22,11 +22,6 @@
 
 #include <noise/noise.h>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 enum class BuilderState
 {
   Begin,
@@ -423,6 +418,3 @@ void StageBuilderRivers::Reset()
 {
   impl->Reset();
 }
-
-} /* namespace rectopia */
-} /* namespace gsl */

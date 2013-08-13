@@ -8,11 +8,6 @@
 
 #include "GUIParentElement.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class GUIElementVisitor;
 
@@ -38,8 +33,4 @@ protected:
 
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // GUIFRAME_H

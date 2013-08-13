@@ -7,11 +7,6 @@
 
 #include "FaceBools.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct FaceBools::Impl
 {
   struct _faces
@@ -237,6 +232,3 @@ FaceBools FaceBools::operator!()
 {
   return this->operator~();
 }
-
-} // namespace rectopia
-} // namespace gsl

@@ -4,11 +4,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 class BlockTopCorners
 {
 public:
@@ -34,8 +29,5 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif /* BLOCKTOPCORNERS_H_ */

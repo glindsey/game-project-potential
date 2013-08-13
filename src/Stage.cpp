@@ -30,11 +30,6 @@
 #include <cstdio>
 #include <ctime>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct Stage::Impl
 {
   /// Pointer to the stage instance.
@@ -650,6 +645,3 @@ bool Stage::okay_to_render_map()
 {
   return impl->okay_to_render_map_;
 }
-
-} // namespace rectopia
-} // namespace gsl

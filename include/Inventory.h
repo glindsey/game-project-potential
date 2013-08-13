@@ -9,11 +9,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class HasLocation;
 
@@ -52,8 +47,4 @@ private:
   std::unique_ptr<Impl> impl;
 
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* INVENTORY_H_ */

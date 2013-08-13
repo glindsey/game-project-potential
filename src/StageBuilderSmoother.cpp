@@ -20,11 +20,6 @@
 #include "StageChunk.h"
 #include "Substance.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct StageBuilderSmoother::Impl
 {
   Impl(Stage& stage, int seed)
@@ -116,6 +111,3 @@ void StageBuilderSmoother::Reset()
 {
   impl->Reset();
 }
-
-} /* namespace rectopia */
-} /* namespace gsl */

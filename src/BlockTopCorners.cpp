@@ -6,11 +6,6 @@
  */
 #include "BlockTopCorners.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct BlockTopCorners::Impl
 {
   /// Bitfield for corner heights.
@@ -97,6 +92,3 @@ void BlockTopCorners::set_front_right(int n)
 {
   impl->corners.front_right_ = n;
 }
-
-} // namespace rectopia
-} // namespace gsl

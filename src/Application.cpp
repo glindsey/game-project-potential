@@ -12,11 +12,6 @@
 #include "FPSControl.h"
 #include "Settings.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct App::Impl
 {
   /// Pointer to the application instance.
@@ -250,6 +245,3 @@ EventResult App::handle_key_down(sf::Event::KeyEvent key)
   }
   return EventResult::Ignored;
 }
-
-} // namespace rectopia
-} // namespace gsl

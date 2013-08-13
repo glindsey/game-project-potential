@@ -2,11 +2,6 @@
 
 #include "GUIElementVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct GUILabel::Impl
 {
   std::u32string   text_;
@@ -48,6 +43,3 @@ void GUILabel::setText(std::u32string text)
 {
   impl->text_ = text;
 }
-
-} // namespace rectopia
-} // namespace gsl

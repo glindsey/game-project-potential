@@ -15,11 +15,6 @@
 #include "PropPrototype.h"
 #include "Verb.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 AppStateSplash::AppStateSplash(AppStateManager* manager)
   : AppState(manager)
 {
@@ -63,6 +58,3 @@ void AppStateSplash::render()
   //window->draw(spriteLogo);
   //window->popGLStates();
 }
-
-} // namespace rectopia
-} // namespace gsl

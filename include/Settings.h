@@ -3,11 +3,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Totally static class containing all global options read from the
 /// configuration file.
 class Settings
@@ -64,8 +59,4 @@ protected:
 private:
   Settings() = delete;  ///< No instantiations!
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // SETTINGS_H

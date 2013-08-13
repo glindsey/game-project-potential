@@ -12,11 +12,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class Stage;
 class Prop;
@@ -37,8 +32,4 @@ public:
 protected:
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* STAGECOMPONENTVISITOR_H_ */

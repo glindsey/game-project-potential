@@ -1,10 +1,5 @@
 #include "CubicBezier.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct CubicBezier::Impl
 {
   /// Simple linear interpolation between two points.
@@ -59,6 +54,3 @@ sf::Vector2f CubicBezier::Impl::lerp(const sf::Vector2f& a,
 
   return dest;
 }
-
-} // namespace rectopia
-} // namespace gsl

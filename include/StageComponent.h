@@ -5,11 +5,6 @@
 #include "common_includes.h"
 #include "common_typedefs.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 class StageComponentVisitor;
 
 /// Superclass for any stage components that may be rendered to the screen.
@@ -23,8 +18,4 @@ public:
 protected:
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // STAGECOMPONENT_H_

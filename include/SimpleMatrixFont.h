@@ -6,11 +6,6 @@
 
 #include "TextureFont.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 class SimpleMatrixFont : public TextureFont
 {
   public:
@@ -36,8 +31,4 @@ class SimpleMatrixFont : public TextureFont
     struct Impl;
     std::unique_ptr<Impl> impl;
 };
-
-} // end namespace rectopia
-} // end namespace gsl
-
 #endif // SIMPLEMATRIXFONT_H

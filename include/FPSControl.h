@@ -5,11 +5,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 class FrequencyControl
 {
 public:
@@ -39,5 +34,3 @@ private:
 };
 
 #endif // CFPS_H
-} // namespace rectopia
-} // namespace gsl

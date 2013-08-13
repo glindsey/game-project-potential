@@ -10,11 +10,6 @@
 #include "StageComponent.h"
 #include "Substance.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class StageComponentVisitor;
 class StageChunk;
@@ -116,8 +111,5 @@ private:
   /// Boolean indicating whether this block is known to the player.
   bool known_;
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // STAGEBLOCK_H

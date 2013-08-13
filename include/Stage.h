@@ -8,11 +8,6 @@
 #include "EventListener.h"
 #include "StageComponent.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class ColumnData;
 class StageBlock;
@@ -122,8 +117,5 @@ private:
   std::unique_ptr<Impl> impl;
 
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // STAGE_H_

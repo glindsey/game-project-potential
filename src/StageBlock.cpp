@@ -7,10 +7,6 @@
 #include "StageChunk.h"
 #include "StageComponentVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
 StageBlock::StageBlock(StageCoord x, StageCoord y, StageCoord z)
 {
   coord_.x = x;
@@ -306,6 +302,3 @@ void StageBlock::invalidate_neighboring_faces()
     stage.get_block(coord_.x, coord_.y, coord_.z + 1).invalidate_face_data();
   }
 }
-
-} // namespace rectopia
-} // namespace gsl

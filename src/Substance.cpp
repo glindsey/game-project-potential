@@ -21,11 +21,6 @@
 #include "Settings.h"
 #include "TextureAtlas.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 typedef boost::ptr_unordered_map<std::string, Substance> SubstanceCollection;
 typedef std::unordered_map<std::string, std::set<std::string> > Categories;
 typedef std::unordered_map<std::string, std::set<std::string> > Verbs;
@@ -728,6 +723,3 @@ void Substance::Impl::checkSubstances(void)
   std::cout << "***   " << categories.size()
             << " distinct substance attributes counted" << std::endl;
 }
-
-} // namespace rectopia
-} // namespace gsl

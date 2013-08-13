@@ -3,11 +3,6 @@
 
 #include <glm/glm.hpp>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /** Struct representing a vertex to send to openGL. */
 struct VertexRenderData
 {
@@ -69,8 +64,5 @@ struct VertexRenderData
   float rs, gs, bs, as;     ///< Specular color
   float s, t;               ///< Texture coordinates
 };
-
-} // end namespace rectopia
-} // end namespace gsl
 
 #endif // VERTEXRENDERDATA_H

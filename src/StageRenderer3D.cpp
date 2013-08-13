@@ -25,11 +25,6 @@
 #include "StageChunkCollection.h"
 #include "VertexRenderData.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct StageRenderer3D::Impl
 {
   /// Draws the stage block requested.
@@ -678,6 +673,3 @@ void StageRenderer3D::draw()
   // Increment frame counter.
   ++(impl->frame_counter);
 }
-
-} // namespace rectopia
-} // namespace gsl

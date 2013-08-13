@@ -6,11 +6,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 struct BGVertexRenderData;
 
@@ -36,8 +31,5 @@ struct BGRenderData
   /// Number of vertices.
   int vertex_count;
 };
-
-} // end namespace rectopia
-} // end namespace gsl
 
 #endif // CHUNKRENDERDATA_H

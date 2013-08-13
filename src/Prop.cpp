@@ -11,11 +11,6 @@
 #include "Settings.h"
 #include "Substance.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // === Private Implementation =================================================
 struct Prop::Impl
 {
@@ -252,6 +247,3 @@ Prop& Prop::get(SerialNumber number)
     return get(create("anomaly"));
   }
 }
-
-} // namespace rectopia
-} // namespace gsl

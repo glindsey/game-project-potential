@@ -9,11 +9,6 @@
 #include "EventListener.h"
 #include "GUIElementVisitor.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Base class implementing a renderer for the GUI.
 class GUIRenderer:
   public EventListener,
@@ -33,8 +28,4 @@ protected:
 
 private:
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // GUIRENDERER_H

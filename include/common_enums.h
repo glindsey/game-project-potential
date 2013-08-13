@@ -1,11 +1,6 @@
 #ifndef COMMON_ENUMS_H_INCLUDED
 #define COMMON_ENUMS_H_INCLUDED
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Enumeration of layers comprising a block.
 enum class BlockLayer
 {
@@ -88,8 +83,5 @@ enum class Visibility
 
 /// Definition of PI.
 const double PI = 3.141592653589791L;
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // COMMON_ENUMS_H_INCLUDED

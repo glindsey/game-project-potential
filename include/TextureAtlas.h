@@ -8,11 +8,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /// Singleton "atlas" texture containing all graphical textures used in the engine.
 class TextureAtlas
 {
@@ -75,8 +70,5 @@ private:
 };
 
 #define TAtlas TextureAtlas::instance()
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // TEXTUREATLAS_H

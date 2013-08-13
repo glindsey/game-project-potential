@@ -1,11 +1,6 @@
 #ifndef GUIVERTEXRENDERDATA_H
 #define GUIVERTEXRENDERDATA_H
 
-namespace gsl
-{
-namespace rectopia
-{
-
 /** Struct representing a background vertex to send to openGL. */
 struct BGVertexRenderData
 {
@@ -37,8 +32,5 @@ struct BGVertexRenderData
   float x, y;               ///< Screen coordinates
   float r, g, b, a;         ///< Color
 };
-
-} // end namespace rectopia
-} // end namespace gsl
 
 #endif // GUIVERTEXRENDERDATA_H

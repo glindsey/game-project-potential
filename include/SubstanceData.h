@@ -5,11 +5,6 @@
 
 #include "common.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct SubstanceData
 {
   std::string name;         ///< Material's name.
@@ -29,8 +24,5 @@ struct SubstanceData
   int tempBoil;             ///< Degrees Celsius at which material boils.
   int tempCondense;         ///< Degrees Celsius at which material condenses.
 };
-
-} // namespace rectopia
-} // namespace gsl
 
 #endif // SUBSTANCEDATA_H_INCLUDED

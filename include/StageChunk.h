@@ -16,11 +16,6 @@
 #include "StageBlock.h"
 #include "StageComponent.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class FaceBools;
 class Stage;
@@ -105,8 +100,4 @@ private:
   /** Mutex for accessing blocks array. */
   boost::mutex blocks_mutex_;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* STAGECHUNK_H_ */

@@ -14,11 +14,6 @@
 
 #include "StageRenderer.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 class StageRenderer3D: public StageRenderer
 {
 public:
@@ -43,8 +38,4 @@ private:
   /// Private implementation pointer
   std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif /* STAGERENDERER3D_H_ */

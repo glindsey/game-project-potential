@@ -18,11 +18,6 @@
 #include "GLShaderProgram.h"
 #include "TextureFont.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct GUIRenderer3D::Impl
 {
   void draw_rect(float left,
@@ -286,6 +281,3 @@ void GUIRenderer3D::draw()
 
   ++frame_counter;
 }
-
-} // end namespace rectopia
-} // end namespace gsl

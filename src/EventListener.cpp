@@ -5,11 +5,6 @@
 
 #include "EventListener.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 EventListener::EventListener()
 {
 }
@@ -119,6 +114,3 @@ EventResult EventListener::handle_window_resize(int w, int h)
 {
   return EventResult::Ignored;
 }
-
-} // namespace rectopia
-} // namespace gsl

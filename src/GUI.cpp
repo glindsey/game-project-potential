@@ -7,11 +7,6 @@
 #include "MenuArea.h"
 #include "StatusArea.h"
 
-namespace gsl
-{
-namespace rectopia
-{
-
 struct GUI::Impl
 {
   char dummy_;
@@ -58,6 +53,3 @@ EventResult GUI::handle_window_resize(int w, int h)
   this->set_size(window_size);
   return EventResult::Acknowledged;
 }
-
-} // namespace rectopia
-} // namespace gsl

@@ -6,11 +6,6 @@
 #include <memory>
 #include <string>
 
-namespace gsl
-{
-namespace rectopia
-{
-
 // Forward declarations
 class TextureFont;
 
@@ -38,8 +33,4 @@ class FontCollection : public boost::noncopyable
     struct Impl;
     std::unique_ptr<Impl> impl;
 };
-
-} // namespace rectopia
-} // namespace gsl
-
 #endif // FONTCOLLECTION_H
