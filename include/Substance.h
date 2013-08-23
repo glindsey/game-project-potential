@@ -4,7 +4,6 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include <boost/noncopyable.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <memory>
 #include <glm/glm.hpp>
@@ -14,9 +13,12 @@
 #include "SubstanceData.h"
 
 /// Representation of a Substance that a StageChunk or a Prop can be made out of.
-class Substance: public boost::noncopyable
+class Substance
 {
 public:
+  Substance(Substance const&) = delete;
+  Substance& operator=(Substance const&) = delete;
+
   virtual ~Substance();                    ///< Destructor
 
   const boost::property_tree::ptree& getProperties(); ///< Get substance XML properties.

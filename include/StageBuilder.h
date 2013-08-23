@@ -16,9 +16,13 @@
 class Stage;
 
 /// StageBuilder: Pure virtual interface for objects that help construct the stage.
-class StageBuilder: public boost::noncopyable
+class StageBuilder
 {
 public:
+  StageBuilder() = default;
+  StageBuilder(StageBuilder const&) = delete;
+  StageBuilder& operator=(StageBuilder const&) = delete;
+
   /// Executes the build process on the stage.
   /// This function must be called repeatedly until it returns true to
   /// indicate that it has completed its process.  This allows the main

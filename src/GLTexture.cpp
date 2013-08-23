@@ -4,82 +4,52 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/transform.hpp>
+#include <soil.h>
 
 struct GLTexture::Impl
 {
   GLuint texture_id;
-  unsigned int width;
-  unsigned int height;
-  std::unique_ptr<Image> image;
-
-  /// Return the array index for the specified pixel.
-  unsigned int pixel(unsigned int x, unsigned int y)
-  {
-    return (y * width) + x;
-  }
 };
 
 GLTexture::GLTexture() :
   impl(new Impl())
 {
-  // Set width, height to zero.
-  impl->width = 0;
-  impl->height = 0;
-
-  // Generate the texture.
-  glGenTextures(1, &(impl->texture_id));
-
+  // Set texture ID to SOIL_CREATE_NEW_ID.
+  impl->texture_id = SOIL_CREATE_NEW_ID;
 }
 
 GLTexture::~GLTexture()
 {
-  // Destroy the texture.
-  glDeleteTextures(1, &(impl->texture_id));
-}
-
-bool GLTexture::initialize(unsigned int width_, unsigned int height_)
-{
-  // Reset the texture data array.
-  impl->image.reset(new Image(width_, height_));
-  return true;
-}
-
-bool GLTexture::blit(Image& src_image,
-                     unsigned int src_width,
-                     unsigned int src_height,
-                     unsigned int dst_x_start = 0,
-                     unsigned int dst_y_start = 0,
-                     unsigned int src_x_start = 0,
-                     unsigned int src_y_start = 0)
-{
-  for (unsigned int y_offset = 0; y_offset < src_height; ++y_offset)
+  // Destroy the texture, if it exists.
+  if (SOIL_CREATE_NEW_ID != impl->texture_id)
   {
-    for (unsigned int x_offset = 0; x_offset < src_width; ++x_offset)
-    {
-      unsigned int src_x = src_x_start + x_offset;
-      unsigned int src_y = src_y_start + y_offset;
-      unsigned int dst_x = dst_x_start + x_offset;
-      unsigned int dst_y = dst_y_start + y_offset;
-
-      impl->image->set_pixel(dst_x, dst_y, src_image.get_pixel(src_x, src_y));
-    }
+    glDeleteTextures(1, &(impl->texture_id));
   }
+}
+
+bool GLTexture::load(char const* filename)
+{
+  GLuint result = SOIL_load_OGL_texture(filename,
+                                        SOIL_LOAD_AUTO,
+                                        impl->texture_id,
+                                        SOIL_FLAG_POWER_OF_TWO
+                                        // | SOIL_FLAG_MIPMAPS
+                                        | SOIL_FLAG_TEXTURE_REPEATS
+                                        //| SOIL_FLAG_MULTIPLY_ALPHA
+                                        //| SOIL_FLAG_COMPRESS_TO_DXT
+                                        );
+
+  if (0 == result)
+  {
+    FATAL_ERROR("SOIL error loading \"%s\": %s", filename, SOIL_last_result());
+    return false;
+  }
+
+  // Save the resulting texture ID.
+  impl->texture_id = result;
+
   return true;
 };
-
-void GLTexture::update()
-{
-  // Upload the underlying image to OpenGL.
-  glTexImage2D(GL_TEXTURE_2D,
-               0,
-               GL_RGBA,
-               impl->width,
-               impl->height,
-               0,
-               GL_RGBA,
-               GL_UNSIGNED_INT_8_8_8_8,
-               impl->image->get_data_ptr());
-}
 
 GLuint GLTexture::get_texture_id()
 {
@@ -88,7 +58,14 @@ GLuint GLTexture::get_texture_id()
 
 void GLTexture::bind()
 {
-  glBindTexture(GL_TEXTURE_2D, impl->texture_id);
+  if (SOIL_CREATE_NEW_ID != impl->texture_id)
+  {
+    glBindTexture(GL_TEXTURE_2D, impl->texture_id);
+  }
+  else
+  {
+    MINOR_ERROR("Tried to bind a GLTexture that wasn't loaded\n");
+  }
 }
 
 void GLTexture::unbind()

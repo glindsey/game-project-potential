@@ -8,7 +8,6 @@
 #ifndef STAGECHUNK_H_
 #define STAGECHUNK_H_
 
-#include <boost/noncopyable.hpp>
 #include <boost/thread/mutex.hpp>
 
 #include "common.h"
@@ -30,8 +29,7 @@ class Substance;
  *  without having to re-render any vertex data.
  */
 class StageChunk:
-  public StageComponent,
-  public boost::noncopyable
+  public StageComponent
 {
 public:
   StageChunk(StageChunkCollection* parent,
@@ -39,6 +37,9 @@ public:
              StageCoord block_x,
              StageCoord block_y,
              StageCoord block_z);
+
+  StageChunk(StageChunk const&) = delete;
+  StageChunk& operator=(StageChunk const&) = delete;
 
   ~StageChunk();
 

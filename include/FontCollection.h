@@ -1,7 +1,6 @@
 #ifndef FONTCOLLECTION_H
 #define FONTCOLLECTION_H
 
-#include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
 #include <memory>
 #include <string>
@@ -9,10 +8,14 @@
 // Forward declarations
 class TextureFont;
 
-class FontCollection : public boost::noncopyable
+class FontCollection
 {
   public:
     FontCollection();
+
+    FontCollection(FontCollection const&) = delete;
+    FontCollection& operator=(FontCollection const&) = delete;
+
     virtual ~FontCollection();
 
     // Add the requested font to the collection.

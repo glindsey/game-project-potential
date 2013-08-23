@@ -109,6 +109,12 @@ void RenderData::update_VAOs()
                         sizeof(VertexRenderData),
                         (const void*) offsetof(VertexRenderData, nx));
 
+  // Set up attribute 5 to be the vertex's texture coordinates.
+  glEnableVertexAttribArray(5);
+  glVertexAttribPointer(5, 2, GL_FLOAT, GL_FALSE,
+                        sizeof(VertexRenderData),
+                        (const void*) offsetof(VertexRenderData, s));
+
   // Clear the vertex data, but keep the count.
   solid_vertices.clear();
 
@@ -152,6 +158,12 @@ void RenderData::update_VAOs()
                         sizeof(VertexRenderData),
                         (const void*) offsetof(VertexRenderData, nx));
 
+  // Set up attribute 5 to be the vertex's texture coordinates.
+  glEnableVertexAttribArray(5);
+  glVertexAttribPointer(5, 2, GL_FLOAT, GL_FALSE,
+                        sizeof(VertexRenderData),
+                        (const void*) offsetof(VertexRenderData, s));
+
   // Clear the vertex data, but keep the count.
   translucent_vertices.clear();
 
@@ -194,6 +206,12 @@ void RenderData::update_VAOs()
   glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE,
                         sizeof(VertexRenderData),
                         (const void*) offsetof(VertexRenderData, nx));
+
+  // Set up attribute 5 to be the vertex's texture coordinates.
+  glEnableVertexAttribArray(5);
+  glVertexAttribPointer(5, 2, GL_FLOAT, GL_FALSE,
+                        sizeof(VertexRenderData),
+                        (const void*) offsetof(VertexRenderData, s));
 
   // Clear the vertex data, but keep the count.
   outline_vertices.clear();

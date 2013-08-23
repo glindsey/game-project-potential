@@ -3,7 +3,6 @@
 
 #include "common.h"
 
-#include <boost/noncopyable.hpp>
 #include <string>
 
 #include "EventListener.h"
@@ -12,11 +11,14 @@
 /// Base class implementing a renderer for the GUI.
 class GUIRenderer:
   public EventListener,
-  public GUIElementVisitor,
-  public boost::noncopyable
+  public GUIElementVisitor
 {
 public:
   GUIRenderer();
+
+  GUIRenderer(GUIRenderer const&) = delete;
+  GUIRenderer& operator=(GUIRenderer const&) = delete;
+
   virtual ~GUIRenderer();
 
   virtual void draw() = 0;

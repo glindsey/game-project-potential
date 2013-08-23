@@ -15,10 +15,10 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="boost_system-mgw47-mt-d-1_52" />
-					<Add library="boost_filesystem-mgw47-mt-d-1_52" />
-					<Add library="boost_chrono-mgw47-mt-d-1_52" />
-					<Add library="boost_thread-mgw47-mt-d-1_52" />
+					<Add library="boost_system-mgw47-mt-d-1_54" />
+					<Add library="boost_filesystem-mgw47-mt-d-1_54" />
+					<Add library="boost_chrono-mgw47-mt-d-1_54" />
+					<Add library="boost_thread-mgw47-mt-d-1_54" />
 					<Add library="sfml-graphics-d" />
 					<Add library="sfml-window-d" />
 					<Add library="sfml-system-d" />
@@ -35,10 +35,10 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="boost_system-mgw47-mt-1_52" />
-					<Add library="boost_filesystem-mgw47-mt-1_52" />
-					<Add library="boost_chrono-mgw47-mt-1_52" />
-					<Add library="boost_thread-mgw47-mt-1_52" />
+					<Add library="boost_system-mgw47-mt-1_54" />
+					<Add library="boost_filesystem-mgw47-mt-1_54" />
+					<Add library="boost_chrono-mgw47-mt-1_54" />
+					<Add library="boost_thread-mgw47-mt-1_54" />
 					<Add library="sfml-graphics" />
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
@@ -48,18 +48,17 @@
 		<Compiler>
 			<Add option="-march=core2" />
 			<Add option="-std=c++11" />
-			<Add option="-Wall" />
 			<Add directory="include" />
 			<Add directory="C:/dropbox/Projects/libraries" />
-			<Add directory="C:/dropbox/Projects/libraries/SFML/include" />
-			<Add directory="C:/Dropbox/Projects/libraries/glfw-2.7.7/include/GL" />
-			<Add directory="C:/dropbox/Projects/libraries/glew-1.9.0/include" />
-			<Add directory="C:/dropbox/Projects/libraries/noise/include" />
+			<Add directory="C:/dropbox/Projects/libraries/SFML-2.1/include" />
+			<Add directory="C:/dropbox/Projects/libraries/glew-1.10.0/include" />
+			<Add directory="C:/dropbox/Projects/libraries/libnoise/include" />
 			<Add directory="C:/Dropbox/Projects/libraries/glm" />
-			<Add directory="C:/dropbox/projects/libraries/zlib-1.2.8" />
-			<Add directory="C:/Dropbox/Projects/libraries/libpng" />
+			<Add directory="C:/dropbox/Projects/libraries/soil/src" />
+			<Add directory="C:/dropbox/Projects/libraries/boost_1_54_0" />
 		</Compiler>
 		<Linker>
+			<Add library="soil" />
 			<Add library="opengl32" />
 			<Add library="glew32" />
 			<Add library="glu32" />
@@ -69,15 +68,11 @@
 			<Add library="winmm" />
 			<Add library="dxguid" />
 			<Add library="noise" />
-			<Add library="png" />
-			<Add library="zlib" />
-			<Add directory="C:/Dropbox/Projects/libraries/SFML/build/lib" />
-			<Add directory="C:/dropbox/Projects/libraries/boost/stage/lib" />
-			<Add directory="C:/dropbox/Projects/libraries/glfw-2.7.7/lib/win32" />
-			<Add directory="C:/dropbox/Projects/libraries/glew-1.9.0/lib" />
-			<Add directory="C:/dropbox/Projects/libraries/noise/lib" />
-			<Add directory="C:/dropbox/projects/libraries/zlib-1.2.8/build" />
-			<Add directory="C:/Dropbox/Projects/libraries/libpng/build/lib" />
+			<Add directory="C:/Dropbox/Projects/libraries/SFML-2.1/lib" />
+			<Add directory="C:/dropbox/Projects/libraries/boost_1_54_0/stage/lib" />
+			<Add directory="C:/dropbox/Projects/libraries/glew-1.10.0/lib" />
+			<Add directory="C:/dropbox/Projects/libraries/libnoise/build" />
+			<Add directory="C:/dropbox/Projects/libraries/soil/lib" />
 		</Linker>
 		<Unit filename="cb.bmp" />
 		<Unit filename="config/settings.xml" />
@@ -112,7 +107,6 @@
 		<Unit filename="include/GUIVertexRenderData.h" />
 		<Unit filename="include/HasInventory.h" />
 		<Unit filename="include/HasLocation.h" />
-		<Unit filename="include/Image.h" />
 		<Unit filename="include/Inventory.h" />
 		<Unit filename="include/MathUtils.h" />
 		<Unit filename="include/MenuArea.h" />
@@ -181,7 +175,6 @@
 		<Unit filename="src/GUIRenderData.cpp" />
 		<Unit filename="src/GUIRenderer.cpp" />
 		<Unit filename="src/GUIRenderer3D.cpp" />
-		<Unit filename="src/Image.cpp" />
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/MenuArea.cpp" />
 		<Unit filename="src/NoiseField.cpp" />

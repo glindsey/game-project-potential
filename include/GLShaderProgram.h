@@ -2,16 +2,20 @@
 #ifndef GLSHADERPROGRAM_H_
 #define GLSHADERPROGRAM_H_
 
-#include <boost/noncopyable.hpp>
 #include <memory>
 #include <GL/glew.h>
 
 #include "common.h"
 
-class GLShaderProgram: public boost::noncopyable
+class GLShaderProgram
 {
   public:
-    GLShaderProgram(const char* vertex_file_path, const char* fragment_file_path);
+    GLShaderProgram(const char* vertex_file_path,
+                    const char* fragment_file_path);
+
+    GLShaderProgram(GLShaderProgram const&) = delete;
+    GLShaderProgram& operator=(GLShaderProgram const&) = delete;
+
     ~GLShaderProgram();
 
     GLuint id();

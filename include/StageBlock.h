@@ -17,11 +17,14 @@ class StageNode;
 
 class StageBlock:
   public StageComponent,
-  public HasInventory,
-  public boost::noncopyable
+  public HasInventory
 {
 public:
   StageBlock(StageCoord x, StageCoord y, StageCoord z);
+
+  StageBlock(StageBlock const&) = delete;
+  StageBlock& operator=(StageBlock const&) = delete;
+
   ~StageBlock();
 
   void accept(StageComponentVisitor& visitor);

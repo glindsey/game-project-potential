@@ -1,7 +1,6 @@
 #ifndef TEXTUREFONT_H
 #define TEXTUREFONT_H
 
-#include <boost/noncopyable.hpp>
 #include <glm/glm.hpp>
 #include <string>
 
@@ -12,10 +11,14 @@
 /// This is a virtual class used as an interface.  Implementations should
 /// derive from this class.
 
-class TextureFont : public boost::noncopyable
+class TextureFont
 {
   public:
     TextureFont();
+
+    TextureFont(TextureFont const&) = delete;
+    TextureFont& operator=(TextureFont const&) = delete;
+
     virtual ~TextureFont();
 
     /// Loads a particular font.  The string passed in is implementation-defined

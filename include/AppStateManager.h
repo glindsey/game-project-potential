@@ -16,13 +16,17 @@ enum class AppStateID
 };
 
 /// Manager of all the application states.
-class AppStateManager: public EventListener, public boost::noncopyable
+class AppStateManager: public EventListener
 {
 public:
   /// Initializes the state manager.
   /// This function instantiates all of the possible app states, and assigns
   /// them to AppStateID tags.
   AppStateManager();
+
+  AppStateManager(AppStateManager const&) = delete;
+  AppStateManager& operator=(AppStateManager const&) = delete;
+
 
   ~AppStateManager();
 

@@ -18,9 +18,12 @@ layout (location = 1) in vec3 in_pos_modelspace;
 layout (location = 2) in vec4 in_color;
 layout (location = 3) in vec4 in_color_specular;
 layout (location = 4) in vec3 in_normal_modelspace;
+layout (location = 5) in vec2 in_texture_uv;
 
 out vec4 color_diffuse;
 out vec4 color_specular;
+
+out vec2 texture_uv;
 
 out vec3 nml_eyespace;
 out vec4 eye_eyespace;
@@ -179,4 +182,7 @@ void main()
       color_specular = in_color_specular;
     }
   }
+
+  // Texture coords passed to fragment shader.
+  texture_uv = in_texture_uv;
 }

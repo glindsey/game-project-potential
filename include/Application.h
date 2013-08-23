@@ -17,12 +17,15 @@
 /// is the class wrapper for the entire program.  Since there's obviously one
 /// instance of the application, it is a singleton class.
 /// @author Gregory Lindsey
-class App: public EventListener, public boost::noncopyable
+class App: public EventListener
 {
 public:
   /// Get the singleton instance of the application.
   /// @return Reference to the singleton instance of the app.
   static App& instance();
+
+  App(App const&) = delete;
+  App& operator=(App const&) = delete;
 
   /// Application destructor.
   /// The destructor tells the application state manager and the rendering

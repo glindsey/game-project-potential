@@ -12,12 +12,15 @@ class AppStateManager;
 
 /// Application state framework.  All application states are derived from this
 /// class.
-class AppState: public EventListener, public boost::noncopyable
+class AppState: public EventListener
 {
 public:
   /// Constructor.
   /// @param manager State manager that this state belongs to.
   AppState(AppStateManager* manager);
+
+  AppState(AppState const&) = delete;
+  AppState& operator=(AppState const&) = delete;
 
   virtual ~AppState();
 

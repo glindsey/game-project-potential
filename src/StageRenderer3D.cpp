@@ -15,7 +15,9 @@
 #include <glm/gtx/transform.hpp>
 
 #include "Application.h"
+#include "ErrorMacros.h"
 #include "GLShaderProgram.h"
+#include "GLTexture.h"
 #include "MathUtils.h"
 #include "RenderData.h"
 #include "Settings.h"
@@ -127,7 +129,12 @@ struct StageRenderer3D::Impl
       return;
     }
 
+    // Texture coordinates
     static glm::vec2 texCoord(0, 0);
+    static glm::vec2 txLoLt(0, 0);
+    static glm::vec2 txLoRt(1, 0);
+    static glm::vec2 txUpLt(0, 1);
+    static glm::vec2 txUpRt(1, 1);
 
     // Set up the vertex coordinates.  Z and Y are flipped because the game
     // treats Y as the back-to-front coord and Z as the top-to-bottom coord.
@@ -205,12 +212,12 @@ struct StageRenderer3D::Impl
     if (hidden.top() != true)
     {
       // Top
-      data.add_vertex(coord, bkUpRt, point_U, color, color_spec, texCoord);
-      data.add_vertex(coord, bkUpLt, point_U, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpLt, point_U, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpLt, point_U, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpRt, point_U, color, color_spec, texCoord);
-      data.add_vertex(coord, bkUpRt, point_U, color, color_spec, texCoord);
+      data.add_vertex(coord, bkUpRt, point_U, color, color_spec, txUpRt);
+      data.add_vertex(coord, bkUpLt, point_U, color, color_spec, txUpLt);
+      data.add_vertex(coord, ftUpLt, point_U, color, color_spec, txLoLt);
+      data.add_vertex(coord, ftUpLt, point_U, color, color_spec, txLoLt);
+      data.add_vertex(coord, ftUpRt, point_U, color, color_spec, txLoRt);
+      data.add_vertex(coord, bkUpRt, point_U, color, color_spec, txUpRt);
 
       // Cap N
       data.add_vertex(coord, CapLo1, point_NNW, color, color_spec, texCoord);
@@ -305,42 +312,42 @@ struct StageRenderer3D::Impl
 
     if (hidden.left() != true)
     {
-      data.add_vertex(coord, ftUpLt, point_W, color, color_spec, texCoord);
-      data.add_vertex(coord, bkUpLt, point_W, color, color_spec, texCoord);
-      data.add_vertex(coord, bkLoLt, point_W, color, color_spec, texCoord);
-      data.add_vertex(coord, bkLoLt, point_W, color, color_spec, texCoord);
-      data.add_vertex(coord, ftLoLt, point_W, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpLt, point_W, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpLt, point_W, color, color_spec, txUpRt);
+      data.add_vertex(coord, bkUpLt, point_W, color, color_spec, txUpLt);
+      data.add_vertex(coord, bkLoLt, point_W, color, color_spec, txLoLt);
+      data.add_vertex(coord, bkLoLt, point_W, color, color_spec, txLoLt);
+      data.add_vertex(coord, ftLoLt, point_W, color, color_spec, txLoRt);
+      data.add_vertex(coord, ftUpLt, point_W, color, color_spec, txUpRt);
     }
 
     if (hidden.bottom() != true)
     {
-      data.add_vertex(coord, bkLoRt, point_D, color, color_spec, texCoord);
-      data.add_vertex(coord, bkLoLt, point_D, color, color_spec, texCoord);
-      data.add_vertex(coord, ftLoLt, point_D, color, color_spec, texCoord);
-      data.add_vertex(coord, ftLoLt, point_D, color, color_spec, texCoord);
-      data.add_vertex(coord, ftLoRt, point_D, color, color_spec, texCoord);
-      data.add_vertex(coord, bkLoRt, point_D, color, color_spec, texCoord);
+      data.add_vertex(coord, bkLoRt, point_D, color, color_spec, txLoRt);
+      data.add_vertex(coord, bkLoLt, point_D, color, color_spec, txLoLt);
+      data.add_vertex(coord, ftLoLt, point_D, color, color_spec, txUpLt);
+      data.add_vertex(coord, ftLoLt, point_D, color, color_spec, txUpLt);
+      data.add_vertex(coord, ftLoRt, point_D, color, color_spec, txUpRt);
+      data.add_vertex(coord, bkLoRt, point_D, color, color_spec, txLoRt);
     }
 
     if (hidden.right() != true)
     {
-      data.add_vertex(coord, ftUpRt, point_E, color, color_spec, texCoord);
-      data.add_vertex(coord, bkUpRt, point_E, color, color_spec, texCoord);
-      data.add_vertex(coord, bkLoRt, point_E, color, color_spec, texCoord);
-      data.add_vertex(coord, bkLoRt, point_E, color, color_spec, texCoord);
-      data.add_vertex(coord, ftLoRt, point_E, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpRt, point_E, color, color_spec, texCoord);
+      data.add_vertex(coord, ftUpRt, point_E, color, color_spec, txUpLt);
+      data.add_vertex(coord, bkUpRt, point_E, color, color_spec, txUpRt);
+      data.add_vertex(coord, bkLoRt, point_E, color, color_spec, txLoRt);
+      data.add_vertex(coord, bkLoRt, point_E, color, color_spec, txLoRt);
+      data.add_vertex(coord, ftLoRt, point_E, color, color_spec, txLoLt);
+      data.add_vertex(coord, ftUpRt, point_E, color, color_spec, txUpLt);
     }
 
     if (hidden.front() != true)
     {
-      data.add_vertex(coord, ftLoLt, point_S, color, color_spec, texCoord);
-      data.add_vertex(coord, ftLoRt, point_S, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpRt, point_S, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpRt, point_S, color, color_spec, texCoord);
-      data.add_vertex(coord, ftUpLt, point_S, color, color_spec, texCoord);
-      data.add_vertex(coord, ftLoLt, point_S, color, color_spec, texCoord);
+      data.add_vertex(coord, ftLoLt, point_S, color, color_spec, txLoLt);
+      data.add_vertex(coord, ftLoRt, point_S, color, color_spec, txLoRt);
+      data.add_vertex(coord, ftUpRt, point_S, color, color_spec, txUpRt);
+      data.add_vertex(coord, ftUpRt, point_S, color, color_spec, txUpRt);
+      data.add_vertex(coord, ftUpLt, point_S, color, color_spec, txUpLt);
+      data.add_vertex(coord, ftLoLt, point_S, color, color_spec, txLoLt);
     }
   }
 
@@ -379,11 +386,17 @@ struct StageRenderer3D::Impl
     GLuint lighting_enabled;
     GLuint pulse_color;
 
+    GLuint texture_unit;
+
   } render_program_id;
 
   RenderData cursor_data;  ///< Cursor rendering data
 
   std::unique_ptr<GLShaderProgram> cursor_program; ///< Cursor rendering program
+
+  /// TEST CODE: Test checkerboard texture.
+  //std::unique_ptr<GLTexture> texture_test;
+  //sf::Texture texture_test;
 };
 
 StageRenderer3D::StageRenderer3D()
@@ -412,6 +425,8 @@ StageRenderer3D::StageRenderer3D()
   program_id.lighting_enabled = program.get_uniform_id("lighting_enabled");
   program_id.pulse_color =      program.get_uniform_id("pulse_color");
 
+  program_id.texture_unit =     program.get_uniform_id("texture_sampler");
+
   // Draw the cursor wireframe.
   impl->draw_cursor(impl->cursor_data,
                     glm::vec4(0.0f, 0.0f, 0.0f, 1.0f),
@@ -427,6 +442,14 @@ StageRenderer3D::StageRenderer3D()
   impl->camera_zoom = -30.0f;
   impl->camera_x_angle = -10.0f;
   impl->camera_y_angle = 30.0f;
+
+  // TEST CODE: Load the test texture.
+  //impl->texture_test.reset(new GLTexture());
+  //impl->texture_test->load("textures/test-checkerboard.png");
+
+  // Bind the shader's texture sampler to unit #0.
+  glUniform1i(impl->render_program_id.texture_unit, 0);
+  glActiveTexture(GL_TEXTURE0);
 }
 
 StageRenderer3D::~StageRenderer3D()
@@ -632,6 +655,9 @@ void StageRenderer3D::draw()
     glUniform3f(impl->render_program_id.cursor_location, cloc.x, cloc.y, cloc.z);
     glUniform1ui(impl->render_program_id.frame_counter, impl->frame_counter);
 
+    // TEST CODE: Bind the test texture.
+    //impl->texture_test->bind();
+
     // Draw solid vertices.
     for (Impl::RenderDataMap::iterator iter = impl->chunk_data.begin();
          iter != impl->chunk_data.end();
@@ -651,6 +677,9 @@ void StageRenderer3D::draw()
       glBindVertexArray(chunk->translucent_vao_id);
       glDrawArrays(GL_TRIANGLES, 0, chunk->translucent_vertex_count);
     }
+
+    // TEST CODE: Unbind the test texture.
+    //impl->texture_test->unbind();
 
     // Draw the wireframe cursor.
 

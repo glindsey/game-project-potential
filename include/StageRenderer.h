@@ -20,11 +20,14 @@ class StageNode;
 
 /// Base class implementing a renderer for the GameStage.
 class StageRenderer: public EventListener,
-  public StageComponentVisitor,
-  public boost::noncopyable
+  public StageComponentVisitor
 {
 public:
   StageRenderer();
+
+  StageRenderer(StageRenderer const&) = delete;
+  StageRenderer& operator=(StageRenderer const&) = delete;
+
   virtual ~StageRenderer();
 
   virtual void draw() = 0;

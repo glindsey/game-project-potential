@@ -3,15 +3,17 @@
 
 #include "common.h"
 
-#include <boost/noncopyable.hpp>
 #include <string>
 
 /// Base class implementing a renderer for the window background.
-class BGRenderer:
-  public boost::noncopyable
+class BGRenderer
 {
 public:
   BGRenderer();
+
+  BGRenderer(BGRenderer const&) = delete;
+  BGRenderer& operator=(BGRenderer const&) = delete;
+
   virtual ~BGRenderer();
 
   virtual void draw() = 0;
