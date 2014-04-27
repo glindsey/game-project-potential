@@ -83,7 +83,7 @@ bool StageBuilderLakes::Build()
 
         if (block.is_traversable())
         {
-          block.set_substance(BlockLayer::Fluid, Substance::get("freshwater"));
+          block.set_substance(BlockLayer::Fluid, "freshwater");
         }
         else
         {

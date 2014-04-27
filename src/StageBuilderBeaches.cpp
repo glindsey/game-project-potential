@@ -84,7 +84,7 @@ bool StageBuilderBeaches::Build()
 
         if (block.is_solid() && !block_above.is_solid())
         {
-          block.set_substance(BlockLayer::Solid, Substance::get("sand"));
+          block.set_substance(BlockLayer::Solid, "sand");
         }
       }
 

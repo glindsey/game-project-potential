@@ -22,6 +22,9 @@
 
 #include <noise/noise.h>
 
+/// Using declarations
+using RandDist = boost::random::uniform_int_distribution<>;
+
 enum class BuilderState
 {
   Begin,
@@ -66,10 +69,10 @@ struct StageBuilderRivers::Impl
   /// Carve out a channel.  In order to save time, we just carve out a box.
   /// The algorithm originally carved out a sphere, but I realized that's a
   /// ton of work for something that will only look marginally better.
-  void CarveChannel(sf::Vector3f center,
-                    float radius,
-                    int max_z_level,
-                    Substance const& substance)
+  void carve_channel(sf::Vector3f center,
+                     float radius,
+                     int max_z_level,
+                     std::string substance)
   {
     static StageCoord3 stage_size = stage.size();
 
@@ -95,8 +98,7 @@ struct StageBuilderRivers::Impl
 
             if (coord.z <= center.z)
             {
-              get_block.set_substance(BlockLayer::Fluid,
-                                      substance);
+              get_block.set_substance(BlockLayer::Fluid, substance);
             }
           }
         }
@@ -192,15 +194,14 @@ bool StageBuilderRivers::Build()
     {
       // Start the river.
       // Figure out which edge we will start at.
-      boost::random::uniform_int_distribution<> edge_selection(0, 3);
+      RandDist edge_selection(0, 3);
       int edge_choice = edge_selection(App::instance().twister());
       switch (edge_choice)
       {
       case 0:
       {
         // Start at the back.
-        boost::random::uniform_int_distribution<> x_selection(
-          0, stage_size.x - 1);
+        RandDist x_selection(0, stage_size.x - 1);
         int x = x_selection(App::instance().twister());
         impl->river_origin.x = x;
         impl->river_origin.y = 0;
@@ -210,8 +211,7 @@ bool StageBuilderRivers::Build()
       case 1:
       {
         // Start on the left.
-        boost::random::uniform_int_distribution<> y_selection(
-          0, stage_size.y - 1);
+        RandDist y_selection(0, stage_size.y - 1);
         int y = y_selection(App::instance().twister());
         impl->river_origin.x = 0;
         impl->river_origin.y = y;
@@ -220,8 +220,7 @@ bool StageBuilderRivers::Build()
       case 2:
       {
         // Start at the front.
-        boost::random::uniform_int_distribution<> x_selection(
-          0, stage_size.x - 1);
+        RandDist x_selection(0, stage_size.x - 1);
         int x = x_selection(App::instance().twister());
         impl->river_origin.x = x;
         impl->river_origin.y = stage_size.y - 1;
@@ -230,8 +229,7 @@ bool StageBuilderRivers::Build()
       case 3:
       {
         // Start at the right.
-        boost::random::uniform_int_distribution<> y_selection(
-          0, stage_size.y - 1);
+        RandDist y_selection(0, stage_size.y - 1);
         int y = y_selection(App::instance().twister());
         impl->river_origin.x = stage_size.x - 1;
         impl->river_origin.y = y;
@@ -240,7 +238,7 @@ bool StageBuilderRivers::Build()
       }
 
       // Pick a random seed point to get our river's Perlin noise from.
-      boost::random::uniform_int_distribution<> seed_selection(-1000, 1000);
+      RandDist seed_selection(-1000, 1000);
       impl->river_seed.x = seed_selection(App::instance().twister());
       impl->river_seed.y = seed_selection(App::instance().twister());
       impl->river_seed.z = seed_selection(App::instance().twister());
@@ -398,8 +396,7 @@ bool StageBuilderRivers::Build()
       sf::Vector3f float_coord = sf::Vector3f(coord.x, coord.y, coord.z);
 
       // TODO: size that changes
-      impl->CarveChannel(float_coord, 3.0f,
-                         max_height, Substance::get("freshwater"));
+      impl->carve_channel(float_coord, 3.0f, max_height, "freshwater");
     }
 
     impl->state = BuilderState::Done;

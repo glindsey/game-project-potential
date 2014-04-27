@@ -33,18 +33,18 @@ public:
   Inventory& get_inventory();
 
   /// Get the block's absolute coordinates.
-  StageCoord3 const& get_coords() const;
+  StageCoord3 get_coords() const;
 
   /// Get the substance a particular block layer is composed of.
-  const Substance& get_substance(BlockLayer _layer) const;
+  std::string get_substance(BlockLayer _layer) const;
 
   /// Set the substance a particular block layer is composed of.
-  void set_substance(BlockLayer layer, const Substance& substance);
+  void set_substance(BlockLayer layer, std::string substance);
 
   /// Set the substance a particular block layer is composed of, without
   /// invalidating neighboring block hidden face data.  This should speed
   /// up stage generation a LOT.
-  void set_substance_quickly(BlockLayer layer, const Substance& substance);
+  void set_substance_quickly(BlockLayer layer, std::string substance);
 
   /// Tells whether a substance is the same as another block's substance.
   bool is_same_substance_as(StageBlock& other, BlockLayer layer);
@@ -54,8 +54,8 @@ public:
 
   /// Gets hidden face info for a substance layer.
   /// If hidden face info is dirty, recalculates it before returning, but ONLY
-  /// if the Stage indicates it is done building.  Otherwise, we're just spinning
-  /// our wheels recalculating data that is bound to change over
+  /// if the Stage indicates it is done building.  Otherwise, we're just
+  /// spinning our wheels recalculating data that is bound to change over
   /// and over again.
   FaceBools get_hidden_faces(BlockLayer _layer);
 
@@ -86,7 +86,7 @@ private:
   StageCoord3 coord_;
 
   /// Materials comprising the block.
-  const Substance* substance_[(unsigned int) BlockLayer::Count];
+  std::string substance_[(unsigned int) BlockLayer::Count];
 
   /// Booleans indicating which sides are hidden from view.
   FaceBools hidden_faces_[(unsigned int) BlockLayer::Count];

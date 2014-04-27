@@ -38,7 +38,7 @@ public:
   ~Stage();
 
   /// Get the single Stage instance.  Create if one doesn't exist yet.
-  static Stage& getInstance();
+  static std::shared_ptr<Stage> get_instance();
 
   void accept(StageComponentVisitor& visitor);
 
@@ -117,5 +117,8 @@ private:
   std::unique_ptr<Impl> impl;
 
 };
+
+// Using declaration
+using StageShPtr = std::shared_ptr<Stage>;
 
 #endif // STAGE_H_

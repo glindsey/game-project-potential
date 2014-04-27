@@ -289,4 +289,10 @@ inline StageCoord3 operator&(const StageCoord3& left,
   return StageCoord3(left.x & right, left.y & right, left.z & right);
 }
 
+/// Return a random number between 0 and range-1.
+inline unsigned int randint(unsigned int range)
+{
+  return rand() % range;
+}
+
 #endif // MATHUTILS_H

@@ -35,35 +35,70 @@ struct Substance::Impl
 
   /// Data corresponding to material.
   SubstanceData data;
-
-  // == Static members ======================================================
-  static void checkSubstances();
-
-  static SubstanceCollection collection;
-  static Categories categories;
-  static Verbs verbs;
-
-  // Special pointers for very fast retrieval of important substances.
-  // Helps to greatly speed up StageBlock initialization.
-  static Substance* substance_nothing_;
-  static Substance* substance_air_;
 };
 
-SubstanceCollection Substance::Impl::collection;
-Categories Substance::Impl::categories;
-Verbs Substance::Impl::verbs;
-Substance* Substance::Impl::substance_nothing_;
-Substance* Substance::Impl::substance_air_;
-
-
-std::vector<Substance const*> Substance::layerSoil;
-std::vector<Substance const*> Substance::layerSedimentary;
-std::vector<Substance const*> Substance::layerMetamorphic;
-std::vector<Substance const*> Substance::layerIgneousIntrusive;
-std::vector<Substance const*> Substance::layerIgneousExtrusive;
-
-Substance::Substance(std::string _name)
+Substance::Substance()
   : impl(new Impl())
+{
+}
+
+Substance::~Substance()
+{
+}
+
+std::string Substance::get_string_property(std::string property) const
+{
+  return impl->properties.get(property, "");
+}
+
+int Substance::get_int_property(std::string property,
+                                int default_value = 0) const
+{
+  return impl->properties.get<int>(property, default_value);
+}
+
+bool Substance::get_bool_property(std::string property,
+                                  bool default_value = false) const
+{
+  return impl->properties.get<bool>(property, default_value);
+}
+
+SubstanceData Substance::get_data() const
+{
+  return impl->data;
+}
+
+Visibility Substance::get_visibility() const
+{
+  return impl->data.visibility;
+}
+
+void Substance::check_consistency(void)
+{
+  SubstanceData& data = impl->data;
+
+  if ((data.phase == Phase::Solid) || (data.phase == Phase::Liquid))
+  {
+    if (data.specificGravity == 0)
+    {
+      MINOR_ERROR("%s is solid or liquid but has no specific gravity defined",
+                  data.name.c_str());
+    }
+  }
+
+  if (data.specificGravity < 0)
+  {
+    MINOR_ERROR("%s has a negative specific gravity defined",
+                data.name.c_str());
+  }
+
+  if (data.hardness < 0)
+  {
+    MINOR_ERROR("%s has a negative hardness defined", data.name.c_str());
+  }
+}
+
+bool Substance::load(std::string _name)
 {
   bool is_opaque, is_visible;
 
@@ -79,6 +114,7 @@ Substance::Substance(std::string _name)
   {
     MINOR_ERROR("Can't parse \"%s\" descriptor file: %s",
                 impl->data.name.c_str(), e.what());
+    return false;
   }
 
   // Get substance visibility.
@@ -209,517 +245,12 @@ Substance::Substance(std::string _name)
     impl->data.colorRender = impl->data.color;
     impl->data.textured = false;
   }
+
+  return true;
 }
 
-Substance::~Substance()
-{
-}
-
-boost::property_tree::ptree const& Substance::getProperties()
+boost::property_tree::ptree const& Substance::get_properties() const
 {
   return impl->properties;
 }
 
-boost::property_tree::ptree const& Substance::getProperties() const
-{
-  return impl->properties;
-}
-
-SubstanceData const& Substance::getData()
-{
-  return impl->data;
-}
-
-SubstanceData const& Substance::getData() const
-{
-  return impl->data;
-}
-
-Visibility Substance::get_visibility()
-{
-  return impl->data.visibility;
-}
-
-Visibility Substance::get_visibility() const
-{
-  return impl->data.visibility;
-}
-
-/*
-sf::IntRect const& Substance::getTextureRect(void)
-{
-  return TAtlas->getRect(impl->data.texNumber);
-}
-
-sf::IntRect const& Substance::getTextureRect(void) const
-{
-  return TAtlas->getRect(impl->data.texNumber);
-}
-*/
-
-// === Static methods =========================================================
-void Substance::initialize()
-{
-  std::cout << "Scanning substances directory for descriptor files..."
-            << std::endl;
-
-  // Scan through the "./data/substances" directory to find all material descriptors.
-  MaterialPath materialPath = "data/substances";
-
-  if (boost::filesystem::exists(materialPath))
-  {
-    if (boost::filesystem::is_directory(materialPath))
-    {
-      NameVector names;
-
-      // Populate the vector with pathnames.
-      for (boost::filesystem::directory_iterator iter =
-             boost::filesystem::directory_iterator(materialPath);
-           iter != boost::filesystem::directory_iterator(); ++iter)
-      {
-        if ((boost::filesystem::is_regular_file(iter->path())) && (iter->path().filename().extension()
-            == ".xml"))
-        {
-          names.push_back(iter->path().filename().stem().generic_string());
-          if (Settings::debugShowVerboseInfo)
-          {
-            std::cout << "Parsing substance " << iter->path().filename().stem()
-                      << "." << std::endl;
-          }
-        }
-        else
-        {
-          if (Settings::debugShowVerboseInfo)
-          {
-            std::cout << iter->path().filename()
-                      << " is not a descriptor file, skipping." << std::endl;
-          }
-        }
-      }
-
-      if (names.size() != 0)
-      {
-        // Attempt to load data for each file seen.
-        for (NameIterator iter = names.begin(); iter != names.end(); ++iter)
-        {
-          std::string tag = *iter;
-          Impl::collection.insert(tag, new Substance(tag));
-        }
-      }
-      else
-      {
-        FATAL_ERROR("\"data/substances\" exists but has no descriptor files in it");
-      }
-    }
-    else
-    {
-      FATAL_ERROR("\"data/substances\" exists but is not a directory");
-    }
-  }
-  else
-  {
-    FATAL_ERROR("Substances directory \"data/substances\" does not exist");
-  }
-
-  // If "nothing" and/or "air" do not exist, create them.  These two Materials
-  // must exist for world generation to work properly.
-  if (Impl::collection.count("nothing") == 0)
-  {
-    std::string tag = "nothing";
-    Impl::collection.insert(tag, new Substance(tag));
-  }
-  Impl::substance_nothing_ = &(Impl::collection.at("nothing"));
-
-  if (Impl::collection.count("air") == 0)
-  {
-    std::string tag = "air";
-    Impl::collection.insert(tag, new Substance(tag));
-  }
-  Impl::substance_air_ = &(Impl::collection.at("air"));
-
-  Impl::checkSubstances();
-}
-
-const Substance& Substance::get(std::string name)
-{
-  if (Impl::collection.count(name) != 0)
-  {
-    return Impl::collection.at(name);
-  }
-  else
-  {
-    if (Settings::debugShowVerboseInfo)
-    {
-      std::cout << "Unable to find substance \"" << name
-                << "\", returning nothing" << std::endl;
-    }
-    return Impl::collection.at("nothing");
-  }
-}
-
-const Substance& Substance::getNothing()
-{
-  return *(Impl::substance_nothing_);
-}
-
-const Substance& Substance::getAir()
-{
-  return *(Impl::substance_air_);
-}
-
-bool Substance::isSubstance(std::string substance, std::string classtype)
-{
-  if (Impl::collection.count(substance) != 0)
-  {
-    return (Impl::categories[classtype].count(substance) != 0);
-  }
-  else
-  {
-    return false;
-  }
-}
-
-void Substance::Impl::checkSubstances(void)
-{
-  std::cout << "*** Parsing substance descriptors for consistency..."
-            << std::endl;
-  int matCount = 0;
-
-  for (SubstanceCollection::iterator substance_iterator = collection.begin();
-       substance_iterator != collection.end(); ++substance_iterator)
-  {
-    ++matCount;
-
-    std::string substance_name = substance_iterator->first;
-    Substance& substance = *(substance_iterator->second);
-
-    if ((substance.getData().phase == Phase::Solid) || (substance.getData().phase
-        == Phase::Liquid))
-    {
-      if (substance.getData().specificGravity == 0)
-      {
-        MINOR_ERROR("%s is solid or liquid but has no specific gravity defined",
-                    substance_name.c_str());
-      }
-    }
-
-    if (substance.getData().specificGravity < 0)
-    {
-      MINOR_ERROR("%s has a negative specific gravity defined", substance_name.c_str());
-    }
-
-    if (substance.getData().hardness < 0)
-    {
-      MINOR_ERROR("%s has a negative hardness defined", substance_name.c_str());
-    }
-
-    // Use attributes to populate substance category information.
-    try
-    {
-      std::string category_name;
-      for (boost::property_tree::ptree::value_type & v : substance.impl->properties.get_child(
-             "attributes"))
-      {
-        category_name = v.first;
-        Impl::categories[category_name].insert(substance_name);
-      }
-    }
-    catch (const boost::property_tree::ptree_bad_path& p)
-    {
-      // If the subtree didn't exist, we don't care.
-    }
-
-    // Automatic class setting for certain implied classes.
-    // TODO: This should be made configurable in XML.
-    if (categories["grass"].count(substance_name) != 0)
-    {
-      categories["plant"].insert(substance_name);
-    }
-    if (categories["metal"].count(substance_name) != 0)
-    {
-      categories["conductor"].insert(substance_name);
-    }
-    if (categories["sand"].count(substance_name) != 0)
-    {
-      categories["granular"].insert(substance_name);
-    }
-    if (categories["soil"].count(substance_name) != 0)
-    {
-      categories["granular"].insert(substance_name);
-    }
-    if (categories["wood"].count(substance_name) != 0)
-    {
-      categories["plant"].insert(substance_name);
-      categories["fuel"].insert(substance_name);
-    }
-
-    // Consistency checks for substance classes: mutually exclusive classes
-    if ((categories["flat"].count(substance_name) != 0) && (categories["granular"].count(
-          substance_name.c_str())
-        != 0))
-    {
-      MINOR_ERROR("%s is defined as both flat and granular; which are incompatible",
-                  substance_name.c_str());
-    }
-
-    // Consistency checks for substance classes: solids.
-    // TODO: This should be made configurable in XML.
-    if (substance.getData().phase != Phase::Solid)
-    {
-      if (categories["flux"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as a flux, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["gem"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as a gem, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["rock"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as a rock, but is not a solid",
-                    substance_name.c_str());
-      }
-      if ((categories["metal"].count(substance_name) != 0) &&
-          (substance.getData().phase != Phase::Liquid))
-      {
-        MINOR_ERROR("%s is defined as a metal, but is not a solid or liquid",
-                    substance_name.c_str());
-      }
-      if (categories["sand"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as a type of sand, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["soil"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as a type of soil, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["wood"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as a type of wood, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["plant"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as a type of plant matter, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["granular"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as granular, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["flat"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is defined as flat, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (substance.getData().hardness != 0)
-      {
-        MINOR_ERROR("%s has a hardness value defined, but is not a solid",
-                    substance_name.c_str());
-      }
-      if (categories["polished"].count(substance_name) != 0)
-      {
-        MINOR_ERROR("%s is marked as polishable, but is not a solid",
-                    substance_name.c_str());
-      }
-    }
-    else // if the substance IS a solid...
-    {
-
-    }
-
-    std::string ore_name = substance.impl->properties.get("attributes.ore", "");
-    if ((ore_name != "") && (collection.count(ore_name) == 0))
-    {
-      MINOR_ERROR("%s is defined as an ore of missing substance %s",
-                  substance_name.c_str(), ore_name.c_str());
-    }
-    ore_name = substance.impl->properties.get("attributes.secondaryore", "");
-    if ((ore_name != "") && (collection.count(ore_name) == 0))
-    {
-      MINOR_ERROR("%s is defined as a secondary ore of missing substance %s",
-                  substance_name.c_str(), ore_name.c_str());
-    }
-
-    // Store verb results.
-    // TODO: Probably better that this info is stored in a separate VerbDictionary or something.
-    std::string verb_name;
-    try
-    {
-      for (boost::property_tree::ptree::value_type & v : substance.impl->properties.get_child(
-             "actions"))
-      {
-        verb_name = v.first;
-        verbs[verb_name].insert(substance_name);
-      }
-    }
-    catch (const boost::property_tree::ptree_bad_path& p)
-    {
-      // If the subtree didn't exist, we don't care.
-    }
-
-    // Check terrain inclusion layers.
-    std::string layer_name = substance.impl->properties.get("terrain.layer",
-                             "");
-    if (layer_name != "")
-    {
-      if (layer_name == "igneous-extrusive")
-      {
-        layerIgneousExtrusive.push_back(&substance);
-      }
-      else if (layer_name == "igneous-intrusive")
-      {
-        layerIgneousIntrusive.push_back(&substance);
-      }
-      else if (layer_name == "sedimentary")
-      {
-        layerSedimentary.push_back(&substance);
-      }
-      else if (layer_name == "metamorphic")
-      {
-        layerMetamorphic.push_back(&substance);
-      }
-      else if (layer_name == "soil")
-      {
-        layerSoil.push_back(&substance);
-      }
-      else if (layer_name == "all")
-      {
-        layerIgneousExtrusive.push_back(&substance);
-        layerIgneousIntrusive.push_back(&substance);
-        layerSedimentary.push_back(&substance);
-        layerMetamorphic.push_back(&substance);
-      }
-      else
-      {
-        MINOR_ERROR("%s has the unknown layer designation \"%s\"",
-                    substance_name.c_str(), layer_name.c_str());
-      }
-    } // end if (name != "")
-
-    // Parse "large deposit" designations.
-    try
-    {
-      for (boost::property_tree::ptree::value_type & v : substance.impl->properties.get_child(
-             "terrain.largedeposit"))
-      {
-        std::string deposit_name = v.first;
-        if (collection.count(deposit_name) == 0)
-        {
-          MINOR_ERROR("%s has the missing largedeposit substance \"%s\"",
-                      substance_name.c_str(), deposit_name.c_str());
-        }
-        else
-        {
-          collection.at(deposit_name).largeDeposits.push_back(&substance);
-        }
-      }
-    }
-    catch (const boost::property_tree::ptree_bad_path& p)
-    {
-      // If the subtree didn't exist, we don't care.
-    }
-
-    // Parse "small deposit" designations.
-    try
-    {
-      for (boost::property_tree::ptree::value_type & v : substance.impl->properties.get_child(
-             "terrain.smalldeposit"))
-      {
-        std::string deposit_name = v.first;
-        if (collection.count(deposit_name) == 0)
-        {
-          MINOR_ERROR("%s has the missing smalldeposit substance \"%s\"",
-                      substance_name.c_str(), deposit_name.c_str());
-        }
-        else
-        {
-          collection.at(deposit_name).smallDeposits.push_back(&substance);
-        }
-      }
-    }
-    catch (const boost::property_tree::ptree_bad_path& p)
-    {
-      // If the subtree didn't exist, we don't care.
-    }
-
-    // Parse "vein" designations.
-    try
-    {
-      for (boost::property_tree::ptree::value_type & v : substance.impl->properties.get_child(
-             "terrain.vein"))
-      {
-        std::string deposit_name = v.first;
-        if (collection.count(deposit_name) == 0)
-        {
-          MINOR_ERROR("%s has the missing vein substance \"%s\"",
-                      substance_name.c_str(), deposit_name.c_str());
-        }
-        else
-        {
-          collection.at(deposit_name).veinDeposits.push_back(&substance);
-        }
-      }
-    }
-    catch (const boost::property_tree::ptree_bad_path& p)
-    {
-      // If the subtree didn't exist, we don't care.
-    }
-
-    // Parse "gangue" designations.
-    try
-    {
-      for (boost::property_tree::ptree::value_type & v : substance.impl->properties.get_child(
-             "terrain.gangue"))
-      {
-        std::string deposit_name = v.first;
-        if (collection.count(deposit_name) == 0)
-        {
-          MINOR_ERROR("%s has the missing gangue substance \"%s\"",
-                      substance_name.c_str(), deposit_name.c_str());
-        }
-        else
-        {
-          collection.at(deposit_name).gangueDeposits.push_back(&substance);
-        }
-      }
-    }
-    catch (const boost::property_tree::ptree_bad_path& p)
-    {
-      // If the subtree didn't exist, we don't care.
-    }
-
-    // Parse "single" designations.
-    try
-    {
-      for (boost::property_tree::ptree::value_type & v : substance.impl->properties.get_child(
-             "terrain.single"))
-      {
-        std::string deposit_name = v.first;
-        if (collection.count(deposit_name) == 0)
-        {
-          MINOR_ERROR("%s has the missing single substance \"%s\"",
-                      substance_name.c_str(), deposit_name.c_str());
-        }
-        else
-        {
-          collection.at(deposit_name).singleDeposits.push_back(&substance);
-        }
-      }
-    }
-    catch (const boost::property_tree::ptree_bad_path& p)
-    {
-      // If the subtree didn't exist, we don't care.
-    }
-  }
-  std::cout << "*** Done parsing descriptors:  " << std::endl;
-  std::cout << "***   " << collection.size() << " substances parsed"
-            << std::endl;
-  std::cout << "***   " << categories.size()
-            << " distinct substance attributes counted" << std::endl;
-}

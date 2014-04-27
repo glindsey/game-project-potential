@@ -18,15 +18,15 @@
 #include "Stage.h"
 #include "Settings.h"
 #include "StageBlock.h"
-#include "Substance.h"
+#include "SubstanceLibrary.h"
 
 #include <noise/noise.h>
 
 /// Typedef for a random distribution.
-typedef boost::random::uniform_int_distribution<> RandomDistribution;
+typedef boost::random::uniform_int_distribution<> RandDist;
 
 /// Typedef for a scoped pointer to a random distribution.
-typedef std::unique_ptr<RandomDistribution> RDPointer;
+typedef std::unique_ptr<RandDist> RDPointer;
 
 enum class BuilderState
 {
@@ -67,7 +67,7 @@ struct StageBuilderTerrain::Impl
   Stage& stage_;
 
   /// Vector used to store strata info.
-  std::vector<const Substance*> strata_;
+  std::vector<std::string> strata_;
 
   /// Seed used for the RNG.
   int seed_;
@@ -114,18 +114,9 @@ struct StageBuilderTerrain::Impl
   /// Returns a random number within a given distribution.
   int get_random(RDPointer& distribution)
   {
-    RandomDistribution& dist = *(distribution.get());
+    RandDist& dist = *(distribution.get());
     return dist(App::instance().twister());
   }
-
-  /// Random distribution for choosing sedimentary types.
-  std::unique_ptr<RandomDistribution> sedimentary_distribution_;
-
-  /// Random distribution for choosing metamorphic types.
-  std::unique_ptr<RandomDistribution> metamorphic_distribution_;
-
-  /// Random distribution for choosing igneous types.
-  std::unique_ptr<RandomDistribution> igneous_distribution_;
 
   /// The column we are currently "painting".
   sf::Vector2i column_;
@@ -231,18 +222,10 @@ bool StageBuilderTerrain::Build()
     impl->soil_level_ = 4;
     impl->sedimentary_level_ = ((float) impl->stage_height_ * 0.4f);
     impl->metamorphic_level_ = ((float) impl->stage_height_ * 0.7f);
-    impl->soil_type_count_ = Substance::layerSoil.size();
-    impl->sedimentary_type_count_ = Substance::layerSedimentary.size();
-    impl->metamorphic_type_count_ = Substance::layerMetamorphic.size();
-    impl->igneous_type_count_ = Substance::layerIgneousIntrusive.size();
-
-    // Reset random distributions.
-    impl->sedimentary_distribution_.reset(
-      new RandomDistribution(0, impl->sedimentary_type_count_ - 1));
-    impl->metamorphic_distribution_.reset(
-      new RandomDistribution(0, impl->metamorphic_type_count_ - 1));
-    impl->igneous_distribution_.reset(
-      new RandomDistribution(0, impl->igneous_type_count_ - 1));
+    impl->soil_type_count_ = SL->get_layer_substance_count("soil");
+    impl->sedimentary_type_count_ = SL->get_layer_substance_count("sedimentary");
+    impl->metamorphic_type_count_ = SL->get_layer_substance_count("metamorphic");
+    impl->igneous_type_count_ = SL->get_layer_substance_count("igneous-intrusive");
 
     // Handle the case if any of the layer vectors are empty!
     if (impl->sedimentary_type_count_ == 0)
@@ -260,27 +243,24 @@ bool StageBuilderTerrain::Build()
 
     for (int z = 0; z < stage_size.z; z += 2)
     {
-      const Substance* substance;
+      std::string substance;
 
       if (z <= impl->soil_level_)
       {
         // TODO: Choose soil layer based on set conditions.
-        substance = &(Substance::get("loam"));
+        substance = "loam";
       }
       else if (z <= impl->sedimentary_level_)
       {
-        substance = Substance::layerSedimentary[impl->get_random(
-            impl->sedimentary_distribution_)];
+        substance = SL->get_layer_random_substance("sedimentary");
       }
       else if (z <= impl->metamorphic_level_)
       {
-        substance = Substance::layerMetamorphic[impl->get_random(
-            impl->metamorphic_distribution_)];
+        substance = SL->get_layer_random_substance("metamorphic");
       }
       else
       {
-        substance = Substance::layerIgneousIntrusive[impl->get_random(
-                      impl->igneous_distribution_)];
+        substance = SL->get_layer_random_substance("igneous-intrusive");
       }
 
       impl->strata_[z] = substance;
@@ -301,18 +281,18 @@ bool StageBuilderTerrain::Build()
       {
         int stratum = 0;
         for (int z = impl->stage_.get_column_initial_height(impl->column_.x,
-                                                         impl->column_.y) - 1;
+                                                            impl->column_.y) - 1;
              z >= 0; --z)
         {
           StageBlock& block = impl->stage_.get_block(impl->column_.x,
-                                                    impl->column_.y,
-                                                    z);
+                                                     impl->column_.y,
+                                                     z);
 
-          const Substance* substance = impl->strata_[stratum];
+          std::string substance = impl->strata_[stratum];
 
           // This can be done "quickly" (no adjoining face invalidation)
           // since the stage is not yet designated "ready to render".
-          block.set_substance_quickly(BlockLayer::Solid, *substance);
+          block.set_substance_quickly(BlockLayer::Solid, substance);
           ++stratum;
         }
 

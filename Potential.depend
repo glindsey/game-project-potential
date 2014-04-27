@@ -8820,7 +8820,7 @@
 	"common_includes.h"
 	"common_typedefs.h"
 
-1356889251 c:\dropbox\projects\libraries\glm\glm\glm.hpp
+1356885651 c:\dropbox\projects\libraries\glm\glm\glm.hpp
 	"core/_fixes.hpp"
 	<cmath>
 	<climits>
@@ -8842,24 +8842,24 @@
 	"./core/func_noise.hpp"
 	"./core/_swizzle.hpp"
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\_fixes.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\_fixes.hpp
 	<cmath>
 
-1357577075 c:\dropbox\projects\libraries\glm\glm\core\setup.hpp
+1357573475 c:\dropbox\projects\libraries\glm\glm\core\setup.hpp
 	<immintrin.h>
 	<immintrin.h>
 	<smmintrin.h>
 	<pmmintrin.h>
 	<emmintrin.h>
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\_detail.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\_detail.hpp
 	"setup.hpp"
 	<cassert>
 	<cstdint>
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\_vectorize.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\_vectorize.hpp
 
-1356889259 c:\dropbox\projects\libraries\glm\glm\core\type.hpp
+1356885659 c:\dropbox\projects\libraries\glm\glm\core\type.hpp
 	"type_half.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -8878,28 +8878,28 @@
 	"type_mat4x3.hpp"
 	"type_mat4x4.hpp"
 
-1356889259 c:\dropbox\projects\libraries\glm\glm\core\type_half.hpp
+1356885659 c:\dropbox\projects\libraries\glm\glm\core\type_half.hpp
 	<cstdlib>
 	"type_half.inl"
 
-1356889259 c:\dropbox\projects\libraries\glm\glm\core\type_half.inl
+1356885659 c:\dropbox\projects\libraries\glm\glm\core\type_half.inl
 	"_detail.hpp"
 
-1356889259 c:\dropbox\projects\libraries\glm\glm\core\type_float.hpp
+1356885659 c:\dropbox\projects\libraries\glm\glm\core\type_float.hpp
 	"type_half.hpp"
 	"setup.hpp"
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_int.hpp
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_int.hpp
 	"setup.hpp"
 	"_detail.hpp"
 
-1356889259 c:\dropbox\projects\libraries\glm\glm\core\type_gentype.hpp
+1356885659 c:\dropbox\projects\libraries\glm\glm\core\type_gentype.hpp
 	"type_size.hpp"
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_size.hpp
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_size.hpp
 	<cstdlib>
 
-1356889262 c:\dropbox\projects\libraries\glm\glm\core\type_vec1.hpp
+1356885662 c:\dropbox\projects\libraries\glm\glm\core\type_vec1.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -8907,17 +8907,17 @@
 	"_swizzle.hpp"
 	"type_vec1.inl"
 
-1356889262 c:\dropbox\projects\libraries\glm\glm\core\type_vec.hpp
+1356885662 c:\dropbox\projects\libraries\glm\glm\core\type_vec.hpp
 	"type_gentype.hpp"
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\_swizzle.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\_swizzle.hpp
 	"_swizzle_func.hpp"
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\_swizzle_func.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\_swizzle_func.hpp
 
-1356889262 c:\dropbox\projects\libraries\glm\glm\core\type_vec1.inl
+1356885662 c:\dropbox\projects\libraries\glm\glm\core\type_vec1.inl
 
-1356889262 c:\dropbox\projects\libraries\glm\glm\core\type_vec2.hpp
+1356885662 c:\dropbox\projects\libraries\glm\glm\core\type_vec2.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -8925,9 +8925,9 @@
 	"_swizzle.hpp"
 	"type_vec2.inl"
 
-1356889262 c:\dropbox\projects\libraries\glm\glm\core\type_vec2.inl
+1356885662 c:\dropbox\projects\libraries\glm\glm\core\type_vec2.inl
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\type_vec3.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\type_vec3.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -8935,9 +8935,9 @@
 	"_swizzle.hpp"
 	"type_vec3.inl"
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\type_vec3.inl
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\type_vec3.inl
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\type_vec4.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\type_vec4.hpp
 	"type_vec.hpp"
 	"type_float.hpp"
 	"type_int.hpp"
@@ -8945,125 +8945,125 @@
 	"_swizzle.hpp"
 	"type_vec4.inl"
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\core\type_vec4.inl
+1356885663 c:\dropbox\projects\libraries\glm\glm\core\type_vec4.inl
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x2.hpp
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x2.hpp
 	"type_mat.hpp"
 	"type_mat2x2.inl"
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_mat.hpp
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_mat.hpp
 	"type_gentype.hpp"
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x2.inl
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x2.inl
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x3.hpp
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x3.hpp
 	"type_mat.hpp"
 	"type_mat2x3.inl"
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x3.inl
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x3.inl
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x4.hpp
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x4.hpp
 	"type_mat.hpp"
 	"type_mat2x4.inl"
 
-1356889260 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x4.inl
+1356885660 c:\dropbox\projects\libraries\glm\glm\core\type_mat2x4.inl
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x2.hpp
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x2.hpp
 	"type_mat.hpp"
 	"type_mat3x2.inl"
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x2.inl
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x2.inl
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x3.hpp
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x3.hpp
 	"type_mat.hpp"
 	"type_mat3x3.inl"
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x3.inl
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x3.inl
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x4.hpp
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x4.hpp
 	"type_mat.hpp"
 	"type_mat3x4.inl"
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x4.inl
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat3x4.inl
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x2.hpp
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x2.hpp
 	"type_mat.hpp"
 	"type_mat4x2.inl"
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x2.inl
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x2.inl
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x3.hpp
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x3.hpp
 	"type_mat.hpp"
 	"type_mat4x3.inl"
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x3.inl
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x3.inl
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x4.hpp
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x4.hpp
 	"type_mat.hpp"
 	"type_mat4x4.inl"
 
-1356889261 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x4.inl
+1356885661 c:\dropbox\projects\libraries\glm\glm\core\type_mat4x4.inl
 
-1356889255 c:\dropbox\projects\libraries\glm\glm\core\func_trigonometric.hpp
+1356885655 c:\dropbox\projects\libraries\glm\glm\core\func_trigonometric.hpp
 	"func_trigonometric.inl"
 
-1356889255 c:\dropbox\projects\libraries\glm\glm\core\func_trigonometric.inl
+1356885655 c:\dropbox\projects\libraries\glm\glm\core\func_trigonometric.inl
 
-1356889251 c:\dropbox\projects\libraries\glm\glm\core\func_exponential.hpp
+1356885651 c:\dropbox\projects\libraries\glm\glm\core\func_exponential.hpp
 	"func_exponential.inl"
 
-1356889251 c:\dropbox\projects\libraries\glm\glm\core\func_exponential.inl
+1356885651 c:\dropbox\projects\libraries\glm\glm\core\func_exponential.inl
 
-1356889251 c:\dropbox\projects\libraries\glm\glm\core\func_common.hpp
+1356885651 c:\dropbox\projects\libraries\glm\glm\core\func_common.hpp
 	"_fixes.hpp"
 	"func_common.inl"
 
-1356889251 c:\dropbox\projects\libraries\glm\glm\core\func_common.inl
+1356885651 c:\dropbox\projects\libraries\glm\glm\core\func_common.inl
 
-1356889254 c:\dropbox\projects\libraries\glm\glm\core\func_packing.hpp
+1356885654 c:\dropbox\projects\libraries\glm\glm\core\func_packing.hpp
 	"func_packing.inl"
 
-1356889255 c:\dropbox\projects\libraries\glm\glm\core\func_packing.inl
+1356885655 c:\dropbox\projects\libraries\glm\glm\core\func_packing.inl
 
-1356889252 c:\dropbox\projects\libraries\glm\glm\core\func_geometric.hpp
+1356885652 c:\dropbox\projects\libraries\glm\glm\core\func_geometric.hpp
 	"func_geometric.inl"
 
-1356889252 c:\dropbox\projects\libraries\glm\glm\core\func_geometric.inl
+1356885652 c:\dropbox\projects\libraries\glm\glm\core\func_geometric.inl
 
-1356889253 c:\dropbox\projects\libraries\glm\glm\core\func_matrix.hpp
+1356885653 c:\dropbox\projects\libraries\glm\glm\core\func_matrix.hpp
 	"func_matrix.inl"
 
-1356889254 c:\dropbox\projects\libraries\glm\glm\core\func_matrix.inl
+1356885654 c:\dropbox\projects\libraries\glm\glm\core\func_matrix.inl
 
-1356889255 c:\dropbox\projects\libraries\glm\glm\core\func_vector_relational.hpp
+1356885655 c:\dropbox\projects\libraries\glm\glm\core\func_vector_relational.hpp
 	"_detail.hpp"
 	"func_vector_relational.inl"
 
-1356889255 c:\dropbox\projects\libraries\glm\glm\core\func_vector_relational.inl
+1356885655 c:\dropbox\projects\libraries\glm\glm\core\func_vector_relational.inl
 
-1356889252 c:\dropbox\projects\libraries\glm\glm\core\func_integer.hpp
+1356885652 c:\dropbox\projects\libraries\glm\glm\core\func_integer.hpp
 	"func_integer.inl"
 
-1356889253 c:\dropbox\projects\libraries\glm\glm\core\func_integer.inl
+1356885653 c:\dropbox\projects\libraries\glm\glm\core\func_integer.inl
 	<intrin.h>
 
-1356889254 c:\dropbox\projects\libraries\glm\glm\core\func_noise.hpp
+1356885654 c:\dropbox\projects\libraries\glm\glm\core\func_noise.hpp
 	"func_noise.inl"
 
-1356889254 c:\dropbox\projects\libraries\glm\glm\core\func_noise.inl
+1356885654 c:\dropbox\projects\libraries\glm\glm\core\func_noise.inl
 
-1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\matrix_transform.hpp
+1356885664 c:\dropbox\projects\libraries\glm\glm\gtc\matrix_transform.hpp
 	"../glm.hpp"
 	"matrix_transform.inl"
 
-1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\matrix_transform.inl
+1356885664 c:\dropbox\projects\libraries\glm\glm\gtc\matrix_transform.inl
 
-1356889274 c:\dropbox\projects\libraries\glm\glm\gtx\transform.hpp
+1356885674 c:\dropbox\projects\libraries\glm\glm\gtx\transform.hpp
 	"../glm.hpp"
 	"../gtc/matrix_transform.hpp"
 	"transform.inl"
 
-1356889274 c:\dropbox\projects\libraries\glm\glm\gtx\transform.inl
+1356885674 c:\dropbox\projects\libraries\glm\glm\gtx\transform.inl
 
 1356888996 c:\dropbox\projects\potential\include\loadshaders.h
 
@@ -9956,7 +9956,7 @@
 1362775498 c:\dropbox\projects\potential\include\cursorvertexrenderdata.h
 	<glm/glm.hpp>
 
-1376405692 source:c:\dropbox\projects\game-project-potential\src\application.cpp
+1376409292 source:c:\dropbox\projects\game-project-potential\src\application.cpp
 	"Application.h"
 	<iostream>
 	<cstdio>
@@ -9968,7 +9968,7 @@
 	"FPSControl.h"
 	"Settings.h"
 
-1376505616 c:\dropbox\projects\game-project-potential\include\application.h
+1376509216 c:\dropbox\projects\game-project-potential\include\application.h
 	<boost/random/mersenne_twister.hpp>
 	<memory>
 	<boost/thread/mutex.hpp>
@@ -9978,27 +9978,27 @@
 	"AppStateManager.h"
 	"FontCollection.h"
 
-1375458968 c:\dropbox\projects\game-project-potential\include\common.h
+1375462568 c:\dropbox\projects\game-project-potential\include\common.h
 	"common_defines.h"
 	"common_enums.h"
 	"common_typedefs.h"
 
-1375458966 c:\dropbox\projects\game-project-potential\include\common_defines.h
+1375392563 c:\dropbox\projects\game-project-potential\include\common_defines.h
 
-1376405638 c:\dropbox\projects\game-project-potential\include\common_enums.h
+1376409238 c:\dropbox\projects\game-project-potential\include\common_enums.h
 
-1376405648 c:\dropbox\projects\game-project-potential\include\common_typedefs.h
+1376409248 c:\dropbox\projects\game-project-potential\include\common_typedefs.h
 
-1376405224 c:\dropbox\projects\game-project-potential\include\eventlistener.h
+1376408824 c:\dropbox\projects\game-project-potential\include\eventlistener.h
 	<SFML/Graphics.hpp>
 
-1376505630 c:\dropbox\projects\game-project-potential\include\appstatemanager.h
+1376509230 c:\dropbox\projects\game-project-potential\include\appstatemanager.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 	"AppState.h"
 
-1375468913 c:\dropbox\projects\game-project-potential\include\common_includes.h
+1375472513 c:\dropbox\projects\game-project-potential\include\common_includes.h
 	<cmath>
 	<cstddef>
 	<cstdint>
@@ -10030,31 +10030,31 @@
 	<boost/unordered_set.hpp>
 	<SFML/Graphics.hpp>
 
-1376505643 c:\dropbox\projects\game-project-potential\include\appstate.h
+1376509243 c:\dropbox\projects\game-project-potential\include\appstate.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 	"EventListener.h"
 
-1376505744 c:\dropbox\projects\game-project-potential\include\fontcollection.h
+1376509344 c:\dropbox\projects\game-project-potential\include\fontcollection.h
 	<boost/shared_ptr.hpp>
 	<memory>
 	<string>
 
-1376060375 c:\dropbox\projects\game-project-potential\include\errormacros.h
+1376063975 c:\dropbox\projects\game-project-potential\include\errormacros.h
 	"Settings.h"
 
-1376405421 c:\dropbox\projects\game-project-potential\include\settings.h
+1376409021 c:\dropbox\projects\game-project-potential\include\settings.h
 	"common.h"
 
-1376405231 c:\dropbox\projects\game-project-potential\include\fpscontrol.h
+1376408831 c:\dropbox\projects\game-project-potential\include\fpscontrol.h
 	<boost/chrono.hpp>
 	"common.h"
 
-1376405661 source:c:\dropbox\projects\game-project-potential\src\appstate.cpp
+1376409261 source:c:\dropbox\projects\game-project-potential\src\appstate.cpp
 	"AppState.h"
 
-1376405671 source:c:\dropbox\projects\game-project-potential\src\appstategame.cpp
+1381786735 source:c:\dropbox\projects\game-project-potential\src\appstategame.cpp
 	<iostream>
 	"AppStateGame.h"
 	"AppStateManager.h"
@@ -10062,75 +10062,78 @@
 	"GUI.h"
 	"GUIRenderer3D.h"
 	"MenuArea.h"
+	"PropPrototype.h"
 	"Settings.h"
 	"Stage.h"
 	"StageRenderer3D.h"
 	"StatusArea.h"
+	"SubstanceLibrary.h"
+	"Verb.h"
 
-1376405138 c:\dropbox\projects\game-project-potential\include\appstategame.h
+1381786534 c:\dropbox\projects\game-project-potential\include\appstategame.h
 	<memory>
 	"common.h"
 	"AppState.h"
 
-1376405274 c:\dropbox\projects\game-project-potential\include\gui.h
+1376408874 c:\dropbox\projects\game-project-potential\include\gui.h
 	"common.h"
 	<memory>
 	<string>
 	"EventListener.h"
 	"GUIParentElement.h"
 
-1376405314 c:\dropbox\projects\game-project-potential\include\guiparentelement.h
+1376408914 c:\dropbox\projects\game-project-potential\include\guiparentelement.h
 	<boost/ptr_container/ptr_map.hpp>
 	"common.h"
 	"GUIElement.h"
 
-1376405283 c:\dropbox\projects\game-project-potential\include\guielement.h
+1376408883 c:\dropbox\projects\game-project-potential\include\guielement.h
 	<memory>
 	<glm/glm.hpp>
 	<string>
 	"common.h"
 	"EventListener.h"
 
-1376405335 c:\dropbox\projects\game-project-potential\include\guirenderer3d.h
+1376408935 c:\dropbox\projects\game-project-potential\include\guirenderer3d.h
 	<memory>
 	"common.h"
 	"GUIRenderer.h"
 
-1376505813 c:\dropbox\projects\game-project-potential\include\guirenderer.h
+1376509413 c:\dropbox\projects\game-project-potential\include\guirenderer.h
 	"common.h"
 	<string>
 	"EventListener.h"
 	"GUIElementVisitor.h"
 
-1376405289 c:\dropbox\projects\game-project-potential\include\guielementvisitor.h
+1376408889 c:\dropbox\projects\game-project-potential\include\guielementvisitor.h
 	"common.h"
 
-1376405385 c:\dropbox\projects\game-project-potential\include\menuarea.h
+1376408985 c:\dropbox\projects\game-project-potential\include\menuarea.h
 	<string>
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 	"GUIParentElement.h"
 
-1376405436 c:\dropbox\projects\game-project-potential\include\stage.h
+1381774416 c:\dropbox\projects\game-project-potential\include\stage.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 	"EventListener.h"
 	"StageComponent.h"
 
-1376405539 c:\dropbox\projects\game-project-potential\include\stagecomponent.h
+1376409139 c:\dropbox\projects\game-project-potential\include\stagecomponent.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376405563 c:\dropbox\projects\game-project-potential\include\stagerenderer3d.h
+1376409163 c:\dropbox\projects\game-project-potential\include\stagerenderer3d.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 	"StageRenderer.h"
 
-1376505980 c:\dropbox\projects\game-project-potential\include\stagerenderer.h
+1376509580 c:\dropbox\projects\game-project-potential\include\stagerenderer.h
 	<string>
 	"common_enums.h"
 	"common_includes.h"
@@ -10138,71 +10141,67 @@
 	"EventListener.h"
 	"StageComponentVisitor.h"
 
-1376405545 c:\dropbox\projects\game-project-potential\include\stagecomponentvisitor.h
+1376409145 c:\dropbox\projects\game-project-potential\include\stagecomponentvisitor.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376405572 c:\dropbox\projects\game-project-potential\include\statusarea.h
+1376409172 c:\dropbox\projects\game-project-potential\include\statusarea.h
 	<string>
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 	"GUIParentElement.h"
 
-1376405677 source:c:\dropbox\projects\game-project-potential\src\appstatemanager.cpp
+1376409277 source:c:\dropbox\projects\game-project-potential\src\appstatemanager.cpp
 	<iostream>
 	"AppStateManager.h"
 	"AppStateSplash.h"
 	"AppStateGame.h"
 
-1376405154 c:\dropbox\projects\game-project-potential\include\appstatesplash.h
+1376408754 c:\dropbox\projects\game-project-potential\include\appstatesplash.h
 	<ctime>
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 	"AppState.h"
 
-1376405684 source:c:\dropbox\projects\game-project-potential\src\appstatesplash.cpp
+1381786620 source:c:\dropbox\projects\game-project-potential\src\appstatesplash.cpp
 	<ctime>
 	<iostream>
 	"AppStateSplash.h"
 	"AppStateManager.h"
 	"Application.h"
-	"Substance.h"
-	"PropPrototype.h"
-	"Verb.h"
 
-1376506008 c:\dropbox\projects\game-project-potential\include\substance.h
+1381803800 c:\dropbox\projects\game-project-potential\include\substance.h
 	<memory>
 	<string>
 	<vector>
 	<boost/property_tree/ptree.hpp>
-	<memory>
 	<glm/glm.hpp>
 	"common.h"
 	"SubstanceData.h"
 
-1376405594 c:\dropbox\projects\game-project-potential\include\substancedata.h
+1376409194 c:\dropbox\projects\game-project-potential\include\substancedata.h
 	<string>
 	"common.h"
 
-1376405409 c:\dropbox\projects\game-project-potential\include\propprototype.h
+1376409009 c:\dropbox\projects\game-project-potential\include\propprototype.h
 	<string>
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376405620 c:\dropbox\projects\game-project-potential\include\verb.h
+1376409220 c:\dropbox\projects\game-project-potential\include\verb.h
 	<string>
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376406524 source:c:\dropbox\projects\game-project-potential\src\blocktopcorners.cpp
+1376410124 source:c:\dropbox\projects\game-project-potential\src\blocktopcorners.cpp
 	"BlockTopCorners.h"
 
-1376405201 c:\dropbox\projects\game-project-potential\include\blocktopcorners.h
+1376408801 c:\dropbox\projects\game-project-potential\include\blocktopcorners.h
 	"common_includes.h"
 	"common_typedefs.h"
 
@@ -10220,10 +10219,10 @@
 1375388963 c:\dropbox\projects\game-project-potential\include\chunkvertexrenderdata.h
 	<glm/glm.hpp>
 
-1376406530 source:c:\dropbox\projects\game-project-potential\src\cubicbezier.cpp
+1376410130 source:c:\dropbox\projects\game-project-potential\src\cubicbezier.cpp
 	"CubicBezier.h"
 
-1376405217 c:\dropbox\projects\game-project-potential\include\cubicbezier.h
+1376408817 c:\dropbox\projects\game-project-potential\include\cubicbezier.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
@@ -10243,17 +10242,17 @@
 1375388963 c:\dropbox\projects\game-project-potential\include\cursorvertexrenderdata.h
 	<glm/glm.hpp>
 
-1376406539 source:c:\dropbox\projects\game-project-potential\src\eventlistener.cpp
+1376410139 source:c:\dropbox\projects\game-project-potential\src\eventlistener.cpp
 	"EventListener.h"
 
-1376406555 source:c:\dropbox\projects\game-project-potential\src\facebools.cpp
+1376410155 source:c:\dropbox\projects\game-project-potential\src\facebools.cpp
 	"FaceBools.h"
 
-1376405244 c:\dropbox\projects\game-project-potential\include\facebools.h
+1376408844 c:\dropbox\projects\game-project-potential\include\facebools.h
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376406573 source:c:\dropbox\projects\game-project-potential\src\fontcollection.cpp
+1376410173 source:c:\dropbox\projects\game-project-potential\src\fontcollection.cpp
 	"ErrorMacros.h"
 	"SimpleMatrixFont.h"
 	"TextureFont.h"
@@ -10261,20 +10260,20 @@
 	<boost/shared_ptr.hpp>
 	"FontCollection.h"
 
-1376405430 c:\dropbox\projects\game-project-potential\include\simplematrixfont.h
+1376409030 c:\dropbox\projects\game-project-potential\include\simplematrixfont.h
 	<memory>
 	<glm/glm.hpp>
 	"TextureFont.h"
 
-1376506032 c:\dropbox\projects\game-project-potential\include\texturefont.h
+1376509632 c:\dropbox\projects\game-project-potential\include\texturefont.h
 	<glm/glm.hpp>
 	<string>
 	"common.h"
 
-1376406547 source:c:\dropbox\projects\game-project-potential\src\fpscontrol.cpp
+1376410147 source:c:\dropbox\projects\game-project-potential\src\fpscontrol.cpp
 	"FPSControl.h"
 
-1376406581 source:c:\dropbox\projects\game-project-potential\src\glshaderprogram.cpp
+1376410181 source:c:\dropbox\projects\game-project-potential\src\glshaderprogram.cpp
 	"GLShaderProgram.h"
 	<cstdio>
 	<fstream>
@@ -10282,12 +10281,12 @@
 	<vector>
 	"ErrorMacros.h"
 
-1376505782 c:\dropbox\projects\game-project-potential\include\glshaderprogram.h
+1376509382 c:\dropbox\projects\game-project-potential\include\glshaderprogram.h
 	<memory>
 	<GL/glew.h>
 	"common.h"
 
-1376406588 source:c:\dropbox\projects\game-project-potential\src\gui.cpp
+1376410188 source:c:\dropbox\projects\game-project-potential\src\gui.cpp
 	"GUI.h"
 	"Application.h"
 	"ErrorMacros.h"
@@ -10296,35 +10295,35 @@
 	"MenuArea.h"
 	"StatusArea.h"
 
-1376406595 source:c:\dropbox\projects\game-project-potential\src\guielement.cpp
+1376410195 source:c:\dropbox\projects\game-project-potential\src\guielement.cpp
 	<iostream>
 	"GUIElement.h"
 	"ErrorMacros.h"
 	"GUIElementVisitor.h"
 	"Settings.h"
 
-1376406601 source:c:\dropbox\projects\game-project-potential\src\guiframe.cpp
+1376410201 source:c:\dropbox\projects\game-project-potential\src\guiframe.cpp
 	"GUIFrame.h"
 	"ErrorMacros.h"
 	"GUIElementVisitor.h"
 
-1376405297 c:\dropbox\projects\game-project-potential\include\guiframe.h
+1376408897 c:\dropbox\projects\game-project-potential\include\guiframe.h
 	<glm/glm.hpp>
 	<string>
 	"common.h"
 	"GUIParentElement.h"
 
-1376406612 source:c:\dropbox\projects\game-project-potential\src\guilabel.cpp
+1376410212 source:c:\dropbox\projects\game-project-potential\src\guilabel.cpp
 	"GUILabel.h"
 	"GUIElementVisitor.h"
 
-1376405304 c:\dropbox\projects\game-project-potential\include\guilabel.h
+1376408904 c:\dropbox\projects\game-project-potential\include\guilabel.h
 	<glm/glm.hpp>
 	<string>
 	"common.h"
 	"GUIElement.h"
 
-1376406624 source:c:\dropbox\projects\game-project-potential\src\guiparentelement.cpp
+1376410224 source:c:\dropbox\projects\game-project-potential\src\guiparentelement.cpp
 	"GUIParentElement.h"
 	<inttypes.h>
 	<stdint.h>
@@ -10332,26 +10331,26 @@
 	"ErrorMacros.h"
 	"GUIElementVisitor.h"
 
-1376406632 source:c:\dropbox\projects\game-project-potential\src\guirenderdata.cpp
+1376410232 source:c:\dropbox\projects\game-project-potential\src\guirenderdata.cpp
 	"GUIRenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
 	"GUIVertexRenderData.h"
 
-1376405322 c:\dropbox\projects\game-project-potential\include\guirenderdata.h
+1376408922 c:\dropbox\projects\game-project-potential\include\guirenderdata.h
 	<boost/container/vector.hpp>
 	<glm/glm.hpp>
 	"common.h"
 
-1376405344 c:\dropbox\projects\game-project-potential\include\guivertexrenderdata.h
+1376408944 c:\dropbox\projects\game-project-potential\include\guivertexrenderdata.h
 
-1376406638 source:c:\dropbox\projects\game-project-potential\src\guirenderer.cpp
+1376410238 source:c:\dropbox\projects\game-project-potential\src\guirenderer.cpp
 	<iostream>
 	<string>
 	"GUIRenderer.h"
 	"Settings.h"
 
-1376406646 source:c:\dropbox\projects\game-project-potential\src\guirenderer3d.cpp
+1376410246 source:c:\dropbox\projects\game-project-potential\src\guirenderer3d.cpp
 	"GUIRenderer3D.h"
 	<algorithm>
 	<iterator>
@@ -10370,21 +10369,21 @@
 	"GLShaderProgram.h"
 	"TextureFont.h"
 
-1376406654 source:c:\dropbox\projects\game-project-potential\src\inventory.cpp
+1376410254 source:c:\dropbox\projects\game-project-potential\src\inventory.cpp
 	<algorithm>
 	<set>
 	"Inventory.h"
 	"Prop.h"
 	"Settings.h"
 
-1376405368 c:\dropbox\projects\game-project-potential\include\inventory.h
+1376408968 c:\dropbox\projects\game-project-potential\include\inventory.h
 	<algorithm>
 	<set>
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376405400 c:\dropbox\projects\game-project-potential\include\prop.h
+1376409000 c:\dropbox\projects\game-project-potential\include\prop.h
 	<string>
 	"common_enums.h"
 	"common_includes.h"
@@ -10394,13 +10393,13 @@
 	"StageComponent.h"
 	"StageComponentVisitor.h"
 
-1376405350 c:\dropbox\projects\game-project-potential\include\hasinventory.h
+1376408950 c:\dropbox\projects\game-project-potential\include\hasinventory.h
 	"StageComponent.h"
 
-1376405359 c:\dropbox\projects\game-project-potential\include\haslocation.h
+1376408959 c:\dropbox\projects\game-project-potential\include\haslocation.h
 	"StageComponent.h"
 
-1377178647 source:c:\dropbox\projects\game-project-potential\src\main.cpp
+1376411270 source:c:\dropbox\projects\game-project-potential\src\main.cpp
 	<exception>
 	<iostream>
 	<cstdlib>
@@ -10409,24 +10408,24 @@
 	<locale.h>
 	"Application.h"
 
-1376406659 source:c:\dropbox\projects\game-project-potential\src\menuarea.cpp
+1376410259 source:c:\dropbox\projects\game-project-potential\src\menuarea.cpp
 	"MenuArea.h"
 	"Application.h"
 	"GUIFrame.h"
 
-1376406666 source:c:\dropbox\projects\game-project-potential\src\noisefield.cpp
+1376410266 source:c:\dropbox\projects\game-project-potential\src\noisefield.cpp
 	<algorithm>
 	<iostream>
 	<vector>
 	"NoiseField.h"
 	<ctime>
 
-1376405391 c:\dropbox\projects\game-project-potential\include\noisefield.h
+1376408991 c:\dropbox\projects\game-project-potential\include\noisefield.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376406678 source:c:\dropbox\projects\game-project-potential\src\prop.cpp
+1376410278 source:c:\dropbox\projects\game-project-potential\src\prop.cpp
 	<algorithm>
 	<iostream>
 	<string>
@@ -10437,7 +10436,7 @@
 	"Settings.h"
 	"Substance.h"
 
-1376406687 source:c:\dropbox\projects\game-project-potential\src\propprototype.cpp
+1376410287 source:c:\dropbox\projects\game-project-potential\src\propprototype.cpp
 	<algorithm>
 	<cstdlib>
 	<exception>
@@ -10449,14 +10448,14 @@
 	"Settings.h"
 	"TextureAtlas.h"
 
-1376405602 c:\dropbox\projects\game-project-potential\include\textureatlas.h
+1376409202 c:\dropbox\projects\game-project-potential\include\textureatlas.h
 	<boost/container/flat_map.hpp>
 	<boost/dynamic_bitset.hpp>
 	<memory>
 	<SFML/Graphics.hpp>
 	"common.h"
 
-1376406699 source:c:\dropbox\projects\game-project-potential\src\settings.cpp
+1376410299 source:c:\dropbox\projects\game-project-potential\src\settings.cpp
 	<cstdio>
 	<cstdlib>
 	<exception>
@@ -10465,12 +10464,12 @@
 	"Settings.h"
 	<boost/property_tree/xml_parser.hpp>
 
-1376406707 source:c:\dropbox\projects\game-project-potential\src\simplematrixfont.cpp
+1376410307 source:c:\dropbox\projects\game-project-potential\src\simplematrixfont.cpp
 	<SFML/Graphics.hpp>
 	"SimpleMatrixFont.h"
 	"ErrorMacros.h"
 
-1376406715 source:c:\dropbox\projects\game-project-potential\src\stage.cpp
+1381776310 source:c:\dropbox\projects\game-project-potential\src\stage.cpp
 	<vector>
 	"Stage.h"
 	"Application.h"
@@ -10499,17 +10498,17 @@
 	<cstdio>
 	<ctime>
 
-1376405208 c:\dropbox\projects\game-project-potential\include\columndata.h
+1376408808 c:\dropbox\projects\game-project-potential\include\columndata.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376405374 c:\dropbox\projects\game-project-potential\include\mathutils.h
+1381799498 c:\dropbox\projects\game-project-potential\include\mathutils.h
 	<complex>
 	<iterator>
 	<glm/glm.hpp>
 
-1376505839 c:\dropbox\projects\game-project-potential\include\stageblock.h
+1381787616 c:\dropbox\projects\game-project-potential\include\stageblock.h
 	"common_includes.h"
 	"common_typedefs.h"
 	"FaceBools.h"
@@ -10518,47 +10517,47 @@
 	"StageComponent.h"
 	"Substance.h"
 
-1376407746 c:\dropbox\projects\game-project-potential\include\stagebuilderbeaches.h
+1376411346 c:\dropbox\projects\game-project-potential\include\stagebuilderbeaches.h
 	"StageBuilder.h"
 
-1376506297 c:\dropbox\projects\game-project-potential\include\stagebuilder.h
+1376509897 c:\dropbox\projects\game-project-potential\include\stagebuilder.h
 	"common_enums.h"
 	"common_includes.h"
 	"common_typedefs.h"
 
-1376407766 c:\dropbox\projects\game-project-potential\include\stagebuilderdeposits.h
+1376411366 c:\dropbox\projects\game-project-potential\include\stagebuilderdeposits.h
 	"StageBuilder.h"
 
-1376407771 c:\dropbox\projects\game-project-potential\include\stagebuilderflora.h
+1376411371 c:\dropbox\projects\game-project-potential\include\stagebuilderflora.h
 	"StageBuilder.h"
 
-1376407812 c:\dropbox\projects\game-project-potential\include\stagebuilderknownstatus.h
+1376411412 c:\dropbox\projects\game-project-potential\include\stagebuilderknownstatus.h
 	"StageBuilder.h"
 
-1376407781 c:\dropbox\projects\game-project-potential\include\stagebuilderlakes.h
+1376411381 c:\dropbox\projects\game-project-potential\include\stagebuilderlakes.h
 	"StageBuilder.h"
 
-1376407787 c:\dropbox\projects\game-project-potential\include\stagebuilderrivers.h
+1376411387 c:\dropbox\projects\game-project-potential\include\stagebuilderrivers.h
 	"StageBuilder.h"
 
-1376407793 c:\dropbox\projects\game-project-potential\include\stagebuildersmoother.h
+1376411393 c:\dropbox\projects\game-project-potential\include\stagebuildersmoother.h
 	"StageBuilder.h"
 
-1376405516 c:\dropbox\projects\game-project-potential\include\stagebuilderterrain.h
+1376409116 c:\dropbox\projects\game-project-potential\include\stagebuilderterrain.h
 	"StageBuilder.h"
 
-1376505939 c:\dropbox\projects\game-project-potential\include\stagechunk.h
+1376509539 c:\dropbox\projects\game-project-potential\include\stagechunk.h
 	<boost/thread/mutex.hpp>
 	"common.h"
 	"StageBlock.h"
 	"StageComponent.h"
 
-1376405531 c:\dropbox\projects\game-project-potential\include\stagechunkcollection.h
+1376409131 c:\dropbox\projects\game-project-potential\include\stagechunkcollection.h
 	"common_includes.h"
 	"common_typedefs.h"
 	"StageComponent.h"
 
-1376406722 source:c:\dropbox\projects\game-project-potential\src\stageblock.cpp
+1381788247 source:c:\dropbox\projects\game-project-potential\src\stageblock.cpp
 	"StageBlock.h"
 	"ColumnData.h"
 	"MathUtils.h"
@@ -10566,8 +10565,9 @@
 	"Stage.h"
 	"StageChunk.h"
 	"StageComponentVisitor.h"
+	"SubstanceLibrary.h"
 
-1376508016 source:c:\dropbox\projects\game-project-potential\src\stagebuilderbeaches.cpp
+1381788410 source:c:\dropbox\projects\game-project-potential\src\stagebuilderbeaches.cpp
 	<iostream>
 	"StageBuilderBeaches.h"
 	"Application.h"
@@ -10579,7 +10579,7 @@
 	"StageChunk.h"
 	"Substance.h"
 
-1376406736 source:c:\dropbox\projects\game-project-potential\src\stagebuilderdeposits.cpp
+1381791491 source:c:\dropbox\projects\game-project-potential\src\stagebuilderdeposits.cpp
 	<algorithm>
 	<cstdlib>
 	<iostream>
@@ -10590,9 +10590,9 @@
 	"Settings.h"
 	"Stage.h"
 	"StageBlock.h"
-	"Substance.h"
+	"SubstanceLibrary.h"
 
-1376406743 source:c:\dropbox\projects\game-project-potential\src\stagebuilderflora.cpp
+1381802234 source:c:\dropbox\projects\game-project-potential\src\stagebuilderflora.cpp
 	<iostream>
 	"../include/StageBuilderFlora.h"
 	"Application.h"
@@ -10604,9 +10604,9 @@
 	"Stage.h"
 	"StageBlock.h"
 	"StageChunk.h"
-	"Substance.h"
+	"SubstanceLibrary.h"
 
-1376406753 source:c:\dropbox\projects\game-project-potential\src\stagebuilderknownstatus.cpp
+1376410353 source:c:\dropbox\projects\game-project-potential\src\stagebuilderknownstatus.cpp
 	<iostream>
 	"../include/StageBuilderKnownStatus.h"
 	"Application.h"
@@ -10619,7 +10619,7 @@
 	"StageChunk.h"
 	"Substance.h"
 
-1376406762 source:c:\dropbox\projects\game-project-potential\src\stagebuilderlakes.cpp
+1381792238 source:c:\dropbox\projects\game-project-potential\src\stagebuilderlakes.cpp
 	<iostream>
 	"../include/StageBuilderLakes.h"
 	"Application.h"
@@ -10631,7 +10631,7 @@
 	"StageChunk.h"
 	"Substance.h"
 
-1376406769 source:c:\dropbox\projects\game-project-potential\src\stagebuilderrivers.cpp
+1381792461 source:c:\dropbox\projects\game-project-potential\src\stagebuilderrivers.cpp
 	<iostream>
 	"StageBuilderRivers.h"
 	"Application.h"
@@ -10645,7 +10645,7 @@
 	"Substance.h"
 	<noise/noise.h>
 
-1376406778 source:c:\dropbox\projects\game-project-potential\src\stagebuildersmoother.cpp
+1376410378 source:c:\dropbox\projects\game-project-potential\src\stagebuildersmoother.cpp
 	<algorithm>
 	<iostream>
 	"../include/StageBuilderSmoother.h"
@@ -10658,7 +10658,7 @@
 	"StageChunk.h"
 	"Substance.h"
 
-1376406784 source:c:\dropbox\projects\game-project-potential\src\stagebuilderterrain.cpp
+1381800654 source:c:\dropbox\projects\game-project-potential\src\stagebuilderterrain.cpp
 	<iostream>
 	<vector>
 	"StageBuilderTerrain.h"
@@ -10669,10 +10669,10 @@
 	"Stage.h"
 	"Settings.h"
 	"StageBlock.h"
-	"Substance.h"
+	"SubstanceLibrary.h"
 	<noise/noise.h>
 
-1376406791 source:c:\dropbox\projects\game-project-potential\src\stagechunk.cpp
+1376410391 source:c:\dropbox\projects\game-project-potential\src\stagechunk.cpp
 	"StageChunk.h"
 	<algorithm>
 	"ErrorMacros.h"
@@ -10682,21 +10682,21 @@
 	"StageChunkCollection.h"
 	"StageComponentVisitor.h"
 
-1376406800 source:c:\dropbox\projects\game-project-potential\src\stagechunkcollection.cpp
+1376410400 source:c:\dropbox\projects\game-project-potential\src\stagechunkcollection.cpp
 	"StageChunkCollection.h"
 	"MathUtils.h"
 	"Stage.h"
 	"StageChunk.h"
 	"StageComponentVisitor.h"
 
-1376406807 source:c:\dropbox\projects\game-project-potential\src\stagerenderer.cpp
+1376410407 source:c:\dropbox\projects\game-project-potential\src\stagerenderer.cpp
 	<iostream>
 	<string>
 	"StageRenderer.h"
 	"Settings.h"
 	"Stage.h"
 
-1377262660 source:c:\dropbox\projects\game-project-potential\src\stagerenderer3d.cpp
+1381795312 source:c:\dropbox\projects\game-project-potential\src\stagerenderer3d.cpp
 	"StageRenderer3D.h"
 	<algorithm>
 	<iterator>
@@ -10722,9 +10722,10 @@
 	"StageBlock.h"
 	"StageChunk.h"
 	"StageChunkCollection.h"
+	"SubstanceLibrary.h"
 	"VertexRenderData.h"
 
-1376406819 source:c:\dropbox\projects\game-project-potential\src\statusarea.cpp
+1381791648 source:c:\dropbox\projects\game-project-potential\src\statusarea.cpp
 	<sstream>
 	<string>
 	"StatusArea.h"
@@ -10736,7 +10737,7 @@
 	"Stage.h"
 	"StageBlock.h"
 
-1376406827 source:c:\dropbox\projects\game-project-potential\src\substance.cpp
+1381795532 source:c:\dropbox\projects\game-project-potential\src\substance.cpp
 	"Substance.h"
 	<algorithm>
 	<cstdlib>
@@ -10757,16 +10758,16 @@
 	"Settings.h"
 	"TextureAtlas.h"
 
-1376406835 source:c:\dropbox\projects\game-project-potential\src\textureatlas.cpp
+1376410435 source:c:\dropbox\projects\game-project-potential\src\textureatlas.cpp
 	<iostream>
 	"TextureAtlas.h"
 	"ErrorMacros.h"
 	"Settings.h"
 
-1376406847 source:c:\dropbox\projects\game-project-potential\src\texturefont.cpp
+1376410447 source:c:\dropbox\projects\game-project-potential\src\texturefont.cpp
 	"TextureFont.h"
 
-1376406855 source:c:\dropbox\projects\game-project-potential\src\verb.cpp
+1376410455 source:c:\dropbox\projects\game-project-potential\src\verb.cpp
 	<algorithm>
 	<exception>
 	<iostream>
@@ -10775,17 +10776,17 @@
 	"ErrorMacros.h"
 	"Settings.h"
 
-1376406491 source:c:\dropbox\projects\game-project-potential\src\bgrenderer.cpp
+1376410091 source:c:\dropbox\projects\game-project-potential\src\bgrenderer.cpp
 	<iostream>
 	<string>
 	"BGRenderer.h"
 	"Settings.h"
 
-1376505731 c:\dropbox\projects\game-project-potential\include\bgrenderer.h
+1376509331 c:\dropbox\projects\game-project-potential\include\bgrenderer.h
 	"common.h"
 	<string>
 
-1376406500 source:c:\dropbox\projects\game-project-potential\src\bgrenderer3d.cpp
+1376410100 source:c:\dropbox\projects\game-project-potential\src\bgrenderer3d.cpp
 	"BGRenderer3D.h"
 	<algorithm>
 	<iterator>
@@ -10794,70 +10795,70 @@
 	"BGRenderData.h"
 	"GLShaderProgram.h"
 
-1376405188 c:\dropbox\projects\game-project-potential\include\bgrenderer3d.h
+1376408788 c:\dropbox\projects\game-project-potential\include\bgrenderer3d.h
 	<memory>
 	"common.h"
 	"BGRenderer.h"
 
-1376405171 c:\dropbox\projects\game-project-potential\include\bgrenderdata.h
+1376408771 c:\dropbox\projects\game-project-potential\include\bgrenderdata.h
 	<boost/container/vector.hpp>
 	<glm/glm.hpp>
 	"common.h"
 
-1376406485 source:c:\dropbox\projects\game-project-potential\src\bgrenderdata.cpp
+1376410085 source:c:\dropbox\projects\game-project-potential\src\bgrenderdata.cpp
 	"BGRenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
 	"BGVertexRenderData.h"
 
-1376405194 c:\dropbox\projects\game-project-potential\include\bgvertexrenderdata.h
+1376408794 c:\dropbox\projects\game-project-potential\include\bgvertexrenderdata.h
 
-1377222610 source:c:\dropbox\projects\game-project-potential\src\renderdata.cpp
+1377226210 source:c:\dropbox\projects\game-project-potential\src\renderdata.cpp
 	"RenderData.h"
 	<GL/glew.h>
 	<glm/glm.hpp>
 	"VertexRenderData.h"
 
-1376405414 c:\dropbox\projects\game-project-potential\include\renderdata.h
+1376409014 c:\dropbox\projects\game-project-potential\include\renderdata.h
 	<boost/container/vector.hpp>
 	<glm/glm.hpp>
 	"common.h"
 
-1376405628 c:\dropbox\projects\game-project-potential\include\vertexrenderdata.h
+1376409228 c:\dropbox\projects\game-project-potential\include\vertexrenderdata.h
 	<glm/glm.hpp>
 
-1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\type_ptr.hpp
+1356885665 c:\dropbox\projects\libraries\glm\glm\gtc\type_ptr.hpp
 	"../glm.hpp"
 	"../gtc/half_float.hpp"
 	"../gtc/quaternion.hpp"
 	<cstring>
 	"type_ptr.inl"
 
-1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\half_float.hpp
+1356885664 c:\dropbox\projects\libraries\glm\glm\gtc\half_float.hpp
 	"../glm.hpp"
 	"half_float.inl"
 
-1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\half_float.inl
+1356885664 c:\dropbox\projects\libraries\glm\glm\gtc\half_float.inl
 
-1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\quaternion.hpp
+1356885665 c:\dropbox\projects\libraries\glm\glm\gtc\quaternion.hpp
 	"../glm.hpp"
 	"../gtc/half_float.hpp"
 	"../gtc/constants.hpp"
 	"quaternion.inl"
 
-1356889263 c:\dropbox\projects\libraries\glm\glm\gtc\constants.hpp
+1356885663 c:\dropbox\projects\libraries\glm\glm\gtc\constants.hpp
 	"../glm.hpp"
 	"../gtc/half_float.hpp"
 	"constants.inl"
 
-1356889264 c:\dropbox\projects\libraries\glm\glm\gtc\constants.inl
+1356885664 c:\dropbox\projects\libraries\glm\glm\gtc\constants.inl
 
-1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\quaternion.inl
+1356885665 c:\dropbox\projects\libraries\glm\glm\gtc\quaternion.inl
 	<limits>
 
-1356889265 c:\dropbox\projects\libraries\glm\glm\gtc\type_ptr.inl
+1356885665 c:\dropbox\projects\libraries\glm\glm\gtc\type_ptr.inl
 
-1377222284 source:c:\dropbox\projects\game-project-potential\src\gltexture.cpp
+1377225884 source:c:\dropbox\projects\game-project-potential\src\gltexture.cpp
 	"GLTexture.h"
 	"ErrorMacros.h"
 	<glm/gtc/matrix_transform.hpp>
@@ -10865,7 +10866,7 @@
 	<glm/gtx/transform.hpp>
 	<soil.h>
 
-1377090706 c:\dropbox\projects\game-project-potential\include\gltexture.h
+1377094306 c:\dropbox\projects\game-project-potential\include\gltexture.h
 	<memory>
 	<GL/glew.h>
 	<glm/glm.hpp>
@@ -11058,7 +11059,7 @@
 
 1215472408 c:\dropbox\projects\libraries\soil\src\soil.h
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window.hpp
 	<SFML/System.hpp>
 	<SFML/Window/Context.hpp>
 	<SFML/Window/ContextSettings.hpp>
@@ -11070,7 +11071,7 @@
 	<SFML/Window/Window.hpp>
 	<SFML/Window/WindowStyle.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Clock.hpp>
 	<SFML/System/Err.hpp>
@@ -11086,9 +11087,9 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/System/Vector3.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\config.hpp
+1374390132 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\config.hpp
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\clock.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\clock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Time.hpp>
 
@@ -11098,53 +11099,53 @@
 1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\time.hpp
 	<SFML/System/Export.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\err.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\err.hpp
 	<SFML/System/Export.hpp>
 	<ostream>
 
 1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\inputstream.hpp
 	<SFML/Config.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\lock.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\lock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\noncopyable.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\noncopyable.hpp
 	<SFML/System/Export.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\mutex.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\mutex.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\sleep.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\sleep.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Time.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\string.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\string.hpp
 	<SFML/System/Export.hpp>
 	<locale>
 	<string>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\thread.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\thread.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<cstdlib>
 	<SFML/System/Thread.inl>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\thread.inl
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\thread.inl
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\threadlocal.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\threadlocal.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<cstdlib>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\threadlocalptr.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\threadlocalptr.hpp
 	<SFML/System/ThreadLocal.hpp>
 	<SFML/System/ThreadLocalPtr.inl>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\threadlocalptr.inl
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\threadlocalptr.inl
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\utf.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\utf.hpp
 	<SFML/Config.hpp>
 	<algorithm>
 	<locale>
@@ -11152,19 +11153,19 @@
 	<cstdlib>
 	<SFML/System/Utf.inl>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\utf.inl
+1372053422 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\utf.inl
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector2.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector2.hpp
 	<SFML/System/Vector2.inl>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector2.inl
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector2.inl
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector3.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector3.hpp
 	<SFML/System/Vector3.inl>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector3.inl
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\system\vector3.inl
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\context.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\context.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/Window/GlResource.hpp>
 	<SFML/Window/ContextSettings.hpp>
@@ -11173,12 +11174,12 @@
 1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\export.hpp
 	<SFML/Config.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\glresource.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\glresource.hpp
 	<SFML/Window/Export.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\contextsettings.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\contextsettings.hpp
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\event.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\event.hpp
 	<SFML/Config.hpp>
 	<SFML/Window/Joystick.hpp>
 	<SFML/Window/Keyboard.hpp>
@@ -11194,11 +11195,11 @@
 	<SFML/Window/Export.hpp>
 	<SFML/System/Vector2.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\videomode.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\videomode.hpp
 	<SFML/Window/Export.hpp>
 	<vector>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\window.hpp
+1371061192 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\window.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/Window/ContextSettings.hpp>
 	<SFML/Window/VideoMode.hpp>
@@ -11213,9 +11214,9 @@
 1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\windowhandle.hpp
 	<SFML/Config.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\windowstyle.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\window\windowstyle.hpp
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics.hpp
+1367997278 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
 	<SFML/Graphics/BlendMode.hpp>
 	<SFML/Graphics/Color.hpp>
@@ -11240,13 +11241,13 @@
 
 1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\blendmode.hpp
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\color.hpp
+1367997278 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\color.hpp
 	<SFML/Graphics/Export.hpp>
 
 1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\export.hpp
 	<SFML/Config.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\font.hpp
+1367997278 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\font.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Glyph.hpp>
 	<SFML/Graphics/Texture.hpp>
@@ -11257,23 +11258,23 @@
 	<string>
 	<vector>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\glyph.hpp
+1367997278 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\glyph.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rect.hpp
+1367997279 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rect.hpp
 	<SFML/System/Vector2.hpp>
 	<algorithm>
 	<SFML/Graphics/Rect.inl>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rect.inl
+1368305601 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rect.inl
 
 1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\texture.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\image.hpp
+1368172116 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\image.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
@@ -11290,12 +11291,12 @@
 	<SFML/Graphics/Rect.hpp>
 	<SFML/System/Vector2.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rendertexture.hpp
+1367997279 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rendertexture.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rendertarget.hpp
+1367997279 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\rendertarget.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
@@ -11307,7 +11308,7 @@
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\view.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\view.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<SFML/Graphics/Transform.hpp>
@@ -11320,14 +11321,14 @@
 	<SFML/Graphics/Color.hpp>
 	<SFML/System/Vector2.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\renderwindow.hpp
+1367997279 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\renderwindow.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Window/Window.hpp>
 	<string>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\shader.hpp
+1371547273 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\shader.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Transform.hpp>
 	<SFML/Graphics/Color.hpp>
@@ -11338,14 +11339,14 @@
 	<map>
 	<string>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\shape.hpp
+1367997279 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\shape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/System/Vector2.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\drawable.hpp
+1367997278 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\drawable.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/RenderStates.hpp>
 
@@ -11374,14 +11375,14 @@
 	<SFML/Graphics/Shape.hpp>
 	<vector>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\sprite.hpp
+1367997279 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\sprite.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\text.hpp
+1367997280 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\graphics\text.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
@@ -11400,7 +11401,7 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1374384608 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\opengl.hpp
+1367997281 c:\dropbox\projects\libraries\sfml-2.1\include\sfml\opengl.hpp
 	<SFML/Config.hpp>
 	<windows.h>
 	<GL/gl.h>
@@ -11429,7 +11430,7 @@
 	<boost/config/select_platform_config.hpp>
 	<boost/config/suffix.hpp>
 
-1361725678 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\select_compiler_config.hpp
+1361722078 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\select_compiler_config.hpp
 
 1303726248 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\select_stdlib_config.hpp
 	<cstddef>
@@ -11456,7 +11457,7 @@
 
 1084691874 c:\dropbox\projects\libraries\boost_1_54_0\boost\non_type.hpp
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\cstdint.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\cstdint.hpp
 	<boost/config.hpp>
 	<inttypes.h>
 	<inttypes.h>
@@ -11479,21 +11480,21 @@
 	<cstddef>
 	<boost/limits.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer_fwd.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer_fwd.hpp
 	<climits>
 	<cstddef>
 	<boost/config.hpp>
 	<boost/limits.hpp>
 	<boost/cstdint.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer.hpp
 	<boost/integer_fwd.hpp>
 	<boost/integer_traits.hpp>
 	<boost/limits.hpp>
 	<boost/cstdint.hpp>
 	<boost/static_assert.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer_traits.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer_traits.hpp
 	<boost/config.hpp>
 	<boost/limits.hpp>
 	<limits.h>
@@ -11530,7 +11531,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1356712762 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_integral.hpp
+1356709162 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_integral.hpp
 	<boost/config.hpp>
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
@@ -11587,10 +11588,10 @@
 	<boost/mpl/aux_/config/msvc.hpp>
 	<boost/mpl/aux_/config/workaround.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\cat.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\cat.hpp
 	<boost/preprocessor/config/config.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\config\config.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\config\config.hpp
 
 1223698742 c:\dropbox\projects\libraries\boost_1_54_0\boost\mpl\aux_\integral_wrapper.hpp
 	<boost/mpl/integral_c_tag.hpp>
@@ -11669,7 +11670,7 @@
 1091337866 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\detail\dmc\auto_rec.hpp
 	<boost/preprocessor/control/iif.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\eat.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\eat.hpp
 	<boost/preprocessor/config/config.hpp>
 
 1090892614 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\inc.hpp
@@ -11751,17 +11752,17 @@
 	<boost/preprocessor/comma_if.hpp>
 	<boost/preprocessor/repeat.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\to_list.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\to_list.hpp
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/config/config.hpp>
 	<boost/preprocessor/facilities/overload.hpp>
 	<boost/preprocessor/variadic/size.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\facilities\overload.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\facilities\overload.hpp
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/variadic/size.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\variadic\size.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\variadic\size.hpp
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/config/config.hpp>
 
@@ -11783,7 +11784,7 @@
 	<boost/preprocessor/config/config.hpp>
 	<boost/preprocessor/detail/check.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\detail\check.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\detail\check.hpp
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/config/config.hpp>
 
@@ -11822,19 +11823,19 @@
 	<boost/preprocessor/logical/bool.hpp>
 	<boost/preprocessor/tuple/eat.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\elem.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\elem.hpp
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/config/config.hpp>
 	<boost/preprocessor/facilities/overload.hpp>
 	<boost/preprocessor/tuple/rem.hpp>
 	<boost/preprocessor/variadic/elem.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\rem.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\tuple\rem.hpp
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/config/config.hpp>
 	<boost/preprocessor/facilities/overload.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\variadic\elem.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\variadic\elem.hpp
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/config/config.hpp>
 
@@ -11869,7 +11870,7 @@
 1221816248 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\no_tr1\cmath.hpp
 	<cmath>
 
-1260807288 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer\static_log2.hpp
+1260803688 c:\dropbox\projects\libraries\boost_1_54_0\boost\integer\static_log2.hpp
 	"boost/integer_fwd.hpp"
 
 1285924276 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_signed.hpp
@@ -11880,7 +11881,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_cv.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_cv.hpp
 	<boost/type_traits/broken_compiler_spec.hpp>
 	<boost/type_traits/detail/cv_traits_impl.hpp>
 	<boost/config.hpp>
@@ -11902,7 +11903,7 @@
 	<boost/detail/workaround.hpp>
 	<boost/type_traits/detail/yes_no_type.hpp>
 
-1070451250 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\yes_no_type.hpp
+1070447650 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\yes_no_type.hpp
 
 1278577678 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\msvc\remove_cv.hpp
 	<boost/type_traits/msvc/typeof.hpp>
@@ -11915,7 +11916,7 @@
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_volatile.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_volatile.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 	<boost/type_traits/detail/cv_traits_impl.hpp>
@@ -11939,7 +11940,7 @@
 	<boost/type_traits/msvc/typeof.hpp>
 	<boost/type_traits/is_array.hpp>
 
-1356712762 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_array.hpp
+1356709162 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_array.hpp
 	<boost/type_traits/config.hpp>
 	<boost/type_traits/detail/yes_no_type.hpp>
 	<boost/type_traits/detail/wrap.hpp>
@@ -11947,11 +11948,11 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1356712762 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\config.hpp
+1356709162 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\config.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 
-1070451250 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\wrap.hpp
+1070447650 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\wrap.hpp
 
 1303727208 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\type_trait_def.hpp
 	<boost/type_traits/detail/template_arity_spec.hpp>
@@ -11972,7 +11973,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_rvalue_reference.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_rvalue_reference.hpp
 	<boost/type_traits/config.hpp>
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
@@ -11996,7 +11997,7 @@
 1128687998 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\false_result.hpp
 	<boost/config.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_const.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_const.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 	<boost/type_traits/detail/cv_traits_impl.hpp>
@@ -12059,7 +12060,7 @@
 1090892614 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\iterate.hpp
 	<boost/preprocessor/iteration/iterate.hpp>
 
-1323687164 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\iteration\iterate.hpp
+1323683564 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\iteration\iterate.hpp
 	<boost/preprocessor/arithmetic/dec.hpp>
 	<boost/preprocessor/arithmetic/inc.hpp>
 	<boost/preprocessor/array/elem.hpp>
@@ -12106,7 +12107,7 @@
 	<boost/preprocessor/enum_params.hpp>
 	<boost/preprocessor/comma_if.hpp>
 
-1356712762 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\is_function_ptr_tester.hpp
+1356709162 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\is_function_ptr_tester.hpp
 	<boost/type_traits/detail/yes_no_type.hpp>
 	<boost/type_traits/config.hpp>
 	<boost/preprocessor/iterate.hpp>
@@ -12159,7 +12160,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_function.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_function.hpp
 	<boost/type_traits/is_reference.hpp>
 	<boost/type_traits/detail/false_result.hpp>
 	<boost/config.hpp>
@@ -12175,7 +12176,7 @@
 	<boost/preprocessor/enum_params.hpp>
 	<boost/preprocessor/comma_if.hpp>
 
-1356712762 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_abstract.hpp
+1356709162 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_abstract.hpp
 	<boost/type_traits/intrinsics.hpp>
 	<boost/static_assert.hpp>
 	<boost/type_traits/detail/yes_no_type.hpp>
@@ -12185,7 +12186,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1231328686 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_class.hpp
+1231325086 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_class.hpp
 	<boost/type_traits/config.hpp>
 	<boost/type_traits/intrinsics.hpp>
 	<boost/type_traits/is_union.hpp>
@@ -12231,14 +12232,14 @@
 	<boost/detail/workaround.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\add_reference.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\add_reference.hpp
 	<boost/type_traits/is_reference.hpp>
 	<boost/detail/workaround.hpp>
 	<boost/config.hpp>
 	<boost/type_traits/detail/type_trait_def.hpp>
 	<boost/type_traits/detail/type_trait_undef.hpp>
 
-1356712762 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_convertible.hpp
+1356709162 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\is_convertible.hpp
 	<boost/type_traits/intrinsics.hpp>
 	<boost/type_traits/detail/yes_no_type.hpp>
 	<boost/type_traits/config.hpp>
@@ -12254,19 +12255,19 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\add_lvalue_reference.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\add_lvalue_reference.hpp
 	<boost/type_traits/add_reference.hpp>
 	<boost/type_traits/detail/type_trait_def.hpp>
 	<boost/type_traits/detail/type_trait_undef.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\add_rvalue_reference.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\add_rvalue_reference.hpp
 	<boost/config.hpp>
 	<boost/type_traits/is_void.hpp>
 	<boost/type_traits/is_reference.hpp>
 	<boost/type_traits/detail/type_trait_def.hpp>
 	<boost/type_traits/detail/type_trait_undef.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_reference.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_reference.hpp
 	<boost/type_traits/broken_compiler_spec.hpp>
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
@@ -12278,7 +12279,7 @@
 	<boost/type_traits/msvc/typeof.hpp>
 	<boost/type_traits/is_reference.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\make_unsigned.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\make_unsigned.hpp
 	<boost/mpl/if.hpp>
 	<boost/type_traits/is_integral.hpp>
 	<boost/type_traits/is_signed.hpp>
@@ -12551,7 +12552,7 @@
 	<boost/random/detail/disable_warnings.hpp>
 	<boost/random/detail/enable_warnings.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\random\detail\integer_log2.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\random\detail\integer_log2.hpp
 	<boost/config.hpp>
 	<boost/limits.hpp>
 	<boost/pending/integer_log2.hpp>
@@ -12565,7 +12566,7 @@
 1269211506 c:\dropbox\projects\libraries\boost_1_54_0\boost\random\detail\disable_warnings.hpp
 	<boost/config.hpp>
 
-1262460196 c:\dropbox\projects\libraries\boost_1_54_0\boost\random\detail\enable_warnings.hpp
+1262456596 c:\dropbox\projects\libraries\boost_1_54_0\boost\random\detail\enable_warnings.hpp
 
 1336245276 c:\dropbox\projects\libraries\boost_1_54_0\boost\random\detail\signed_unsigned_tools.hpp
 	<boost/limits.hpp>
@@ -12577,7 +12578,7 @@
 
 1302031672 c:\dropbox\projects\libraries\boost_1_54_0\boost\random\detail\generator_seed_seq.hpp
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\mutex.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\mutex.hpp
 	<boost/thread/detail/platform.hpp>
 	<boost/thread/win32/mutex.hpp>
 	<boost/thread/pthread/mutex.hpp>
@@ -12587,10 +12588,10 @@
 	<boost/config.hpp>
 	<boost/config/requires_threads.hpp>
 
-1071914086 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\requires_threads.hpp
+1071910486 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\requires_threads.hpp
 	<boost/config.hpp>
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\win32\mutex.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\win32\mutex.hpp
 	<boost/thread/win32/basic_timed_mutex.hpp>
 	<boost/thread/exceptions.hpp>
 	<boost/thread/lock_types.hpp>
@@ -12629,11 +12630,11 @@
 	<boost/thread/detail/platform.hpp>
 	<boost/config/auto_link.hpp>
 
-1355153190 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\auto_link.hpp
+1355149590 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\auto_link.hpp
 	<boost/config.hpp>
 	<boost/version.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\version.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\version.hpp
 
 1340237724 c:\dropbox\projects\libraries\boost_1_54_0\boost\throw_exception.hpp
 	<boost/exception/detail/attribute_noreturn.hpp>
@@ -12645,9 +12646,9 @@
 
 1332869508 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\attribute_noreturn.hpp
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\exception.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\exception.hpp
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\exceptions.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\exceptions.hpp
 	<boost/thread/detail/config.hpp>
 	<string>
 	<stdexcept>
@@ -12698,7 +12699,7 @@
 1365853792 c:\dropbox\projects\libraries\boost_1_54_0\boost\noncopyable.hpp
 	<boost/config.hpp>
 
-1195137066 c:\dropbox\projects\libraries\boost_1_54_0\boost\cerrno.hpp
+1195133466 c:\dropbox\projects\libraries\boost_1_54_0\boost\cerrno.hpp
 	<cerrno>
 
 1216111312 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\abi_prefix.hpp
@@ -12706,7 +12707,7 @@
 
 1216111312 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\abi_suffix.hpp
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\interlocked.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\interlocked.hpp
 	<boost/config.hpp>
 	<windows.h>
 	<intrin.h>
@@ -12724,7 +12725,7 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_clock.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_clock.hpp
 	"boost/date_time/c_time.hpp"
 	"boost/shared_ptr.hpp"
 
@@ -12746,14 +12747,14 @@
 	<locale>
 	<boost/config/auto_link.hpp>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\locale_config.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\locale_config.hpp
 	"boost/config.hpp"
 	"boost/detail/workaround.hpp"
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\shared_ptr.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\shared_ptr.hpp
 	<boost/smart_ptr/shared_ptr.hpp>
 
-1361028082 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\shared_ptr.hpp
+1361024482 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\shared_ptr.hpp
 	<boost/config.hpp>
 	<boost/smart_ptr/detail/shared_ptr_nmt.hpp>
 	<boost/config/no_tr1/memory.hpp>
@@ -12774,7 +12775,7 @@
 	<ostream>
 	<boost/smart_ptr/detail/operator_bool.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\shared_ptr_nmt.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\shared_ptr_nmt.hpp
 	<boost/assert.hpp>
 	<boost/checked_delete.hpp>
 	<boost/throw_exception.hpp>
@@ -12796,14 +12797,14 @@
 	<boost/smart_ptr/detail/atomic_count_gcc.hpp>
 	<boost/smart_ptr/detail/atomic_count_pthreads.hpp>
 
-1352887078 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_has_sync.hpp
+1352883478 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_has_sync.hpp
 
 1240129070 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\atomic_count_pthreads.hpp
 	<pthread.h>
 
 1240129070 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\atomic_count_gcc_x86.hpp
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\atomic_count_win32.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\atomic_count_win32.hpp
 	<boost/detail/interlocked.hpp>
 
 1240129070 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\atomic_count_sync.hpp
@@ -12816,7 +12817,7 @@
 1129732720 c:\dropbox\projects\libraries\boost_1_54_0\boost\config\no_tr1\memory.hpp
 	<memory>
 
-1362637128 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\shared_count.hpp
+1362633528 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\shared_count.hpp
 	<boost/config.hpp>
 	<boost/checked_delete.hpp>
 	<boost/throw_exception.hpp>
@@ -12829,10 +12830,10 @@
 	<new>
 	<boost/utility/addressof.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\bad_weak_ptr.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\bad_weak_ptr.hpp
 	<exception>
 
-1355403188 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base.hpp
+1355399588 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base.hpp
 	<boost/config.hpp>
 	<boost/smart_ptr/detail/sp_has_sync.hpp>
 	<boost/smart_ptr/detail/sp_counted_base_nt.hpp>
@@ -12854,7 +12855,7 @@
 	<boost/smart_ptr/detail/sp_counted_base_nt.hpp>
 	<boost/smart_ptr/detail/sp_counted_base_spin.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_nt.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_nt.hpp
 	<boost/detail/sp_typeinfo.hpp>
 
 1287951894 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\sp_typeinfo.hpp
@@ -12863,7 +12864,7 @@
 	<functional>
 	<typeinfo>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_spin.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_spin.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<boost/smart_ptr/detail/spinlock_pool.hpp>
 
@@ -12882,10 +12883,10 @@
 	<boost/smart_ptr/detail/spinlock_pt.hpp>
 	<boost/smart_ptr/detail/spinlock_nt.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_pt.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_pt.hpp
 	<pthread.h>
 
-1352884668 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_gcc_arm.hpp
+1352881068 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_gcc_arm.hpp
 	<boost/smart_ptr/detail/yield_k.hpp>
 
 1278788824 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\yield_k.hpp
@@ -12894,67 +12895,67 @@
 	<sched.h>
 	<time.h>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_sync.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_sync.hpp
 	<boost/smart_ptr/detail/yield_k.hpp>
 	<ia64intrin.h>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_w32.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_w32.hpp
 	<boost/detail/interlocked.hpp>
 	<boost/smart_ptr/detail/yield_k.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_nt.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\spinlock_nt.hpp
 	<boost/assert.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_pt.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_pt.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<pthread.h>
 
-1356271646 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_snc_ps3.hpp
+1356268046 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_snc_ps3.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<inttypes.h>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_x86.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_x86.hpp
 	<boost/detail/sp_typeinfo.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_acc_ia64.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_acc_ia64.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<machine/sys/inline.h>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_ia64.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_ia64.hpp
 	<boost/detail/sp_typeinfo.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_vacpp_ppc.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_vacpp_ppc.hpp
 	<boost/detail/sp_typeinfo.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_cw_ppc.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_cw_ppc.hpp
 	<boost/detail/sp_typeinfo.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_ppc.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_ppc.hpp
 	<boost/detail/sp_typeinfo.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_mips.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_mips.hpp
 	<boost/detail/sp_typeinfo.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_sync.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_sync.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<limits.h>
 	<ia64intrin.h>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_sparc.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_gcc_sparc.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<inttypes.h>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_w32.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_w32.hpp
 	<boost/detail/interlocked.hpp>
 	<boost/detail/workaround.hpp>
 	<boost/detail/sp_typeinfo.hpp>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_aix.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_base_aix.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<builtins.h>
 	<sys/atomic_op.h>
 
-1355403432 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_impl.hpp
+1355399832 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_counted_impl.hpp
 	<boost/config.hpp>
 	<boost/checked_delete.hpp>
 	<boost/smart_ptr/detail/sp_counted_base.hpp>
@@ -12962,7 +12963,7 @@
 	<memory>
 	<cstddef>
 
-1260805458 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\quick_allocator.hpp
+1260801858 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\quick_allocator.hpp
 	<boost/config.hpp>
 	<boost/smart_ptr/detail/lightweight_mutex.hpp>
 	<boost/type_traits/type_with_alignment.hpp>
@@ -12970,22 +12971,22 @@
 	<new>
 	<cstddef>
 
-1236004650 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lightweight_mutex.hpp
+1236001050 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lightweight_mutex.hpp
 	<boost/config.hpp>
 	<boost/smart_ptr/detail/lwm_nop.hpp>
 	<boost/smart_ptr/detail/lwm_pthreads.hpp>
 	<boost/smart_ptr/detail/lwm_win32_cs.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lwm_nop.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lwm_nop.hpp
 
-1259605500 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lwm_pthreads.hpp
+1259601900 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lwm_pthreads.hpp
 	<boost/assert.hpp>
 	<pthread.h>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lwm_win32_cs.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\lwm_win32_cs.hpp
 	<windows.h>
 
-1325949480 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\type_with_alignment.hpp
+1325945880 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\type_with_alignment.hpp
 	<boost/mpl/if.hpp>
 	<boost/preprocessor/list/for_each_i.hpp>
 	<boost/preprocessor/tuple/to_list.hpp>
@@ -13049,16 +13050,16 @@
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 
-1352893930 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_convertible.hpp
+1352890330 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_convertible.hpp
 	<boost/config.hpp>
 
-1357767690 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_nullptr_t.hpp
+1357764090 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\sp_nullptr_t.hpp
 	<boost/config.hpp>
 	<cstddef>
 
-1259855436 c:\dropbox\projects\libraries\boost_1_54_0\boost\memory_order.hpp
+1259851836 c:\dropbox\projects\libraries\boost_1_54_0\boost\memory_order.hpp
 
-1355243720 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\operator_bool.hpp
+1355240120 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\detail\operator_bool.hpp
 
 1273475748 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\microsec_time_clock.hpp
 	<boost/cstdint.hpp>
@@ -13076,19 +13077,19 @@
 	<boost/date_time/time.hpp>
 	<boost/date_time/date_defs.hpp>
 
-1226511472 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time.hpp
+1226507872 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time.hpp
 	<string>
 	<boost/operators.hpp>
 	<boost/date_time/time_defs.hpp>
 	<boost/date_time/special_defs.hpp>
 
-1226511472 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_defs.hpp
+1226507872 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_defs.hpp
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\special_defs.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\special_defs.hpp
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\date_defs.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\date_defs.hpp
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\posix_time_types.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\posix_time_types.hpp
 	"boost/date_time/time_clock.hpp"
 	"boost/date_time/microsec_time_clock.hpp"
 	"boost/date_time/posix_time/ptime.hpp"
@@ -13099,11 +13100,11 @@
 	"boost/date_time/time_iterator.hpp"
 	"boost/date_time/dst_rules.hpp"
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\ptime.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\ptime.hpp
 	"boost/date_time/posix_time/posix_time_system.hpp"
 	"boost/date_time/time.hpp"
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\posix_time_system.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\posix_time_system.hpp
 	"boost/date_time/posix_time/posix_time_config.hpp"
 	"boost/date_time/time_system_split.hpp"
 	"boost/date_time/time_system_counted.hpp"
@@ -13134,14 +13135,14 @@
 	<boost/date_time/int_adapter.hpp>
 	<boost/date_time/compiler_config.hpp>
 
-1226511472 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\int_adapter.hpp
+1226507872 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\int_adapter.hpp
 	"boost/config.hpp"
 	"boost/limits.hpp"
 	"boost/date_time/special_defs.hpp"
 	"boost/date_time/locale_config.hpp"
 	<ostream>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\gregorian_types.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\gregorian_types.hpp
 	"boost/date_time/date.hpp"
 	"boost/date_time/period.hpp"
 	"boost/date_time/gregorian/greg_calendar.hpp"
@@ -13158,12 +13159,12 @@
 	<boost/date_time/year_month_day.hpp>
 	<boost/date_time/special_defs.hpp>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\year_month_day.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\year_month_day.hpp
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\period.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\period.hpp
 	"boost/operators.hpp"
 
-1263143842 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_calendar.hpp
+1263140242 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_calendar.hpp
 	<boost/cstdint.hpp>
 	<boost/date_time/gregorian/greg_weekday.hpp>
 	<boost/date_time/gregorian/greg_day_of_year.hpp>
@@ -13171,14 +13172,14 @@
 	<boost/date_time/gregorian/greg_ymd.hpp>
 	<boost/date_time/int_adapter.hpp>
 
-1226511472 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_weekday.hpp
+1226507872 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_weekday.hpp
 	"boost/date_time/constrained_value.hpp"
 	"boost/date_time/date_defs.hpp"
 	"boost/date_time/compiler_config.hpp"
 	<stdexcept>
 	<string>
 
-1226511472 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\constrained_value.hpp
+1226507872 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\constrained_value.hpp
 	<exception>
 	<stdexcept>
 	<boost/config.hpp>
@@ -13207,34 +13208,34 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_day_of_year.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_day_of_year.hpp
 	"boost/date_time/constrained_value.hpp"
 	<stdexcept>
 	<string>
 
-1263143842 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian_calendar.hpp
+1263140242 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian_calendar.hpp
 	"boost/date_time/gregorian_calendar.ipp"
 
 1348322650 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian_calendar.ipp
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_ymd.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_ymd.hpp
 	"boost/date_time/year_month_day.hpp"
 	"boost/date_time/special_defs.hpp"
 	"boost/date_time/gregorian/greg_day.hpp"
 	"boost/date_time/gregorian/greg_year.hpp"
 	"boost/date_time/gregorian/greg_month.hpp"
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_day.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_day.hpp
 	"boost/date_time/constrained_value.hpp"
 	<stdexcept>
 	<string>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_year.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_year.hpp
 	"boost/date_time/constrained_value.hpp"
 	<stdexcept>
 	<string>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_month.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_month.hpp
 	"boost/date_time/constrained_value.hpp"
 	"boost/date_time/date_defs.hpp"
 	"boost/shared_ptr.hpp"
@@ -13245,7 +13246,7 @@
 	<algorithm>
 	<cctype>
 
-1226511472 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_duration.hpp
+1226507872 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_duration.hpp
 	<boost/date_time/date_duration.hpp>
 	<boost/date_time/int_adapter.hpp>
 	<boost/date_time/special_defs.hpp>
@@ -13255,26 +13256,26 @@
 	<boost/operators.hpp>
 	<boost/date_time/special_defs.hpp>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\date_duration_types.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\date_duration_types.hpp
 	<boost/date_time/int_adapter.hpp>
 	<boost/date_time/special_defs.hpp>
 	<boost/date_time/date_duration.hpp>
 
-1226511472 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_duration_types.hpp
+1226507872 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_duration_types.hpp
 	<boost/date_time/gregorian/greg_date.hpp>
 	<boost/date_time/int_adapter.hpp>
 	<boost/date_time/adjust_functors.hpp>
 	<boost/date_time/date_duration_types.hpp>
 	<boost/date_time/gregorian/greg_duration.hpp>
 
-1263143842 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_date.hpp
+1263140242 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\gregorian\greg_date.hpp
 	<boost/throw_exception.hpp>
 	<boost/date_time/date.hpp>
 	<boost/date_time/special_defs.hpp>
 	<boost/date_time/gregorian/greg_calendar.hpp>
 	<boost/date_time/gregorian/greg_duration.hpp>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\adjust_functors.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\adjust_functors.hpp
 	"boost/date_time/date.hpp"
 	"boost/date_time/wrapping_int.hpp"
 
@@ -13287,29 +13288,29 @@
 	<boost/date_time/date.hpp>
 	<boost/date_time/compiler_config.hpp>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\date_clock_device.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\date_clock_device.hpp
 	"boost/date_time/c_time.hpp"
 
 1348346012 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\date_iterator.hpp
 	<iterator>
 
-1226599822 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_system_split.hpp
+1226596222 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_system_split.hpp
 	<string>
 	"boost/date_time/compiler_config.hpp"
 	"boost/date_time/special_defs.hpp"
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_system_counted.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\time_system_counted.hpp
 	"boost/date_time/time_defs.hpp"
 	<string>
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\date_duration_operators.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\date_duration_operators.hpp
 	"boost/date_time/gregorian/greg_duration_types.hpp"
 	"boost/date_time/posix_time/ptime.hpp"
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\posix_time_duration.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\posix_time_duration.hpp
 	"boost/date_time/posix_time/posix_time_config.hpp"
 
-1204135224 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\time_period.hpp
+1204131624 c:\dropbox\projects\libraries\boost_1_54_0\boost\date_time\posix_time\time_period.hpp
 	"boost/date_time/period.hpp"
 	"boost/date_time/posix_time/posix_time_duration.hpp"
 	"boost/date_time/posix_time/ptime.hpp"
@@ -13322,7 +13323,7 @@
 	"boost/date_time/date_defs.hpp"
 	<stdexcept>
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\xtime.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\xtime.hpp
 	<boost/thread/detail/config.hpp>
 	<boost/cstdint.hpp>
 	<boost/thread/thread_time.hpp>
@@ -13455,7 +13456,7 @@
 	<boost/mpl/aux_/config/gcc.hpp>
 	<boost/mpl/aux_/config/workaround.hpp>
 
-1140516128 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\stringize.hpp
+1140512528 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\stringize.hpp
 	<boost/preprocessor/config/config.hpp>
 
 1223698742 c:\dropbox\projects\libraries\boost_1_54_0\boost\mpl\aux_\logical_op.hpp
@@ -13516,7 +13517,7 @@
 	<boost/rational.hpp>
 	<boost/ratio/mpl/rational_c_tag.hpp>
 
-1354397944 c:\dropbox\projects\libraries\boost_1_54_0\boost\ratio\config.hpp
+1354394344 c:\dropbox\projects\libraries\boost_1_54_0\boost\ratio\config.hpp
 	<boost/config.hpp>
 	<boost/cstdint.hpp>
 	<boost/static_assert.hpp>
@@ -13576,7 +13577,7 @@
 1346835796 c:\dropbox\projects\libraries\boost_1_54_0\boost\ratio\ratio_fwd.hpp
 	<boost/ratio/config.hpp>
 
-1354397944 c:\dropbox\projects\libraries\boost_1_54_0\boost\ratio\detail\overflow_helpers.hpp
+1354394344 c:\dropbox\projects\libraries\boost_1_54_0\boost\ratio\detail\overflow_helpers.hpp
 	<boost/ratio/config.hpp>
 	<boost/ratio/detail/mpl/abs.hpp>
 	<boost/ratio/detail/mpl/sign.hpp>
@@ -13588,7 +13589,7 @@
 	<boost/utility/enable_if.hpp>
 	<boost/integer_traits.hpp>
 
-1229939844 c:\dropbox\projects\libraries\boost_1_54_0\boost\rational.hpp
+1229936244 c:\dropbox\projects\libraries\boost_1_54_0\boost\rational.hpp
 	<iostream>
 	<ios>
 	<stdexcept>
@@ -13603,12 +13604,12 @@
 	<limits>
 	<boost/static_assert.hpp>
 
-1070451250 c:\dropbox\projects\libraries\boost_1_54_0\boost\call_traits.hpp
+1070447650 c:\dropbox\projects\libraries\boost_1_54_0\boost\call_traits.hpp
 	<boost/config.hpp>
 	<boost/detail/ob_call_traits.hpp>
 	<boost/detail/call_traits.hpp>
 
-1070451250 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\ob_call_traits.hpp
+1070447650 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\ob_call_traits.hpp
 	<boost/config.hpp>
 	<boost/type_traits/arithmetic_traits.hpp>
 	<boost/type_traits/composite_traits.hpp>
@@ -13644,14 +13645,14 @@
 	<boost/type_traits/is_pointer.hpp>
 	<boost/detail/workaround.hpp>
 
-1299424774 c:\dropbox\projects\libraries\boost_1_54_0\boost\math\common_factor_rt.hpp
+1299421174 c:\dropbox\projects\libraries\boost_1_54_0\boost\math\common_factor_rt.hpp
 	<boost/math_fwd.hpp>
 	<boost/config.hpp>
 	<boost/limits.hpp>
 	<climits>
 	<boost/detail/workaround.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\math_fwd.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\math_fwd.hpp
 	<boost/cstdint.hpp>
 
 1300720462 c:\dropbox\projects\libraries\boost_1_54_0\boost\ratio\mpl\rational_c_tag.hpp
@@ -13669,7 +13670,7 @@
 	<boost/utility/declval.hpp>
 	<boost/type_traits/add_rvalue_reference.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\typeof.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\typeof.hpp
 	<boost/typeof/dmc/typeof_impl.hpp>
 	<boost/typeof/msvc/typeof_impl.hpp>
 	<boost/typeof/msvc/typeof_impl.hpp>
@@ -13690,7 +13691,7 @@
 	<boost/detail/workaround.hpp>
 	<boost/mpl/int.hpp>
 
-1290368572 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\msvc\typeof_impl.hpp
+1290364972 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\msvc\typeof_impl.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 	<boost/mpl/int.hpp>
@@ -13698,9 +13699,9 @@
 	<boost/utility/enable_if.hpp>
 	<typeinfo>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\unsupported.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\unsupported.hpp
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\message.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\message.hpp
 
 1206215154 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\typeof_impl.hpp
 	<boost/mpl/size_t.hpp>
@@ -13922,7 +13923,7 @@
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/repetition/repeat.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\register_functions.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\typeof\register_functions.hpp
 	<boost/preprocessor/repetition/enum.hpp>
 	<boost/preprocessor/repetition/enum_params.hpp>
 	<boost/preprocessor/repetition/enum_trailing_params.hpp>
@@ -13947,7 +13948,7 @@
 	<boost/type_traits/is_function.hpp>
 	<boost/utility/enable_if.hpp>
 
-1356712762 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\common_type_imp.hpp
+1356709162 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\detail\common_type_imp.hpp
 	<cstddef>
 	<boost/mpl/assert.hpp>
 	<boost/mpl/at.hpp>
@@ -15131,7 +15132,7 @@
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/stringize.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\make_signed.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\make_signed.hpp
 	<boost/mpl/if.hpp>
 	<boost/type_traits/is_integral.hpp>
 	<boost/type_traits/is_signed.hpp>
@@ -15158,7 +15159,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1322261352 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\is_evenly_divisible_by.hpp
+1322257752 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\is_evenly_divisible_by.hpp
 	<boost/chrono/config.hpp>
 	<boost/mpl/logical.hpp>
 	<boost/ratio/detail/overflow_helpers.hpp>
@@ -15191,7 +15192,7 @@
 	<boost/chrono/time_point.hpp>
 	<boost/chrono/system_clocks.hpp>
 
-1359135528 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\win\chrono.hpp
+1359131928 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\win\chrono.hpp
 	<boost/detail/win/time.hpp>
 	<boost/detail/win/timers.hpp>
 	<boost/detail/win/GetLastError.hpp>
@@ -15212,11 +15213,11 @@
 1301008854 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\win\getlasterror.hpp
 	<boost/detail/win/basic_types.hpp>
 
-1322261352 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\mac\chrono.hpp
+1322257752 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\mac\chrono.hpp
 	<sys/time.h>
 	<mach/mach_time.h>
 
-1322261352 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\posix\chrono.hpp
+1322257752 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\posix\chrono.hpp
 	<time.h>
 
 1318017850 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\ceil.hpp
@@ -15268,7 +15269,7 @@
 1371849048 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\delete.hpp
 	<boost/config.hpp>
 
-1354395024 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\utility.hpp
+1354391424 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\utility.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/core.hpp>
 	<boost/move/detail/meta_utils.hpp>
@@ -15276,7 +15277,7 @@
 	<boost/type_traits/remove_reference.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1353782910 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\config_begin.hpp
+1353779310 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\config_begin.hpp
 	<boost/config.hpp>
 
 1368866454 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\core.hpp
@@ -15284,13 +15285,13 @@
 	<boost/move/detail/meta_utils.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1353782910 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\meta_utils.hpp
+1353779310 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\meta_utils.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1353782910 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\config_end.hpp
+1353779310 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\config_end.hpp
 
-1354395024 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\traits.hpp
+1354391424 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\traits.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/type_traits/has_trivial_destructor.hpp>
 	<boost/move/detail/meta_utils.hpp>
@@ -15305,7 +15306,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\lock_options.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\lock_options.hpp
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
@@ -15340,7 +15341,7 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\pthread\timespec.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\pthread\timespec.hpp
 	<boost/thread/detail/config.hpp>
 	<boost/thread/thread_time.hpp>
 	<boost/date_time/posix_time/conversion.hpp>
@@ -15367,7 +15368,7 @@
 	<boost/mpl/identity.hpp>
 	<boost/utility/enable_if.hpp>
 
-1294634102 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\begin.hpp
+1294630502 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\begin.hpp
 	<boost/range/config.hpp>
 	<boost/range/detail/begin.hpp>
 	<boost/range/iterator.hpp>
@@ -15376,7 +15377,7 @@
 	<boost/detail/workaround.hpp>
 	<boost/config.hpp>
 
-1294634102 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\begin.hpp
+1294630502 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\begin.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 	<boost/range/iterator.hpp>
@@ -15429,7 +15430,7 @@
 1371514926 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\extract_optional_type.hpp
 	<boost/config.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_traits.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_traits.hpp
 	<boost/detail/iterator.hpp>
 	<boost/detail/workaround.hpp>
 
@@ -15447,7 +15448,7 @@
 	<cstddef>
 	"boost/type_traits/detail/bool_trait_def.hpp"
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_const.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_const.hpp
 	<boost/type_traits/is_volatile.hpp>
 	<boost/type_traits/broken_compiler_spec.hpp>
 	<boost/type_traits/detail/cv_traits_impl.hpp>
@@ -15496,14 +15497,14 @@
 	<boost/range/iterator.hpp>
 	<boost/iterator/iterator_traits.hpp>
 
-1294634102 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\end.hpp
+1294630502 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\end.hpp
 	<boost/range/config.hpp>
 	<boost/range/detail/end.hpp>
 	<boost/range/detail/implementation_help.hpp>
 	<boost/range/iterator.hpp>
 	<boost/range/const_iterator.hpp>
 
-1294634102 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\end.hpp
+1294630502 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\end.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 	<boost/range/detail/vc6/end.hpp>
@@ -15539,7 +15540,7 @@
 	<boost/utility/enable_if.hpp>
 	<boost/type_traits/is_integral.hpp>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\all.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\all.hpp
 	<boost/exception/diagnostic_information.hpp>
 	<boost/exception/error_info.hpp>
 	<boost/exception/exception.hpp>
@@ -15556,7 +15557,7 @@
 	<boost/exception/errinfo_nested_exception.hpp>
 	<boost/exception_ptr.hpp>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\diagnostic_information.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\diagnostic_information.hpp
 	<boost/config.hpp>
 	<boost/exception/get_error_info.hpp>
 	<boost/exception/info.hpp>
@@ -15567,16 +15568,16 @@
 	<string>
 	<boost/exception/current_exception_cast.hpp>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\get_error_info.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\get_error_info.hpp
 	<boost/exception/exception.hpp>
 	<boost/exception/detail/error_info_impl.hpp>
 	<boost/exception/detail/type_info.hpp>
 	<boost/shared_ptr.hpp>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\error_info_impl.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\error_info_impl.hpp
 	<string>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\type_info.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\type_info.hpp
 	<boost/detail/sp_typeinfo.hpp>
 	<boost/current_function.hpp>
 	<boost/config.hpp>
@@ -15602,7 +15603,7 @@
 	<boost/algorithm/string/formatter.hpp>
 	<boost/algorithm/string/compare.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\config.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\config.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 
@@ -15630,7 +15631,7 @@
 	<algorithm>
 	<cstddef>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_facade.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_facade.hpp
 	<boost/iterator.hpp>
 	<boost/iterator/interoperable.hpp>
 	<boost/iterator/iterator_traits.hpp>
@@ -15687,7 +15688,7 @@
 	<boost/detail/indirect_traits.hpp>
 	<boost/iterator/detail/config_undef.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_categories.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_categories.hpp
 	<boost/config.hpp>
 	<boost/detail/iterator.hpp>
 	<boost/iterator/detail/config_def.hpp>
@@ -15774,7 +15775,7 @@
 	<boost/range/end.hpp>
 	<boost/range/difference_type.hpp>
 
-1359162818 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\empty.hpp
+1359159218 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\empty.hpp
 	<boost/range/config.hpp>
 	<boost/range/begin.hpp>
 	<boost/range/end.hpp>
@@ -15832,7 +15833,7 @@
 	<boost/range/value_type.hpp>
 	<boost/range/detail/misc_concept.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\concept_check.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\concept_check.hpp
 	<boost/concept/assert.hpp>
 	<boost/iterator.hpp>
 	<boost/type_traits/conversion_traits.hpp>
@@ -15893,7 +15894,7 @@
 
 1206215154 c:\dropbox\projects\libraries\boost_1_54_0\boost\concept\detail\concept_undef.hpp
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_concepts.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\iterator\iterator_concepts.hpp
 	<boost/concept_check.hpp>
 	<boost/iterator/iterator_categories.hpp>
 	<boost/detail/iterator.hpp>
@@ -15913,11 +15914,11 @@
 1306518326 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\misc_concept.hpp
 	<boost/concept_check.hpp>
 
-1294634102 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\safe_bool.hpp
+1294630502 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\detail\safe_bool.hpp
 	<boost/config.hpp>
 	<boost/range/config.hpp>
 
-1359162818 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\iterator_range_io.hpp
+1359159218 c:\dropbox\projects\libraries\boost_1_54_0\boost\range\iterator_range_io.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 	<ostream>
@@ -15975,7 +15976,7 @@
 	<boost/range/begin.hpp>
 	<boost/range/end.hpp>
 
-1356711564 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\find_format.hpp
+1356707964 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\find_format.hpp
 	<boost/algorithm/string/config.hpp>
 	<boost/range/iterator_range.hpp>
 	<boost/range/const_iterator.hpp>
@@ -15983,7 +15984,7 @@
 	<boost/algorithm/string/detail/find_format_store.hpp>
 	<boost/algorithm/string/detail/replace_storage.hpp>
 
-1294680998 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\find_format_store.hpp
+1294677398 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\find_format_store.hpp
 	<boost/algorithm/string/config.hpp>
 	<boost/range/iterator_range.hpp>
 
@@ -15994,12 +15995,12 @@
 	<boost/algorithm/string/sequence_traits.hpp>
 	<boost/algorithm/string/detail/sequence.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\sequence_traits.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\sequence_traits.hpp
 	<boost/config.hpp>
 	<boost/mpl/bool.hpp>
 	<boost/algorithm/string/yes_no_type.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\yes_no_type.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\yes_no_type.hpp
 
 1252861854 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\sequence.hpp
 	<boost/algorithm/string/config.hpp>
@@ -16009,7 +16010,7 @@
 	<boost/range/end.hpp>
 	<boost/algorithm/string/sequence_traits.hpp>
 
-1356711564 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\find_format_all.hpp
+1356707964 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\find_format_all.hpp
 	<boost/algorithm/string/config.hpp>
 	<boost/range/iterator_range.hpp>
 	<boost/range/const_iterator.hpp>
@@ -16028,9 +16029,9 @@
 	<boost/algorithm/string/detail/finder.hpp>
 	<boost/algorithm/string/compare.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\constants.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\constants.hpp
 
-1356711564 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\finder.hpp
+1356707964 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\finder.hpp
 	<boost/algorithm/string/config.hpp>
 	<boost/algorithm/string/constants.hpp>
 	<boost/detail/iterator.hpp>
@@ -16040,11 +16041,11 @@
 	<boost/range/empty.hpp>
 	<boost/range/as_literal.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\compare.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\compare.hpp
 	<boost/algorithm/string/config.hpp>
 	<locale>
 
-1356711564 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\formatter.hpp
+1356707964 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\formatter.hpp
 	<boost/detail/iterator.hpp>
 	<boost/range/value_type.hpp>
 	<boost/range/iterator_range.hpp>
@@ -16058,12 +16059,12 @@
 	<boost/range/const_iterator.hpp>
 	<boost/algorithm/string/detail/util.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\util.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\algorithm\string\detail\util.hpp
 	<boost/algorithm/string/config.hpp>
 	<functional>
 	<boost/range/iterator_range.hpp>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\info.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\info.hpp
 	<boost/exception/exception.hpp>
 	<boost/exception/to_string_stub.hpp>
 	<boost/exception/detail/error_info_impl.hpp>
@@ -16071,20 +16072,20 @@
 	<boost/config.hpp>
 	<map>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\to_string_stub.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\to_string_stub.hpp
 	<boost/exception/to_string.hpp>
 	<boost/exception/detail/object_hex_dump.hpp>
 	<boost/assert.hpp>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\to_string.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\to_string.hpp
 	<boost/utility/enable_if.hpp>
 	<boost/exception/detail/is_output_streamable.hpp>
 	<sstream>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\is_output_streamable.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\is_output_streamable.hpp
 	<ostream>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\object_hex_dump.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\object_hex_dump.hpp
 	<boost/exception/detail/type_info.hpp>
 	<iomanip>
 	<ios>
@@ -16092,11 +16093,11 @@
 	<sstream>
 	<cstdlib>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\current_exception_cast.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\current_exception_cast.hpp
 
 1332869508 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\error_info.hpp
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\info_tuple.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\info_tuple.hpp
 	<boost/exception/info.hpp>
 	<boost/tuple/tuple.hpp>
 
@@ -16107,7 +16108,7 @@
 	"boost/ref.hpp"
 	"boost/tuple/detail/tuple_basic.hpp"
 
-1293992710 c:\dropbox\projects\libraries\boost_1_54_0\boost\tuple\detail\tuple_basic_no_partial_spec.hpp
+1293989110 c:\dropbox\projects\libraries\boost_1_54_0\boost\tuple\detail\tuple_basic_no_partial_spec.hpp
 	"boost/type_traits.hpp"
 	"boost/utility/swap.hpp"
 	<utility>
@@ -16222,7 +16223,7 @@
 	<boost/type_traits/detail/size_t_trait_def.hpp>
 	<boost/type_traits/detail/size_t_trait_undef.hpp>
 
-1196022894 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\floating_point_promotion.hpp
+1196019294 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\floating_point_promotion.hpp
 	<boost/config.hpp>
 	<boost/mpl/at.hpp>
 	<boost/mpl/int.hpp>
@@ -16293,12 +16294,12 @@
 1090892614 c:\dropbox\projects\libraries\boost_1_54_0\boost\preprocessor\enum.hpp
 	<boost/preprocessor/repetition/enum.hpp>
 
-1294330482 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\function_traits.hpp
+1294326882 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\function_traits.hpp
 	<boost/config.hpp>
 	<boost/type_traits/is_function.hpp>
 	<boost/type_traits/add_pointer.hpp>
 
-1260184012 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\has_new_operator.hpp
+1260180412 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\has_new_operator.hpp
 	<new>
 	<cstddef>
 	<boost/type_traits/config.hpp>
@@ -16710,7 +16711,7 @@
 	<boost/type_traits/msvc/typeof.hpp>
 	<boost/type_traits/is_array.hpp>
 
-1355155898 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_volatile.hpp
+1355152298 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\remove_volatile.hpp
 	<boost/type_traits/is_const.hpp>
 	<boost/type_traits/broken_compiler_spec.hpp>
 	<boost/type_traits/detail/cv_traits_impl.hpp>
@@ -16747,7 +16748,7 @@
 	<boost/type_traits/detail/type_trait_def.hpp>
 	<boost/type_traits/detail/type_trait_undef.hpp>
 
-1226704284 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\swap.hpp
+1226700684 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\swap.hpp
 	<algorithm>
 	<cstddef>
 
@@ -16758,7 +16759,7 @@
 	<boost/detail/workaround.hpp>
 	<boost/type.hpp>
 
-1293992710 c:\dropbox\projects\libraries\boost_1_54_0\boost\tuple\detail\tuple_basic.hpp
+1293989110 c:\dropbox\projects\libraries\boost_1_54_0\boost\tuple\detail\tuple_basic.hpp
 	<utility>
 	"boost/type_traits/cv_traits.hpp"
 	"boost/type_traits/function_traits.hpp"
@@ -16780,7 +16781,7 @@
 
 1248288950 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\errinfo_at_line.hpp
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\errinfo_errno.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\errinfo_errno.hpp
 	"boost/exception/info.hpp"
 	<errno.h>
 	<string.h>
@@ -16799,10 +16800,10 @@
 
 1301944788 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\errinfo_nested_exception.hpp
 
-1260995216 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception_ptr.hpp
+1260991616 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception_ptr.hpp
 	<boost/exception/detail/exception_ptr.hpp>
 
-1362700904 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\exception_ptr.hpp
+1362697304 c:\dropbox\projects\libraries\boost_1_54_0\boost\exception\detail\exception_ptr.hpp
 	<boost/config.hpp>
 	<boost/exception/exception.hpp>
 	<boost/exception/info.hpp>
@@ -16837,7 +16838,7 @@
 1335033370 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\config_begin.hpp
 	<boost/config.hpp>
 
-1354395706 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\workaround.hpp
+1354392106 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\workaround.hpp
 	<boost/container/detail/config_begin.hpp>
 	<boost/container/detail/config_end.hpp>
 
@@ -16895,7 +16896,7 @@
 	<utility>
 	<boost/container/detail/config_end.hpp>
 
-1354395024 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\iterator.hpp
+1354391424 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\iterator.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/utility.hpp>
 	<iterator>
@@ -16904,7 +16905,7 @@
 1337870198 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\mpl.hpp
 	<cstddef>
 
-1354395706 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\type_traits.hpp
+1354392106 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\type_traits.hpp
 	"config_begin.hpp"
 	<boost/move/utility.hpp>
 	<boost/container/detail/config_end.hpp>
@@ -16924,7 +16925,7 @@
 	<boost/container/detail/preprocessor.hpp>
 	<boost/container/detail/config_end.hpp>
 
-1354395372 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\pointer_traits.hpp
+1354391772 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\pointer_traits.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<boost/intrusive/detail/workaround.hpp>
 	<boost/intrusive/detail/memory_util.hpp>
@@ -16935,13 +16936,13 @@
 1342420762 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\config_begin.hpp
 	<boost/config.hpp>
 
-1354395372 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\workaround.hpp
+1354391772 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\workaround.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<boost/intrusive/detail/config_end.hpp>
 
 1342420762 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\config_end.hpp
 
-1354395372 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\memory_util.hpp
+1354391772 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\memory_util.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<boost/intrusive/detail/workaround.hpp>
 	<boost/intrusive/detail/mpl.hpp>
@@ -16949,7 +16950,7 @@
 	<boost/intrusive/detail/has_member_function_callable_with.hpp>
 	<boost/intrusive/detail/config_end.hpp>
 
-1356033268 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\mpl.hpp
+1356029668 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\mpl.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<cstddef>
 	<boost/intrusive/detail/config_end.hpp>
@@ -16995,7 +16996,7 @@
 	<boost/preprocessor/tuple/elem.hpp>
 	<boost/preprocessor/tuple/rem.hpp>
 
-1356033268 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\has_member_function_callable_with.hpp
+1356029668 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\has_member_function_callable_with.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<boost/intrusive/detail/workaround.hpp>
 	<boost/intrusive/detail/preprocessor.hpp>
@@ -17004,7 +17005,7 @@
 	<boost/move/move.hpp>
 	<boost/intrusive/detail/config_end.hpp>
 
-1354395024 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\move.hpp
+1354391424 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\move.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/utility.hpp>
 	<boost/move/iterator.hpp>
@@ -17012,7 +17013,7 @@
 	<boost/move/algorithm.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1356728970 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\algorithm.hpp
+1356725370 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\algorithm.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/utility.hpp>
 	<boost/move/iterator.hpp>
@@ -17033,7 +17034,7 @@
 	<boost/intrusive/detail/has_member_function_callable_with.hpp>
 	<boost/container/detail/config_end.hpp>
 
-1354395706 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\preprocessor.hpp
+1354392106 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\preprocessor.hpp
 	<boost/container/detail/config_begin.hpp>
 	<boost/container/detail/workaround.hpp>
 	<boost/move/utility.hpp>
@@ -17056,7 +17057,7 @@
 	<boost/move/utility.hpp>
 	<boost/container/detail/config_end.hpp>
 
-1356731622 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\pair.hpp
+1356728022 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\pair.hpp
 	"config_begin.hpp"
 	<boost/container/detail/workaround.hpp>
 	<boost/container/detail/mpl.hpp>
@@ -17147,7 +17148,7 @@
 	<cstring>
 	<boost/container/detail/config_end.hpp>
 
-1354395706 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\destroyers.hpp
+1354392106 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\destroyers.hpp
 	"config_begin.hpp"
 	<boost/container/detail/workaround.hpp>
 	<boost/container/detail/version_type.hpp>
@@ -17178,7 +17179,7 @@
 	<cstdlib>
 	<boost/container/detail/config_end.hpp>
 
-1354395706 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\multiallocation_chain.hpp
+1354392106 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\multiallocation_chain.hpp
 	"config_begin.hpp"
 	<boost/container/container_fwd.hpp>
 	<boost/container/detail/utilities.hpp>
@@ -17336,7 +17337,7 @@
 	<boost/intrusive/detail/config_begin.hpp>
 	<boost/intrusive/detail/config_end.hpp>
 
-1353782910 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\move_helpers.hpp
+1353779310 c:\dropbox\projects\libraries\boost_1_54_0\boost\move\detail\move_helpers.hpp
 	<boost/move/utility.hpp>
 	<boost/type_traits/is_class.hpp>
 	<boost/move/utility.hpp>
@@ -17367,7 +17368,7 @@
 	<boost/container/detail/workaround.hpp>
 	<boost/container/detail/config_end.hpp>
 
-1354395706 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\set.hpp
+1354392106 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\set.hpp
 	<boost/container/detail/config_begin.hpp>
 	<boost/container/detail/workaround.hpp>
 	<boost/container/container_fwd.hpp>
@@ -17382,7 +17383,7 @@
 	<boost/container/detail/preprocessor.hpp>
 	<boost/container/detail/config_end.hpp>
 
-1354395706 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\tree.hpp
+1354392106 c:\dropbox\projects\libraries\boost_1_54_0\boost\container\detail\tree.hpp
 	"config_begin.hpp"
 	<boost/container/detail/workaround.hpp>
 	<boost/container/container_fwd.hpp>
@@ -17405,7 +17406,7 @@
 	<algorithm>
 	<boost/container/detail/config_end.hpp>
 
-1354395372 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\rbtree.hpp
+1354391772 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\rbtree.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<algorithm>
 	<cstddef>
@@ -17459,7 +17460,7 @@
 	<boost/intrusive/pointer_traits.hpp>
 	<boost/intrusive/detail/config_end.hpp>
 
-1354395372 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\tree_algorithms.hpp
+1354391772 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\detail\tree_algorithms.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<boost/intrusive/detail/assert.hpp>
 	<boost/intrusive/intrusive_fwd.hpp>
@@ -17502,7 +17503,7 @@
 1221381988 c:\dropbox\projects\libraries\boost_1_54_0\boost\dynamic_bitset.hpp
 	"boost/dynamic_bitset/dynamic_bitset.hpp"
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\dynamic_bitset\dynamic_bitset.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\dynamic_bitset\dynamic_bitset.hpp
 	<assert.h>
 	<string>
 	<stdexcept>
@@ -17522,7 +17523,7 @@
 	"boost/limits.hpp"
 	"boost/pending/lowest_bit.hpp"
 
-1231103008 c:\dropbox\projects\libraries\boost_1_54_0\boost\dynamic_bitset\config.hpp
+1231099408 c:\dropbox\projects\libraries\boost_1_54_0\boost\dynamic_bitset\config.hpp
 	"boost/config.hpp"
 	"boost/detail/workaround.hpp"
 
@@ -17538,7 +17539,7 @@
 	<assert.h>
 	"boost/pending/integer_log2.hpp"
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\filesystem.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\filesystem.hpp
 	<boost/filesystem/config.hpp>
 	<boost/filesystem/path.hpp>
 	<boost/filesystem/operations.hpp>
@@ -17590,14 +17591,14 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1295025714 c:\dropbox\projects\libraries\boost_1_54_0\boost\io\detail\quoted_manip.hpp
+1295022114 c:\dropbox\projects\libraries\boost_1_54_0\boost\io\detail\quoted_manip.hpp
 	<iosfwd>
 	<ios>
 	<string>
 	<iterator>
 	<boost/io/ios_state.hpp>
 
-1262760922 c:\dropbox\projects\libraries\boost_1_54_0\boost\io\ios_state.hpp
+1262757322 c:\dropbox\projects\libraries\boost_1_54_0\boost\io\ios_state.hpp
 	<boost/io_fwd.hpp>
 	<boost/detail/workaround.hpp>
 	<ios>
@@ -17640,11 +17641,11 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\scoped_enum_emulation.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\scoped_enum_emulation.hpp
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
 
-1297772322 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\bitmask.hpp
+1297768722 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\bitmask.hpp
 	<boost/cstdint.hpp>
 
 1337600682 c:\dropbox\projects\libraries\boost_1_54_0\boost\filesystem\convenience.hpp
@@ -17681,7 +17682,7 @@
 
 1301593662 c:\dropbox\projects\libraries\boost_1_54_0\boost\optional\optional_fwd.hpp
 
-1326450038 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\string_path.hpp
+1326446438 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\string_path.hpp
 	<boost/property_tree/ptree_fwd.hpp>
 	<boost/property_tree/id_translator.hpp>
 	<boost/property_tree/exceptions.hpp>
@@ -17700,7 +17701,7 @@
 	<boost/optional.hpp>
 	<string>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\optional.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\optional.hpp
 	"boost/optional/optional.hpp"
 
 1350813696 c:\dropbox\projects\libraries\boost_1_54_0\boost\optional\optional.hpp
@@ -17736,7 +17737,7 @@
 1301582868 c:\dropbox\projects\libraries\boost_1_54_0\boost\none.hpp
 	"boost/none_t.hpp"
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\none_t.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\none_t.hpp
 
 1279221554 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\compare_pointees.hpp
 	<functional>
@@ -17760,7 +17761,7 @@
 
 1279221554 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\detail\in_place_factory_suffix.hpp
 
-1326450038 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\exceptions.hpp
+1326446438 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\exceptions.hpp
 	<boost/property_tree/ptree_fwd.hpp>
 	<boost/any.hpp>
 	<string>
@@ -17779,7 +17780,7 @@
 	<boost/type_traits/is_same.hpp>
 	<cstring>
 
-1326450038 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\exception_implementation.hpp
+1326446438 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\exception_implementation.hpp
 
 1251833264 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\ptree_utils.hpp
 	<boost/limits.hpp>
@@ -17802,7 +17803,7 @@
 	<locale>
 	<limits>
 
-1292146452 c:\dropbox\projects\libraries\boost_1_54_0\boost\optional\optional_io.hpp
+1292142852 c:\dropbox\projects\libraries\boost_1_54_0\boost\optional\optional_io.hpp
 	<iostream>
 	<istream>
 	<ostream>
@@ -17811,7 +17812,7 @@
 	"boost/optional/optional.hpp"
 	"boost/utility/value_init.hpp"
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\value_init.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\value_init.hpp
 	<boost/aligned_storage.hpp>
 	<boost/config.hpp>
 	<boost/detail/workaround.hpp>
@@ -17822,10 +17823,10 @@
 	<cstring>
 	<new>
 
-1226704284 c:\dropbox\projects\libraries\boost_1_54_0\boost\swap.hpp
+1226700684 c:\dropbox\projects\libraries\boost_1_54_0\boost\swap.hpp
 	"boost/utility/swap.hpp"
 
-1322394734 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index_container.hpp
+1322391134 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index_container.hpp
 	<boost/config.hpp>
 	<algorithm>
 	<boost/detail/allocator_utilities.hpp>
@@ -18244,7 +18245,7 @@
 	<boost/serialization/access.hpp>
 	<boost/throw_exception.hpp>
 
-1356366228 c:\dropbox\projects\libraries\boost_1_54_0\boost\archive\archive_exception.hpp
+1356362628 c:\dropbox\projects\libraries\boost_1_54_0\boost\archive\archive_exception.hpp
 	<exception>
 	<boost/assert.hpp>
 	<string>
@@ -18259,13 +18260,13 @@
 	<boost/config.hpp>
 	<boost/preprocessor/facilities/empty.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\archive\detail\abi_prefix.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\archive\detail\abi_prefix.hpp
 	<boost/config/abi_prefix.hpp>
 
 1223350486 c:\dropbox\projects\libraries\boost_1_54_0\boost\archive\detail\abi_suffix.hpp
 	<boost/config/abi_suffix.hpp>
 
-1259987568 c:\dropbox\projects\libraries\boost_1_54_0\boost\serialization\access.hpp
+1259983968 c:\dropbox\projects\libraries\boost_1_54_0\boost\serialization\access.hpp
 	<boost/config.hpp>
 	<boost/serialization/pfto.hpp>
 
@@ -18357,7 +18358,7 @@
 1223698742 c:\dropbox\projects\libraries\boost_1_54_0\boost\mpl\greater.hpp
 	<boost/mpl/aux_/comparison_op.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\serialization\tracking_enum.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\serialization\tracking_enum.hpp
 
 1289054494 c:\dropbox\projects\libraries\boost_1_54_0\boost\serialization\type_info_implementation.hpp
 	<boost/config.hpp>
@@ -18368,7 +18369,7 @@
 	<boost/type_traits/is_base_and_derived.hpp>
 	<boost/serialization/traits.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\serialization\traits.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\serialization\traits.hpp
 	<boost/config.hpp>
 	<boost/static_assert.hpp>
 	<boost/mpl/int.hpp>
@@ -18418,7 +18419,7 @@
 	<boost/serialization/nvp.hpp>
 	<cstddef>
 
-1361278172 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\detail\index_matcher.hpp
+1361274572 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\detail\index_matcher.hpp
 	<boost/config.hpp>
 	<algorithm>
 	<boost/noncopyable.hpp>
@@ -18432,7 +18433,7 @@
 	<boost/config.hpp>
 	<boost/mpl/contains.hpp>
 
-1361278172 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\detail\safe_mode.hpp
+1361274572 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\detail\safe_mode.hpp
 	<boost/assert.hpp>
 	<boost/config.hpp>
 	<algorithm>
@@ -18452,13 +18453,13 @@
 
 1215096712 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\safe_mode_errors.hpp
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\lightweight_mutex.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\lightweight_mutex.hpp
 	<boost/smart_ptr/detail/lightweight_mutex.hpp>
 
 1304703504 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\detail\scope_guard.hpp
 	<boost/detail/no_exceptions_support.hpp>
 
-1101605244 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\base_from_member.hpp
+1101601644 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\base_from_member.hpp
 	<boost/preprocessor/arithmetic/inc.hpp>
 	<boost/preprocessor/repetition/enum_binary_params.hpp>
 	<boost/preprocessor/repetition/enum_params.hpp>
@@ -18593,10 +18594,10 @@
 1215096712 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\sequenced_index_fwd.hpp
 	<boost/multi_index/tag.hpp>
 
-1236003340 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind.hpp
+1235999740 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind.hpp
 	<boost/bind/bind.hpp>
 
-1322668418 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\bind.hpp
+1322664818 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\bind.hpp
 	<boost/config.hpp>
 	<boost/ref.hpp>
 	<boost/mem_fn.hpp>
@@ -18623,10 +18624,10 @@
 	<boost/bind/bind_mf2_cc.hpp>
 	<boost/bind/placeholders.hpp>
 
-1236003340 c:\dropbox\projects\libraries\boost_1_54_0\boost\mem_fn.hpp
+1235999740 c:\dropbox\projects\libraries\boost_1_54_0\boost\mem_fn.hpp
 	<boost/bind/mem_fn.hpp>
 
-1236003340 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\mem_fn.hpp
+1235999740 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\mem_fn.hpp
 	<boost/config.hpp>
 	<boost/get_pointer.hpp>
 	<boost/detail/workaround.hpp>
@@ -18651,30 +18652,30 @@
 	<boost/bind/mem_fn_cc.hpp>
 	<boost/bind/mem_fn_cc.hpp>
 
-1352884828 c:\dropbox\projects\libraries\boost_1_54_0\boost\get_pointer.hpp
+1352881228 c:\dropbox\projects\libraries\boost_1_54_0\boost\get_pointer.hpp
 	<boost/config.hpp>
 	<boost/config/no_tr1/memory.hpp>
 
-1259855076 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\mem_fn_template.hpp
+1259851476 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\mem_fn_template.hpp
 
 1090794732 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\mem_fn_vw.hpp
 
 1090794732 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\mem_fn_cc.hpp
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\is_placeholder.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\is_placeholder.hpp
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\arg.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\arg.hpp
 	<boost/config.hpp>
 	<boost/is_placeholder.hpp>
 
 1090715368 c:\dropbox\projects\libraries\boost_1_54_0\boost\visit_each.hpp
 	<boost/config.hpp>
 
-1141213588 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\storage.hpp
+1141209988 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\storage.hpp
 	<boost/config.hpp>
 	<boost/bind/arg.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\bind_template.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\bind_template.hpp
 
 1090794732 c:\dropbox\projects\libraries\boost_1_54_0\boost\bind\bind_cc.hpp
 
@@ -18686,7 +18687,7 @@
 	<boost/bind/arg.hpp>
 	<boost/config.hpp>
 
-1361278172 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\ordered_index.hpp
+1361274572 c:\dropbox\projects\libraries\boost_1_54_0\boost\multi_index\ordered_index.hpp
 	<boost/config.hpp>
 	<algorithm>
 	<boost/call_traits.hpp>
@@ -18779,7 +18780,7 @@
 	<string>
 	<locale>
 
-1326450038 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\xml_parser_write.hpp
+1326446438 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\xml_parser_write.hpp
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/detail/xml_parser_utils.hpp>
 	<string>
@@ -18802,13 +18803,13 @@
 	<boost/property_tree/ptree.hpp>
 	<string>
 
-1289370178 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\xml_parser_writer_settings.hpp
+1289366578 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\xml_parser_writer_settings.hpp
 	<string>
 	<boost/property_tree/detail/ptree_utils.hpp>
 
 1251992256 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\xml_parser_flags.hpp
 
-1326450038 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\xml_parser_read_rapidxml.hpp
+1326446438 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\xml_parser_read_rapidxml.hpp
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/detail/xml_parser_error.hpp>
 	<boost/property_tree/detail/xml_parser_flags.hpp>
@@ -18816,7 +18817,7 @@
 	<boost/property_tree/detail/rapidxml.hpp>
 	<vector>
 
-1326450038 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\rapidxml.hpp
+1326446438 c:\dropbox\projects\libraries\boost_1_54_0\boost\property_tree\detail\rapidxml.hpp
 	<boost/assert.hpp>
 	<cstdlib>
 	<new>
@@ -18868,10 +18869,10 @@
 	<cstddef>
 	<boost/scoped_array.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\scoped_array.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\scoped_array.hpp
 	<boost/smart_ptr/scoped_array.hpp>
 
-1357767690 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\scoped_array.hpp
+1357764090 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\scoped_array.hpp
 	<boost/config.hpp>
 	<boost/assert.hpp>
 	<boost/checked_delete.hpp>
@@ -18891,12 +18892,12 @@
 	<boost/type_traits/add_reference.hpp>
 	<boost/type_traits/is_array.hpp>
 
-1070451250 c:\dropbox\projects\libraries\boost_1_54_0\boost\compressed_pair.hpp
+1070447650 c:\dropbox\projects\libraries\boost_1_54_0\boost\compressed_pair.hpp
 	<boost/config.hpp>
 	<boost/detail/ob_compressed_pair.hpp>
 	<boost/detail/compressed_pair.hpp>
 
-1075109346 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\ob_compressed_pair.hpp
+1075105746 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\ob_compressed_pair.hpp
 	<algorithm>
 	<boost/type_traits/object_traits.hpp>
 	<boost/type_traits/same_traits.hpp>
@@ -18922,7 +18923,7 @@
 1128687998 c:\dropbox\projects\libraries\boost_1_54_0\boost\type_traits\same_traits.hpp
 	<boost/type_traits/is_same.hpp>
 
-1140296594 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\compressed_pair.hpp
+1140292994 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\compressed_pair.hpp
 	<algorithm>
 	<boost/type_traits/remove_cv.hpp>
 	<boost/type_traits/is_empty.hpp>
@@ -18994,7 +18995,7 @@
 
 1336075520 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\fwd.hpp
 
-1354738016 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\equivalent.hpp
+1354734416 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\equivalent.hpp
 	<boost/unordered/detail/table.hpp>
 	<boost/unordered/detail/extract_key.hpp>
 
@@ -19030,7 +19031,7 @@
 
 1090794732 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\select_type.hpp
 
-1354738016 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\allocate.hpp
+1354734416 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\allocate.hpp
 	<boost/unordered/detail/fwd.hpp>
 	<boost/move/move.hpp>
 	<boost/preprocessor/cat.hpp>
@@ -19059,10 +19060,10 @@
 
 1215866832 c:\dropbox\projects\libraries\boost_1_54_0\boost\pointer_to_other.hpp
 
-1354738016 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\extract_key.hpp
+1354734416 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\extract_key.hpp
 	<boost/unordered/detail/table.hpp>
 
-1354738016 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\unique.hpp
+1354734416 c:\dropbox\projects\libraries\boost_1_54_0\boost\unordered\detail\unique.hpp
 	<boost/unordered/detail/table.hpp>
 	<boost/unordered/detail/extract_key.hpp>
 	<boost/throw_exception.hpp>
@@ -19071,7 +19072,7 @@
 1236804668 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash.hpp
 	<boost/functional/hash/hash.hpp>
 
-1355430858 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\hash.hpp
+1355427258 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\hash.hpp
 	<boost/functional/hash/hash_fwd.hpp>
 	<functional>
 	<boost/functional/hash/detail/hash_float.hpp>
@@ -19084,7 +19085,7 @@
 	<typeindex>
 	<boost/functional/hash/extensions.hpp>
 
-1356772302 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\detail\hash_float.hpp
+1356768702 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\detail\hash_float.hpp
 	<boost/config.hpp>
 	<boost/functional/hash/detail/float_functions.hpp>
 	<boost/functional/hash/detail/limits.hpp>
@@ -19096,7 +19097,7 @@
 	<cstring>
 	<boost/config/no_tr1/cmath.hpp>
 
-1355430858 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\detail\float_functions.hpp
+1355427258 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\detail\float_functions.hpp
 	<boost/config.hpp>
 	<boost/config/no_tr1/cmath.hpp>
 
@@ -19104,7 +19105,7 @@
 	<boost/limits.hpp>
 	<float.h>
 
-1355430858 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\extensions.hpp
+1355427258 c:\dropbox\projects\libraries\boost_1_54_0\boost\functional\hash\extensions.hpp
 	<boost/functional/hash/hash.hpp>
 	<boost/detail/container_fwd.hpp>
 	<boost/utility/enable_if.hpp>
@@ -19136,7 +19137,7 @@
 	<vector>
 	<boost/ptr_container/ptr_sequence_adapter.hpp>
 
-1257066432 c:\dropbox\projects\libraries\boost_1_54_0\boost\ptr_container\ptr_sequence_adapter.hpp
+1257062832 c:\dropbox\projects\libraries\boost_1_54_0\boost\ptr_container\ptr_sequence_adapter.hpp
 	<boost/ptr_container/detail/reversible_ptr_container.hpp>
 	<boost/ptr_container/indirect_fun.hpp>
 	<boost/ptr_container/detail/void_ptr_iterator.hpp>
@@ -19152,7 +19153,7 @@
 	<boost/type_traits/is_void.hpp>
 	<functional>
 
-1362862504 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\result_of.hpp
+1362858904 c:\dropbox\projects\libraries\boost_1_54_0\boost\utility\result_of.hpp
 	<boost/config.hpp>
 	<boost/preprocessor/cat.hpp>
 	<boost/preprocessor/iteration/iterate.hpp>
@@ -19244,11 +19245,11 @@
 	<boost/functional/hash_fwd.hpp>
 	<boost/unordered/detail/fwd.hpp>
 
-1360686720 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\thread.hpp
+1360683120 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\thread.hpp
 	<boost/thread/thread_only.hpp>
 	<boost/thread/detail/thread_group.hpp>
 
-1360686720 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\thread_only.hpp
+1360683120 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\thread_only.hpp
 	<boost/thread/detail/platform.hpp>
 	<boost/thread/win32/thread_data.hpp>
 	<boost/thread/pthread/thread_data.hpp>
@@ -19269,7 +19270,7 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\win32\thread_heap_alloc.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\win32\thread_heap_alloc.hpp
 	<new>
 	<boost/thread/detail/config.hpp>
 	<boost/thread/win32/thread_primitives.hpp>
@@ -19281,10 +19282,10 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive_ptr.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive_ptr.hpp
 	<boost/smart_ptr/intrusive_ptr.hpp>
 
-1357767690 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\intrusive_ptr.hpp
+1357764090 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\intrusive_ptr.hpp
 	<boost/config.hpp>
 	<boost/assert.hpp>
 	<boost/detail/workaround.hpp>
@@ -19319,7 +19320,7 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1358273972 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\lock_guard.hpp
+1358270372 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\lock_guard.hpp
 	<boost/thread/detail/config.hpp>
 	<boost/thread/detail/delete.hpp>
 	<boost/thread/detail/move.hpp>
@@ -19330,13 +19331,13 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1357317648 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\lockable_wrapper.hpp
+1357314048 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\lockable_wrapper.hpp
 	<boost/thread/detail/config.hpp>
 	<initializer_list>
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1358176670 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\pthread\condition_variable_fwd.hpp
+1358173070 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\pthread\condition_variable_fwd.hpp
 	<boost/assert.hpp>
 	<boost/throw_exception.hpp>
 	<pthread.h>
@@ -19356,16 +19357,16 @@
 1337698994 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\cv_status.hpp
 	<boost/detail/scoped_enum_emulation.hpp>
 
-1236003736 c:\dropbox\projects\libraries\boost_1_54_0\boost\enable_shared_from_this.hpp
+1236000136 c:\dropbox\projects\libraries\boost_1_54_0\boost\enable_shared_from_this.hpp
 	<boost/smart_ptr/enable_shared_from_this.hpp>
 
-1353505086 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\enable_shared_from_this.hpp
+1353501486 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\enable_shared_from_this.hpp
 	<boost/smart_ptr/weak_ptr.hpp>
 	<boost/smart_ptr/shared_ptr.hpp>
 	<boost/assert.hpp>
 	<boost/config.hpp>
 
-1355595620 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\weak_ptr.hpp
+1355592020 c:\dropbox\projects\libraries\boost_1_54_0\boost\smart_ptr\weak_ptr.hpp
 	<memory>
 	<boost/smart_ptr/detail/shared_count.hpp>
 	<boost/smart_ptr/shared_ptr.hpp>
@@ -19422,11 +19423,11 @@
 	<boost/type_traits/remove_reference.hpp>
 	<functional>
 
-1357139386 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\is_convertible.hpp
+1357135786 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\is_convertible.hpp
 	<boost/type_traits/is_convertible.hpp>
 	<boost/thread/detail/move.hpp>
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\thread_interruption.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\thread_interruption.hpp
 	<boost/thread/detail/config.hpp>
 	<boost/thread/detail/delete.hpp>
 
@@ -19437,12 +19438,12 @@
 	<boost/thread/condition_variable.hpp>
 	<boost/thread/lock_types.hpp>
 
-1196006838 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\condition_variable.hpp
+1196003238 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\condition_variable.hpp
 	<boost/thread/detail/platform.hpp>
 	<boost/thread/win32/condition_variable.hpp>
 	<boost/thread/pthread/condition_variable.hpp>
 
-1357139386 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\win32\condition_variable.hpp
+1357135786 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\win32\condition_variable.hpp
 	<boost/thread/win32/thread_primitives.hpp>
 	<boost/thread/win32/thread_data.hpp>
 	<boost/thread/win32/thread_data.hpp>
@@ -19463,7 +19464,7 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1358176670 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\pthread\condition_variable.hpp
+1358173070 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\pthread\condition_variable.hpp
 	<boost/thread/pthread/timespec.hpp>
 	<boost/thread/pthread/pthread_mutex_scoped_lock.hpp>
 	<boost/thread/pthread/thread_data.hpp>
@@ -19474,7 +19475,7 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
-1354432952 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\thread_group.hpp
+1354429352 c:\dropbox\projects\libraries\boost_1_54_0\boost\thread\detail\thread_group.hpp
 	<list>
 	<boost/thread/shared_mutex.hpp>
 	<boost/thread/mutex.hpp>
@@ -19581,7 +19582,7 @@
 	<boost/config/abi_suffix.hpp>
 	<boost/chrono/detail/inlined/process_cpu_clocks.hpp>
 
-1322261352 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\process_cpu_clocks.hpp
+1322257752 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\process_cpu_clocks.hpp
 	<boost/chrono/config.hpp>
 	<boost/version.hpp>
 	<boost/chrono/process_cpu_clocks.hpp>
@@ -19606,7 +19607,7 @@
 1302633964 c:\dropbox\projects\libraries\boost_1_54_0\boost\detail\win\getprocesstimes.hpp
 	<boost/detail/win/time.hpp>
 
-1322261352 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\mac\process_cpu_clocks.hpp
+1322257752 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\mac\process_cpu_clocks.hpp
 	<boost/chrono/config.hpp>
 	<boost/chrono/process_cpu_clocks.hpp>
 	<boost/assert.hpp>
@@ -19645,7 +19646,7 @@
 	<boost/chrono/detail/inlined/mac/thread_clock.hpp>
 	<boost/chrono/detail/inlined/posix/thread_clock.hpp>
 
-1322261352 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\win\thread_clock.hpp
+1322257752 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\inlined\win\thread_clock.hpp
 	<boost/chrono/config.hpp>
 	<boost/chrono/thread_clock.hpp>
 	<cassert>
@@ -19672,7 +19673,7 @@
 	<pthread.h>
 	<unistd.h>
 
-1354368154 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\ios_base_state.hpp
+1354364554 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\ios_base_state.hpp
 	<boost/chrono/config.hpp>
 	<locale>
 	<boost/chrono/io/duration_style.hpp>
@@ -19685,7 +19686,7 @@
 1346955172 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\timezone.hpp
 	<boost/detail/scoped_enum_emulation.hpp>
 
-1354368154 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\utility\ios_base_state_ptr.hpp
+1354364554 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\utility\ios_base_state_ptr.hpp
 	<ios>
 	<boost/assert.hpp>
 
@@ -19738,7 +19739,7 @@
 	<boost/ratio/ratio.hpp>
 	<boost/static_string/basic_str.hpp>
 
-1354368154 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\time_point_get.hpp
+1354364554 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\time_point_get.hpp
 	<boost/chrono/config.hpp>
 	<boost/chrono/detail/scan_keyword.hpp>
 	<boost/chrono/io/time_point_units.hpp>
@@ -19864,9 +19865,9 @@
 	<boost/assert.hpp>
 	<locale>
 
-1354368154 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\no_warning\signed_unsigned_cmp.hpp
+1354364554 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\detail\no_warning\signed_unsigned_cmp.hpp
 
-1359135528 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\duration_io.hpp
+1359131928 c:\dropbox\projects\libraries\boost_1_54_0\boost\chrono\io\duration_io.hpp
 	<boost/chrono/duration.hpp>
 	<boost/ratio/ratio_io.hpp>
 	<boost/chrono/io/duration_style.hpp>
@@ -19993,9 +19994,899 @@
 	<boost/intrusive/pointer_traits.hpp>
 	<boost/intrusive/detail/config_end.hpp>
 
-1354395372 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\circular_list_algorithms.hpp
+1354391772 c:\dropbox\projects\libraries\boost_1_54_0\boost\intrusive\circular_list_algorithms.hpp
 	<boost/intrusive/detail/config_begin.hpp>
 	<boost/intrusive/intrusive_fwd.hpp>
 	<cstddef>
 	<boost/intrusive/detail/config_end.hpp>
+
+1381800743 source:c:\dropbox\projects\game-project-potential\src\substancelibrary.cpp
+	"SubstanceLibrary.h"
+	<unordered_map>
+	<set>
+	<vector>
+	<boost/filesystem.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	"ErrorMacros.h"
+	"MathUtils.h"
+
+1381800296 c:\dropbox\projects\game-project-potential\include\substancelibrary.h
+	<memory>
+	<string>
+	<boost/property_tree/ptree.hpp>
+	"common.h"
+	"Substance.h"
+
+1376405692 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\application.cpp
+	"Application.h"
+	<iostream>
+	<cstdio>
+	<boost/thread/mutex.hpp>
+	<boost/thread/thread.hpp>
+	<GL/glew.h>
+	<SFML/OpenGL.hpp>
+	"ErrorMacros.h"
+	"FPSControl.h"
+	"Settings.h"
+
+1376505616 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\application.h
+	<boost/random/mersenne_twister.hpp>
+	<memory>
+	<boost/thread/mutex.hpp>
+	<SFML/Window.hpp>
+	"common.h"
+	"EventListener.h"
+	"AppStateManager.h"
+	"FontCollection.h"
+
+1375458968 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\common.h
+	"common_defines.h"
+	"common_enums.h"
+	"common_typedefs.h"
+
+1375388963 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\common_defines.h
+
+1376405638 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\common_enums.h
+
+1376405648 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\common_typedefs.h
+
+1376405224 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\eventlistener.h
+	<SFML/Graphics.hpp>
+
+1376505630 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\appstatemanager.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"AppState.h"
+
+1375468913 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\common_includes.h
+	<cmath>
+	<cstddef>
+	<cstdint>
+	<cstdio>
+	<exception>
+	<iostream>
+	<limits>
+	<mutex>
+	<sstream>
+	<string>
+	<vector>
+	<boost/algorithm/clamp.hpp>
+	<boost/algorithm/hex.hpp>
+	<boost/container/flat_map.hpp>
+	<boost/container/set.hpp>
+	<boost/container/vector.hpp>
+	<boost/dynamic_bitset.hpp>
+	<boost/exception/all.hpp>
+	<boost/filesystem.hpp>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	<boost/ptr_container/ptr_map.hpp>
+	<boost/ptr_container/ptr_unordered_map.hpp>
+	<boost/ptr_container/ptr_vector.hpp>
+	<boost/random/mersenne_twister.hpp>
+	<boost/random/uniform_int_distribution.hpp>
+	<memory>
+	<boost/unordered_map.hpp>
+	<boost/unordered_set.hpp>
+	<SFML/Graphics.hpp>
+
+1376505643 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\appstate.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"EventListener.h"
+
+1376505744 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\fontcollection.h
+	<boost/shared_ptr.hpp>
+	<memory>
+	<string>
+
+1376060375 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\errormacros.h
+	"Settings.h"
+
+1376405421 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\settings.h
+	"common.h"
+
+1376405231 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\fpscontrol.h
+	<boost/chrono.hpp>
+	"common.h"
+
+1376405661 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\appstate.cpp
+	"AppState.h"
+
+1381783135 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\appstategame.cpp
+	<iostream>
+	"AppStateGame.h"
+	"AppStateManager.h"
+	"BGRenderer3D.h"
+	"GUI.h"
+	"GUIRenderer3D.h"
+	"MenuArea.h"
+	"PropPrototype.h"
+	"Settings.h"
+	"Stage.h"
+	"StageRenderer3D.h"
+	"StatusArea.h"
+	"SubstanceLibrary.h"
+	"Verb.h"
+
+1381782934 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\appstategame.h
+	<memory>
+	"common.h"
+	"AppState.h"
+
+1376405188 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\bgrenderer3d.h
+	<memory>
+	"common.h"
+	"BGRenderer.h"
+
+1376505731 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\bgrenderer.h
+	"common.h"
+	<string>
+
+1376405274 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\gui.h
+	"common.h"
+	<memory>
+	<string>
+	"EventListener.h"
+	"GUIParentElement.h"
+
+1376405314 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guiparentelement.h
+	<boost/ptr_container/ptr_map.hpp>
+	"common.h"
+	"GUIElement.h"
+
+1376405283 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guielement.h
+	<memory>
+	<glm/glm.hpp>
+	<string>
+	"common.h"
+	"EventListener.h"
+
+1376405335 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guirenderer3d.h
+	<memory>
+	"common.h"
+	"GUIRenderer.h"
+
+1376505813 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guirenderer.h
+	"common.h"
+	<string>
+	"EventListener.h"
+	"GUIElementVisitor.h"
+
+1376405289 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guielementvisitor.h
+	"common.h"
+
+1376405385 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\menuarea.h
+	<string>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"GUIParentElement.h"
+
+1376405409 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\propprototype.h
+	<string>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1381770816 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stage.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"EventListener.h"
+	"StageComponent.h"
+
+1376405539 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagecomponent.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376405563 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagerenderer3d.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"StageRenderer.h"
+
+1376505980 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagerenderer.h
+	<string>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"EventListener.h"
+	"StageComponentVisitor.h"
+
+1376405545 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagecomponentvisitor.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376405572 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\statusarea.h
+	<string>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"GUIParentElement.h"
+
+1381796696 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\substancelibrary.h
+	<memory>
+	<string>
+	<boost/property_tree/ptree.hpp>
+	"common.h"
+	"Substance.h"
+
+1381800200 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\substance.h
+	<memory>
+	<string>
+	<vector>
+	<boost/property_tree/ptree.hpp>
+	<glm/glm.hpp>
+	"common.h"
+	"SubstanceData.h"
+
+1376405594 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\substancedata.h
+	<string>
+	"common.h"
+
+1376405620 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\verb.h
+	<string>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376405677 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\appstatemanager.cpp
+	<iostream>
+	"AppStateManager.h"
+	"AppStateSplash.h"
+	"AppStateGame.h"
+
+1376405154 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\appstatesplash.h
+	<ctime>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"AppState.h"
+
+1381783020 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\appstatesplash.cpp
+	<ctime>
+	<iostream>
+	"AppStateSplash.h"
+	"AppStateManager.h"
+	"Application.h"
+
+1376406485 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\bgrenderdata.cpp
+	"BGRenderData.h"
+	<GL/glew.h>
+	<glm/glm.hpp>
+	"BGVertexRenderData.h"
+
+1376405171 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\bgrenderdata.h
+	<boost/container/vector.hpp>
+	<glm/glm.hpp>
+	"common.h"
+
+1376405194 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\bgvertexrenderdata.h
+
+1376406491 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\bgrenderer.cpp
+	<iostream>
+	<string>
+	"BGRenderer.h"
+	"Settings.h"
+
+1376406500 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\bgrenderer3d.cpp
+	"BGRenderer3D.h"
+	<algorithm>
+	<iterator>
+	<vector>
+	"Application.h"
+	"BGRenderData.h"
+	"GLShaderProgram.h"
+
+1376505782 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\glshaderprogram.h
+	<memory>
+	<GL/glew.h>
+	"common.h"
+
+1376406524 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\blocktopcorners.cpp
+	"BlockTopCorners.h"
+
+1376405201 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\blocktopcorners.h
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376406530 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\cubicbezier.cpp
+	"CubicBezier.h"
+
+1376405217 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\cubicbezier.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	<SFML/Graphics.hpp>
+
+1376406539 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\eventlistener.cpp
+	"EventListener.h"
+
+1376406555 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\facebools.cpp
+	"FaceBools.h"
+
+1376405244 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\facebools.h
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376406573 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\fontcollection.cpp
+	"ErrorMacros.h"
+	"SimpleMatrixFont.h"
+	"TextureFont.h"
+	<boost/container/map.hpp>
+	<boost/shared_ptr.hpp>
+	"FontCollection.h"
+
+1376405430 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\simplematrixfont.h
+	<memory>
+	<glm/glm.hpp>
+	"TextureFont.h"
+
+1376506032 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\texturefont.h
+	<glm/glm.hpp>
+	<string>
+	"common.h"
+
+1376406547 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\fpscontrol.cpp
+	"FPSControl.h"
+
+1376406581 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\glshaderprogram.cpp
+	"GLShaderProgram.h"
+	<cstdio>
+	<fstream>
+	<string>
+	<vector>
+	"ErrorMacros.h"
+
+1377222284 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\gltexture.cpp
+	"GLTexture.h"
+	"ErrorMacros.h"
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtx/transform.hpp>
+	<soil.h>
+
+1377090706 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\gltexture.h
+	<memory>
+	<GL/glew.h>
+	<glm/glm.hpp>
+
+1376406588 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\gui.cpp
+	"GUI.h"
+	"Application.h"
+	"ErrorMacros.h"
+	"GUIRenderer.h"
+	"GUIRenderer3D.h"
+	"MenuArea.h"
+	"StatusArea.h"
+
+1376406595 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\guielement.cpp
+	<iostream>
+	"GUIElement.h"
+	"ErrorMacros.h"
+	"GUIElementVisitor.h"
+	"Settings.h"
+
+1376406601 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\guiframe.cpp
+	"GUIFrame.h"
+	"ErrorMacros.h"
+	"GUIElementVisitor.h"
+
+1376405297 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guiframe.h
+	<glm/glm.hpp>
+	<string>
+	"common.h"
+	"GUIParentElement.h"
+
+1376406612 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\guilabel.cpp
+	"GUILabel.h"
+	"GUIElementVisitor.h"
+
+1376405304 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guilabel.h
+	<glm/glm.hpp>
+	<string>
+	"common.h"
+	"GUIElement.h"
+
+1376406624 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\guiparentelement.cpp
+	"GUIParentElement.h"
+	<inttypes.h>
+	<stdint.h>
+	<stdio.h>
+	"ErrorMacros.h"
+	"GUIElementVisitor.h"
+
+1376406632 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\guirenderdata.cpp
+	"GUIRenderData.h"
+	<GL/glew.h>
+	<glm/glm.hpp>
+	"GUIVertexRenderData.h"
+
+1376405322 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guirenderdata.h
+	<boost/container/vector.hpp>
+	<glm/glm.hpp>
+	"common.h"
+
+1376405344 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\guivertexrenderdata.h
+
+1376406638 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\guirenderer.cpp
+	<iostream>
+	<string>
+	"GUIRenderer.h"
+	"Settings.h"
+
+1376406646 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\guirenderer3d.cpp
+	"GUIRenderer3D.h"
+	<algorithm>
+	<iterator>
+	<vector>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtx/transform.hpp>
+	"Application.h"
+	"ErrorMacros.h"
+	"GUI.h"
+	"GUIElement.h"
+	"GUIFrame.h"
+	"GUILabel.h"
+	"GUIParentElement.h"
+	"GUIRenderData.h"
+	"GLShaderProgram.h"
+	"TextureFont.h"
+
+1376406654 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\inventory.cpp
+	<algorithm>
+	<set>
+	"Inventory.h"
+	"Prop.h"
+	"Settings.h"
+
+1376405368 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\inventory.h
+	<algorithm>
+	<set>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376405400 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\prop.h
+	<string>
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+	"HasInventory.h"
+	"HasLocation.h"
+	"StageComponent.h"
+	"StageComponentVisitor.h"
+
+1376405350 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\hasinventory.h
+	"StageComponent.h"
+
+1376405359 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\haslocation.h
+	"StageComponent.h"
+
+1376407670 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\main.cpp
+	<exception>
+	<iostream>
+	<cstdlib>
+	<clocale>
+	<stdlib.h>
+	<locale.h>
+	"Application.h"
+
+1376406659 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\menuarea.cpp
+	"MenuArea.h"
+	"Application.h"
+	"GUIFrame.h"
+
+1376406666 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\noisefield.cpp
+	<algorithm>
+	<iostream>
+	<vector>
+	"NoiseField.h"
+	<ctime>
+
+1376405391 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\noisefield.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376406678 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\prop.cpp
+	<algorithm>
+	<iostream>
+	<string>
+	"Prop.h"
+	"ErrorMacros.h"
+	"Inventory.h"
+	"PropPrototype.h"
+	"Settings.h"
+	"Substance.h"
+
+1376406687 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\propprototype.cpp
+	<algorithm>
+	<cstdlib>
+	<exception>
+	<iostream>
+	<string>
+	<vector>
+	"PropPrototype.h"
+	"ErrorMacros.h"
+	"Settings.h"
+	"TextureAtlas.h"
+
+1376405602 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\textureatlas.h
+	<boost/container/flat_map.hpp>
+	<boost/dynamic_bitset.hpp>
+	<memory>
+	<SFML/Graphics.hpp>
+	"common.h"
+
+1377222610 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\renderdata.cpp
+	"RenderData.h"
+	<GL/glew.h>
+	<glm/glm.hpp>
+	"VertexRenderData.h"
+
+1376405414 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\renderdata.h
+	<boost/container/vector.hpp>
+	<glm/glm.hpp>
+	"common.h"
+
+1376405628 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\vertexrenderdata.h
+	<glm/glm.hpp>
+
+1376406699 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\settings.cpp
+	<cstdio>
+	<cstdlib>
+	<exception>
+	<iostream>
+	<string>
+	"Settings.h"
+	<boost/property_tree/xml_parser.hpp>
+
+1376406707 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\simplematrixfont.cpp
+	<SFML/Graphics.hpp>
+	"SimpleMatrixFont.h"
+	"ErrorMacros.h"
+
+1381772710 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stage.cpp
+	<vector>
+	"Stage.h"
+	"Application.h"
+	"ColumnData.h"
+	"CubicBezier.h"
+	"ErrorMacros.h"
+	"FaceBools.h"
+	"MathUtils.h"
+	"NoiseField.h"
+	"Prop.h"
+	"Settings.h"
+	"StageBlock.h"
+	"StageBuilderBeaches.h"
+	"StageBuilderDeposits.h"
+	"StageBuilderFlora.h"
+	"StageBuilderKnownStatus.h"
+	"StageBuilderLakes.h"
+	"StageBuilderRivers.h"
+	"StageBuilderSmoother.h"
+	"StageBuilderTerrain.h"
+	"StageChunk.h"
+	"StageChunkCollection.h"
+	<stddef.h>
+	<iostream>
+	<cassert>
+	<cstdio>
+	<ctime>
+
+1376405208 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\columndata.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1381795898 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\mathutils.h
+	<complex>
+	<iterator>
+	<glm/glm.hpp>
+
+1381784016 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stageblock.h
+	"common_includes.h"
+	"common_typedefs.h"
+	"FaceBools.h"
+	"Inventory.h"
+	"Prop.h"
+	"StageComponent.h"
+	"Substance.h"
+
+1376407746 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilderbeaches.h
+	"StageBuilder.h"
+
+1376506297 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilder.h
+	"common_enums.h"
+	"common_includes.h"
+	"common_typedefs.h"
+
+1376407766 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilderdeposits.h
+	"StageBuilder.h"
+
+1376407771 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilderflora.h
+	"StageBuilder.h"
+
+1376407812 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilderknownstatus.h
+	"StageBuilder.h"
+
+1376407781 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilderlakes.h
+	"StageBuilder.h"
+
+1376407787 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilderrivers.h
+	"StageBuilder.h"
+
+1376407793 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuildersmoother.h
+	"StageBuilder.h"
+
+1376405516 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagebuilderterrain.h
+	"StageBuilder.h"
+
+1376505939 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagechunk.h
+	<boost/thread/mutex.hpp>
+	"common.h"
+	"StageBlock.h"
+	"StageComponent.h"
+
+1376405531 c:\users\gregory lindsey\dropbox\projects\game-project-potential\include\stagechunkcollection.h
+	"common_includes.h"
+	"common_typedefs.h"
+	"StageComponent.h"
+
+1381784647 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stageblock.cpp
+	"StageBlock.h"
+	"ColumnData.h"
+	"MathUtils.h"
+	"Settings.h"
+	"Stage.h"
+	"StageChunk.h"
+	"StageComponentVisitor.h"
+	"SubstanceLibrary.h"
+
+1381784810 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuilderbeaches.cpp
+	<iostream>
+	"StageBuilderBeaches.h"
+	"Application.h"
+	"ColumnData.h"
+	"MathUtils.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunk.h"
+	"Substance.h"
+
+1381787891 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuilderdeposits.cpp
+	<algorithm>
+	<cstdlib>
+	<iostream>
+	"../include/StageBuilderDeposits.h"
+	"Application.h"
+	"ColumnData.h"
+	"MathUtils.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"SubstanceLibrary.h"
+
+1381798634 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuilderflora.cpp
+	<iostream>
+	"../include/StageBuilderFlora.h"
+	"Application.h"
+	"ColumnData.h"
+	"ErrorMacros.h"
+	"MathUtils.h"
+	"NoiseField.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunk.h"
+	"SubstanceLibrary.h"
+
+1376406753 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuilderknownstatus.cpp
+	<iostream>
+	"../include/StageBuilderKnownStatus.h"
+	"Application.h"
+	"ColumnData.h"
+	"MathUtils.h"
+	"NoiseField.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunk.h"
+	"Substance.h"
+
+1381788638 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuilderlakes.cpp
+	<iostream>
+	"../include/StageBuilderLakes.h"
+	"Application.h"
+	"ColumnData.h"
+	"MathUtils.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunk.h"
+	"Substance.h"
+
+1381788861 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuilderrivers.cpp
+	<iostream>
+	"StageBuilderRivers.h"
+	"Application.h"
+	"ColumnData.h"
+	"ErrorMacros.h"
+	"MathUtils.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunk.h"
+	"Substance.h"
+	<noise/noise.h>
+
+1376406778 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuildersmoother.cpp
+	<algorithm>
+	<iostream>
+	"../include/StageBuilderSmoother.h"
+	"Application.h"
+	"ColumnData.h"
+	"MathUtils.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunk.h"
+	"Substance.h"
+
+1381797054 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagebuilderterrain.cpp
+	<iostream>
+	<vector>
+	"StageBuilderTerrain.h"
+	"Application.h"
+	"ColumnData.h"
+	"ErrorMacros.h"
+	"MathUtils.h"
+	"Stage.h"
+	"Settings.h"
+	"StageBlock.h"
+	"SubstanceLibrary.h"
+	<noise/noise.h>
+
+1376406791 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagechunk.cpp
+	"StageChunk.h"
+	<algorithm>
+	"ErrorMacros.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunkCollection.h"
+	"StageComponentVisitor.h"
+
+1376406800 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagechunkcollection.cpp
+	"StageChunkCollection.h"
+	"MathUtils.h"
+	"Stage.h"
+	"StageChunk.h"
+	"StageComponentVisitor.h"
+
+1376406807 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagerenderer.cpp
+	<iostream>
+	<string>
+	"StageRenderer.h"
+	"Settings.h"
+	"Stage.h"
+
+1381791712 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\stagerenderer3d.cpp
+	"StageRenderer3D.h"
+	<algorithm>
+	<iterator>
+	<list>
+	<vector>
+	<boost/container/list.hpp>
+	<boost/thread/condition_variable.hpp>
+	<boost/thread/mutex.hpp>
+	<boost/thread/thread.hpp>
+	<boost/unordered_set.hpp>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtx/transform.hpp>
+	"Application.h"
+	"ErrorMacros.h"
+	"GLShaderProgram.h"
+	"GLTexture.h"
+	"MathUtils.h"
+	"RenderData.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+	"StageChunk.h"
+	"StageChunkCollection.h"
+	"SubstanceLibrary.h"
+	"VertexRenderData.h"
+
+1381788048 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\statusarea.cpp
+	<sstream>
+	<string>
+	"StatusArea.h"
+	"Application.h"
+	"FaceBools.h"
+	"GUIFrame.h"
+	"GUILabel.h"
+	"Settings.h"
+	"Stage.h"
+	"StageBlock.h"
+
+1381800191 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\substance.cpp
+	"Substance.h"
+	<algorithm>
+	<cstdlib>
+	<exception>
+	<iostream>
+	<iterator>
+	<limits>
+	<unordered_map>
+	<set>
+	<string>
+	<boost/filesystem.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	<boost/ptr_container/ptr_unordered_map.hpp>
+	<boost/unordered_map.hpp>
+	<glm/glm.hpp>
+	<noise/noise.h>
+	"ErrorMacros.h"
+	"Settings.h"
+	"TextureAtlas.h"
+
+1376406835 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\textureatlas.cpp
+	<iostream>
+	"TextureAtlas.h"
+	"ErrorMacros.h"
+	"Settings.h"
+
+1376406847 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\texturefont.cpp
+	"TextureFont.h"
+
+1376406855 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\verb.cpp
+	<algorithm>
+	<exception>
+	<iostream>
+	<string>
+	"Verb.h"
+	"ErrorMacros.h"
+	"Settings.h"
+
+1381797143 source:c:\users\gregory lindsey\dropbox\projects\game-project-potential\src\substancelibrary.cpp
+	"SubstanceLibrary.h"
+	<unordered_map>
+	<set>
+	<vector>
+	<boost/filesystem.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	"ErrorMacros.h"
+	"MathUtils.h"
 

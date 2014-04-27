@@ -8,10 +8,13 @@
 #include "GUI.h"
 #include "GUIRenderer3D.h"
 #include "MenuArea.h"
+#include "PropPrototype.h"
 #include "Settings.h"
 #include "Stage.h"
 #include "StageRenderer3D.h"
 #include "StatusArea.h"
+#include "SubstanceLibrary.h"
+#include "Verb.h"
 
 struct AppStateGame::Impl
 {
@@ -32,6 +35,13 @@ const unsigned int AppStateGame::Impl::menu_bar_width = 250;
 AppStateGame::AppStateGame(AppStateManager* manager)
   : AppState(manager), impl(new Impl())
 {
+  Verb::initialize();                 // verb dictionary
+
+  // Create and initialize the substance library.
+  SubstanceLibrary::get_instance()->initialize();
+
+  PropPrototype::initialize();        // prop prototypes
+
   impl->gui.reset(new GUI());
 
   // Create the status area.
@@ -58,7 +68,7 @@ void AppStateGame::enter_state()
 {
   // Build the terrain.
   // TODO: choose a seed
-  Stage::getInstance().build(Settings::terrainSize, 2);
+  Stage::get_instance()->build(Settings::terrainSize, 2);
 }
 
 void AppStateGame::leave_state()
@@ -94,7 +104,7 @@ EventResult AppStateGame::handle_event(const sf::Event& event)
   }
 
   // 4. Pass the event to the game stage.
-  result = Stage::getInstance().handle_event(event);
+  result = Stage::get_instance()->handle_event(event);
   if (result == EventResult::Handled)
   {
     return result;
@@ -106,7 +116,7 @@ EventResult AppStateGame::handle_event(const sf::Event& event)
 void AppStateGame::process()
 {
   // Run the stage's processing state machine.
-  Stage::getInstance().process();
+  Stage::get_instance()->process();
 }
 
 void AppStateGame::render()
@@ -127,10 +137,10 @@ void AppStateGame::render()
   // Render background.
   impl->bg_renderer->draw();
 
-  if (Stage::getInstance().okay_to_render_map())
+  if (Stage::get_instance()->okay_to_render_map())
   {
     // Tell renderer to visit the stage to create the vertex array.
-    Stage::getInstance().accept(*(impl->stage_renderer));
+    Stage::get_instance()->accept(*(impl->stage_renderer));
 
     // Render stage.
     impl->stage_renderer->draw();

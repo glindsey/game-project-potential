@@ -66,8 +66,8 @@ void StatusArea::render()
 
   if (block.known())
   {
-    stream << solid_substance.getProperties().get<std::string>("name") << " / ";
-    stream << fluid_substance.getProperties().get<std::string>("name");
+    stream << solid_substance.get_properties().get<std::string>("name") << " / ";
+    stream << fluid_substance.get_properties().get<std::string>("name");
   }
   else
   {
@@ -75,9 +75,9 @@ void StatusArea::render()
 
     if (Settings::debugMapRevealAll)
     {
-      stream << "(" << solid_substance.getProperties().get<std::string>("name")
+      stream << "(" << solid_substance.get_properties().get<std::string>("name")
              << " / ";
-      stream << fluid_substance.getProperties().get<std::string>("name") << ")";
+      stream << fluid_substance.get_properties().get<std::string>("name") << ")";
     }
   }
 

@@ -11,17 +11,10 @@
 #include "AppStateManager.h"
 
 #include "Application.h"
-#include "Substance.h"
-#include "PropPrototype.h"
-#include "Verb.h"
 
 AppStateSplash::AppStateSplash(AppStateManager* manager)
   : AppState(manager)
 {
-  // Create the required stores.
-  Verb::initialize();                 // verb dictionary
-  Substance::initialize();             // materials
-  PropPrototype::initialize();        // prop prototypes
 }
 
 AppStateSplash::~AppStateSplash()

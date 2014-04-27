@@ -33,7 +33,7 @@
 struct Stage::Impl
 {
   /// Pointer to the stage instance.
-  static std::unique_ptr<Stage> instance_;
+  static std::shared_ptr<Stage> instance_;
 
   ColumnData& getColumnData(StageCoord x, StageCoord y)
   {
@@ -177,7 +177,7 @@ struct Stage::Impl
 }
 ;
 
-std::unique_ptr<Stage> Stage::Impl::instance_;
+StageShPtr Stage::Impl::instance_;
 
 Stage::Stage()
   : impl(new Impl())
@@ -189,7 +189,7 @@ Stage::~Stage()
   std::cout << "Destroying Stage..." << std::endl;
 }
 
-Stage& Stage::getInstance()
+StageShPtr Stage::get_instance()
 {
   // Instantiate stage if it hasn't been yet.
   if (Impl::instance_.get() == nullptr)
@@ -197,7 +197,7 @@ Stage& Stage::getInstance()
     Impl::instance_.reset(new Stage());
   }
 
-  return *(Impl::instance_.get());
+  return Impl::instance_;
 }
 
 

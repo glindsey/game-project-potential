@@ -19,7 +19,7 @@
 #include "Stage.h"
 #include "StageBlock.h"
 #include "StageChunk.h"
-#include "Substance.h"
+#include "SubstanceLibrary.h"
 
 struct StageBuilderFlora::Impl
 {
@@ -118,16 +118,11 @@ bool StageBuilderFlora::Build()
                                                       height);
 
       bool block_is_soil =
-        block.get_substance(BlockLayer::Solid).getProperties().get<bool>(
-          "attributes.soil", false);
-      /*
-       bool thisChunkIsWater =
-       thisNode.get_block()->getSubstance(BlockLayer::Fluid)->getProperties().get<bool>(
-       "attributes.water", false);
-       */
+        SL->get(block.get_substance(BlockLayer::Solid))->
+          get_bool_property("attributes.soil", false);
       bool above_is_water =
-        block_above.get_substance(BlockLayer::Fluid).getProperties().get<bool>(
-          "attributes.water", false);
+        SL->get(block_above.get_substance(BlockLayer::Fluid))->
+          get_bool_property("attributes.water", false);
 
       // Make sure this chunk is soil.
       if (block_is_soil)

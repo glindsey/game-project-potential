@@ -18,13 +18,11 @@
 #include "Settings.h"
 #include "Stage.h"
 #include "StageBlock.h"
-#include "Substance.h"
+#include "SubstanceLibrary.h"
 
-/// Typedef for a random distribution.
-typedef boost::random::uniform_int_distribution<> RandomDistribution;
-
-/// Typedef for a scoped pointer to a random distribution.
-typedef std::unique_ptr<RandomDistribution> RDPointer;
+/// Using declarations
+using RandDist = boost::random::uniform_int_distribution<>;
+using RDPointer = std::unique_ptr<RandDist>;
 
 enum class PlacerState
 {
@@ -42,15 +40,15 @@ struct StageBuilderDeposits::Impl
   {
     number_remaining_ = 0;  // This gets set later.
 
-    x_distribution_.reset(new RandomDistribution(0, stage_.size().x - 1));
-    y_distribution_.reset(new RandomDistribution(0, stage_.size().y - 1));
-    z_distribution_.reset(new RandomDistribution(0, stage_.size().z - 1));
+    x_distribution_.reset(new RandDist(0, stage_.size().x - 1));
+    y_distribution_.reset(new RandDist(0, stage_.size().y - 1));
+    z_distribution_.reset(new RandDist(0, stage_.size().z - 1));
 
     // TODO: Define displacements in Settings instead of hardcoding.
-    tiny_displacement_distribution_.reset(new RandomDistribution(-1, 1));
-    medium_displacement_distribution_.reset(new RandomDistribution(-2, 2));
-    large_displacement_distribution_.reset(new RandomDistribution(-4, 4));
-    huge_displacement_distribution_.reset(new RandomDistribution(-8, 8));
+    tiny_displacement_distribution_.reset(new RandDist(-1, 1));
+    medium_displacement_distribution_.reset(new RandDist(-2, 2));
+    large_displacement_distribution_.reset(new RandDist(-4, 4));
+    huge_displacement_distribution_.reset(new RandDist(-8, 8));
 
     placer_state_ = PlacerState::Start;
 
@@ -58,11 +56,11 @@ struct StageBuilderDeposits::Impl
   }
 
   /// Sets a block's substance, after making sure the coordinates are valid.
-  void SetSubstance(StageCoord const& x,
-                    StageCoord const& y,
-                    StageCoord const& z,
-                    BlockLayer const& layer,
-                    Substance const& substance)
+  void set_substance(StageCoord x,
+                     StageCoord y,
+                     StageCoord z,
+                     BlockLayer layer,
+                     std::string substance)
   {
     if (stage_.valid_coordinates(x, y, z))
     {
@@ -70,9 +68,9 @@ struct StageBuilderDeposits::Impl
     }
   }
 
-  void DrawLargeBlob(StageCoord3 const& coord,
-                     BlockLayer const& layer,
-                     Substance const& substance)
+  void draw_large_blob(StageCoord3 coord,
+                       BlockLayer layer,
+                       std::string substance)
   {
     /// Create a large-deposit blob.
     /// The blob created looks like the following:
@@ -122,16 +120,16 @@ struct StageBuilderDeposits::Impl
 
     for (StageCoord3 & offset : offsets)
     {
-      SetSubstance(coord.x + offset.x,
-                   coord.y + offset.y,
-                   coord.z + offset.z,
-                   layer, substance);
+      set_substance(coord.x + offset.x,
+                    coord.y + offset.y,
+                    coord.z + offset.z,
+                    layer, substance);
     }
   }
 
-  void DrawSmallBlob(StageCoord3 const& coord,
-                     BlockLayer const& layer,
-                     Substance const& substance)
+  void draw_small_blob(StageCoord3 coord,
+                       BlockLayer layer,
+                       std::string substance)
   {
     /// Create a small-deposit blob.
     /// The blob created looks like the following:
@@ -157,19 +155,19 @@ struct StageBuilderDeposits::Impl
 
     for (StageCoord3 & offset : offsets)
     {
-      SetSubstance(coord.x + offset.x,
-                   coord.y + offset.y,
-                   coord.z + offset.z,
-                   layer, substance);
+      set_substance(coord.x + offset.x,
+                    coord.y + offset.y,
+                    coord.z + offset.z,
+                    layer, substance);
     }
   }
 
   /// This function uses a 3-D version of Bresenham's line algorithm to draw
   /// a line of small blobs, creating a vein.
   /// @todo Perhaps make this a series of lines, or a Bezier curve.
-  void DrawVein(StageCoord3 const& src,
-                StageCoord3 const& dst,
-                Substance const& substance)
+  void draw_vein(StageCoord3 const& src,
+                 StageCoord3 const& dst,
+                 std::string substance)
   {
     StageCoord3 d(dst.x - src.x, dst.y - src.y, dst.z - src.z);
     StageCoord3 a(abs(d.x) * 2, abs(d.y) * 2, abs(d.z) * 2);
@@ -183,7 +181,7 @@ struct StageBuilderDeposits::Impl
 
       do
       {
-        DrawSmallBlob(coord, BlockLayer::Solid, substance);
+        draw_small_blob(coord, BlockLayer::Solid, substance);
 
         if (yd >= 0)        // Move along Y
         {
@@ -210,7 +208,7 @@ struct StageBuilderDeposits::Impl
 
       do
       {
-        DrawSmallBlob(coord, BlockLayer::Solid, substance);
+        draw_small_blob(coord, BlockLayer::Solid, substance);
 
         if (xd >= 0)    // Move along X
         {
@@ -237,7 +235,7 @@ struct StageBuilderDeposits::Impl
 
       do
       {
-        DrawSmallBlob(coord, BlockLayer::Solid, substance);
+        draw_small_blob(coord, BlockLayer::Solid, substance);
 
         if (coord.z == dst.z)
         {
@@ -274,9 +272,9 @@ struct StageBuilderDeposits::Impl
   PlacerState placer_state_;
 
   /// Returns a random number within a given distribution.
-  int get_random(RDPointer& distribution)
+  int get_random(RDPointer const& distribution)
   {
-    RandomDistribution& dist = *(distribution.get());
+    RandDist& dist = *(distribution.get());
     return dist(App::instance().twister());
   }
 
@@ -284,25 +282,25 @@ struct StageBuilderDeposits::Impl
   int number_remaining_;
 
   /// Random distribution across X axis.
-  std::unique_ptr<RandomDistribution> x_distribution_;
+  std::unique_ptr<RandDist> x_distribution_;
 
   /// Random distribution across Y axis.
-  std::unique_ptr<RandomDistribution> y_distribution_;
+  std::unique_ptr<RandDist> y_distribution_;
 
   /// Random distribution across Z axis.
-  std::unique_ptr<RandomDistribution> z_distribution_;
+  std::unique_ptr<RandDist> z_distribution_;
 
   /// Tiny displacement distribution.
-  std::unique_ptr<RandomDistribution> tiny_displacement_distribution_;
+  std::unique_ptr<RandDist> tiny_displacement_distribution_;
 
   /// Medium displacement distribution.
-  std::unique_ptr<RandomDistribution> medium_displacement_distribution_;
+  std::unique_ptr<RandDist> medium_displacement_distribution_;
 
   /// Large displacement distribution.
-  std::unique_ptr<RandomDistribution> large_displacement_distribution_;
+  std::unique_ptr<RandDist> large_displacement_distribution_;
 
   /// Huge displacement distribution.
-  std::unique_ptr<RandomDistribution> huge_displacement_distribution_;
+  std::unique_ptr<RandDist> huge_displacement_distribution_;
 
   bool begin_;
 };
@@ -354,20 +352,19 @@ bool StageBuilderDeposits::Build()
                              impl->get_random(impl->y_distribution_),
                              impl->get_random(impl->z_distribution_));
       StageBlock& chosen_block = impl->stage_.get_block(random.x,
-                                                       random.y,
-                                                       random.z);
-      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
+                                                        random.y,
+                                                        random.z);
+      SubstanceConstShPtr substance =
+        SL->get(chosen_block.get_substance(BlockLayer::Solid));
 
       // Make sure the randomly selected block's substance can contain large deposits.
-      if (substance.largeDeposits.size() != 0)
+      if (substance->large_deposits.size() != 0)
       {
-
         // Create a distribution to choose one of the substances included.
-        boost::random::uniform_int_distribution<> substance_distribution(
-          0, substance.largeDeposits.size() - 1);
-        const Substance& deposit_substance =
-          *(substance.largeDeposits[substance_distribution(
-                                      App::instance().twister())]);
+        RandDist substance_distribution(0, substance->large_deposits.size() - 1);
+        std::string deposit_substance =
+          substance->large_deposits[substance_distribution(
+                                    App::instance().twister())];
 
         // Create the deposit out of 8 slightly-displaced large blobs.
         // TODO: make the size of a deposit customizable?
@@ -390,7 +387,7 @@ bool StageBuilderDeposits::Build()
                                         try_coord.y,
                                         try_coord.z).is_solid());
 
-          impl->DrawLargeBlob(coord, BlockLayer::Solid, deposit_substance);
+          impl->draw_large_blob(coord, BlockLayer::Solid, deposit_substance);
         }
 
         --(impl->number_remaining_);
@@ -419,18 +416,18 @@ bool StageBuilderDeposits::Build()
                              impl->get_random(impl->y_distribution_),
                              impl->get_random(impl->z_distribution_));
       StageBlock& chosen_block = impl->stage_.get_block(random.x, random.y, random.z);
-      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
+      SubstanceConstShPtr substance =
+        SL->get(chosen_block.get_substance(BlockLayer::Solid));
 
       // Make sure the randomly selected block's substance can contain small deposits.
-      if (substance.smallDeposits.size() != 0)
+      if (substance->small_deposits.size() != 0)
       {
-
         // Create a distribution to choose one of the substances included.
         boost::random::uniform_int_distribution<> substance_distribution(
-          0, substance.smallDeposits.size() - 1);
-        const Substance& deposit_substance =
-          *(substance.smallDeposits[substance_distribution(
-                                      App::instance().twister())]);
+          0, substance->small_deposits.size() - 1);
+        std::string deposit_substance =
+          substance->small_deposits[substance_distribution(
+                                    App::instance().twister())];
 
         // Create the deposit out of 4 slightly-displaced small blobs.
         // TODO: make the size of a deposit customizable?
@@ -454,7 +451,7 @@ bool StageBuilderDeposits::Build()
                                         try_coord.y,
                                         try_coord.z).is_solid());
 
-          impl->DrawSmallBlob(coord, BlockLayer::Solid, deposit_substance);
+          impl->draw_small_blob(coord, BlockLayer::Solid, deposit_substance);
         }
 
         --(impl->number_remaining_);
@@ -485,18 +482,19 @@ bool StageBuilderDeposits::Build()
       StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);
-      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
+      SubstanceConstShPtr substance =
+        SL->get(chosen_block.get_substance(BlockLayer::Solid));
 
       // Make sure the randomly selected block's substance can contain veins.
-      if (substance.veinDeposits.size() != 0)
+      if (substance->vein_deposits.size() != 0)
       {
 
         // Create a distribution to choose one of the substances included.
         boost::random::uniform_int_distribution<> substance_distribution(
-          0, substance.veinDeposits.size() - 1);
-        const Substance& deposit_substance =
-          *(substance.veinDeposits[substance_distribution(
-                                     App::instance().twister())]);
+          0, substance->vein_deposits.size() - 1);
+        std::string deposit_substance =
+          substance->vein_deposits[substance_distribution(
+                                   App::instance().twister())];
 
         // Figure out the end of the vein.  We don't do any checking for
         // the endpoint right now except to make sure it is solid.
@@ -516,7 +514,7 @@ bool StageBuilderDeposits::Build()
         }
         while (!impl->stage_.get_block(try_dest.x, try_dest.y, try_dest.z).is_solid());
 
-        impl->DrawVein(random, try_dest, deposit_substance);
+        impl->draw_vein(random, try_dest, deposit_substance);
 
         --(impl->number_remaining_);
       }
@@ -546,21 +544,22 @@ bool StageBuilderDeposits::Build()
       StageBlock& chosen_block = impl->stage_.get_block(random.x,
                                                        random.y,
                                                        random.z);
-      const Substance& substance = chosen_block.get_substance(BlockLayer::Solid);
+      SubstanceConstShPtr substance =
+        SL->get(chosen_block.get_substance(BlockLayer::Solid));
 
       // Make sure the randomly selected block's substance can contain solitaires.
-      if (substance.singleDeposits.size() != 0)
+      if (substance->single_deposits.size() != 0)
       {
 
         // Create a distribution to choose one of the substances included.
         boost::random::uniform_int_distribution<> substance_distribution(
-          0, substance.singleDeposits.size() - 1);
-        const Substance& deposit_substance =
-          *(substance.singleDeposits[substance_distribution(
-                                       App::instance().twister())]);
+          0, substance->single_deposits.size() - 1);
+        std::string deposit_substance =
+          substance->single_deposits[substance_distribution(
+                                    App::instance().twister())];
 
-        impl->SetSubstance(random.x, random.y, random.z,
-                           BlockLayer::Solid, deposit_substance);
+        impl->set_substance(random.x, random.y, random.z,
+                            BlockLayer::Solid, deposit_substance);
 
         --(impl->number_remaining_);
       }

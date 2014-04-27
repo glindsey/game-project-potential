@@ -25,6 +25,7 @@
 #include "StageBlock.h"
 #include "StageChunk.h"
 #include "StageChunkCollection.h"
+#include "SubstanceLibrary.h"
 #include "VertexRenderData.h"
 
 struct StageRenderer3D::Impl
@@ -39,11 +40,11 @@ struct StageRenderer3D::Impl
     FaceBools hiddenFacesSolid = block.get_hidden_faces(BlockLayer::Solid);
     FaceBools hiddenFacesFluid = block.get_hidden_faces(BlockLayer::Fluid);
 
-    glm::vec4 colorSolid = block.get_substance(BlockLayer::Solid).getData().color;
-    glm::vec4 colorFluid = block.get_substance(BlockLayer::Fluid).getData().color;
+    glm::vec4 colorSolid = SL->get(block.get_substance(BlockLayer::Solid))->get_data().color;
+    glm::vec4 colorFluid = SL->get(block.get_substance(BlockLayer::Fluid))->get_data().color;
 
-    glm::vec4 colorSpecularSolid = block.get_substance(BlockLayer::Solid).getData().color_specular;
-    glm::vec4 colorSpecularFluid = block.get_substance(BlockLayer::Fluid).getData().color_specular;
+    glm::vec4 colorSpecularSolid = SL->get(block.get_substance(BlockLayer::Solid))->get_data().color_specular;
+    glm::vec4 colorSpecularFluid = SL->get(block.get_substance(BlockLayer::Fluid))->get_data().color_specular;
 
     if ((Settings::debugMapRevealAll || block.is_known()) &&
         block.is_visible() && block.has_any_visible_faces())
@@ -574,7 +575,7 @@ void StageRenderer3D::draw()
 {
   sf::Window& window = App::instance().window();
   const sf::Vector2u& window_size = window.getSize();
-  Stage& stage = Stage::getInstance();
+  StageShPtr stage = Stage::get_instance();
 
   // Set the viewport to match window size.
   glViewport(0.0f, 0.0f, (float) window_size.x, (float) window_size.y);
@@ -620,11 +621,11 @@ void StageRenderer3D::draw()
     }
   }
 
-  if (stage.is_ready())
+  if (stage->is_ready())
   {
     impl->render_program->bind();
 
-    StageCoord3 cursor_location = stage.cursor();
+    StageCoord3 cursor_location = stage->cursor();
     glm::vec3& ldir = impl->light_dir;
     glm::vec3& lcol = impl->light_color;
     StageCoord3& cloc = cursor_location;
